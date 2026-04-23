@@ -1104,7 +1104,24 @@
         "crit",
         "critResist"
       ]
-    }
+    },
+	"斯諾奇": {
+      "layer1": [
+        "attack",
+        "defense"
+      ],
+      "layer2": [
+        "attack",
+        "hp",
+        "defense"
+      ],
+      "layer3": [
+        "attack",
+        "hp",
+        "crit",
+        "critResist"
+      ]
+	}
   },
   "boardConfig": {
     "layer1": {

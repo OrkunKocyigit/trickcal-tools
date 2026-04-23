@@ -648,5 +648,15 @@
     "deployRow": "前排",
     "role": "坦克",
     "race": "精靈"
+  },
+  "斯諾奇": {
+    "name": "斯諾奇",
+    "en": "Snorky",
+    "personality": "憂鬱",
+    "stars": 3,
+    "attackType": "物理",
+    "deployRow": "前排",
+    "role": "坦克",
+    "race": "魔女"
   }
 }
