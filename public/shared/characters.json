@@ -658,5 +658,15 @@
     "deployRow": "前排",
     "role": "坦克",
     "race": "魔女"
+  },
+  "瑟琳娜": {
+    "name": "瑟琳娜",
+    "en": "Selene",
+    "personality": "活潑",
+    "stars": 3,
+    "attackType": "魔法",
+    "deployRow": "前排",
+    "role": "坦克",
+    "race": "幽靈"
   }
 }

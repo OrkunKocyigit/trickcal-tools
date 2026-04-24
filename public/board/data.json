@@ -1121,6 +1121,23 @@
         "crit",
         "critResist"
       ]
+	},
+	"瑟琳娜": {
+      "layer1": [
+        "attack",
+        "defense"
+      ],
+      "layer2": [
+        "attack",
+        "hp",
+        "defense"
+      ],
+      "layer3": [
+        "attack",
+        "hp",
+        "crit",
+        "critResist"
+      ]
 	}
   },
   "boardConfig": {
