@@ -3,6 +3,7 @@ import { ref, computed } from 'vue'
 import { BoardProgressStorage } from '@/utils/storage'
 import { Logger } from '@/utils/logger'
 import { useCharactersStore } from './characters'
+import { useRosterStore } from './roster'
 
 export interface Character {
   name: string
@@ -183,8 +184,11 @@ export const useBoardStore = defineStore('board', () => {
 
   // 切換角色擁有狀態
   function toggleCharacterOwnership(characterName: string) {
+    const rosterStore = useRosterStore()
+
     if (userProgress.value.ownedCharacters.has(characterName)) {
       userProgress.value.ownedCharacters.delete(characterName)
+      delete rosterStore.rosterData[characterName]
       // 移除所有相關的啟動格子
       Object.keys(userProgress.value.activatedCells).forEach(key => {
         if (key.startsWith(characterName + '_')) {
@@ -193,8 +197,10 @@ export const useBoardStore = defineStore('board', () => {
       })
     } else {
       userProgress.value.ownedCharacters.add(characterName)
+      rosterStore.ensureUnitProgress(characterName)
     }
     saveUserProgress()
+    rosterStore.saveData()
   }
 
   // 切換格子啟動狀態
@@ -204,12 +210,15 @@ export const useBoardStore = defineStore('board', () => {
 
     if (!isOwned) {
       userProgress.value.ownedCharacters.add(character.name)
+      const rosterStore = useRosterStore()
+      rosterStore.ensureUnitProgress(character.name)
+      rosterStore.saveData()
     } else if (!userProgress.value.activatedCells[cellKey]) {
       userProgress.value.activatedCells[cellKey] = true
     } else {
       userProgress.value.activatedCells[cellKey] = false
     }
-    
+
     saveUserProgress()
   }
 
@@ -220,14 +229,19 @@ export const useBoardStore = defineStore('board', () => {
       activatedCells: {}
     }
     saveUserProgress()
+    const rosterStore = useRosterStore()
+    rosterStore.clearAll()
   }
 
   // 全選所有角色
   function selectAllCharacters() {
+    const rosterStore = useRosterStore()
     characters.value.forEach(char => {
       userProgress.value.ownedCharacters.add(char.name)
+      rosterStore.ensureUnitProgress(char.name)
     })
     saveUserProgress()
+    rosterStore.saveData()
   }
 
   // 計算統計數據

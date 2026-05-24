@@ -15,6 +15,7 @@ Note: Unit names are fetched from the English version of soshage.com.
 import argparse
 import io
 import json
+import random
 import re
 import shutil
 import sys
@@ -93,9 +94,17 @@ SESSION.headers.update({
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
         "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/124.0.0.0 Safari/537.36"
+        "Chrome/126.0.0.0 Safari/537.36"
     ),
-    "Accept-Language": "en-US,en;q=0.9",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
+    "Accept-Language": "zh-TW,zh;q=0.9,en;q=0.8",
+    "Accept-Encoding": "gzip, deflate",
+    "Connection": "keep-alive",
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "none",
+    "Sec-Fetch-User": "?1",
+    "Upgrade-Insecure-Requests": "1",
 })
 
 
@@ -352,6 +361,83 @@ def get_chinese_name(uid: int, en_name: str) -> str:
     return en_name
 
 
+def backfill_unit_ids(
+    characters: dict[str, Any],
+    news: list[dict[str, Any]],
+    dry_run: bool = False,
+) -> int:
+    """Backfill missing 'id' fields in characters.json using known news uids
+    and a one-time uid range scan (10000-10199). Returns count backfilled."""
+    backfilled = 0
+
+    # ---- Pass 1: news entries (zero extra HTTP) ----
+    for entry in news:
+        if not isinstance(entry, dict):
+            continue
+        unit = entry.get("unit") or {}
+        uid = unit.get("uid")
+        if not uid:
+            continue
+        cn_name = unit.get("cn_name") or unit.get("name", "")
+        if not cn_name:
+            continue
+        if cn_name in characters and characters[cn_name].get("id") is None:
+            if not dry_run:
+                characters[cn_name]["id"] = uid
+            backfilled += 1
+
+    # ---- Pass 2: range scan for remaining chars (rate-limited) ----
+    still_missing = [k for k, v in characters.items() if v.get("id") is None]
+    if not still_missing:
+        return backfilled
+
+    print(f"\n  Scanning uids for {len(still_missing)} missing character(s)...")
+    found: dict[str, int] = {}
+    scanned = 0
+    consecutive_errors = 0
+    MAX_ERRORS = 5
+
+    for uid in range(10000, 10200):
+        scanned += 1
+        if scanned % 20 == 0:
+            print(f"    scanned {scanned}/200 uids, found {len(found)} so far...")
+
+        time.sleep(random.uniform(0.3, 0.6))
+
+        resp = fetch(f"{SOSHAGE_ZH_TW}/unit/{uid}")
+        if resp is None:
+            consecutive_errors += 1
+            if consecutive_errors >= MAX_ERRORS:
+                print(f"    Stopping scan: {MAX_ERRORS} consecutive errors (rate-limited likely)")
+                break
+            time.sleep(random.uniform(2, 4))
+            continue
+
+        consecutive_errors = 0
+        resp.encoding = "utf-8"
+        soup = BeautifulSoup(resp.text, "html.parser")
+        h1 = soup.find("h1")
+        if not isinstance(h1, Tag):
+            continue
+        cn_name = h1.get_text(strip=True)
+        if not cn_name:
+            continue
+
+        if cn_name in characters and characters[cn_name].get("id") is None:
+            found[cn_name] = uid
+            print(f"    uid {uid} → {cn_name}")
+            if not dry_run:
+                characters[cn_name]["id"] = uid
+
+        if len(found) >= len(still_missing):
+            break
+
+    backfilled += len(found)
+    if found:
+        print(f"  Found {len(found)} chars via range scan")
+    return backfilled
+
+
 # ---------------------------------------------------------------------------
 # Portrait download
 # ---------------------------------------------------------------------------
@@ -440,6 +526,7 @@ def process_character(
             return "???"
 
     char_entry: dict[str, Any] = {
+        "id": unit_uid,
         "name": cn_name,
         "en": unit_name,
         "personality": _map(PERSONALITY_MAP, unit.get("personality")),
@@ -579,6 +666,9 @@ def _run_main(
 
     # ---- Fetch news ----
     print("\nFetching character list from soshage.com...")
+    initial_delay = random.uniform(1.0, 2.5)
+    print(f"  initial delay {initial_delay:.1f}s to avoid rate-limit...")
+    time.sleep(initial_delay)
     news = get_news_entries()
     if not news:
         print("ERROR: no news entries retrieved. Check soshage scraping logic.")
@@ -638,9 +728,17 @@ def _run_main(
         )
         new_chars.append((cn_name, char_entry, board_entry, food_entry))
 
+    # ---- Backfill missing unit IDs ----
+    backfilled = backfill_unit_ids(characters, news, dry_run=args.dry_run)
+    if backfilled:
+        print(f"\nBackfilled {backfilled} unit id(s)")
+
     # ---- Summary ----
     print(f"\n=== {len(new_chars)} new character(s) ===")
     if not new_chars:
+        if backfilled and not args.dry_run:
+            save_json(CHARACTERS_JSON, characters)
+            print(f"  saved: {CHARACTERS_JSON.relative_to(PROJECT_ROOT)}")
         print("Nothing to add — already up to date.")
         return
 
