@@ -1105,7 +1105,7 @@
         "critResist"
       ]
     },
-	"斯諾奇": {
+    "斯諾奇": {
       "layer1": [
         "attack",
         "defense"
@@ -1121,8 +1121,8 @@
         "crit",
         "critResist"
       ]
-	},
-	"瑟琳娜": {
+    },
+    "瑟琳娜": {
       "layer1": [
         "attack",
         "defense"
@@ -1138,7 +1138,41 @@
         "crit",
         "critResist"
       ]
-	}
+    },
+    "卡洛特": {
+      "layer1": [
+        "hp",
+        "attack"
+      ],
+      "layer2": [
+        "attack",
+        "defense",
+        "critResist"
+      ],
+      "layer3": [
+        "attack",
+        "defense",
+        "critResist",
+        "crit"
+      ]
+    },
+    "寧琉": {
+      "layer1": [
+        "attack",
+        "defense"
+      ],
+      "layer2": [
+        "hp",
+        "attack",
+        "defense"
+      ],
+      "layer3": [
+        "critResist",
+        "crit",
+        "hp",
+        "attack"
+      ]
+    }
   },
   "boardConfig": {
     "layer1": {

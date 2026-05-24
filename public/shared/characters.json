@@ -668,5 +668,25 @@
     "deployRow": "前排",
     "role": "坦克",
     "race": "幽靈"
+  },
+  "卡洛特": {
+    "name": "卡洛特",
+    "en": "Kyarot",
+    "personality": "天真",
+    "stars": 3,
+    "attackType": "魔法",
+    "deployRow": "後排",
+    "role": "輔助",
+    "race": "妖精"
+  },
+  "寧琉": {
+    "name": "寧琉",
+    "en": "Ner",
+    "personality": "狂亂",
+    "stars": 3,
+    "attackType": "魔法",
+    "deployRow": "前排",
+    "role": "輔助",
+    "race": "妖精"
   }
 }
