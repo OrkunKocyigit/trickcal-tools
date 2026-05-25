@@ -19,6 +19,16 @@ export const STORAGE_KEYS = {
   USAGE_SESSION_ID: 'trickcal_usage_session_id',
   /** 待同步的使用事件 */
   USAGE_PENDING_EVENTS: 'trickcal_usage_pending_events',
+  /** 角色編制數據 */
+  ROSTER: 'trickcal_roster',
+  /** 裝備工坊素材庫存 */
+  MATERIAL_INVENTORY: 'trickcal_material_inventory',
+  /** 裝備工坊已擁有裝備 */
+  OWNED_GEAR: 'trickcal_owned_gear',
+  /** 裝備工坊 Equipment 101 貨幣 */
+  EQUIPMENT_101: 'trickcal_equipment_101',
+  /** 裝備工坊上次選擇的角色 */
+  SELECTED_CHARACTER: 'trickcal_armory_selected_char',
 } as const
 
 /**

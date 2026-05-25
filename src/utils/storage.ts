@@ -145,6 +145,66 @@ export const SweepSelectionStorage = {
 }
 
 /**
+ * 角色編制存儲工具
+ */
+export const RosterStorage = {
+  get: <T>(): T | null => {
+    return Storage.get<T>(STORAGE_KEYS.ROSTER)
+  },
+  set: <T>(data: T): boolean => {
+    return Storage.set(STORAGE_KEYS.ROSTER, data)
+  },
+}
+
+/**
+ * 裝備工坊素材庫存存儲工具
+ */
+export const MaterialInventoryStorage = {
+  get: (): Record<number, number> => {
+    return Storage.get<Record<number, number>>(STORAGE_KEYS.MATERIAL_INVENTORY) || {}
+  },
+  set: (data: Record<number, number>): boolean => {
+    return Storage.set(STORAGE_KEYS.MATERIAL_INVENTORY, data)
+  },
+}
+
+/**
+ * 裝備工坊已擁有裝備存儲工具
+ */
+export const OwnedGearStorage = {
+  get: (): number[] => {
+    return Storage.get<number[]>(STORAGE_KEYS.OWNED_GEAR) || []
+  },
+  set: (data: number[]): boolean => {
+    return Storage.set(STORAGE_KEYS.OWNED_GEAR, data)
+  },
+}
+
+/**
+ * 裝備工坊 Equipment 101 貨幣
+ */
+export const Equipment101Storage = {
+  get: (): number => {
+    return Storage.get<number>(STORAGE_KEYS.EQUIPMENT_101) || 0
+  },
+  set: (count: number): boolean => {
+    return Storage.set(STORAGE_KEYS.EQUIPMENT_101, count)
+  },
+}
+
+export const SelectedCharacterStorage = {
+  get: (): string | null => {
+    return Storage.get<string>(STORAGE_KEYS.SELECTED_CHARACTER)
+  },
+  set: (name: string): boolean => {
+    return Storage.set(STORAGE_KEYS.SELECTED_CHARACTER, name)
+  },
+  remove: (): boolean => {
+    return Storage.remove(STORAGE_KEYS.SELECTED_CHARACTER)
+  },
+}
+
+/**
  * 使用計數存儲工具
  */
 export const UsageStorage = {

@@ -4,7 +4,7 @@ import { Logger } from '@/utils/logger'
 import { useRosterStore } from './roster'
 import { useMaterialInventoryStore } from './materialInventory'
 import { useOwnedGearStore } from './ownedGear'
-import { Equipment101Storage } from '@/utils/storage'
+import { Equipment101Storage, SelectedCharacterStorage } from '@/utils/storage'
 
 const STAMINA_PER_RUN = 10
 
@@ -29,6 +29,7 @@ export interface MaterialRequirement {
   have: number
   need: number
   farmable: boolean
+  minRank: number
 }
 
 export interface StageDrop {
@@ -192,6 +193,10 @@ export const useArmoryStore = defineStore('armory', () => {
       loading.value = false
     }
     equipment101Count.value = Equipment101Storage.get()
+    const savedChar = SelectedCharacterStorage.get()
+    if (savedChar && charData.value[savedChar]) {
+      selectedCharacter.value = savedChar
+    }
   }
 
   function setEquipment101Count(count: number) {
@@ -221,6 +226,7 @@ export const useArmoryStore = defineStore('armory', () => {
 
   function selectCharacter(name: string) {
     selectedCharacter.value = name
+    SelectedCharacterStorage.set(name)
     targetRank.value = maxRank.value
     computeRequirements()
   }
@@ -312,6 +318,8 @@ export const useArmoryStore = defineStore('armory', () => {
       if (gearDb.value[String(uid)] && ogStore.isOwned(uid)) {
         have += 1
       }
+      const rankMap = rn.get(uid)
+      const minRank = rankMap ? Math.min(...rankMap.keys()) : 99
       mats.push({
         uid,
         name: info.name,
@@ -319,10 +327,11 @@ export const useArmoryStore = defineStore('armory', () => {
         have,
         need,
         farmable: sweepUidSet.has(uid),
+        minRank,
       })
     }
 
-    mats.sort((a, b) => a.uid - b.uid)
+    mats.sort((a, b) => a.minRank - b.minRank || a.uid - b.uid)
 
     requirements.value = reqs
     materialNeeds.value = mats

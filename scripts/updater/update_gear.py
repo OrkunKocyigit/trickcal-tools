@@ -281,7 +281,7 @@ def parse_gear_from_equips(equips_data: list[dict[str, Any]]) -> tuple[int, list
             if uid_str not in gear_objects:
                 entry: dict[str, Any] = {
                     "uid": uid,
-                    "nameEn": gear_obj.get("name", ""),
+                    "nameEn": gear_obj.get("name", "").replace("\\n", " "),
                     "type": SLOT_TYPES[slot_idx] if slot_idx < len(SLOT_TYPES) else "unknown",
                     "icon": gear_obj.get("icon", ""),
                 }
@@ -315,7 +315,7 @@ def parse_gear_from_equips(equips_data: list[dict[str, Any]]) -> tuple[int, list
                             if mat_uid_str not in material_objects:
                                 material_objects[mat_uid_str] = {
                                     "uid": mat_uid,
-                                    "nameEn": mat_obj.get("name", ""),
+                                    "nameEn": mat_obj.get("name", "").replace("\\n", " "),
                                 }
 
                 if recipe_list:

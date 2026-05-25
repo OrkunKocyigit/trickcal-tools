@@ -39,10 +39,10 @@
             <!-- State B: Selected -->
             <div v-else class="selected-state">
               <div class="slots-row">
-                <!-- Left slots: 0-2 -->
+                <!-- Left slots: 0, 1, 5 -->
                 <div class="slot-column">
                   <div
-                    v-for="si in [0, 1, 2]"
+                    v-for="si in [0, 1, 5]"
                     :key="si"
                     class="gear-slot"
                     :class="gearSlotClass(si)"
@@ -113,10 +113,10 @@
                   </div>
                 </div>
 
-                <!-- Right slots: 3-5 -->
+                <!-- Right slots: 2, 4, 3 -->
                 <div class="slot-column">
                   <div
-                    v-for="si in [3, 4, 5]"
+                    v-for="si in [2, 4, 3]"
                     :key="si"
                     class="gear-slot"
                     :class="gearSlotClass(si)"
@@ -417,6 +417,9 @@ watch(rankOptions, (opts) => {
 
 onMounted(async () => {
   await armoryStore.loadData()
+  if (armoryStore.selectedCharacter) {
+    selectedChar.value = armoryStore.selectedCharacter
+  }
 
   document.addEventListener('click', closeRankDropdown)
 })
