@@ -148,7 +148,8 @@
     "ownedGearTitle": "已擁有裝備",
     "manageOwnedGear": "管理已擁有裝備",
     "upgrade": "升級角色",
-    "equipment101": "Equipment 101"
+    "equipment101": "Equipment 101",
+    "hideFulfilled": "Hide fulfilled"
   },
   "food": {
     "characters": "角色",

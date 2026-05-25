@@ -29,6 +29,8 @@ export const STORAGE_KEYS = {
   EQUIPMENT_101: 'trickcal_equipment_101',
   /** 裝備工坊上次選擇的角色 */
   SELECTED_CHARACTER: 'trickcal_armory_selected_char',
+  /** 裝備工坊隱藏已滿足素材 */
+  HIDE_FULFILLED: 'trickcal_armory_hide_fulfilled',
 } as const
 
 /**

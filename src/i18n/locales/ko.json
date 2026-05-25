@@ -148,7 +148,8 @@
     "ownedGearTitle": "보유 장비",
     "manageOwnedGear": "보유 장비 관리",
     "upgrade": "캐릭터 강화",
-    "equipment101": "Equipment 101"
+    "equipment101": "Equipment 101",
+    "hideFulfilled": "Hide fulfilled"
   },
   "changelog": {
     "title": "변경 로그"

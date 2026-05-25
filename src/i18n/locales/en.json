@@ -148,7 +148,8 @@
     "ownedGearTitle": "Owned Gear",
     "manageOwnedGear": "Manage Owned Gear",
     "upgrade": "Upgrade Character",
-    "equipment101": "Equipment 101"
+    "equipment101": "Equipment 101",
+    "hideFulfilled": "Hide fulfilled"
   },
   "food": {
     "characters": "Characters",

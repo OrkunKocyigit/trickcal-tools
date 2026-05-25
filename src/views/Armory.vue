@@ -164,9 +164,13 @@
           <section class="panel requirements-panel">
             <header>
               <h2>{{ $t('armory.gearAndMaterials') }}</h2>
+              <label class="hide-fulfilled-label">
+                <input type="checkbox" v-model="hideMetReqs" />
+                {{ $t('armory.hideFulfilled') }}
+              </label>
             </header>
             <RequirementsPanel
-              :mat-list="armoryStore.materialNeeds"
+              :mat-list="filteredMatList"
               @dec-material="decMaterial"
               @inc-material="incMaterial"
               @set-material-zero="setMaterialZero"
@@ -227,6 +231,7 @@ import RequirementsPanel from '@/components/Armory/RequirementsPanel.vue'
 import OptimizationPanel from '@/components/Armory/OptimizationPanel.vue'
 import OwnedGearModal from '@/components/Armory/OwnedGearModal.vue'
 import { getAssetUrl, getCharacterImageUrl, getGearImageUrl } from '@/utils/assets'
+import { HideFulfilledStorage } from '@/utils/storage'
 
 const { locale } = useI18n()
 const armoryStore = useArmoryStore()
@@ -237,6 +242,7 @@ const inventoryStore = useMaterialInventoryStore()
 const selectedChar = ref('')
 const showCharSelect = ref(false)
 const showOwnedGearModal = ref(false)
+const hideMetReqs = ref(HideFulfilledStorage.get())
 const charSelectorRef = ref<InstanceType<typeof CharacterSelector> | null>(null)
 const showRankDropdown = ref(false)
 const rankDropdownStyle = ref({})
@@ -268,6 +274,11 @@ const currentRank = computed(() => {
   if (!selectedChar.value) return 1
   const prog = rosterStore.getUnitProgress(selectedChar.value)
   return prog.currentRank
+})
+
+const filteredMatList = computed(() => {
+  if (!hideMetReqs.value) return armoryStore.materialNeeds
+  return armoryStore.materialNeeds.filter(m => m.have < m.need)
 })
 
 const displayCharName = computed(() => {
@@ -417,6 +428,10 @@ watch(selectedChar, (name) => {
   }
 })
 
+watch(hideMetReqs, (hide) => {
+  HideFulfilledStorage.set(hide)
+})
+
 watch(rankOptions, (opts) => {
   if (!selectedChar.value) return
   if (opts.length > 0 && !opts.includes(armoryStore.targetRank)) {
@@ -494,7 +509,26 @@ function closeRankDropdown() {
 }
 
 .panel header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   margin-bottom: 1rem;
+}
+
+.hide-fulfilled-label {
+  margin-left: auto;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.hide-fulfilled-label input[type="checkbox"] {
+  cursor: pointer;
 }
 
 .panel header h2 {

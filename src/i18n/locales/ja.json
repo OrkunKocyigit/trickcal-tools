@@ -148,7 +148,8 @@
     "ownedGearTitle": "所持装備",
     "manageOwnedGear": "所持装備を管理",
     "upgrade": "キャラを強化",
-    "equipment101": "Equipment 101"
+    "equipment101": "Equipment 101",
+    "hideFulfilled": "Hide fulfilled"
   },
   "changelog": {
     "title": "変更履歴"

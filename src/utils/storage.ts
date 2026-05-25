@@ -205,6 +205,18 @@ export const SelectedCharacterStorage = {
 }
 
 /**
+ * 裝備工坊隱藏已滿足素材
+ */
+export const HideFulfilledStorage = {
+  get: (): boolean => {
+    return Storage.get<boolean>(STORAGE_KEYS.HIDE_FULFILLED) ?? false
+  },
+  set: (hide: boolean): boolean => {
+    return Storage.set(STORAGE_KEYS.HIDE_FULFILLED, hide)
+  },
+}
+
+/**
  * 使用計數存儲工具
  */
 export const UsageStorage = {
