@@ -46,6 +46,13 @@ export interface StagePlanRow {
   expectedDrops: StageDrop[]
 }
 
+export interface Eq101ReplacedMat {
+  uid: number
+  name: string
+  nameEn: string
+  count: number
+}
+
 export interface GearDb {
   [uidStr: string]: {
     uid: number
@@ -109,6 +116,7 @@ export const useArmoryStore = defineStore('armory', () => {
   const infeasibleMaterials = ref<number[]>([])
   const equipment101Count = ref(0)
   const equipment101Used = ref(0)
+  const eq101ReplacedMats = ref<Eq101ReplacedMat[]>([])
   const rankedNeeds = ref<Map<number, Map<number, number>>>(new Map())
 
   const canUpgrade = computed(() => {
@@ -486,6 +494,8 @@ export const useArmoryStore = defineStore('armory', () => {
     }
 
     // Preprocess Equipment 101: greedy even-distribution across remaining material needs
+    eq101ReplacedMats.value = []
+    const replacedMap = new Map<number, number>()
     let total101Used = 0
     if (equipment101Count.value > 0) {
       let remBudget = equipment101Count.value
@@ -545,6 +555,7 @@ export const useArmoryStore = defineStore('armory', () => {
         for (let i = 0; i < group.length; i++) {
           const allocated = group[i].remaining - final[i]
           if (allocated <= 0) continue
+          replacedMap.set(group[i].uid, (replacedMap.get(group[i].uid) || 0) + allocated)
           const matKey = `m${group[i].uid}`
           const cur = constraintsMap.get(matKey) || 0
           const next = cur - allocated
@@ -562,6 +573,13 @@ export const useArmoryStore = defineStore('armory', () => {
 
       equipment101Used.value = total101Used
     }
+
+    eq101ReplacedMats.value = [...replacedMap.entries()]
+      .map(([uid, count]) => {
+        const info = getGearNameByUid(uid)
+        return { uid, name: info.name, nameEn: info.nameEn, count }
+      })
+      .sort((a, b) => a.uid - b.uid)
 
     const model: any = {
       optimize: 'cost',
@@ -733,6 +751,7 @@ export const useArmoryStore = defineStore('armory', () => {
     canUpgrade,
     equipment101Count,
     equipment101Used,
+    eq101ReplacedMats,
     rankedNeeds,
     charNames,
     charList,

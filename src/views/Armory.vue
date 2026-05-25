@@ -202,6 +202,7 @@
             :can-upgrade="armoryStore.canUpgrade"
             :equipment-101-count="armoryStore.equipment101Count"
             :equipment-101-used="armoryStore.equipment101Used"
+            :eq101-replaced-mats="armoryStore.eq101ReplacedMats"
             @upgrade="armoryStore.upgradeCharacter()"
             @dec-101="armoryStore.setEquipment101Count(armoryStore.equipment101Count - 1)"
             @inc-101="armoryStore.setEquipment101Count(armoryStore.equipment101Count + 1)"

@@ -48,13 +48,27 @@
           <img :src="getAssetUrl('assets/icons/stamina.webp')" class="summary-icon" />
           {{ $t('armory.totalStamina', { stamina: totalStamina, runs: totalRuns }) }}
         </div>
-        <div v-if="equipment101Used > 0" class="eq101-line">
-          <img :src="getAssetUrl('assets/icons/equipment_101.webp')" class="summary-icon" />
-          {{ equipment101Used }} Equipment 101
-        </div>
       </div>
 
       <div class="plan-list" ref="planListRef">
+        <div v-if="equipment101Used > 0 && eq101ReplacedMats.length > 0" class="plan-row plan-row-eq101">
+          <div class="plan-stage eq101-stage">
+            <img :src="getAssetUrl('assets/icons/equipment_101.webp')" class="eq101-card-icon" />
+            <span class="eq101-total-used">×{{ equipment101Used }}</span>
+          </div>
+          <div class="plan-drops plan-drops-eq101">
+            <span v-for="mat in eq101ReplacedMats" :key="mat.uid" class="plan-drop plan-drop-eq101">
+              <img
+                :src="getGearImageUrl(mat.name)"
+                :alt="mat.name"
+                class="drop-icon"
+                loading="lazy"
+                @error="($event.target as HTMLImageElement).style.display = 'none'"
+              />
+              <span class="drop-rate">×{{ mat.count }}</span>
+            </span>
+          </div>
+        </div>
         <div
           v-for="row in plan"
           :key="row.stage"
@@ -88,7 +102,7 @@
 import { ref, computed, nextTick } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { getAssetUrl, getGearImageUrl } from '@/utils/assets'
-import type { StagePlanRow, StageDrop } from '@/stores/armory'
+import type { StagePlanRow, StageDrop, Eq101ReplacedMat } from '@/stores/armory'
 
 const { locale } = useI18n()
 
@@ -101,6 +115,7 @@ const props = defineProps<{
   canUpgrade: boolean
   equipment101Count: number
   equipment101Used: number
+  eq101ReplacedMats: Eq101ReplacedMat[]
 }>()
 
 const emit = defineEmits<{
@@ -274,15 +289,10 @@ function dropName(d: StageDrop): string {
   font-weight: 600;
 }
 
-.stamina-line, .eq101-line {
+.stamina-line {
   display: flex;
   align-items: center;
   gap: 0.375rem;
-}
-
-.eq101-line {
-  color: var(--warning-color, #f59e0b);
-  font-weight: 500;
 }
 
 .summary-icon {
@@ -329,16 +339,19 @@ function dropName(d: StageDrop): string {
   overflow-y: auto;
 }
 
-.plan-row {
+:where(.plan-row, .plan-row-eq101) {
   display: grid;
-  grid-template-columns: 60px 50px 60px 1fr;
   gap: 0.5rem;
   align-items: center;
   padding: 0.625rem;
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
   border-radius: 8px;
   font-size: 0.8125rem;
+}
+
+.plan-row {
+  grid-template-columns: 60px 50px 60px 1fr;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
 }
 
 .plan-stage {
@@ -393,4 +406,60 @@ function dropName(d: StageDrop): string {
   color: var(--text-secondary);
   line-height: 1;
 }
+
+.plan-row-eq101 {
+  grid-template-columns: 56px 1fr;
+  background: var(--panel-bg);
+  border: 1px solid var(--warning-color, #f59e0b);
+  opacity: 0.9;
+}
+
+.eq101-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+}
+
+.eq101-stage .eq101-card-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: block;
+}
+
+.eq101-total-used {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--warning-color, #f59e0b);
+  line-height: 1;
+}
+
+.plan-drops-eq101 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(38px, 42px));
+  justify-content: end;
+  gap: 2px;
+  padding: 0;
+}
+
+.plan-drop-eq101 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  padding: 2px 0;
+}
+
+.plan-drop-eq101 .drop-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.plan-drop-eq101 .drop-rate {
+  font-size: 0.625rem;
+  line-height: 1;
+}
+
+
 </style>
