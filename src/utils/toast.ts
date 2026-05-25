@@ -2,7 +2,7 @@
  * Toast 通知服務
  */
 
-import { createApp, h, type Component } from 'vue'
+import { createApp, h } from 'vue'
 import Toast from '@/components/Common/Toast.vue'
 
 export type ToastType = 'success' | 'error' | 'warning' | 'info'

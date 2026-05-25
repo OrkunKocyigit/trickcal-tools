@@ -315,7 +315,7 @@ class GoogleDriveService {
   /**
    * 搜尋備份檔案
    */
-  async findBackupFile(): Promise<gapi.client.drive.File | null> {
+  async findBackupFile(): Promise<any> {
     if (!this.isSignedIn) {
       throw new Error('請先登入 Google')
     }

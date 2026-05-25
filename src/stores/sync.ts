@@ -186,7 +186,7 @@ export const useSyncStore = defineStore('sync', () => {
         return null
       }
 
-      logger.info(`找到雲端備份: ${cloudData.timestamp}`)
+      logger.info(`找到雲端備份: ${cloudData.lastSync}`)
       return cloudData
     } catch (error) {
       logger.error('檢查雲端備份失敗:', error)

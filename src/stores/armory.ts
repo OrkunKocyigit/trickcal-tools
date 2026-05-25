@@ -589,14 +589,13 @@ export const useArmoryStore = defineStore('armory', () => {
       stageCodeByVarKey.set(varKey, stageCode)
     }
 
-    solveModel(model, stageCodeByVarKey, varsMap, unfarmable)
+    solveModel(model, stageCodeByVarKey, varsMap)
   }
 
   function solveModel(
     model: any,
     stageCodeByVarKey: Map<string, string>,
     varsMap: Map<string, { code: string; drops: { uid: number; rate: number }[] }>,
-    unfarmable: number[],
   ) {
     optimizing.value = true
     optimizationProgress.value = 0
