@@ -22,6 +22,7 @@
 
     <div class="eq101-row">
       <button class="adj-btn" type="button" @click="$emit('dec-101')">−</button>
+      <img :src="getAssetUrl('assets/icons/equipment_101.webp')" class="eq101-icon" />
       <span class="eq101-label">{{ $t('armory.equipment101') }}</span>
       <span
         v-if="!editing101"
@@ -43,10 +44,14 @@
 
     <div v-if="plan.length > 0" class="results">
       <div class="total-stamina">
-        {{ $t('armory.totalStamina', { stamina: totalStamina, runs: totalRuns }) }}
-        <span v-if="equipment101Used > 0" class="stamina-eq101">
-          | {{ equipment101Used }} Equipment 101
-        </span>
+        <div class="stamina-line">
+          <img :src="getAssetUrl('assets/icons/stamina.webp')" class="summary-icon" />
+          {{ $t('armory.totalStamina', { stamina: totalStamina, runs: totalRuns }) }}
+        </div>
+        <div v-if="equipment101Used > 0" class="eq101-line">
+          <img :src="getAssetUrl('assets/icons/equipment_101.webp')" class="summary-icon" />
+          {{ equipment101Used }} Equipment 101
+        </div>
       </div>
 
       <div class="plan-list" ref="planListRef">
@@ -82,7 +87,7 @@
 <script setup lang="ts">
 import { ref, computed, nextTick } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { getGearImageUrl } from '@/utils/assets'
+import { getAssetUrl, getGearImageUrl } from '@/utils/assets'
 import type { StagePlanRow, StageDrop } from '@/stores/armory'
 
 const { locale } = useI18n()
@@ -257,18 +262,44 @@ function dropName(d: StageDrop): string {
 }
 
 .total-stamina {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
   padding: 0.75rem;
   background: var(--panel-bg);
   border-radius: 8px;
-  text-align: center;
   color: var(--text-primary);
   font-size: 0.9375rem;
   font-weight: 600;
 }
 
-.stamina-eq101 {
+.stamina-line, .eq101-line {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.eq101-line {
   color: var(--warning-color, #f59e0b);
   font-weight: 500;
+}
+
+.summary-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.eq101-icon, .stamina-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.stamina-icon {
+  vertical-align: middle;
+  margin-right: 0.25rem;
 }
 
 .adj-btn {

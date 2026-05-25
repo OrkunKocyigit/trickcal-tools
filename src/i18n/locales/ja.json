@@ -138,7 +138,7 @@
     "unfarmableWarning": "{count} 個の素材に収集可能なステージがありません。所持装備設定を確認してください。",
     "optimize": "最適計画を計算",
     "optimizing": "計算中...",
-    "totalStamina": "合計：{stamina} スタミナ ｜ {runs} 回",
+    "totalStamina": "{stamina} スタミナ ｜ {runs} 回",
     "owned": "所持",
     "characterScreen": "キャラクター装備",
     "gearAndMaterials": "装備と素材",

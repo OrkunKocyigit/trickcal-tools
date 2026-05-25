@@ -138,7 +138,7 @@
     "unfarmableWarning": "{count} material(s) have no farmable stage. Check owned gear toggles.",
     "optimize": "Optimize Farming Plan",
     "optimizing": "Optimizing...",
-    "totalStamina": "Total: {stamina} stamina  |  {runs} runs",
+    "totalStamina": "{stamina} Stamina  |  {runs} runs",
     "owned": "Owned",
     "characterScreen": "Character Screen",
     "gearAndMaterials": "Gear & Materials",

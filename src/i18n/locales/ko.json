@@ -138,7 +138,7 @@
     "unfarmableWarning": "{count} 개 재료에 수집 가능한 스테이지가 없습니다. 보유 장비 설정을 확인하세요.",
     "optimize": "최적 계획 계산",
     "optimizing": "계산 중...",
-    "totalStamina": "총계：{stamina} 스태미너 ｜ {runs} 회",
+    "totalStamina": "{stamina} 스태미너 ｜ {runs} 회",
     "owned": "보유",
     "characterScreen": "캐릭터 장비",
     "gearAndMaterials": "장비 및 재료",

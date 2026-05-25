@@ -138,7 +138,7 @@
     "unfarmableWarning": "{count} 個素材無可刷關卡，請檢查已擁有裝備設定。",
     "optimize": "計算最佳方案",
     "optimizing": "計算中...",
-    "totalStamina": "總計：{stamina} 體力 ｜ {runs} 次",
+    "totalStamina": "{stamina} 體力 ｜ {runs} 次",
     "owned": "已擁有",
     "characterScreen": "角色裝備",
     "gearAndMaterials": "裝備與素材",
