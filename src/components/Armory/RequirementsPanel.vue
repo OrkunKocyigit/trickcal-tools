@@ -73,7 +73,9 @@ const editingUid = ref<number | null>(null)
 function startEdit(uid: number) {
   editingUid.value = uid
   nextTick(() => {
-    ;(document.querySelector('.adj-input') as HTMLInputElement)?.focus()
+    const el = document.querySelector('.adj-input') as HTMLInputElement | null
+    el?.focus()
+    el?.select()
   })
 }
 

@@ -110,7 +110,9 @@ const editing101 = ref(false)
 function startEdit101() {
   editing101.value = true
   nextTick(() => {
-    ;(document.querySelector('.eq101-input') as HTMLInputElement)?.focus()
+    const el = document.querySelector('.eq101-input') as HTMLInputElement | null
+    el?.focus()
+    el?.select()
   })
 }
 

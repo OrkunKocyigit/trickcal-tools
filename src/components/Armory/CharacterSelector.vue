@@ -3,6 +3,7 @@
     <label for="char-select">{{ $t('armory.selectCharacter') }}</label>
     <select
       id="char-select"
+      ref="selectRef"
       :value="modelValue"
       @change="$emit('update:modelValue', ($event.target as HTMLSelectElement).value)"
     >
@@ -15,6 +16,7 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const props = defineProps<{
@@ -25,6 +27,17 @@ const props = defineProps<{
 defineEmits<{
   'update:modelValue': [value: string]
 }>()
+
+const selectRef = ref<HTMLSelectElement | null>(null)
+
+defineExpose({
+  focus: () => {
+    const el = selectRef.value
+    if (!el) return
+    el.focus()
+    try { el.showPicker() } catch { /* not supported */ }
+  }
+})
 
 const { locale } = useI18n()
 

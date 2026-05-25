@@ -30,6 +30,7 @@
               </div>
               <div v-if="showCharSelect" class="char-dropdown-wrapper">
                 <CharacterSelector
+                  ref="charSelectorRef"
                   v-model="selectedChar"
                   :char-list="armoryStore.charList"
                 />
@@ -107,6 +108,7 @@
                   </div>
                   <div v-if="showCharSelect" class="char-dropdown-wrapper">
                     <CharacterSelector
+                      ref="charSelectorRef"
                       v-model="selectedChar"
                       :char-list="armoryStore.charList"
                     />
@@ -213,7 +215,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
+import { ref, computed, watch, nextTick, onMounted, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useArmoryStore } from '@/stores/armory'
 import { useRosterStore } from '@/stores/roster'
@@ -235,6 +237,7 @@ const inventoryStore = useMaterialInventoryStore()
 const selectedChar = ref('')
 const showCharSelect = ref(false)
 const showOwnedGearModal = ref(false)
+const charSelectorRef = ref<InstanceType<typeof CharacterSelector> | null>(null)
 const showRankDropdown = ref(false)
 const rankDropdownStyle = ref({})
 
@@ -400,6 +403,12 @@ function setMaterialCount(uid: number, count: number) {
   inventoryStore.setCount(uid, Math.max(0, count))
   armoryStore.computeRequirements()
 }
+
+watch(showCharSelect, (show) => {
+  if (show) {
+    nextTick(() => charSelectorRef.value?.focus())
+  }
+})
 
 watch(selectedChar, (name) => {
   if (name) {
