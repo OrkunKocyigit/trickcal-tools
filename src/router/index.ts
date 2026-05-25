@@ -26,6 +26,12 @@ const routes: RouteRecordRaw[] = [
     meta: { title: '食物喜好' }
   },
   {
+    path: '/armory',
+    name: 'Armory',
+    component: () => import('@/views/Armory.vue'),
+    meta: { title: '裝備工坊' }
+  },
+  {
     path: '/changelog',
     name: 'Changelog',
     component: () => import('@/views/Changelog.vue'),

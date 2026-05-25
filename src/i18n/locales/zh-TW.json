@@ -12,7 +12,9 @@
     "homeDescription": "工具集首頁",
     "boardDescription": "角色管理與格子統計",
     "sweepDescription": "素材需求計算",
-    "foodDescription": "角色食物喜好查詢"
+    "foodDescription": "角色食物喜好查詢",
+    "armory": "裝備工坊",
+    "armoryDescription": "最省體力裝備升級規劃"
   },
   "hero": {
     "eyebrow": "Trickcal 工具集",
@@ -32,6 +34,10 @@
     "food": {
       "name": "食物喜好",
       "description": "查詢角色的食物喜好，了解每個角色喜歡什麼食物。"
+    },
+    "armory": {
+      "name": "裝備工坊",
+      "description": "規劃裝備升級路線，找出最省體力的材料刷取方案。"
     }
   },
   "layers": {
@@ -111,6 +117,38 @@
   },
   "errors": {
     "noData": "無資料可顯示"
+  },
+  "armory": {
+    "title": "裝備工坊",
+    "plan": "刷取方案",
+    "selectCharacter": "選擇角色",
+    "chooseCharacter": "-- 請選擇角色 --",
+    "currentRank": "當前 Rank",
+    "targetRank": "目標 Rank",
+    "gearNeeded": "需要裝備",
+    "materialsNeeded": "需要素材",
+    "noRequirements": "所有裝備已擁有，無需刷取。",
+    "rankLabel": "R{rank}",
+    "slot0": "身體",
+    "slot1": "武器",
+    "slot2": "頭部",
+    "slot3": "靴子",
+    "slot4": "戒指",
+    "slot5": "飾品",
+    "unfarmable": "無關卡",
+    "unfarmableWarning": "{count} 個素材無可刷關卡，請檢查已擁有裝備設定。",
+    "optimize": "計算最佳方案",
+    "optimizing": "計算中...",
+    "totalStamina": "總計：{stamina} 體力 ｜ {runs} 次",
+    "owned": "已擁有",
+    "characterScreen": "角色裝備",
+    "gearAndMaterials": "裝備與素材",
+    "currentRankLabel": "目前 Rank: {rank}",
+    "matsCount": "{n} 素材",
+    "ownedGearTitle": "已擁有裝備",
+    "manageOwnedGear": "管理已擁有裝備",
+    "upgrade": "升級角色",
+    "equipment101": "Equipment 101"
   },
   "food": {
     "characters": "角色",

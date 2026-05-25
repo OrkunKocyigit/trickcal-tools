@@ -68,6 +68,16 @@
               </div>
             </router-link>
 
+            <router-link to="/armory" class="tool-card" @click="handleToolClick('armory')">
+              <div class="tool-icon">
+                <img :src="getAssetUrl('assets/icons/research.webp')" alt="" />
+              </div>
+              <div>
+                <h3>{{ $t('tools.armory.name') }}</h3>
+                <p>{{ $t('tools.armory.description') }}</p>
+              </div>
+            </router-link>
+
           </div>
         </section>
       </div>

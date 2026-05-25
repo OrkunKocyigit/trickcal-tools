@@ -12,7 +12,9 @@
     "homeDescription": "ツール集ホーム",
     "boardDescription": "キャラクター管理とセル統計",
     "sweepDescription": "素材計算機",
-    "foodDescription": "キャラクターの食べ物の好みを確認"
+    "foodDescription": "キャラクターの食べ物の好みを確認",
+    "armory": "装備工房",
+    "armoryDescription": "最適装備育成プランナー"
   },
   "hero": {
     "eyebrow": "Trickcal ツール",
@@ -32,6 +34,10 @@
     "food": {
       "name": "食べ物の好み",
       "description": "キャラクターの食べ物の好みを確認し、各キャラクターが好きな食べ物を発見します。"
+    },
+    "armory": {
+      "name": "装備工房",
+      "description": "装備強化計画を立て、最もスタミナ効率の良い素材収集ルートを見つけます。"
     }
   },
   "layers": {
@@ -111,6 +117,38 @@
   },
   "errors": {
     "noData": "表示するデータがありません"
+  },
+  "armory": {
+    "title": "装備工房",
+    "plan": "収集計画",
+    "selectCharacter": "キャラクター選択",
+    "chooseCharacter": "-- キャラクターを選択 --",
+    "currentRank": "現在の Rank",
+    "targetRank": "目標 Rank",
+    "gearNeeded": "必要な装備",
+    "materialsNeeded": "必要な素材",
+    "noRequirements": "すべての装備を所持しています。",
+    "rankLabel": "R{rank}",
+    "slot0": "身体",
+    "slot1": "武器",
+    "slot2": "頭",
+    "slot3": "靴",
+    "slot4": "指輪",
+    "slot5": "アクセサリー",
+    "unfarmable": "ステージなし",
+    "unfarmableWarning": "{count} 個の素材に収集可能なステージがありません。所持装備設定を確認してください。",
+    "optimize": "最適計画を計算",
+    "optimizing": "計算中...",
+    "totalStamina": "合計：{stamina} スタミナ ｜ {runs} 回",
+    "owned": "所持",
+    "characterScreen": "キャラクター装備",
+    "gearAndMaterials": "装備と素材",
+    "currentRankLabel": "現在 Rank: {rank}",
+    "matsCount": "{n} 素材",
+    "ownedGearTitle": "所持装備",
+    "manageOwnedGear": "所持装備を管理",
+    "upgrade": "キャラを強化",
+    "equipment101": "Equipment 101"
   },
   "changelog": {
     "title": "変更履歴"

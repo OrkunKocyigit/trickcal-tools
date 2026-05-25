@@ -3,9 +3,14 @@ import { ref, computed } from 'vue'
 import { SweepSelectionStorage } from '@/utils/storage'
 import { Logger } from '@/utils/logger'
 
+export interface StageInfo {
+  code: string
+  dropRate: number
+}
+
 export interface MaterialInfo {
   rank: number
-  stages: string[]
+  stages: StageInfo[]
 }
 
 export interface MaterialData {
@@ -57,10 +62,10 @@ export const useSweepStore = defineStore('sweep', () => {
       materialList.push(materialName)
 
       for (const stage of materialInfo.stages) {
-        if (!stages[stage]) {
-          stages[stage] = []
+        if (!stages[stage.code]) {
+          stages[stage.code] = []
         }
-        stages[stage].push(materialName)
+        stages[stage.code].push(materialName)
       }
     }
 
@@ -192,26 +197,22 @@ export const useSweepStore = defineStore('sweep', () => {
           
           // 遍歷該材料的所有關卡（除了當前關卡）
           for (const altStage of materialInfo.stages) {
-            if (altStage === stage) continue
-            
-            const altStageMaterials = stageData.value[altStage] || []
-            
-            // 過濾掉：1. 被選中的主體材料 2. R1 材料
+            if (altStage.code === stage) continue
+
+            const altStageMaterials = stageData.value[altStage.code] || []
+
             const filteredMaterials = altStageMaterials.filter(m => {
-              // 不顯示被選中的主體材料
               if (m === material) return false
-              // 不顯示 R1 材料
               const mInfo = materialData.value[m]
               if (mInfo && mInfo.rank === 1) return false
               return true
             })
-            
+
             const blueprints = altStageMaterials.filter(m => isBlueprintMaterial(m))
-            
-            // 只顯示有材料的替代關卡
+
             if (filteredMaterials.length > 0) {
               alternatives.push({
-                stage: altStage,
+                stage: altStage.code,
                 materials: filteredMaterials,
                 blueprints: blueprints
               })

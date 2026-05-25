@@ -16,6 +16,7 @@ export interface BackupData {
   lastSync: string
   board: any
   sweep: any
+  roster: any
   metadata: {
     device: string
     appVersion: string

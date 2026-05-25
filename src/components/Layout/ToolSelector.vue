@@ -110,6 +110,14 @@ const tools = [
     descriptionKey: 'nav.foodDescription',
     icon: 'assets/icons/food_like.webp',
     badge: null as string | null
+  },
+  {
+    path: '/armory',
+    name: 'Armory',
+    nameKey: 'nav.armory',
+    descriptionKey: 'nav.armoryDescription',
+    icon: 'assets/icons/research.webp',
+    badge: null as string | null
   }
 ]
 

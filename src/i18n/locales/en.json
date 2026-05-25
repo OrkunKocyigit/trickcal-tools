@@ -12,7 +12,9 @@
     "homeDescription": "Tool Collection Homepage",
     "boardDescription": "Character Management & Cell Statistics",
     "sweepDescription": "Material Requirement Calculator",
-    "foodDescription": "Character Food Preference Query"
+    "foodDescription": "Character Food Preference Query",
+    "armory": "Armory",
+    "armoryDescription": "Optimal Equipment Farming Planner"
   },
   "hero": {
     "eyebrow": "Trickcal Tools",
@@ -32,6 +34,10 @@
     "food": {
       "name": "Food Preferences",
       "description": "Look up character food preferences and discover what each character likes."
+    },
+    "armory": {
+      "name": "Armory",
+      "description": "Plan equipment upgrades and find the most stamina-efficient farming routes."
     }
   },
   "layers": {
@@ -111,6 +117,38 @@
   },
   "errors": {
     "noData": "No data to display"
+  },
+  "armory": {
+    "title": "Armory",
+    "plan": "Farming Plan",
+    "selectCharacter": "Select Character",
+    "chooseCharacter": "-- Choose a character --",
+    "currentRank": "Current Rank",
+    "targetRank": "Target Rank",
+    "gearNeeded": "Gear Needed",
+    "materialsNeeded": "Materials Needed",
+    "noRequirements": "All gear owned. Nothing to farm.",
+    "rankLabel": "R{rank}",
+    "slot0": "Body",
+    "slot1": "Weapon",
+    "slot2": "Hat",
+    "slot3": "Boots",
+    "slot4": "Ring",
+    "slot5": "Accessory",
+    "unfarmable": "No Stage",
+    "unfarmableWarning": "{count} material(s) have no farmable stage. Check owned gear toggles.",
+    "optimize": "Optimize Farming Plan",
+    "optimizing": "Optimizing...",
+    "totalStamina": "Total: {stamina} stamina  |  {runs} runs",
+    "owned": "Owned",
+    "characterScreen": "Character Screen",
+    "gearAndMaterials": "Gear & Materials",
+    "currentRankLabel": "Current Rank: {rank}",
+    "matsCount": "{n} mats",
+    "ownedGearTitle": "Owned Gear",
+    "manageOwnedGear": "Manage Owned Gear",
+    "upgrade": "Upgrade Character",
+    "equipment101": "Equipment 101"
   },
   "food": {
     "characters": "Characters",

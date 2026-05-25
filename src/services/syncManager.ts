@@ -195,12 +195,13 @@ class SyncManager {
   /**
    * 創建備份數據
    */
-  private createBackupData(boardData: any, sweepData: any): BackupData {
+  private createBackupData(boardData: any, sweepData: any, rosterData: any): BackupData {
     return {
       version: BACKUP_VERSION,
       lastSync: new Date().toISOString(),
       board: boardData,
       sweep: sweepData,
+      roster: rosterData,
       metadata: {
         device: navigator.userAgent,
         appVersion: '1.0.0',
@@ -212,7 +213,7 @@ class SyncManager {
   /**
    * 上傳到雲端
    */
-  async uploadToCloud(boardData: any, sweepData: any): Promise<void> {
+  async uploadToCloud(boardData: any, sweepData: any, rosterData: any = {}): Promise<void> {
     if (!this.status.isSignedIn) {
       throw new Error('請先登入 Google')
     }
@@ -220,7 +221,7 @@ class SyncManager {
     this.updateStatus({ isSyncing: true, lastError: null })
 
     try {
-      const backupData = this.createBackupData(boardData, sweepData)
+      const backupData = this.createBackupData(boardData, sweepData, rosterData)
       
       // 檢查是否已存在備份檔案
       const existingFile = await googleDrive.findBackupFile()
@@ -346,13 +347,14 @@ class SyncManager {
   async autoSync(
     localBoardData: any,
     localSweepData: any,
-    localTimestamp?: number
+    localTimestamp?: number,
+    localRosterData?: any
   ): Promise<{ action: 'uploaded' | 'downloaded' | 'conflict'; data?: BackupData }> {
     const cloudData = await this.checkCloudBackup()
 
     if (!cloudData) {
       // 雲端無備份，上傳本地數據
-      await this.uploadToCloud(localBoardData, localSweepData)
+      await this.uploadToCloud(localBoardData, localSweepData, localRosterData)
       return { action: 'uploaded' }
     }
 
@@ -365,7 +367,7 @@ class SyncManager {
     if (comparison === 'useCloud') {
       return { action: 'downloaded', data: cloudData }
     } else if (comparison === 'useLocal') {
-      await this.uploadToCloud(localBoardData, localSweepData)
+      await this.uploadToCloud(localBoardData, localSweepData, localRosterData)
       return { action: 'uploaded' }
     } else {
       // 衝突，需要用戶介入

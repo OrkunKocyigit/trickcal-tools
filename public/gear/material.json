@@ -1,0 +1,282 @@
+{
+  "110101": {
+    "uid": 110101,
+    "name": "領口鬆垮的T恤",
+    "nameEn": "Stretched-Out Neck Shirt"
+  },
+  "150003": {
+    "uid": 150003,
+    "name": "盔甲圖紙（2階）",
+    "nameEn": "Armor Design (Tier 2)"
+  },
+  "130106": {
+    "uid": 130106,
+    "name": "能量飲",
+    "nameEn": "Energy Drink"
+  },
+  "150002": {
+    "uid": 150002,
+    "name": "魔法武器圖紙（2階）",
+    "nameEn": "Magical Weapon Design (Tier 2)"
+  },
+  "110106": {
+    "uid": 110106,
+    "name": "紅色套脖泳圈",
+    "nameEn": "Red Neck Tube"
+  },
+  "150004": {
+    "uid": 150004,
+    "name": "帽子圖紙（2階）",
+    "nameEn": "Hat Design (Tier 2)"
+  },
+  "110111": {
+    "uid": 110111,
+    "name": "老舊眼鏡",
+    "nameEn": "Old Glasses"
+  },
+  "150005": {
+    "uid": 150005,
+    "name": "靴子圖紙（2階）",
+    "nameEn": "Boots Design (Tier 2)"
+  },
+  "120101": {
+    "uid": 120101,
+    "name": "糖球戒指",
+    "nameEn": "Candy Ring"
+  },
+  "150006": {
+    "uid": 150006,
+    "name": "璀璨的飾品圖紙（2階）",
+    "nameEn": "Brilliant Accessory Design\\n(Tier 2)"
+  },
+  "120106": {
+    "uid": 120106,
+    "name": "漩渦糖果項鍊",
+    "nameEn": "Bangle Candy Necklace"
+  },
+  "150007": {
+    "uid": 150007,
+    "name": "燦爛的飾品圖紙（2階）",
+    "nameEn": "Shining Accessory Design (Tier 2)"
+  },
+  "150010": {
+    "uid": 150010,
+    "name": "盔甲圖紙（3階）",
+    "nameEn": "Armor Design (Tier 3)"
+  },
+  "150009": {
+    "uid": 150009,
+    "name": "魔法武器圖紙（3階）",
+    "nameEn": "Magical Weapon Design (Tier 3)"
+  },
+  "150011": {
+    "uid": 150011,
+    "name": "帽子圖紙（3階）",
+    "nameEn": "Hat Design (Tier 3)"
+  },
+  "150012": {
+    "uid": 150012,
+    "name": "靴子圖紙（3階）",
+    "nameEn": "Boots Design (Tier 3)"
+  },
+  "150013": {
+    "uid": 150013,
+    "name": "璀璨的飾品碎片圖紙（3階）",
+    "nameEn": "Brilliant Accessory Design\\n(Tier 3)"
+  },
+  "150014": {
+    "uid": 150014,
+    "name": "燦爛的飾品碎片圖紙（3階）",
+    "nameEn": "Shining Accessory Design (Tier 3)"
+  },
+  "140003": {
+    "uid": 140003,
+    "name": "盔甲碎片（4階）",
+    "nameEn": "Armor Shard (Tier 4)"
+  },
+  "140002": {
+    "uid": 140002,
+    "name": "魔法武器碎片（4階）",
+    "nameEn": "Magical Weapon Shard (Tier 4)"
+  },
+  "140004": {
+    "uid": 140004,
+    "name": "帽子碎片（4階）",
+    "nameEn": "Hat Shard (Tier 4)"
+  },
+  "140005": {
+    "uid": 140005,
+    "name": "靴子碎片（4階）",
+    "nameEn": "Boots Shard (Tier 4)"
+  },
+  "140006": {
+    "uid": 140006,
+    "name": "璀璨的飾品碎片（4階）",
+    "nameEn": "Brilliant Accessory Shard\\n(Tier 4)"
+  },
+  "140007": {
+    "uid": 140007,
+    "name": "燦爛的飾品碎片（4階）",
+    "nameEn": "Shining Accessory Shard (Tier 4)"
+  },
+  "150017": {
+    "uid": 150017,
+    "name": "盔甲圖紙（5階）",
+    "nameEn": "Armor Design (Tier 5)"
+  },
+  "150016": {
+    "uid": 150016,
+    "name": "魔法武器圖紙（5階）",
+    "nameEn": "Magical Weapon Design (Tier 5)"
+  },
+  "150018": {
+    "uid": 150018,
+    "name": "帽子圖紙（5階）",
+    "nameEn": "Hat Design (Tier 5)"
+  },
+  "150019": {
+    "uid": 150019,
+    "name": "靴子圖紙（5階）",
+    "nameEn": "Boots Design (Tier 5)"
+  },
+  "150020": {
+    "uid": 150020,
+    "name": "璀璨的飾品圖紙（5階）",
+    "nameEn": "Brilliant Accessory Design\\n(Tier 5)"
+  },
+  "150021": {
+    "uid": 150021,
+    "name": "燦爛的飾品圖紙（5階）",
+    "nameEn": "Shining Accessory Design (Tier 5)"
+  },
+  "150024": {
+    "uid": 150024,
+    "name": "盔甲圖紙（6階）",
+    "nameEn": "Armor Design (Tier 6)"
+  },
+  "150023": {
+    "uid": 150023,
+    "name": "魔法武器圖紙（6階）",
+    "nameEn": "Magical Weapon Design (Tier 6)"
+  },
+  "150025": {
+    "uid": 150025,
+    "name": "帽子圖紙（6階）",
+    "nameEn": "Hat Design (Tier 6)"
+  },
+  "150026": {
+    "uid": 150026,
+    "name": "靴子圖紙（6階）",
+    "nameEn": "Boots Design (Tier 6)"
+  },
+  "150027": {
+    "uid": 150027,
+    "name": "璀璨的飾品碎片圖紙（6階）",
+    "nameEn": "Brilliant Accessory Design\\n(Tier 6)"
+  },
+  "150028": {
+    "uid": 150028,
+    "name": "燦爛的飾品碎片圖紙（6階）",
+    "nameEn": "Shining Accessory Design (Tier 6)"
+  },
+  "140010": {
+    "uid": 140010,
+    "name": "盔甲碎片（7階）",
+    "nameEn": "Armor Shard (Tier 7)"
+  },
+  "140009": {
+    "uid": 140009,
+    "name": "魔法武器碎片（7階）",
+    "nameEn": "Magical Weapon Shard (Tier 7)"
+  },
+  "140011": {
+    "uid": 140011,
+    "name": "帽子碎片（7階）",
+    "nameEn": "Hat Shard (Tier 7)"
+  },
+  "140012": {
+    "uid": 140012,
+    "name": "靴子碎片（7階）",
+    "nameEn": "Boots Shard (Tier 7)"
+  },
+  "140013": {
+    "uid": 140013,
+    "name": "璀璨的飾品碎片（7階）",
+    "nameEn": "Brilliant Accessory Shard\\n(Tier 7)"
+  },
+  "140014": {
+    "uid": 140014,
+    "name": "燦爛的飾品碎片（7階）",
+    "nameEn": "Shining Accessory Shard (Tier 7)"
+  },
+  "150031": {
+    "uid": 150031,
+    "name": "盔甲圖紙（8階）",
+    "nameEn": "Armor Design (Tier 8)"
+  },
+  "150030": {
+    "uid": 150030,
+    "name": "魔法武器圖紙（8階）",
+    "nameEn": "Magical Weapon Design (Tier 8)"
+  },
+  "150032": {
+    "uid": 150032,
+    "name": "帽子圖紙（8階）",
+    "nameEn": "Hat Design (Tier 8)"
+  },
+  "150033": {
+    "uid": 150033,
+    "name": "靴子圖紙（8階）",
+    "nameEn": "Boots Design (Tier 8)"
+  },
+  "150034": {
+    "uid": 150034,
+    "name": "璀璨的飾品圖紙（8階）",
+    "nameEn": "Brilliant Accessory Design\\n(Tier 8)"
+  },
+  "150035": {
+    "uid": 150035,
+    "name": "燦爛的飾品圖紙（8階）",
+    "nameEn": "Shining Accessory Design (Tier 8)"
+  },
+  "130101": {
+    "uid": 130101,
+    "name": "拳擊手套",
+    "nameEn": "Boxing Gloves"
+  },
+  "150001": {
+    "uid": 150001,
+    "name": "物理武器圖紙（2階）",
+    "nameEn": "Physical Weapon Design (Tier 2)"
+  },
+  "150008": {
+    "uid": 150008,
+    "name": "物理武器圖紙（3階）",
+    "nameEn": "Physical Weapon Design (Tier 3)"
+  },
+  "140001": {
+    "uid": 140001,
+    "name": "物理武器碎片（4階）",
+    "nameEn": "Physical Weapon Shard (Tier 4)"
+  },
+  "150015": {
+    "uid": 150015,
+    "name": "物理武器圖紙（5階）",
+    "nameEn": "Physical Weapon Design (Tier 5)"
+  },
+  "150022": {
+    "uid": 150022,
+    "name": "物理武器圖紙（6階）",
+    "nameEn": "Physical Weapon Design (Tier 6)"
+  },
+  "140008": {
+    "uid": 140008,
+    "name": "物理武器碎片（7階）",
+    "nameEn": "Physical Weapon Shard (Tier 7)"
+  },
+  "150029": {
+    "uid": 150029,
+    "name": "物理武器圖紙（8階）",
+    "nameEn": "Physical Weapon Design (Tier 8)"
+  }
+}

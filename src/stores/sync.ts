@@ -8,11 +8,13 @@ import { ref, computed } from 'vue'
 import { syncManager, type SyncStatus } from '@/services/syncManager'
 import { useBoardStore } from './board'
 import { useSweepStore } from './sweep'
+import { useRosterStore } from './roster'
 import { logger } from '@/utils/logger'
 
 export const useSyncStore = defineStore('sync', () => {
   const boardStore = useBoardStore()
   const sweepStore = useSweepStore()
+  const rosterStore = useRosterStore()
 
   // 同步狀態
   const status = ref<SyncStatus>({
@@ -128,6 +130,7 @@ export const useSyncStore = defineStore('sync', () => {
       sweep: {
         selectedMaterials: Array.from(sweepStore.selectedMaterials),
       },
+      roster: rosterStore.rosterData,
       timestamp: Date.now(),
     }
   }
@@ -153,6 +156,14 @@ export const useSyncStore = defineStore('sync', () => {
         sweepStore.selectedMaterials = new Set(cloudData.sweep.selectedMaterials || [])
         if (typeof sweepStore.saveSelection === 'function') {
           sweepStore.saveSelection()
+        }
+      }
+
+      // 應用 roster 數據
+      if (cloudData.roster) {
+        rosterStore.rosterData = cloudData.roster
+        if (typeof rosterStore.saveData === 'function') {
+          rosterStore.saveData()
         }
       }
 
@@ -188,7 +199,7 @@ export const useSyncStore = defineStore('sync', () => {
    */
   async function uploadToCloud() {
     const localData = getLocalData()
-    await syncManager.uploadToCloud(localData.board, localData.sweep)
+    await syncManager.uploadToCloud(localData.board, localData.sweep, localData.roster)
   }
 
   /**
@@ -273,7 +284,8 @@ export const useSyncStore = defineStore('sync', () => {
       const result = await syncManager.autoSync(
         localData.board,
         localData.sweep,
-        localData.timestamp
+        localData.timestamp,
+        localData.roster
       )
 
       if (result.action === 'downloaded' && result.data) {

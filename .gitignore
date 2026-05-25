@@ -44,3 +44,5 @@ clearup/
 
 # docs
 docs/
+
+**/__pycache__
