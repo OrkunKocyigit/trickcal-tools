@@ -133,7 +133,6 @@
 import { ref, computed, onMounted } from 'vue'
 import { useFoodStore } from '@/stores/food'
 import { useCharactersStore } from '@/stores/characters'
-import { useTracking } from '@/composables/useTracking'
 import { useFoodTranslations } from '@/composables/useFoodTranslations'
 import AppLayout from '@/components/Layout/AppLayout.vue'
 import FoodCard from '@/components/Food/FoodCard.vue'
@@ -142,7 +141,6 @@ import { getAssetUrl } from '@/utils/assets'
 
 const foodStore = useFoodStore()
 const charactersStore = useCharactersStore()
-const tracking = useTracking('food')
 const { loadTranslations, preferenceLabels } = useFoodTranslations()
 
 const characterSearchTerm = ref('')
@@ -247,8 +245,6 @@ function selectCharacter(charName: string) {
     foodStore.clearSelection()
   } else {
     foodStore.selectCharacter(charName)
-    // 追踪角色选择
-    tracking.food.selectCharacter(charName)
   }
 }
 
@@ -257,15 +253,11 @@ function selectFood(foodName: string) {
     foodStore.clearSelection()
   } else {
     foodStore.selectFood(foodName)
-    // 追踪食物选择
-    tracking.food.selectFood(foodName)
   }
 }
 
 function clearSelection() {
   foodStore.clearSelection()
-  // 追踪清除选择
-  tracking.food.clearSelection()
 }
 
 onMounted(async () => {

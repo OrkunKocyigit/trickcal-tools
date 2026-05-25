@@ -177,7 +177,7 @@
 import { ref, computed, watch, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useSweepStore } from '@/stores/sweep'
-import { useTracking } from '@/composables/useTracking'
+
 import AppLayout from '@/components/Layout/AppLayout.vue'
 import MaterialCard from '@/components/Sweep/MaterialCard.vue'
 import MaterialChip from '@/components/Sweep/MaterialChip.vue'
@@ -185,8 +185,6 @@ import { getAssetUrl } from '@/utils/assets'
 
 const { t } = useI18n()
 const sweepStore = useSweepStore()
-const tracking = useTracking('sweep')
-
 const searchTerm = ref('')
 const currentPage = ref(1)
 const pageSize = 24
@@ -290,25 +288,21 @@ const pageText = computed(() =>
 function prevPage() {
   if (currentPage.value > 1) {
     currentPage.value--
-    tracking.sweep.changePage(currentPage.value)
   }
 }
 
 function nextPage() {
   if (currentPage.value < totalPages.value) {
     currentPage.value++
-    tracking.sweep.changePage(currentPage.value)
   }
 }
 
 function toggleMaterial(material: string) {
   sweepStore.toggleMaterial(material)
-  tracking.sweep.toggleMaterial(material)
 }
 
 function clearSelection() {
   sweepStore.clearSelection()
-  tracking.sweep.clearSelection()
 }
 
 function getStageMaterials(stage: string) {
@@ -321,16 +315,7 @@ onMounted(async () => {
   loadRankFilter()
 })
 
-// 追蹤搜索（使用 debounce 避免過多追蹤）
-let searchTimer: ReturnType<typeof setTimeout> | null = null
-watch(searchTerm, (value) => {
-  if (searchTimer) clearTimeout(searchTimer)
-  searchTimer = setTimeout(() => {
-    if (value.trim().length > 0) {
-      tracking.sweep.search(value.trim())
-    }
-  }, 500) // 500ms debounce
-})
+
 </script>
 
 <style scoped>

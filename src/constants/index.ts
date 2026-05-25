@@ -15,10 +15,6 @@ export const STORAGE_KEYS = {
   BOARD_PROGRESS: 'trickcal_board_progress',
   /** 掃蕩工具選擇 */
   SWEEP_SELECTION: 'trickcal_sweep_selected_materials',
-  /** 使用計數 Session ID */
-  USAGE_SESSION_ID: 'trickcal_usage_session_id',
-  /** 待同步的使用事件 */
-  USAGE_PENDING_EVENTS: 'trickcal_usage_pending_events',
   /** 角色編制數據 */
   ROSTER: 'trickcal_roster',
   /** 裝備工坊素材庫存 */

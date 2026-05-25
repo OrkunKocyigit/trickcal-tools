@@ -88,12 +88,7 @@
 <script setup lang="ts">
 import AppLayout from '@/components/Layout/AppLayout.vue'
 import { getAssetUrl, getIconUrl } from '@/utils/assets'
-import { useTracking } from '@/composables/useTracking'
-
-const tracking = useTracking('home')
-
 function handleToolClick(toolName: string) {
-  tracking.home.clickTool(toolName)
 }
 </script>
 

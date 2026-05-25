@@ -146,7 +146,6 @@
 <script setup lang="ts">
 import { ref, computed, watch, onMounted } from 'vue'
 import { useBoardStore } from '@/stores/board'
-import { useTracking } from '@/composables/useTracking'
 import AppLayout from '@/components/Layout/AppLayout.vue'
 import LayerSummary from '@/components/Board/LayerSummary.vue'
 import CharacterCard from '@/components/Board/CharacterCard.vue'
@@ -160,7 +159,6 @@ import type { Character } from '@/stores/board'
 import { getAssetUrl } from '@/utils/assets'
 
 const boardStore = useBoardStore()
-const tracking = useTracking('board')
 const showSettings = ref(false)
 const leftPanelOpen = ref(false)
 const rightPanelOpen = ref(false)
@@ -192,8 +190,6 @@ const cellStats = computed(() => {
 
 function handleCharacterClick(char: Character) {
   boardStore.toggleCellActivation(char, boardStore.currentCellType)
-  // 追蹤格子點擊
-  tracking.board.toggleCell(char.name, boardStore.currentCellType, boardStore.currentLayer)
 }
 
 function toggleLeftPanel() {
@@ -220,22 +216,7 @@ onMounted(async () => {
   boardStore.loadUserProgress()
 })
 
-// 追蹤層級切換
-watch(() => boardStore.currentLayer, (newLayer) => {
-  tracking.board.changeLayer(newLayer)
-})
 
-// 追蹤格子類型切換
-watch(() => boardStore.currentCellType, (newType) => {
-  tracking.board.changeCellType(newType)
-})
-
-// 追蹤設置打開
-watch(showSettings, (value) => {
-  if (value) {
-    tracking.board.openSettings()
-  }
-})
 </script>
 
 <style scoped>

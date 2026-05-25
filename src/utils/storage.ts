@@ -24,7 +24,8 @@ export class Storage {
       } catch {
         // 如果不是 JSON，直接返回字串
         return item as T
-      }
+}
+
     } catch (error) {
       console.error(`Failed to get ${key} from localStorage:`, error)
       return defaultValue ?? null
@@ -216,32 +217,5 @@ export const HideFulfilledStorage = {
   },
 }
 
-/**
- * 使用計數存儲工具
- */
-export const UsageStorage = {
-  getSessionId: (): string | null => {
-    return Storage.get<string>(STORAGE_KEYS.USAGE_SESSION_ID)
-  },
-  setSessionId: (sessionId: string): boolean => {
-    return Storage.set(STORAGE_KEYS.USAGE_SESSION_ID, sessionId)
-  },
-  getPendingEvents: () => {
-    return Storage.get<Array<{
-      page_type: string
-      action_type: string
-      timestamp: number
-    }>>(STORAGE_KEYS.USAGE_PENDING_EVENTS) || []
-  },
-  setPendingEvents: (events: Array<{
-    page_type: string
-    action_type: string
-    timestamp: number
-  }>): boolean => {
-    return Storage.set(STORAGE_KEYS.USAGE_PENDING_EVENTS, events)
-  },
-  clearPendingEvents: (): boolean => {
-    return Storage.remove(STORAGE_KEYS.USAGE_PENDING_EVENTS)
-  },
-}
+
 
