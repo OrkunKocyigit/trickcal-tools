@@ -223,7 +223,7 @@
 import { ref, computed, watch, nextTick, onMounted, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useArmoryStore } from '@/stores/armory'
-import { useRosterStore } from '@/stores/roster'
+import { useRosterStore, ensureOwnedInBoard } from '@/stores/roster'
 import { useOwnedGearStore } from '@/stores/ownedGear'
 import { useMaterialInventoryStore } from '@/stores/materialInventory'
 import AppLayout from '@/components/Layout/AppLayout.vue'
@@ -383,6 +383,7 @@ function toggleOwnedForSlot(slotIndex: number) {
   const uid = getSlotGearUid(slotIndex)
   if (!uid) return
   ownedGearStore.toggleOwned(uid)
+  ensureOwnedInBoard(selectedChar.value)
   armoryStore.computeRequirements()
 }
 

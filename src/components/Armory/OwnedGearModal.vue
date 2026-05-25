@@ -42,6 +42,7 @@ import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useArmoryStore } from '@/stores/armory'
 import { useOwnedGearStore } from '@/stores/ownedGear'
+import { ensureOwnedInBoard } from '@/stores/roster'
 import { getGearImageUrl } from '@/utils/assets'
 
 const { locale } = useI18n()
@@ -96,6 +97,8 @@ function gearByRank(rank: number): GearSlotInfo[] {
 
 function toggle(uid: number) {
   ownedGearStore.toggleOwned(uid)
+  const charName = armoryStore.selectedCharacter
+  if (charName) ensureOwnedInBoard(charName)
   armoryStore.computeRequirements()
 }
 </script>

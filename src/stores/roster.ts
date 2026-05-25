@@ -20,7 +20,7 @@ const DEFAULT_UNIT: UnitProgress = {
   equipment: [null, null, null, null, null, null],
 }
 
-function ensureOwnedInBoard(characterName: string) {
+export function ensureOwnedInBoard(characterName: string) {
   const boardStore = useBoardStore()
   if (!boardStore.userProgress.ownedCharacters.has(characterName)) {
     boardStore.userProgress.ownedCharacters.add(characterName)
