@@ -4,7 +4,7 @@
       <div class="footer-info">
         <p class="footer-text">
           <span class="footer-label">{{ $t('footer.author') }}：</span>
-          <span class="footer-value">nos</span>
+          <span class="footer-value">nos, OrkunKocyigit</span>
         </p>
         <p class="footer-text">
           <span class="footer-label">{{ $t('footer.copyright') }}：</span>

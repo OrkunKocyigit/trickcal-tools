@@ -2,6 +2,7 @@
   "name": "trickcal",
   "private": true,
   "version": "1.0.0",
+  "author": "OrkunKocyigit",
   "type": "module",
   "scripts": {
     "dev": "vite",
