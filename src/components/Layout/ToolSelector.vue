@@ -116,7 +116,7 @@ const tools = [
     name: 'Armory',
     nameKey: 'nav.armory',
     descriptionKey: 'nav.armoryDescription',
-    icon: 'assets/icons/research.webp',
+    icon: 'assets/icons/purchase_card.webp',
     badge: null as string | null
   }
 ]

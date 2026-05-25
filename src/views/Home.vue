@@ -50,7 +50,7 @@
 
             <router-link to="/sweep" class="tool-card" @click="handleToolClick('sweep')">
               <div class="tool-icon">
-                <img :src="getAssetUrl('assets/favicons/favicon.webp')" alt="" />
+                <img :src="getAssetUrl('assets/icons/sweep.webp')" alt="" />
               </div>
               <div>
                 <h3>{{ $t('tools.sweep.name') }}</h3>
@@ -70,7 +70,7 @@
 
             <router-link to="/armory" class="tool-card" @click="handleToolClick('armory')">
               <div class="tool-icon">
-                <img :src="getAssetUrl('assets/icons/research.webp')" alt="" />
+                <img :src="getAssetUrl('assets/icons/purchase_card.webp')" alt="" />
               </div>
               <div>
                 <h3>{{ $t('tools.armory.name') }}</h3>
