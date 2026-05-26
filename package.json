@@ -13,9 +13,6 @@
     "postinstall": "node -e \"require('fs').copyFileSync('node_modules/highs/build/highs.wasm','public/highs.wasm')\""
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.39.0",
-    "@types/marked": "^5.0.2",
-    "gapi-script": "^1.2.0",
     "highs": "^1.8.0",
     "marked": "^16.4.1",
     "pinia": "^2.1.7",
@@ -26,7 +23,6 @@
   "devDependencies": {
     "@types/node": "^20.10.6",
     "@vitejs/plugin-vue": "^5.2.0",
-    "fontmin": "^1.1.1",
     "gh-pages": "^6.3.0",
     "sharp": "^0.34.4",
     "terser": "^5.44.0",

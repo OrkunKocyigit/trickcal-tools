@@ -30,16 +30,6 @@ export const STORAGE_KEYS = {
 } as const
 
 /**
- * Supabase 配置
- */
-export const SUPABASE_CONFIG = {
-  /** Supabase 項目 URL */
-  URL: import.meta.env.VITE_SUPABASE_URL || 'https://phiemgvtolycpmpbgzan.supabase.co',
-  /** Supabase 匿名金鑰 */
-  ANON_KEY: import.meta.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBoaWVtZ3Z0b2x5Y3BtcGJnemFuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA3NTQ5NDksImV4cCI6MjA3NjMzMDk0OX0.-nSfSQpKvD6Ye0GJ0BVJMamFWrHjqriQbXJ1n0T9Pas',
-} as const
-
-/**
  * API 配置
  */
 export const API_CONFIG = {
