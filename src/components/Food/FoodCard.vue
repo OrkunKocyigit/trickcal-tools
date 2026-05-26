@@ -33,7 +33,6 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
 import { getAssetUrl } from '@/utils/assets'
 import { useFoodTranslations } from '@/composables/useFoodTranslations'
 import type { FoodPreferenceLevel } from '@/stores/food'

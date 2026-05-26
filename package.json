@@ -11,7 +11,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "type-check": "tsc --noEmit",
+    "type-check": "vue-tsc --noEmit",
     "deploy": "node scripts/deploy.cjs",
     "postinstall": "node -e \"require('fs').copyFileSync('node_modules/highs/build/highs.wasm','public/highs.wasm')\""
   },
@@ -32,6 +32,7 @@
     "vite": "^8.0.0",
     "vite-plugin-compression2": "^2.0.0",
     "vite-plugin-pwa": "^1.3.0",
+    "vue-tsc": "^3.3.2",
     "workbox-window": "^7.4.1"
   }
 }

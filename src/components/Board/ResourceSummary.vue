@@ -58,15 +58,16 @@ const currentLayerCrayons = computed(() => {
 })
 
 const totalCrayons = computed(() => {
-  if (!boardStore.boardData || boardStore.characters.length === 0) return 0
+  const bd = boardStore.boardData
+  if (!bd || boardStore.characters.length === 0) return 0
   
-  return Object.keys(boardStore.boardData.boardConfig).reduce((sum, layer) => {
+  return Object.keys(bd.boardConfig).reduce((sum, layer) => {
     const cost = costMap[layer] || 2
     let total = 0
     let activated = 0
     
     boardStore.characters.forEach(char => {
-      const types = char.boardTypes?.[layer]
+      const types = char.boardTypes?.[layer as keyof typeof char.boardTypes]
       if (types && Array.isArray(types)) {
         total += types.length
         types.forEach(type => {
@@ -100,14 +101,15 @@ const currentLayerBonus = computed(() => {
 })
 
 const allLayersBonus = computed(() => {
-  if (!boardStore.boardData || boardStore.characters.length === 0) return 0
+  const bd = boardStore.boardData
+  if (!bd || boardStore.characters.length === 0) return 0
   
-  return Object.keys(boardStore.boardData.boardConfig).reduce((sum, layer) => {
-    const bonusPerCell = boardStore.boardData.boardConfig[layer]?.bonusPerCell || 0
+  return Object.keys(bd.boardConfig).reduce((sum, layer) => {
+    const bonusPerCell = bd.boardConfig[layer]?.bonusPerCell || 0
     let activated = 0
     
     boardStore.characters.forEach(char => {
-      const types = char.boardTypes?.[layer]
+      const types = char.boardTypes?.[layer as keyof typeof char.boardTypes]
       if (types && Array.isArray(types)) {
         types.forEach(type => {
           const key = `${char.name}_${layer}_${type}`

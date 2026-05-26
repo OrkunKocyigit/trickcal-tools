@@ -180,7 +180,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch, onMounted, nextTick } from 'vue'
+import { ref, computed, onMounted, nextTick } from 'vue'
 import { useBoardStore } from '@/stores/board'
 import AppLayout from '@/components/Layout/AppLayout.vue'
 import LayerSummary from '@/components/Board/LayerSummary.vue'

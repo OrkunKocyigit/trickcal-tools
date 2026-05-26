@@ -38,7 +38,7 @@
             <h2 class="section-title">{{ $t('tools.heading') }}</h2>
           </header>
           <div class="tool-grid">
-            <router-link to="/board" class="tool-card" @click="handleToolClick('board')">
+            <router-link to="/board" class="tool-card">
               <div class="tool-icon">
                 <img :src="getIconUrl('gold_crayon')" alt="" />
               </div>
@@ -48,7 +48,7 @@
               </div>
             </router-link>
 
-            <router-link to="/sweep" class="tool-card" @click="handleToolClick('sweep')">
+            <router-link to="/sweep" class="tool-card">
               <div class="tool-icon">
                 <img :src="getAssetUrl('assets/icons/sweep.webp')" alt="" />
               </div>
@@ -58,7 +58,7 @@
               </div>
             </router-link>
 
-            <router-link to="/food" class="tool-card" @click="handleToolClick('food')">
+            <router-link to="/food" class="tool-card">
               <div class="tool-icon">
                 <img :src="getAssetUrl('assets/icons/food_like.webp')" alt="" />
               </div>
@@ -68,7 +68,7 @@
               </div>
             </router-link>
 
-            <router-link to="/armory" class="tool-card" @click="handleToolClick('armory')">
+            <router-link to="/armory" class="tool-card">
               <div class="tool-icon">
                 <img :src="getAssetUrl('assets/icons/purchase_card.webp')" alt="" />
               </div>
@@ -88,8 +88,6 @@
 <script setup lang="ts">
 import AppLayout from '@/components/Layout/AppLayout.vue'
 import { getAssetUrl, getIconUrl } from '@/utils/assets'
-function handleToolClick(toolName: string) {
-}
 </script>
 
 <style scoped>
