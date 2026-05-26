@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "author": "OrkunKocyigit",
   "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -21,7 +24,7 @@
     "vue-router": "^5.0.0"
   },
   "devDependencies": {
-    "@types/node": "^20.10.6",
+    "@types/node": "^24.0.0",
     "@vitejs/plugin-vue": "^6.0.0",
     "gh-pages": "^6.3.0",
     "sharp": "^0.34.4",
