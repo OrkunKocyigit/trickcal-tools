@@ -135,10 +135,11 @@ export const useFoodStore = defineStore('food', () => {
     
     isLoading.value = true
     try {
+      const baseUrl = import.meta.env.BASE_URL
       // 同时加载食物偏好数据和食物元数据
       const [prefsResponse, metaResponse] = await Promise.all([
-        fetch('/food/data.json'),
-        fetch('/food/foods.json')
+        fetch(`${baseUrl}food/data.json`),
+        fetch(`${baseUrl}food/foods.json`)
       ])
       
       if (!prefsResponse.ok) {
