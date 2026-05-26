@@ -9,13 +9,14 @@
     "build": "vite build",
     "preview": "vite preview",
     "type-check": "tsc --noEmit",
-    "deploy": "node scripts/deploy.cjs"
+    "deploy": "node scripts/deploy.cjs",
+    "postinstall": "node -e \"require('fs').copyFileSync('node_modules/highs/build/highs.wasm','public/highs.wasm')\""
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.0",
     "@types/marked": "^5.0.2",
     "gapi-script": "^1.2.0",
-    "javascript-lp-solver": "^1.0.3",
+    "highs": "^1.8.0",
     "marked": "^16.4.1",
     "pinia": "^2.1.7",
     "vue": "^3.4.0",

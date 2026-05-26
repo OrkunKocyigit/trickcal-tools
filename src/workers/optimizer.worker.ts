@@ -1,11 +1,45 @@
-import lpSolver from 'javascript-lp-solver'
+import highsLoader from 'highs'
 
-self.onmessage = (e: MessageEvent<{ model: any }>) => {
-  const { model } = e.data
+type Highs = Awaited<ReturnType<typeof highsLoader>>
+let highs: Highs | null = null
+const isDev = import.meta.env.DEV
+
+async function getSolver(): Promise<Highs> {
+  if (!highs) {
+    if (isDev) console.log('[solver] initializing HiGHS WASM...')
+    const t0 = performance.now()
+    highs = await highsLoader({
+      locateFile: () => new URL('/highs.wasm', self.location.href).href,
+    })
+    if (isDev) console.log(`[solver] HiGHS ready in ${(performance.now() - t0).toFixed(0)}ms`)
+  }
+  return highs
+}
+
+self.onmessage = async (e: MessageEvent<{ lp: string }>) => {
+  const { lp } = e.data
   try {
-    const result = lpSolver.Solve(model)
-    self.postMessage({ result })
+    if (isDev) console.log(`[solver] received LP: ${lp.length} chars, ${lp.split('\n').length} lines`)
+
+    const solver = await getSolver()
+    const t0 = performance.now()
+    const solution = solver.solve(lp)
+    const elapsed = performance.now() - t0
+
+    if (isDev) {
+      console.log(`[solver] status: ${solution.Status}, objective: ${solution.ObjectiveValue}, time: ${elapsed.toFixed(0)}ms`)
+      if (solution.Status !== 'Optimal') {
+        console.warn('[solver] non-optimal result, full solution:', solution)
+        console.warn('[solver] LP input:\n', lp)
+      }
+    }
+
+    self.postMessage({ result: solution })
   } catch (error) {
+    if (isDev) {
+      console.error('[solver] solve failed:', error)
+      console.error('[solver] LP input:\n', lp)
+    }
     self.postMessage({ error: String(error) })
   }
 }

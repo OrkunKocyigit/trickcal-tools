@@ -581,46 +581,86 @@ export const useArmoryStore = defineStore('armory', () => {
       })
       .sort((a, b) => a.uid - b.uid)
 
-    const model: any = {
-      optimize: 'cost',
-      opType: 'min',
-      constraints: {},
-      variables: {},
-    }
-
-    for (const [matKey, need] of constraintsMap) {
-      model.constraints[matKey] = { min: Math.ceil(need) }
-    }
-
+    // Build CPLEX LP format string for HiGHS solver
     const stageCodeByVarKey = new Map<string, string>()
+    const varKeys: string[] = []
+
+    // Collect variable definitions: varKey -> { drops relevant to constraints }
+    const varDrops = new Map<string, { matKey: string; rate: number }[]>()
 
     for (const [stageCode, v] of varsMap) {
       const varKey = `s_${stageCode.replace('-', '_')}`
-      const varDef: any = { cost: STAMINA_PER_RUN }
+      stageCodeByVarKey.set(varKey, stageCode)
+      varKeys.push(varKey)
+      const drops: { matKey: string; rate: number }[] = []
       for (const drop of v.drops) {
         const matKey = `m${drop.uid}`
         if (constraintsMap.has(matKey)) {
-          varDef[matKey] = drop.rate
+          drops.push({ matKey, rate: drop.rate })
         }
       }
-      model.variables[varKey] = varDef
-      stageCodeByVarKey.set(varKey, stageCode)
+      varDrops.set(varKey, drops)
     }
 
-    solveModel(model, stageCodeByVarKey, varsMap)
+    // Build LP string
+    const lpParts: string[] = ['Minimize', '  obj:']
+
+    // Objective: minimize total stamina cost
+    const objTerms = varKeys.map((vk, i) =>
+      i === 0 ? `${STAMINA_PER_RUN} ${vk}` : `+ ${STAMINA_PER_RUN} ${vk}`,
+    )
+    lpParts.push(`    ${objTerms.join(' ')}`)
+
+    // Constraints: each material need must be met
+    lpParts.push('Subject To')
+    for (const [matKey, need] of constraintsMap) {
+      const terms: string[] = []
+      for (const vk of varKeys) {
+        const drops = varDrops.get(vk)!
+        const drop = drops.find((d) => d.matKey === matKey)
+        if (drop) {
+          if (terms.length === 0) {
+            terms.push(`${drop.rate} ${vk}`)
+          } else {
+            terms.push(`+ ${drop.rate} ${vk}`)
+          }
+        }
+      }
+      if (terms.length > 0) {
+        lpParts.push(`  ${matKey}: ${terms.join(' ')} >= ${Math.ceil(need)}`)
+      }
+    }
+
+    // Bounds: all variables >= 0
+    lpParts.push('Bounds')
+    for (const vk of varKeys) {
+      lpParts.push(`  ${vk} >= 0`)
+    }
+
+    // Integer variables
+    lpParts.push('General')
+    lpParts.push(`  ${varKeys.join(' ')}`)
+    lpParts.push('End')
+
+    const lp = lpParts.join('\n')
+    if (import.meta.env.DEV) {
+      console.log(`[armory] LP model: ${varKeys.length} vars, ${constraintsMap.size} constraints, ${lp.length} chars`)
+    }
+    solveModel(lp, stageCodeByVarKey, varsMap)
   }
 
   function solveModel(
-    model: any,
+    lp: string,
     stageCodeByVarKey: Map<string, string>,
     varsMap: Map<string, { code: string; drops: { uid: number; rate: number }[] }>,
   ) {
     optimizing.value = true
     optimizationProgress.value = 0
 
-    const varCount = Object.keys(model.variables).length
-    const conCount = Object.keys(model.constraints).length
-    console.log(`[armory] solving LP: ${varCount} vars, ${conCount} constraints`)
+    console.log(`[armory] solving ILP: ${stageCodeByVarKey.size} vars, HiGHS WASM`)
+    if (import.meta.env.DEV) {
+      console.log('[armory] LP preview:\n', lp.slice(0, 500) + (lp.length > 500 ? '\n...' : ''))
+    }
 
     const worker = getSolverWorker()
     const progressInterval = setInterval(() => {
@@ -657,26 +697,35 @@ export const useArmoryStore = defineStore('armory', () => {
         return
       }
 
-      // Collect stage variable values
-      const stageValues = new Map<string, number>()
-
-      for (const [varKey, rawVal] of Object.entries(result as Record<string, unknown>)) {
-        if (varKey === 'cost' || varKey === 'result' || varKey === 'feasible' || varKey === 'bounded' || varKey === 'isIntegral') continue
-        const val = rawVal as number
-        if (val <= 0) continue
-
-        if (stageCodeByVarKey.has(varKey)) {
-          stageValues.set(varKey, val)
-        }
+      // HiGHS solution format
+      const solution = result as {
+        Status: string
+        ObjectiveValue: number
+        Columns: Record<string, { Primal: number; Name: string }>
       }
 
-      // Build plan from stage variables
+      if (solution.Status !== 'Optimal') {
+        console.warn('[armory] HiGHS status:', solution.Status)
+        if (import.meta.env.DEV) {
+          console.warn('[armory] non-optimal solution:', solution)
+        }
+        plan.value = []
+        totalStamina.value = 0
+        optimizing.value = false
+        optimizationProgress.value = 0
+        return
+      }
+
+      // Build plan from column primal values
       const planRows: StagePlanRow[] = []
       let total = 0
 
-      for (const [varKey, val] of stageValues) {
+      for (const [varKey, col] of Object.entries(solution.Columns)) {
+        const runCount = Math.round(col.Primal)
+        if (runCount <= 0) continue
+        if (!stageCodeByVarKey.has(varKey)) continue
+
         const stageCode = stageCodeByVarKey.get(varKey)!
-        const runCount = Math.ceil(val)
         const expectedDrops: StageDrop[] = []
         for (const drop of (varsMap.get(stageCode)?.drops || [])) {
           const info = getGearNameByUid(drop.uid)
@@ -702,6 +751,9 @@ export const useArmoryStore = defineStore('armory', () => {
 
       plan.value = planRows
       totalStamina.value = total
+      if (import.meta.env.DEV) {
+        console.log(`[armory] solution: ${planRows.length} stages, ${total} total stamina`)
+      }
       optimizing.value = false
       optimizationProgress.value = 100
     }
@@ -717,7 +769,7 @@ export const useArmoryStore = defineStore('armory', () => {
 
     worker.addEventListener('message', onMessage)
     worker.addEventListener('error', onError)
-    worker.postMessage({ model })
+    worker.postMessage({ lp })
   }
 
   function toggleGearOwned(uid: number) {

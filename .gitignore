@@ -15,6 +15,9 @@ dist
 dist-ssr
 *.local
 
+# WASM binaries copied from node_modules
+public/highs.wasm
+
 # Environment variables
 .env
 .env.local
