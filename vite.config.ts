@@ -5,7 +5,7 @@ import viteCompression from 'vite-plugin-compression'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: process.env.GITHUB_ACTIONS === 'true' ? '/trickcal-tools/' : '/',
+  base: process.env.VITE_DEPLOY_TARGET === 'gh-pages' ? '/trickcal-tools/' : '/',
   plugins: [
     vue(),
     // Gzip 壓縮

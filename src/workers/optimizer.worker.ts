@@ -9,7 +9,7 @@ async function getSolver(): Promise<Highs> {
     if (isDev) console.log('[solver] initializing HiGHS WASM...')
     const t0 = performance.now()
     highs = await highsLoader({
-      locateFile: () => new URL('/highs.wasm', self.location.href).href,
+      locateFile: () => `${import.meta.env.BASE_URL}highs.wasm`,
     })
     if (isDev) console.log(`[solver] HiGHS ready in ${(performance.now() - t0).toFixed(0)}ms`)
   }

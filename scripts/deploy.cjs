@@ -1,18 +1,21 @@
 #!/usr/bin/env node
 /**
- * Trickcal 部署管理工具
- * 提供簡單的互動式界面來管理 Git 操作和部署
+ * Trickcal Deploy Manager
+ * Interactive CLI for Git operations and deployment
  */
 
 const { execSync } = require('child_process');
 const readline = require('readline');
+const ghpages = require('gh-pages');
+const path = require('path');
+const fs = require('fs');
 
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
 
-// 顏色輸出
+// Color output
 const colors = {
   reset: '\x1b[0m',
   bright: '\x1b[1m',
@@ -49,283 +52,329 @@ function question(prompt) {
 async function showMenu() {
   console.clear();
   log('\n╔════════════════════════════════════════════╗', 'bright');
-  log('║     🚀 Trickcal 部署管理工具 v1.0       ║', 'bright');
+  log('║     🚀 Trickcal Deploy Manager v1.0      ║', 'bright');
   log('╚════════════════════════════════════════════╝\n', 'bright');
   
-  log('請選擇操作：\n', 'yellow');
-  log('  1. 📊 查看當前狀態', 'cyan');
-  log('  2. ➕ 添加並提交更改', 'cyan');
-  log('  3. 🚀 推送到 GitHub', 'cyan');
-  log('  4. 🔨 構建項目', 'cyan');
-  log('  5. 🎯 快速部署 (構建 + 提交 + 推送)', 'green');
-  log('  6. 📜 查看提交歷史', 'cyan');
-  log('  7. ↩️  撤銷最後一次提交', 'yellow');
-  log('  8. 🗑️  刪除遠程分支', 'red');
-  log('  9. ℹ️  查看幫助', 'cyan');
-  log('  0. 👋 退出\n', 'magenta');
+  log('Select an option:\n', 'yellow');
+  log('  1. 📊 View current status', 'cyan');
+  log('  2. ➕ Stage & commit changes', 'cyan');
+  log('  3. 🚀 Push to GitHub', 'cyan');
+  log('  4. 🔨 Build project (production)', 'cyan');
+  log('  5. 🚀 Publish to GitHub Pages', 'cyan');
+  log('  6. 🎯 Quick deploy (build + publish)', 'green');
+  log('  7. 📜 View commit history', 'cyan');
+  log('  8. ↩️  Undo last commit', 'yellow');
+  log('  9. 🗑️  Delete remote branch', 'red');
+  log(' 10. ℹ️  Show help', 'cyan');
+  log('  0. 👋 Exit\n', 'magenta');
   
-  const choice = await question('請輸入選項 (0-9): ');
+  const choice = await question('Enter option (0-10): ');
   return choice.trim();
 }
 
 async function showStatus() {
-  log('\n📊 Git 狀態：\n', 'bright');
+  log('\n📊 Git status:\n', 'bright');
   execCommand('git status --short');
-  log('\n📌 當前分支：', 'bright');
+  log('\n📌 Current branch:', 'bright');
   execCommand('git branch --show-current');
-  await question('\n按 Enter 繼續...');
+  await question('\nPress Enter to continue...');
 }
 
 async function commitChanges() {
-  log('\n➕ 添加並提交更改\n', 'bright');
+  log('\n➕ Stage & commit changes\n', 'bright');
   
-  // 顯示當前更改
-  log('📝 當前更改：\n', 'yellow');
+  log('📝 Current changes:\n', 'yellow');
   execCommand('git status --short');
   
-  const addAll = await question('\n是否添加所有更改？(Y/n): ');
+  const addAll = await question('\nStage all changes? (Y/n): ');
   if (addAll.toLowerCase() !== 'n') {
-    log('\n📦 添加所有更改...', 'cyan');
+    log('\n📦 Staging all changes...', 'cyan');
     const result = execCommand('git add -A', true);
     if (result.success) {
-      log('✅ 已添加所有更改', 'green');
+      log('✅ All changes staged', 'green');
     } else {
-      log('❌ 添加失敗', 'red');
-      await question('\n按 Enter 繼續...');
+      log('❌ Stage failed', 'red');
+      await question('\nPress Enter to continue...');
       return;
     }
   }
   
-  const message = await question('\n💬 請輸入提交信息: ');
+  const message = await question('\n💬 Enter commit message: ');
   if (!message.trim()) {
-    log('❌ 提交信息不能為空', 'red');
-    await question('\n按 Enter 繼續...');
+    log('❌ Commit message cannot be empty', 'red');
+    await question('\nPress Enter to continue...');
     return;
   }
   
-  log('\n📝 正在提交...', 'cyan');
+  log('\n📝 Committing...', 'cyan');
   const result = execCommand(`git commit -m "${message}"`, true);
   
   if (result.success) {
-    log('✅ 提交成功！', 'green');
+    log('✅ Commit successful!', 'green');
   } else {
-    log('❌ 提交失敗', 'red');
+    log('❌ Commit failed', 'red');
   }
   
-  await question('\n按 Enter 繼續...');
+  await question('\nPress Enter to continue...');
 }
 
 async function pushToGitHub() {
-  log('\n🚀 推送到 GitHub\n', 'bright');
+  log('\n🚀 Push to GitHub\n', 'bright');
   
   const branch = execCommand('git branch --show-current', true).output.trim();
-  log(`📌 當前分支: ${branch}\n`, 'yellow');
+  log(`📌 Current branch: ${branch}\n`, 'yellow');
   
-  const confirm = await question(`確認推送到 origin/${branch}？(Y/n): `);
+  const confirm = await question(`Push to origin/${branch}? (Y/n): `);
   if (confirm.toLowerCase() === 'n') {
-    log('❌ 已取消推送', 'yellow');
-    await question('\n按 Enter 繼續...');
+    log('❌ Push cancelled', 'yellow');
+    await question('\nPress Enter to continue...');
     return;
   }
   
-  log('\n🚀 正在推送...', 'cyan');
+  log('\n🚀 Pushing...', 'cyan');
   const result = execCommand(`git push origin ${branch}`);
   
   if (result.success) {
-    log('\n✅ 推送成功！', 'green');
-    log('🌐 GitHub Actions 將自動部署', 'cyan');
-    log('⏱️  預計 2-3 分鐘後生效\n', 'cyan');
+    log('\n✅ Push successful!', 'green');
+    log('💡 To deploy to GitHub Pages, use option 5 or 6\n', 'cyan');
   } else {
-    log('\n❌ 推送失敗', 'red');
+    log('\n❌ Push failed', 'red');
   }
   
-  await question('\n按 Enter 繼續...');
+  await question('\nPress Enter to continue...');
 }
 
 async function buildProject() {
-  log('\n🔨 構建項目\n', 'bright');
+  log('\n🔨 Build project (production)\n', 'bright');
+  log('📄 Loading env vars from .env\n', 'yellow');
   
-  const confirm = await question('確認開始構建？這可能需要幾秒鐘 (Y/n): ');
+  const confirm = await question('Start build? This may take a few seconds (Y/n): ');
   if (confirm.toLowerCase() === 'n') {
-    log('❌ 已取消構建', 'yellow');
-    await question('\n按 Enter 繼續...');
+    log('❌ Build cancelled', 'yellow');
+    await question('\nPress Enter to continue...');
     return;
   }
   
-  log('\n🔨 正在構建...', 'cyan');
-  const result = execCommand('npm run build');
-  
-  if (result.success) {
-    log('\n✅ 構建成功！', 'green');
+  log('\n🔨 Building...', 'cyan');
+  const origTarget = process.env.VITE_DEPLOY_TARGET;
+  process.env.VITE_DEPLOY_TARGET = 'gh-pages';
+  const result = execCommand('pnpm run build');
+  if (origTarget !== undefined) {
+    process.env.VITE_DEPLOY_TARGET = origTarget;
   } else {
-    log('\n❌ 構建失敗', 'red');
+    delete process.env.VITE_DEPLOY_TARGET;
   }
   
-  await question('\n按 Enter 繼續...');
+  if (result.success) {
+    log('\n✅ Build successful!', 'green');
+  } else {
+    log('\n❌ Build failed', 'red');
+  }
+  
+  await question('\nPress Enter to continue...');
 }
 
 async function quickDeploy() {
-  log('\n🎯 快速部署\n', 'bright');
-  log('這將執行以下步驟：', 'yellow');
-  log('  1. 構建項目', 'cyan');
-  log('  2. 添加所有更改', 'cyan');
-  log('  3. 提交更改', 'cyan');
-  log('  4. 推送到 GitHub\n', 'cyan');
+  log('\n🎯 Quick deploy\n', 'bright');
+  log('This will execute:', 'yellow');
+  log('  1. Build project (production)', 'cyan');
+  log('  2. Publish to GitHub Pages\n', 'cyan');
   
-  const confirm = await question('確認開始快速部署？(Y/n): ');
+  const confirm = await question('Start quick deploy? (Y/n): ');
   if (confirm.toLowerCase() === 'n') {
-    log('❌ 已取消部署', 'yellow');
-    await question('\n按 Enter 繼續...');
+    log('❌ Deploy cancelled', 'yellow');
+    await question('\nPress Enter to continue...');
     return;
   }
   
-  // 步驟 1: 構建
-  log('\n🔨 [1/4] 構建項目...', 'cyan');
-  let result = execCommand('npm run build');
-  if (!result.success) {
-    log('❌ 構建失敗，已停止部署', 'red');
-    await question('\n按 Enter 繼續...');
-    return;
-  }
-  log('✅ 構建完成', 'green');
-  
-  // 步驟 2: 添加更改
-  log('\n📦 [2/4] 添加更改...', 'cyan');
-  execCommand('git add -A', true);
-  log('✅ 已添加所有更改', 'green');
-  
-  // 步驟 3: 提交
-  const message = await question('\n💬 請輸入提交信息: ');
-  if (!message.trim()) {
-    log('❌ 提交信息不能為空，已停止部署', 'red');
-    await question('\n按 Enter 繼續...');
-    return;
-  }
-  
-  log('\n📝 [3/4] 提交更改...', 'cyan');
-  result = execCommand(`git commit -m "${message}"`, true);
-  if (!result.success) {
-    log('⚠️  沒有新的更改需要提交', 'yellow');
+  // Step 1: Build
+  log('\n🔨 [1/2] Building project...', 'cyan');
+  const origTarget = process.env.VITE_DEPLOY_TARGET;
+  process.env.VITE_DEPLOY_TARGET = 'gh-pages';
+  let result = execCommand('pnpm run build');
+  if (origTarget !== undefined) {
+    process.env.VITE_DEPLOY_TARGET = origTarget;
   } else {
-    log('✅ 提交完成', 'green');
+    delete process.env.VITE_DEPLOY_TARGET;
+  }
+  if (!result.success) {
+    log('❌ Build failed, deploy aborted', 'red');
+    await question('\nPress Enter to continue...');
+    return;
+  }
+  log('✅ Build complete', 'green');
+  
+  // Step 2: Publish to gh-pages
+  log('\n📤 [2/2] Publishing to GitHub Pages...', 'cyan');
+  const distPath = path.resolve(__dirname, '../dist');
+  const remoteUrl = execCommand('git remote get-url origin', true).output.trim();
+  
+  const publishResult = await new Promise((resolve) => {
+    ghpages.publish(distPath, {
+      branch: 'gh-pages',
+      repo: remoteUrl,
+      message: `deploy: update ${new Date().toISOString().split('T')[0]}`,
+      dotfiles: true,
+    }, (err) => {
+      if (err) {
+        log(`\n❌ Publish failed: ${err.message}`, 'red');
+        resolve(false);
+      } else {
+        resolve(true);
+      }
+    });
+  });
+  
+  if (publishResult) {
+    log('\n🎉 Quick deploy complete!', 'green');
+    log('🌐 https://OrkunKocyigit.github.io/trickcal-tools/\n', 'blue');
   }
   
-  // 步驟 4: 推送
-  const branch = execCommand('git branch --show-current', true).output.trim();
-  log(`\n🚀 [4/4] 推送到 origin/${branch}...`, 'cyan');
-  result = execCommand(`git push origin ${branch}`);
-  
-  if (result.success) {
-    log('\n🎉 快速部署完成！', 'green');
-    log('🌐 GitHub Actions 正在自動部署', 'cyan');
-    log('⏱️  預計 2-3 分鐘後生效', 'cyan');
-    log('🔗 https://noswork.github.io/trickcal/\n', 'blue');
-  } else {
-    log('\n❌ 推送失敗', 'red');
-  }
-  
-  await question('\n按 Enter 繼續...');
+  await question('\nPress Enter to continue...');
 }
 
 async function showHistory() {
-  log('\n📜 最近 10 次提交歷史：\n', 'bright');
+  log('\n📜 Last 10 commits:\n', 'bright');
   execCommand('git log --oneline --graph --decorate -10');
-  await question('\n按 Enter 繼續...');
+  await question('\nPress Enter to continue...');
 }
 
 async function undoLastCommit() {
-  log('\n↩️  撤銷最後一次提交\n', 'bright');
+  log('\n↩️  Undo last commit\n', 'bright');
   
-  log('⚠️  注意：這將撤銷最後一次提交，但保留更改', 'yellow');
-  log('💡 更改將回到暫存區，可以重新提交\n', 'cyan');
+  log('⚠️  This will undo the last commit but keep changes', 'yellow');
+  log('💡 Changes return to staging, ready to recommit\n', 'cyan');
   
-  const confirm = await question('確認撤銷最後一次提交？(y/N): ');
+  const confirm = await question('Undo last commit? (y/N): ');
   if (confirm.toLowerCase() !== 'y') {
-    log('❌ 已取消操作', 'yellow');
-    await question('\n按 Enter 繼續...');
+    log('❌ Operation cancelled', 'yellow');
+    await question('\nPress Enter to continue...');
     return;
   }
   
-  log('\n↩️  正在撤銷...', 'cyan');
+  log('\n↩️  Undoing...', 'cyan');
   const result = execCommand('git reset --soft HEAD~1', true);
   
   if (result.success) {
-    log('✅ 已撤銷最後一次提交', 'green');
-    log('📝 更改已保留在暫存區', 'cyan');
+    log('✅ Last commit undone', 'green');
+    log('📝 Changes retained in staging', 'cyan');
   } else {
-    log('❌ 撤銷失敗', 'red');
+    log('❌ Undo failed', 'red');
   }
   
-  await question('\n按 Enter 繼續...');
+  await question('\nPress Enter to continue...');
 }
 
 async function deleteBranch() {
-  log('\n🗑️  刪除遠程分支\n', 'bright');
+  log('\n🗑️  Delete remote branch\n', 'bright');
   
-  log('⚠️  警告：這是危險操作！', 'red');
-  log('💡 請確保你知道你在做什麼\n', 'yellow');
+  log('⚠️  WARNING: This is destructive!', 'red');
+  log('💡 Make sure you know what you are doing\n', 'yellow');
   
-  const branchName = await question('請輸入要刪除的遠程分支名稱: ');
+  const branchName = await question('Enter remote branch name to delete: ');
   if (!branchName.trim()) {
-    log('❌ 分支名稱不能為空', 'red');
-    await question('\n按 Enter 繼續...');
+    log('❌ Branch name cannot be empty', 'red');
+    await question('\nPress Enter to continue...');
     return;
   }
   
-  const confirm = await question(`\n⚠️  確認刪除遠程分支 "${branchName}"？(y/N): `);
+  const confirm = await question(`\n⚠️  Delete remote branch "${branchName}"? (y/N): `);
   if (confirm.toLowerCase() !== 'y') {
-    log('❌ 已取消刪除', 'yellow');
-    await question('\n按 Enter 繼續...');
+    log('❌ Delete cancelled', 'yellow');
+    await question('\nPress Enter to continue...');
     return;
   }
   
-  log('\n🗑️  正在刪除...', 'cyan');
+  log('\n🗑️  Deleting...', 'cyan');
   const result = execCommand(`git push origin --delete ${branchName}`);
   
   if (result.success) {
-    log(`\n✅ 已刪除遠程分支 "${branchName}"`, 'green');
+    log(`\n✅ Remote branch "${branchName}" deleted`, 'green');
   } else {
-    log('\n❌ 刪除失敗', 'red');
+    log('❌ Delete failed', 'red');
   }
   
-  await question('\n按 Enter 繼續...');
+  await question('\nPress Enter to continue...');
+}
+
+async function publishToGhPages() {
+  log('\n🚀 Publish to GitHub Pages\n', 'bright');
+
+  const distPath = path.resolve(__dirname, '../dist');
+  if (!fs.existsSync(distPath)) {
+    log('❌ dist directory not found, build first', 'red');
+    return;
+  }
+
+  const remoteUrl = execCommand('git remote get-url origin', true).output.trim();
+  if (!remoteUrl) {
+    log('❌ Could not get remote repo URL', 'red');
+    return;
+  }
+
+  log(`📡 Remote repo: ${remoteUrl}\n`, 'yellow');
+
+  const confirm = await question('Publish to GitHub Pages? (Y/n): ');
+  if (confirm.toLowerCase() === 'n') {
+    log('❌ Publish cancelled', 'yellow');
+    return;
+  }
+
+  log('\n📤 Publishing to gh-pages branch...', 'cyan');
+
+  return new Promise((resolve) => {
+    ghpages.publish(distPath, {
+      branch: 'gh-pages',
+      repo: remoteUrl,
+      message: `deploy: update ${new Date().toISOString().split('T')[0]}`,
+      dotfiles: true,
+    }, (err) => {
+      if (err) {
+        log(`\n❌ Publish failed: ${err.message}`, 'red');
+        resolve(false);
+      } else {
+        log('\n✅ Publish successful!', 'green');
+        log('🌐 https://OrkunKocyigit.github.io/trickcal-tools/\n', 'blue');
+        resolve(true);
+      }
+    });
+  });
 }
 
 async function showHelp() {
   console.clear();
   log('\n╔════════════════════════════════════════════╗', 'bright');
-  log('║        📖 使用說明                        ║', 'bright');
+  log('║              📖 Help                       ║', 'bright');
   log('╚════════════════════════════════════════════╝\n', 'bright');
   
-  log('🎯 快速開始：', 'yellow');
-  log('  1. 選擇 "5" 快速部署，一鍵完成所有操作\n', 'cyan');
+  log('Quick start:', 'yellow');
+  log('  1. Select "6" for one-click build + deploy\n', 'cyan');
   
-  log('📝 常用操作：', 'yellow');
-  log('  • 修改代碼後想要部署：', 'cyan');
-  log('    選擇 5 → 輸入提交信息 → 完成！\n', 'green');
+  log('Common tasks:', 'yellow');
+  log('  • After changing code, deploy:', 'cyan');
+  log('    Select 6 → one-click build & deploy to Pages\n', 'green');
   
-  log('  • 只想查看狀態：', 'cyan');
-  log('    選擇 1 → 查看當前更改\n', 'green');
+  log('  • Just check status:', 'cyan');
+  log('    Select 1 → view current changes\n', 'green');
   
-  log('  • 分步操作：', 'cyan');
-  log('    選擇 4 (構建) → 2 (提交) → 3 (推送)\n', 'green');
+  log('  • Step by step:', 'cyan');
+  log('    Select 4 (build) → 5 (publish to Pages)\n', 'green');
   
-  log('⚠️  注意事項：', 'yellow');
-  log('  • 提交前請確認更改內容', 'cyan');
-  log('  • 推送後 GitHub Actions 會自動部署', 'cyan');
-  log('  • 部署需要 2-3 分鐘生效', 'cyan');
-  log('  • 危險操作會有二次確認\n', 'cyan');
+  log('Notes:', 'yellow');
+  log('  • Review changes before committing', 'cyan');
+  log('  • Build before publishing to Pages', 'cyan');
+  log('  • Ensure .env has VITE_GOOGLE_CLIENT_ID', 'cyan');
+  log('  • Destructive actions require confirmation\n', 'cyan');
   
-  log('💡 小技巧：', 'yellow');
-  log('  • 提交信息建議使用 emoji 前綴', 'cyan');
-  log('    🎨 UI改進  ✨ 新功能  🐛 修復  📝 文檔', 'cyan');
-  log('  • 可以隨時按 Ctrl+C 退出程式\n', 'cyan');
+  log('Tips:', 'yellow');
+  log('  • Use emoji prefixes in commit messages', 'cyan');
+  log('    🎨 UI  ✨ Feature  🐛 Fix  📝 Docs', 'cyan');
+  log('  • Press Ctrl+C to exit anytime\n', 'cyan');
   
-  log('🔗 相關連結：', 'yellow');
-  log('  • 網站：https://noswork.github.io/trickcal/', 'blue');
-  log('  • Actions：https://github.com/noswork/trickcal/actions\n', 'blue');
+  log('Links:', 'yellow');
+  log('  • Site: https://OrkunKocyigit.github.io/trickcal-tools/', 'blue');
   
-  await question('按 Enter 返回主選單...');
+  await question('Press Enter to return to menu...');
 }
 
 async function main() {
@@ -346,39 +395,41 @@ async function main() {
         await buildProject();
         break;
       case '5':
-        await quickDeploy();
+        await publishToGhPages();
         break;
       case '6':
-        await showHistory();
+        await quickDeploy();
         break;
       case '7':
-        await undoLastCommit();
+        await showHistory();
         break;
       case '8':
-        await deleteBranch();
+        await undoLastCommit();
         break;
       case '9':
+        await deleteBranch();
+        break;
+      case '10':
         await showHelp();
         break;
       case '0':
-        log('\n👋 再見！', 'green');
+        log('\n👋 Goodbye!', 'green');
         rl.close();
         process.exit(0);
         break;
       default:
-        log('\n❌ 無效選項，請重新選擇', 'red');
-        await question('按 Enter 繼續...');
+        log('\n❌ Invalid option, try again', 'red');
+        await question('Press Enter to continue...');
     }
   }
 }
 
-// 啟動程式
-log('\n🚀 正在啟動 Trickcal 部署管理工具...', 'cyan');
+// Startup
+log('\n🚀 Starting Trickcal Deploy Manager...', 'cyan');
 setTimeout(() => {
   main().catch(error => {
-    log(`\n❌ 發生錯誤: ${error.message}`, 'red');
+    log(`\n❌ Error: ${error.message}`, 'red');
     rl.close();
     process.exit(1);
   });
 }, 500);
-
