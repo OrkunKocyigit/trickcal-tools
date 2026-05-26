@@ -1,0 +1,4412 @@
+{
+  "110103": {
+    "uid": 110103,
+    "name": "平凡的居家服",
+    "nameEn": "Ordinary Indoor Clothes",
+    "type": "body",
+    "icon": "Equip_Icon_Armor103",
+    "rarity": 1
+  },
+  "130107": {
+    "uid": 130107,
+    "name": "小麵包刀",
+    "nameEn": "Small Bread Knife",
+    "type": "weapon",
+    "icon": "Equip_Icon_Weapon107",
+    "rarity": 1
+  },
+  "110108": {
+    "uid": 110108,
+    "name": "紅布腰帶",
+    "nameEn": "Red Cloth Sash",
+    "type": "hat",
+    "icon": "Equip_Icon_Armor108",
+    "rarity": 1
+  },
+  "110113": {
+    "uid": 110113,
+    "name": "泳鏡",
+    "nameEn": "Water Goggles",
+    "type": "boots",
+    "icon": "Equip_Icon_Armor113",
+    "rarity": 1
+  },
+  "120102": {
+    "uid": 120102,
+    "name": "細線戒指",
+    "nameEn": "Thin Ring",
+    "type": "ring",
+    "icon": "Equip_Icon_Accessory102",
+    "rarity": 1
+  },
+  "120107": {
+    "uid": 120107,
+    "name": "老舊杯子",
+    "nameEn": "Old Cup",
+    "type": "accessory",
+    "icon": "Equip_Icon_Accessory107",
+    "rarity": 1
+  },
+  "110203": {
+    "uid": 110203,
+    "name": "條紋居家服",
+    "nameEn": "Striped Indoor Clothes",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 110101,
+        "count": 4
+      },
+      {
+        "uid": 150003,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Armor203",
+    "rarity": 1
+  },
+  "130207": {
+    "uid": 130207,
+    "name": "塑膠勺子",
+    "nameEn": "Plastic Ladle",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 130106,
+        "count": 4
+      },
+      {
+        "uid": 150002,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Weapon207",
+    "rarity": 1
+  },
+  "110208": {
+    "uid": 110208,
+    "name": "過時的腰帶",
+    "nameEn": "Passé Belt",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 110106,
+        "count": 4
+      },
+      {
+        "uid": 150004,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Armor208",
+    "rarity": 1
+  },
+  "110213": {
+    "uid": 110213,
+    "name": "心形泳鏡",
+    "nameEn": "Heart-Shaped Water Goggles",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 110111,
+        "count": 4
+      },
+      {
+        "uid": 150005,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Armor213",
+    "rarity": 1
+  },
+  "120202": {
+    "uid": 120202,
+    "name": "被丟棄的戒指",
+    "nameEn": "Abandoned Ring",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 120101,
+        "count": 4
+      },
+      {
+        "uid": 150006,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Accessory202",
+    "rarity": 1
+  },
+  "120209": {
+    "uid": 120209,
+    "name": "堅固的零錢包",
+    "nameEn": "Sturdy Coin Wallet",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 120106,
+        "count": 4
+      },
+      {
+        "uid": 150007,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Accessory209",
+    "rarity": 1
+  },
+  "110303": {
+    "uid": 110303,
+    "name": "方格居家服",
+    "nameEn": "Checkered Indoor Clothes",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 150003,
+        "count": 8
+      },
+      {
+        "uid": 150010,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Armor303",
+    "rarity": 2
+  },
+  "130307": {
+    "uid": 130307,
+    "name": "水中手槍",
+    "nameEn": "Aqua Colt",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 150002,
+        "count": 8
+      },
+      {
+        "uid": 150009,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Weapon307",
+    "rarity": 2
+  },
+  "110308": {
+    "uid": 110308,
+    "name": "麂皮腰帶",
+    "nameEn": "Suede Belt",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 150004,
+        "count": 8
+      },
+      {
+        "uid": 150011,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Armor308",
+    "rarity": 2
+  },
+  "110313": {
+    "uid": 110313,
+    "name": "雙星泳鏡",
+    "nameEn": "Double Star Water Goggles",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 150005,
+        "count": 8
+      },
+      {
+        "uid": 150012,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Armor313",
+    "rarity": 2
+  },
+  "120302": {
+    "uid": 120302,
+    "name": "關節注意環",
+    "nameEn": "Caution Knuckle Ring",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 150006,
+        "count": 8
+      },
+      {
+        "uid": 150013,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Accessory302",
+    "rarity": 2
+  },
+  "120309": {
+    "uid": 120309,
+    "name": "手工脖套",
+    "nameEn": "Handmade Neck Warmer",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 150007,
+        "count": 8
+      },
+      {
+        "uid": 150014,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Accessory309",
+    "rarity": 2
+  },
+  "110403": {
+    "uid": 110403,
+    "name": "連身睡衣裙",
+    "nameEn": "Onesies",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 140003,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Armor403",
+    "rarity": 2
+  },
+  "130407": {
+    "uid": 130407,
+    "name": "派對蛋糕刀",
+    "nameEn": "Party Cake Cutter",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140002,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Weapon407",
+    "rarity": 2
+  },
+  "110408": {
+    "uid": 110408,
+    "name": "小兔子腰帶",
+    "nameEn": "Petite Rabbit Belt",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 140004,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Armor408",
+    "rarity": 2
+  },
+  "110413": {
+    "uid": 110413,
+    "name": "青蛙泳鏡",
+    "nameEn": "Froggy Water Goggles",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 140005,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Armor413",
+    "rarity": 2
+  },
+  "120402": {
+    "uid": 120402,
+    "name": "分離手指虎",
+    "nameEn": "Disassembled Knuckles",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 140006,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Accessory402",
+    "rarity": 2
+  },
+  "120409": {
+    "uid": 120409,
+    "name": "春天圍巾",
+    "nameEn": "Spring Scarf",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 140007,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Accessory409",
+    "rarity": 2
+  },
+  "110503": {
+    "uid": 110503,
+    "name": "綠蔭的睡衣洋裝",
+    "nameEn": "Verdure Onesies",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 140003,
+        "count": 12
+      },
+      {
+        "uid": 150017,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Armor503",
+    "rarity": 3
+  },
+  "130507": {
+    "uid": 130507,
+    "name": "破風刀",
+    "nameEn": "Wind Cutter",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140002,
+        "count": 12
+      },
+      {
+        "uid": 150016,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Weapon507",
+    "rarity": 3
+  },
+  "110508": {
+    "uid": 110508,
+    "name": "野花花冠",
+    "nameEn": "Wildflower Crown",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 140004,
+        "count": 12
+      },
+      {
+        "uid": 150018,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Armor508",
+    "rarity": 3
+  },
+  "110513": {
+    "uid": 110513,
+    "name": "兔耳頭帶",
+    "nameEn": "Bunny Ears Headband",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 140005,
+        "count": 12
+      },
+      {
+        "uid": 150019,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Armor513",
+    "rarity": 3
+  },
+  "120502": {
+    "uid": 120502,
+    "name": "絕對戒指",
+    "nameEn": "The Only Ring",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 140006,
+        "count": 12
+      },
+      {
+        "uid": 150020,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Accessory502",
+    "rarity": 3
+  },
+  "120509": {
+    "uid": 120509,
+    "name": "麻花捲圍巾",
+    "nameEn": "Twisted Scarf",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 140007,
+        "count": 12
+      },
+      {
+        "uid": 150021,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Accessory509",
+    "rarity": 3
+  },
+  "110603": {
+    "uid": 110603,
+    "name": "派對用連身睡衣裙",
+    "nameEn": "Party Onesies",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 150017,
+        "count": 14
+      },
+      {
+        "uid": 150024,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Armor603",
+    "rarity": 3
+  },
+  "130607": {
+    "uid": 130607,
+    "name": "藍檸檬汽水",
+    "nameEn": "Blue Lemonade",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 150016,
+        "count": 14
+      },
+      {
+        "uid": 150023,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Weapon607",
+    "rarity": 3
+  },
+  "110608": {
+    "uid": 110608,
+    "name": "星星腰帶",
+    "nameEn": "Star Belt",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 150018,
+        "count": 14
+      },
+      {
+        "uid": 150025,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Armor608",
+    "rarity": 3
+  },
+  "110613": {
+    "uid": 110613,
+    "name": "鴨頭飛翼潛水鏡",
+    "nameEn": "Duckwing Snorkel",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 150019,
+        "count": 14
+      },
+      {
+        "uid": 150026,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Armor613",
+    "rarity": 3
+  },
+  "120602": {
+    "uid": 120602,
+    "name": "祈願戒指",
+    "nameEn": "Ring of Prayers",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 150020,
+        "count": 14
+      },
+      {
+        "uid": 150027,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Accessory602",
+    "rarity": 3
+  },
+  "120609": {
+    "uid": 120609,
+    "name": "精製手工圍巾",
+    "nameEn": "Handmade Heartfelt Scarf",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 150021,
+        "count": 14
+      },
+      {
+        "uid": 150028,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Accessory609",
+    "rarity": 3
+  },
+  "110703": {
+    "uid": 110703,
+    "name": "可愛兔兔套裝",
+    "nameEn": "Cutesy Rabbit Suit",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 140010,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Armor703",
+    "rarity": 4
+  },
+  "130707": {
+    "uid": 130707,
+    "name": "大容量啊！飲用水",
+    "nameEn": "Bulk Bread Bull",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140009,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Weapon707",
+    "rarity": 4
+  },
+  "110708": {
+    "uid": 110708,
+    "name": "勝利者的祈願腰帶",
+    "nameEn": "Warrior's Holy Belt",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 140011,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Armor708",
+    "rarity": 4
+  },
+  "110713": {
+    "uid": 110713,
+    "name": "深淵探查潛水鏡",
+    "nameEn": "Abyss Exploration Snorkel",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 140012,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Armor713",
+    "rarity": 4
+  },
+  "120702": {
+    "uid": 120702,
+    "name": "保護的戒指",
+    "nameEn": "Ring of Protection",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 140013,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Accessory702",
+    "rarity": 4
+  },
+  "120709": {
+    "uid": 120709,
+    "name": "蝴蝶結頸圈",
+    "nameEn": "Ribbon Choker",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 140014,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Accessory709",
+    "rarity": 4
+  },
+  "110803": {
+    "uid": 110803,
+    "name": "玩耍套裝",
+    "nameEn": "Let's Play Suit",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 140010,
+        "count": 18
+      },
+      {
+        "uid": 150031,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Armor803",
+    "rarity": 4
+  },
+  "130807": {
+    "uid": 130807,
+    "name": "滿載星光的燈籠",
+    "nameEn": "Starlight Filled Lantern",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140009,
+        "count": 18
+      },
+      {
+        "uid": 150030,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Weapon807",
+    "rarity": 4
+  },
+  "110808": {
+    "uid": 110808,
+    "name": "紫水晶頭冠",
+    "nameEn": "Amethyst Tiara",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 140011,
+        "count": 18
+      },
+      {
+        "uid": 150032,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Armor808",
+    "rarity": 4
+  },
+  "110813": {
+    "uid": 110813,
+    "name": "高級珍珠頭帶",
+    "nameEn": "Quality Pearl Headband",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 140012,
+        "count": 18
+      },
+      {
+        "uid": 150033,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Armor813",
+    "rarity": 4
+  },
+  "120802": {
+    "uid": 120802,
+    "name": "日常禮儀戒指",
+    "nameEn": "Manner Rings",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 140013,
+        "count": 18
+      },
+      {
+        "uid": 150034,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Accessory802",
+    "rarity": 4
+  },
+  "120809": {
+    "uid": 120809,
+    "name": "紫水晶頸圈",
+    "nameEn": "Amethyst Choker",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 140014,
+        "count": 18
+      },
+      {
+        "uid": 150035,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Accessory809",
+    "rarity": 4
+  },
+  "110101": {
+    "uid": 110101,
+    "name": "領口鬆垮的T恤",
+    "nameEn": "Stretched-Out Neck Shirt",
+    "type": "body",
+    "icon": "Equip_Icon_Armor101",
+    "rarity": 1
+  },
+  "130104": {
+    "uid": 130104,
+    "name": "紅色鉛筆",
+    "nameEn": "Red Pencil",
+    "type": "weapon",
+    "icon": "Equip_Icon_Weapon104",
+    "rarity": 1
+  },
+  "110106": {
+    "uid": 110106,
+    "name": "紅色套脖泳圈",
+    "nameEn": "Red Neck Tube",
+    "type": "hat",
+    "icon": "Equip_Icon_Armor106",
+    "rarity": 1
+  },
+  "110111": {
+    "uid": 110111,
+    "name": "老舊眼鏡",
+    "nameEn": "Old Glasses",
+    "type": "boots",
+    "icon": "Equip_Icon_Armor111",
+    "rarity": 1
+  },
+  "120104": {
+    "uid": 120104,
+    "name": "細線手環",
+    "nameEn": "Thin Bracelet",
+    "type": "ring",
+    "icon": "Equip_Icon_Accessory104",
+    "rarity": 1
+  },
+  "120109": {
+    "uid": 120109,
+    "name": "老舊零錢包",
+    "nameEn": "Worn-Out Coin Wallet",
+    "type": "accessory",
+    "icon": "Equip_Icon_Accessory109",
+    "rarity": 1
+  },
+  "110201": {
+    "uid": 110201,
+    "name": "腳印T恤",
+    "nameEn": "Pawprint T-Shirt",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 110101,
+        "count": 4
+      },
+      {
+        "uid": 150003,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Armor201",
+    "rarity": 1
+  },
+  "130204": {
+    "uid": 130204,
+    "name": "海豚小水槍",
+    "nameEn": "Dolphin Petite Gun",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 130101,
+        "count": 4
+      },
+      {
+        "uid": 150001,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Weapon204",
+    "rarity": 1
+  },
+  "110206": {
+    "uid": 110206,
+    "name": "可愛的套脖泳圈",
+    "nameEn": "Cute Neck Tube",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 110106,
+        "count": 4
+      },
+      {
+        "uid": 150004,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Armor206",
+    "rarity": 1
+  },
+  "110211": {
+    "uid": 110211,
+    "name": "模範生眼鏡",
+    "nameEn": "Model Student Glasses",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 110111,
+        "count": 4
+      },
+      {
+        "uid": 150005,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Armor211",
+    "rarity": 1
+  },
+  "120204": {
+    "uid": 120204,
+    "name": "編織手環",
+    "nameEn": "Knotted Bracelet",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 120101,
+        "count": 4
+      },
+      {
+        "uid": 150006,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Accessory204",
+    "rarity": 1
+  },
+  "120207": {
+    "uid": 120207,
+    "name": "漱口杯",
+    "nameEn": "Toothbrush Cup",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 120106,
+        "count": 4
+      },
+      {
+        "uid": 150007,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Accessory207",
+    "rarity": 1
+  },
+  "110301": {
+    "uid": 110301,
+    "name": "新品T恤",
+    "nameEn": "New T-Shirt",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 150003,
+        "count": 8
+      },
+      {
+        "uid": 150010,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Armor301",
+    "rarity": 2
+  },
+  "130304": {
+    "uid": 130304,
+    "name": "收到的鉛筆禮物",
+    "nameEn": "Gifted Pencil",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 150001,
+        "count": 8
+      },
+      {
+        "uid": 150008,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Weapon304",
+    "rarity": 2
+  },
+  "110306": {
+    "uid": 110306,
+    "name": "花形套脖泳圈",
+    "nameEn": "Flower-shaped Neck Tube",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 150004,
+        "count": 8
+      },
+      {
+        "uid": 150011,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Armor306",
+    "rarity": 2
+  },
+  "110311": {
+    "uid": 110311,
+    "name": "翅膀裝飾眼鏡",
+    "nameEn": "Winged Glasses",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 150005,
+        "count": 8
+      },
+      {
+        "uid": 150012,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Armor311",
+    "rarity": 2
+  },
+  "120304": {
+    "uid": 120304,
+    "name": "老舊手鏡",
+    "nameEn": "Old Hand Mirror",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 150006,
+        "count": 8
+      },
+      {
+        "uid": 150013,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Accessory304",
+    "rarity": 2
+  },
+  "120307": {
+    "uid": 120307,
+    "name": "手工糖項鍊",
+    "nameEn": "Handmade Candy Necklace",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 150007,
+        "count": 8
+      },
+      {
+        "uid": 150014,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Accessory307",
+    "rarity": 2
+  },
+  "110401": {
+    "uid": 110401,
+    "name": "春光連帽衣",
+    "nameEn": "Springlight Hoodie",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 140003,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Armor401",
+    "rarity": 2
+  },
+  "130404": {
+    "uid": 130404,
+    "name": "貓咪平底鍋",
+    "nameEn": "Meow-Pan",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140001,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Weapon404",
+    "rarity": 2
+  },
+  "110406": {
+    "uid": 110406,
+    "name": "蹦蹦救生衣",
+    "nameEn": "Spring Life Vest",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 140004,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Armor406",
+    "rarity": 2
+  },
+  "110411": {
+    "uid": 110411,
+    "name": "特色太陽眼鏡",
+    "nameEn": "Statement Sunglasses",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 140005,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Armor411",
+    "rarity": 2
+  },
+  "120404": {
+    "uid": 120404,
+    "name": "春光手鏡",
+    "nameEn": "Springlight Hand Mirror",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 140006,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Accessory404",
+    "rarity": 2
+  },
+  "120407": {
+    "uid": 120407,
+    "name": "兔子項鍊",
+    "nameEn": "Bunny Necklace",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 140007,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Accessory407",
+    "rarity": 2
+  },
+  "110501": {
+    "uid": 110501,
+    "name": "長袖連帽衣",
+    "nameEn": "Long-Sleeved Hoodie",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 140003,
+        "count": 12
+      },
+      {
+        "uid": 150017,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Armor501",
+    "rarity": 3
+  },
+  "130504": {
+    "uid": 130504,
+    "name": "水槍",
+    "nameEn": "Aqua Smash",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140001,
+        "count": 12
+      },
+      {
+        "uid": 150015,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Weapon504",
+    "rarity": 3
+  },
+  "110506": {
+    "uid": 110506,
+    "name": "綠色救生衣",
+    "nameEn": "Green Life Vest",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 140004,
+        "count": 12
+      },
+      {
+        "uid": 150018,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Armor506",
+    "rarity": 3
+  },
+  "110511": {
+    "uid": 110511,
+    "name": "羊面具",
+    "nameEn": "Lamb Mask",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 140005,
+        "count": 12
+      },
+      {
+        "uid": 150019,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Armor511",
+    "rarity": 3
+  },
+  "120504": {
+    "uid": 120504,
+    "name": "綠蔭的手鏡",
+    "nameEn": "Verdure Hand Mirror",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 140006,
+        "count": 12
+      },
+      {
+        "uid": 150020,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Accessory504",
+    "rarity": 3
+  },
+  "120507": {
+    "uid": 120507,
+    "name": "狐狸項鍊",
+    "nameEn": "Fox Necklace",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 140007,
+        "count": 12
+      },
+      {
+        "uid": 150021,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Accessory507",
+    "rarity": 3
+  },
+  "110601": {
+    "uid": 110601,
+    "name": "超級貓咪連帽衣",
+    "nameEn": "Super Meow Hoodie",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 150017,
+        "count": 14
+      },
+      {
+        "uid": 150024,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Armor601",
+    "rarity": 3
+  },
+  "130604": {
+    "uid": 130604,
+    "name": "夜晚手指虎",
+    "nameEn": "Night Knuckles",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 150015,
+        "count": 14
+      },
+      {
+        "uid": 150022,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Weapon604",
+    "rarity": 3
+  },
+  "110606": {
+    "uid": 110606,
+    "name": "星星救生衣",
+    "nameEn": "Star Life Vest",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 150018,
+        "count": 14
+      },
+      {
+        "uid": 150025,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Armor606",
+    "rarity": 3
+  },
+  "110611": {
+    "uid": 110611,
+    "name": "假太陽眼鏡",
+    "nameEn": "Fake Sunglasses",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 150019,
+        "count": 14
+      },
+      {
+        "uid": 150026,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Armor611",
+    "rarity": 3
+  },
+  "120604": {
+    "uid": 120604,
+    "name": "晴朗的手鏡",
+    "nameEn": "Serene Hand Mirror",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 150020,
+        "count": 14
+      },
+      {
+        "uid": 150027,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Accessory604",
+    "rarity": 3
+  },
+  "120607": {
+    "uid": 120607,
+    "name": "獅子項鍊",
+    "nameEn": "Lion Necklace",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 150021,
+        "count": 14
+      },
+      {
+        "uid": 150028,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Accessory607",
+    "rarity": 3
+  },
+  "110701": {
+    "uid": 110701,
+    "name": "可愛兔兔連帽外套",
+    "nameEn": "Cutesy Rabbit Hoodie",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 140010,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Armor701",
+    "rarity": 4
+  },
+  "130704": {
+    "uid": 130704,
+    "name": "胡蘿蔔水槍",
+    "nameEn": "Aqua Carrot",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140008,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Weapon704",
+    "rarity": 4
+  },
+  "110706": {
+    "uid": 110706,
+    "name": "救生員的救生衣",
+    "nameEn": "Lifeguard's Life Vest",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 140011,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Armor706",
+    "rarity": 4
+  },
+  "110711": {
+    "uid": 110711,
+    "name": "花朵太陽眼鏡",
+    "nameEn": "Flower Sunglasses",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 140012,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Armor711",
+    "rarity": 4
+  },
+  "120704": {
+    "uid": 120704,
+    "name": "妖精的手鏡",
+    "nameEn": "Sprite's Hand Mirror",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 140013,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Accessory704",
+    "rarity": 4
+  },
+  "120707": {
+    "uid": 120707,
+    "name": "水晶項鍊",
+    "nameEn": "Crystal Necklace",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 140014,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Accessory707",
+    "rarity": 4
+  },
+  "110801": {
+    "uid": 110801,
+    "name": "能量翼羽絨外套",
+    "nameEn": "Power Wing Padded Jacket",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 140010,
+        "count": 18
+      },
+      {
+        "uid": 150031,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Armor801",
+    "rarity": 4
+  },
+  "130804": {
+    "uid": 130804,
+    "name": "雪霜駝鹿平底鍋",
+    "nameEn": "Frost Moose Pan",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140008,
+        "count": 18
+      },
+      {
+        "uid": 150029,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Weapon804",
+    "rarity": 4
+  },
+  "110806": {
+    "uid": 110806,
+    "name": "可愛心形救生衣",
+    "nameEn": "Cutesy Heart Life Vest",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 140011,
+        "count": 18
+      },
+      {
+        "uid": 150032,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Armor806",
+    "rarity": 4
+  },
+  "110811": {
+    "uid": 110811,
+    "name": "鄰村反派面具",
+    "nameEn": "Neighborhood Villain Mask",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 140012,
+        "count": 18
+      },
+      {
+        "uid": 150033,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Armor811",
+    "rarity": 4
+  },
+  "120804": {
+    "uid": 120804,
+    "name": "星光手鏡",
+    "nameEn": "Starlight Hand Mirror",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 140013,
+        "count": 18
+      },
+      {
+        "uid": 150034,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Accessory804",
+    "rarity": 4
+  },
+  "120807": {
+    "uid": 120807,
+    "name": "紫水晶項鍊",
+    "nameEn": "Amethyst Necklace",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 140014,
+        "count": 18
+      },
+      {
+        "uid": 150035,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Accessory807",
+    "rarity": 4
+  },
+  "110105": {
+    "uid": 110105,
+    "name": "紅色圍裙",
+    "nameEn": "Red Apron",
+    "type": "body",
+    "icon": "Equip_Icon_Armor105",
+    "rarity": 1
+  },
+  "130102": {
+    "uid": 130102,
+    "name": "堅硬的法棍",
+    "nameEn": "Hard Baguette",
+    "type": "weapon",
+    "icon": "Equip_Icon_Weapon102",
+    "rarity": 1
+  },
+  "110110": {
+    "uid": 110110,
+    "name": "可回收紙袋",
+    "nameEn": "Recyclable Paper Bag",
+    "type": "hat",
+    "icon": "Equip_Icon_Armor110",
+    "rarity": 1
+  },
+  "110115": {
+    "uid": 110115,
+    "name": "老舊拖鞋",
+    "nameEn": "Old Slippers",
+    "type": "boots",
+    "icon": "Equip_Icon_Armor115",
+    "rarity": 1
+  },
+  "110205": {
+    "uid": 110205,
+    "name": "可愛的圍裙",
+    "nameEn": "Cute Apron",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 110101,
+        "count": 4
+      },
+      {
+        "uid": 150003,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Armor205",
+    "rarity": 1
+  },
+  "130202": {
+    "uid": 130202,
+    "name": "橡皮擦鉛筆",
+    "nameEn": "Eraser-Tipped Pencil",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 130101,
+        "count": 4
+      },
+      {
+        "uid": 150001,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Weapon202",
+    "rarity": 1
+  },
+  "110210": {
+    "uid": 110210,
+    "name": "帶有麵包香的麵包袋",
+    "nameEn": "Bread-scented Bread Bag",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 110106,
+        "count": 4
+      },
+      {
+        "uid": 150004,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Armor210",
+    "rarity": 1
+  },
+  "110215": {
+    "uid": 110215,
+    "name": "室內拖鞋",
+    "nameEn": "Indoor Slippers",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 110111,
+        "count": 4
+      },
+      {
+        "uid": 150005,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Armor215",
+    "rarity": 1
+  },
+  "120210": {
+    "uid": 120210,
+    "name": "漩渦糖果耳環",
+    "nameEn": "Bangle Candy Earrings",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 120106,
+        "count": 4
+      },
+      {
+        "uid": 150007,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Accessory210",
+    "rarity": 1
+  },
+  "110305": {
+    "uid": 110305,
+    "name": "蝴蝶結圍裙",
+    "nameEn": "Ribbon Apron",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 150003,
+        "count": 8
+      },
+      {
+        "uid": 150010,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Armor305",
+    "rarity": 2
+  },
+  "130302": {
+    "uid": 130302,
+    "name": "毛栗手套",
+    "nameEn": "Chestnut Gloves",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 150001,
+        "count": 8
+      },
+      {
+        "uid": 150008,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Weapon302",
+    "rarity": 2
+  },
+  "110310": {
+    "uid": 110310,
+    "name": "改造的禮物袋",
+    "nameEn": "Modified Gift Bag",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 150004,
+        "count": 8
+      },
+      {
+        "uid": 150011,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Armor310",
+    "rarity": 2
+  },
+  "110315": {
+    "uid": 110315,
+    "name": "雙翼泳鏡",
+    "nameEn": "Double Wing Water Goggles",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 150005,
+        "count": 8
+      },
+      {
+        "uid": 150012,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Armor315",
+    "rarity": 2
+  },
+  "120310": {
+    "uid": 120310,
+    "name": "小化妝包",
+    "nameEn": "Petite Pouch",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 150007,
+        "count": 8
+      },
+      {
+        "uid": 150014,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Accessory310",
+    "rarity": 2
+  },
+  "110405": {
+    "uid": 110405,
+    "name": "料理用圍裙",
+    "nameEn": "Cooking Apron",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 140003,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Armor405",
+    "rarity": 2
+  },
+  "130402": {
+    "uid": 130402,
+    "name": "玉米脫粒手套",
+    "nameEn": "Corn Threshing Gloves",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140001,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Weapon402",
+    "rarity": 2
+  },
+  "110410": {
+    "uid": 110410,
+    "name": "舊式巴拉克拉法帽",
+    "nameEn": "Old-fashioned Balaclava",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 140004,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Armor410",
+    "rarity": 2
+  },
+  "110415": {
+    "uid": 110415,
+    "name": "春光皮鞋",
+    "nameEn": "Springlight Shoes",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 140005,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Armor415",
+    "rarity": 2
+  },
+  "120410": {
+    "uid": 120410,
+    "name": "小熊化妝包",
+    "nameEn": "Teddy Bear Pouch",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 140007,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Accessory410",
+    "rarity": 2
+  },
+  "110505": {
+    "uid": 110505,
+    "name": "小淑女圍裙",
+    "nameEn": "Little Girl's Apron",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 140003,
+        "count": 12
+      },
+      {
+        "uid": 150017,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Armor505",
+    "rarity": 3
+  },
+  "130502": {
+    "uid": 130502,
+    "name": "切奶油的法棍",
+    "nameEn": "Cream-Slicing Baguette",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140001,
+        "count": 12
+      },
+      {
+        "uid": 150015,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Weapon502",
+    "rarity": 3
+  },
+  "110510": {
+    "uid": 110510,
+    "name": "綠心太陽眼鏡",
+    "nameEn": "Green Heart Sunglasses",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 140004,
+        "count": 12
+      },
+      {
+        "uid": 150018,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Armor510",
+    "rarity": 3
+  },
+  "110515": {
+    "uid": 110515,
+    "name": "蝴蝶結皮鞋",
+    "nameEn": "Ribbon Shoes",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 140005,
+        "count": 12
+      },
+      {
+        "uid": 150019,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Armor515",
+    "rarity": 3
+  },
+  "120510": {
+    "uid": 120510,
+    "name": "小兔子化妝包",
+    "nameEn": "Petite Rabbit Pouch",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 140007,
+        "count": 12
+      },
+      {
+        "uid": 150021,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Accessory510",
+    "rarity": 3
+  },
+  "110605": {
+    "uid": 110605,
+    "name": "荷葉邊圍裙",
+    "nameEn": "Frill Apron",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 150017,
+        "count": 14
+      },
+      {
+        "uid": 150024,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Armor605",
+    "rarity": 3
+  },
+  "130602": {
+    "uid": 130602,
+    "name": "雙翼鋼筆",
+    "nameEn": "Twin Wing Fountain Pen",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 150015,
+        "count": 14
+      },
+      {
+        "uid": 150022,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Weapon602",
+    "rarity": 3
+  },
+  "110610": {
+    "uid": 110610,
+    "name": "滑雪巴拉克拉法帽",
+    "nameEn": "Ski Balaclava",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 150018,
+        "count": 14
+      },
+      {
+        "uid": 150025,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Armor610",
+    "rarity": 3
+  },
+  "110615": {
+    "uid": 110615,
+    "name": "飛翼帆布鞋",
+    "nameEn": "Wing Canvas Sneakers",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 150019,
+        "count": 14
+      },
+      {
+        "uid": 150026,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Armor615",
+    "rarity": 3
+  },
+  "120610": {
+    "uid": 120610,
+    "name": "小貓咪化妝包",
+    "nameEn": "Petite Meow Pouch",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 150021,
+        "count": 14
+      },
+      {
+        "uid": 150028,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Accessory610",
+    "rarity": 3
+  },
+  "110705": {
+    "uid": 110705,
+    "name": "工藝家的圍裙",
+    "nameEn": "Craftsman's Apron",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 140010,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Armor705",
+    "rarity": 4
+  },
+  "130702": {
+    "uid": 130702,
+    "name": "青鳥鋼筆",
+    "nameEn": "Blue Bird Fountain Pen",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140008,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Weapon702",
+    "rarity": 4
+  },
+  "110710": {
+    "uid": 110710,
+    "name": "新買的頭盔",
+    "nameEn": "Newly Purchased Helmet",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 140011,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Armor710",
+    "rarity": 4
+  },
+  "110715": {
+    "uid": 110715,
+    "name": "中筒軍靴",
+    "nameEn": "Mid-Rise Combat Boots",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 140012,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Armor715",
+    "rarity": 4
+  },
+  "120710": {
+    "uid": 120710,
+    "name": "皮革托特包",
+    "nameEn": "Leather Tote Bag",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 140014,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Accessory710",
+    "rarity": 4
+  },
+  "110805": {
+    "uid": 110805,
+    "name": "技師的圍裙",
+    "nameEn": "Technician's Apron",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 140010,
+        "count": 18
+      },
+      {
+        "uid": 150031,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Armor805",
+    "rarity": 4
+  },
+  "130802": {
+    "uid": 130802,
+    "name": "核爆甜栗手套",
+    "nameEn": "Atomic Noogie Gloves",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140008,
+        "count": 18
+      },
+      {
+        "uid": 150029,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Weapon802",
+    "rarity": 4
+  },
+  "110810": {
+    "uid": 110810,
+    "name": "派對用太陽眼鏡",
+    "nameEn": "Party Sunglasses",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 140011,
+        "count": 18
+      },
+      {
+        "uid": 150032,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Armor810",
+    "rarity": 4
+  },
+  "110815": {
+    "uid": 110815,
+    "name": "老鷹飛翼頭盔",
+    "nameEn": "Eagle Wing Helmet",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 140012,
+        "count": 18
+      },
+      {
+        "uid": 150033,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Armor815",
+    "rarity": 4
+  },
+  "120810": {
+    "uid": 120810,
+    "name": "丁香紫單肩包",
+    "nameEn": "Lilac Shoulder Bag",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 140014,
+        "count": 18
+      },
+      {
+        "uid": 150035,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Accessory810",
+    "rarity": 4
+  },
+  "110102": {
+    "uid": 110102,
+    "name": "破舊的披風",
+    "nameEn": "Ragged Cape",
+    "type": "body",
+    "icon": "Equip_Icon_Armor102",
+    "rarity": 1
+  },
+  "110202": {
+    "uid": 110202,
+    "name": "小披風",
+    "nameEn": "Petite Cape",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 110101,
+        "count": 4
+      },
+      {
+        "uid": 150003,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Armor202",
+    "rarity": 1
+  },
+  "120206": {
+    "uid": 120206,
+    "name": "糖球項鍊",
+    "nameEn": "Candy Necklace",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 120106,
+        "count": 4
+      },
+      {
+        "uid": 150007,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Accessory206",
+    "rarity": 1
+  },
+  "110302": {
+    "uid": 110302,
+    "name": "飛翔披風",
+    "nameEn": "Flying Cape",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 150003,
+        "count": 8
+      },
+      {
+        "uid": 150010,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Armor302",
+    "rarity": 2
+  },
+  "120306": {
+    "uid": 120306,
+    "name": "鐵製梳子",
+    "nameEn": "Metal Comb",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 150007,
+        "count": 8
+      },
+      {
+        "uid": 150014,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Accessory306",
+    "rarity": 2
+  },
+  "110402": {
+    "uid": 110402,
+    "name": "奇怪設計的披風",
+    "nameEn": "Cape With a Strange Design",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 140003,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Armor402",
+    "rarity": 2
+  },
+  "120406": {
+    "uid": 120406,
+    "name": "指壓兩用梳",
+    "nameEn": "Acupressure Comb",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 140007,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Accessory406",
+    "rarity": 2
+  },
+  "110502": {
+    "uid": 110502,
+    "name": "歌劇披風",
+    "nameEn": "Opera Cape",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 140003,
+        "count": 12
+      },
+      {
+        "uid": 150017,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Armor502",
+    "rarity": 3
+  },
+  "120506": {
+    "uid": 120506,
+    "name": "軟綿綿刷",
+    "nameEn": "Soft Brush",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 140007,
+        "count": 12
+      },
+      {
+        "uid": 150021,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Accessory506",
+    "rarity": 3
+  },
+  "110602": {
+    "uid": 110602,
+    "name": "閃亮荷葉邊披風",
+    "nameEn": "Pretty Frill Cape",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 150017,
+        "count": 14
+      },
+      {
+        "uid": 150024,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Armor602",
+    "rarity": 3
+  },
+  "120606": {
+    "uid": 120606,
+    "name": "捲髮梳",
+    "nameEn": "Petite Blow Dry Brush",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 150021,
+        "count": 14
+      },
+      {
+        "uid": 150028,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Accessory606",
+    "rarity": 3
+  },
+  "110702": {
+    "uid": 110702,
+    "name": "實習魔法師的披風",
+    "nameEn": "Apprentice Wizard's Cape",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 140010,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Armor702",
+    "rarity": 4
+  },
+  "120706": {
+    "uid": 120706,
+    "name": "頭髮電棒",
+    "nameEn": "Hair Iron",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 140014,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Accessory706",
+    "rarity": 4
+  },
+  "110802": {
+    "uid": 110802,
+    "name": "中級魔法師的披風",
+    "nameEn": "Average Wizard's Cape",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 140010,
+        "count": 18
+      },
+      {
+        "uid": 150031,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Armor802",
+    "rarity": 4
+  },
+  "120806": {
+    "uid": 120806,
+    "name": "多功能頭髮電棒",
+    "nameEn": "Multi-Functioning Hair Iron",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 140014,
+        "count": 18
+      },
+      {
+        "uid": 150035,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Accessory806",
+    "rarity": 4
+  },
+  "130101": {
+    "uid": 130101,
+    "name": "拳擊手套",
+    "nameEn": "Boxing Gloves",
+    "type": "weapon",
+    "icon": "Equip_Icon_Weapon101",
+    "rarity": 1
+  },
+  "130201": {
+    "uid": 130201,
+    "name": "腳踏車手套",
+    "nameEn": "Motorcycle Gloves",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 130101,
+        "count": 4
+      },
+      {
+        "uid": 150001,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Weapon201",
+    "rarity": 1
+  },
+  "120208": {
+    "uid": 120208,
+    "name": "登山用脖套",
+    "nameEn": "Hiking Neck Warmer",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 120106,
+        "count": 4
+      },
+      {
+        "uid": 150007,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Accessory208",
+    "rarity": 1
+  },
+  "130301": {
+    "uid": 130301,
+    "name": "最高齡的法棍",
+    "nameEn": "Oldest Baguette",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 150001,
+        "count": 8
+      },
+      {
+        "uid": 150008,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Weapon301",
+    "rarity": 2
+  },
+  "120308": {
+    "uid": 120308,
+    "name": "條紋漱口杯",
+    "nameEn": "Striped Toothbrush Cup",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 150007,
+        "count": 8
+      },
+      {
+        "uid": 150014,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Accessory308",
+    "rarity": 2
+  },
+  "130401": {
+    "uid": 130401,
+    "name": "綠球藻法棍",
+    "nameEn": "Chlorella Baguette",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140001,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Weapon401",
+    "rarity": 2
+  },
+  "120408": {
+    "uid": 120408,
+    "name": "塑膠漱口杯",
+    "nameEn": "Plastic Toothbrush Cup",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 140007,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Accessory408",
+    "rarity": 2
+  },
+  "130501": {
+    "uid": 130501,
+    "name": "微風手套",
+    "nameEn": "Breeze Gloves",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140001,
+        "count": 12
+      },
+      {
+        "uid": 150015,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Weapon501",
+    "rarity": 3
+  },
+  "120508": {
+    "uid": 120508,
+    "name": "高級漱口杯",
+    "nameEn": "Quality Toothbrush Cup",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 140007,
+        "count": 12
+      },
+      {
+        "uid": 150021,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Accessory508",
+    "rarity": 3
+  },
+  "130601": {
+    "uid": 130601,
+    "name": "雲朵手套",
+    "nameEn": "Cloud Gloves",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 150015,
+        "count": 14
+      },
+      {
+        "uid": 150022,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Weapon601",
+    "rarity": 3
+  },
+  "120608": {
+    "uid": 120608,
+    "name": "可愛杯子",
+    "nameEn": "Cutesy Cup",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 150021,
+        "count": 14
+      },
+      {
+        "uid": 150028,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Accessory608",
+    "rarity": 3
+  },
+  "130701": {
+    "uid": 130701,
+    "name": "沉睡手套",
+    "nameEn": "Deep Sleep Gloves",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140008,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Weapon701",
+    "rarity": 4
+  },
+  "120708": {
+    "uid": 120708,
+    "name": "手工陶瓷杯",
+    "nameEn": "Handmade Ceramic Cup",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 140014,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Accessory708",
+    "rarity": 4
+  },
+  "130801": {
+    "uid": 130801,
+    "name": "破滅的法棍",
+    "nameEn": "Baguette of Destruction",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140008,
+        "count": 18
+      },
+      {
+        "uid": 150029,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Weapon801",
+    "rarity": 4
+  },
+  "120808": {
+    "uid": 120808,
+    "name": "客製化隨行杯",
+    "nameEn": "Custom Tumbler",
+    "type": "accessory",
+    "recipe": [
+      {
+        "uid": 140014,
+        "count": 18
+      },
+      {
+        "uid": 150035,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Accessory808",
+    "rarity": 4
+  },
+  "120103": {
+    "uid": 120103,
+    "name": "老舊腕帶",
+    "nameEn": "Old Band",
+    "type": "ring",
+    "icon": "Equip_Icon_Accessory103",
+    "rarity": 1
+  },
+  "120108": {
+    "uid": 120108,
+    "name": "涼感脖套",
+    "nameEn": "Cooling Neck Warmer",
+    "type": "accessory",
+    "icon": "Equip_Icon_Accessory108",
+    "rarity": 1
+  },
+  "120203": {
+    "uid": 120203,
+    "name": "柔軟腕帶",
+    "nameEn": "Soft Band",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 120101,
+        "count": 4
+      },
+      {
+        "uid": 150006,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Accessory203",
+    "rarity": 1
+  },
+  "120303": {
+    "uid": 120303,
+    "name": "牢固腕帶",
+    "nameEn": "Sturdy Band",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 150006,
+        "count": 8
+      },
+      {
+        "uid": 150013,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Accessory303",
+    "rarity": 2
+  },
+  "120403": {
+    "uid": 120403,
+    "name": "錶型腕帶",
+    "nameEn": "Watch-Like Band",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 140006,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Accessory403",
+    "rarity": 2
+  },
+  "120503": {
+    "uid": 120503,
+    "name": "金屬扣帶錶",
+    "nameEn": "Metal Buckle Wristwatch",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 140006,
+        "count": 12
+      },
+      {
+        "uid": 150020,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Accessory503",
+    "rarity": 3
+  },
+  "120603": {
+    "uid": 120603,
+    "name": "健檢手錶",
+    "nameEn": "Fitness Tracker",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 150020,
+        "count": 14
+      },
+      {
+        "uid": 150027,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Accessory603",
+    "rarity": 3
+  },
+  "120703": {
+    "uid": 120703,
+    "name": "智慧型手錶",
+    "nameEn": "Smartwatch",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 140013,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Accessory703",
+    "rarity": 4
+  },
+  "120803": {
+    "uid": 120803,
+    "name": "增強訊號手錶",
+    "nameEn": "Enhanced Communication Wristwatch",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 140013,
+        "count": 18
+      },
+      {
+        "uid": 150034,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Accessory803",
+    "rarity": 4
+  },
+  "110104": {
+    "uid": 110104,
+    "name": "紅色裙子",
+    "nameEn": "Red Skirt",
+    "type": "body",
+    "icon": "Equip_Icon_Armor104",
+    "rarity": 1
+  },
+  "130109": {
+    "uid": 130109,
+    "name": "扔石彈弓",
+    "nameEn": "Slingshot",
+    "type": "weapon",
+    "icon": "Equip_Icon_Weapon109",
+    "rarity": 1
+  },
+  "110109": {
+    "uid": 110109,
+    "name": "趕製的尖頂帽",
+    "nameEn": "Hastily Made Cone Hat",
+    "type": "hat",
+    "icon": "Equip_Icon_Armor109",
+    "rarity": 1
+  },
+  "110114": {
+    "uid": 110114,
+    "name": "平凡的拖鞋",
+    "nameEn": "Ordinary Slippers",
+    "type": "boots",
+    "icon": "Equip_Icon_Armor114",
+    "rarity": 1
+  },
+  "110204": {
+    "uid": 110204,
+    "name": "蝴蝶結裙子",
+    "nameEn": "Ribbon Skirt",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 110101,
+        "count": 4
+      },
+      {
+        "uid": 150003,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Armor204",
+    "rarity": 1
+  },
+  "130209": {
+    "uid": 130209,
+    "name": "高階雷射筆",
+    "nameEn": "Quality Laser Pointer",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 130106,
+        "count": 4
+      },
+      {
+        "uid": 150002,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Weapon209",
+    "rarity": 1
+  },
+  "110209": {
+    "uid": 110209,
+    "name": "金箔尖頂帽",
+    "nameEn": "Golden Cone Hat",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 110106,
+        "count": 4
+      },
+      {
+        "uid": 150004,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Armor209",
+    "rarity": 1
+  },
+  "110214": {
+    "uid": 110214,
+    "name": "頭帶",
+    "nameEn": "Headband",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 110111,
+        "count": 4
+      },
+      {
+        "uid": 150005,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Armor214",
+    "rarity": 1
+  },
+  "110304": {
+    "uid": 110304,
+    "name": "愛心紋路裙",
+    "nameEn": "Heart-pattern Skirt",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 150003,
+        "count": 8
+      },
+      {
+        "uid": 150010,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Armor304",
+    "rarity": 2
+  },
+  "130309": {
+    "uid": 130309,
+    "name": "好球",
+    "nameEn": "Strike",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 150002,
+        "count": 8
+      },
+      {
+        "uid": 150009,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Weapon309",
+    "rarity": 2
+  },
+  "110309": {
+    "uid": 110309,
+    "name": "生日蛋糕帽",
+    "nameEn": "Birthday Cake Hat",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 150004,
+        "count": 8
+      },
+      {
+        "uid": 150011,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Armor309",
+    "rarity": 2
+  },
+  "110314": {
+    "uid": 110314,
+    "name": "條紋頭帶",
+    "nameEn": "Striped Headband",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 150005,
+        "count": 8
+      },
+      {
+        "uid": 150012,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Armor314",
+    "rarity": 2
+  },
+  "110404": {
+    "uid": 110404,
+    "name": "春光洋裝",
+    "nameEn": "Springlight Dress",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 140003,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Armor404",
+    "rarity": 2
+  },
+  "130409": {
+    "uid": 130409,
+    "name": "小浣熊麥克風",
+    "nameEn": "Raccoon? Microphone",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140002,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Weapon409",
+    "rarity": 2
+  },
+  "110409": {
+    "uid": 110409,
+    "name": "春光花冠",
+    "nameEn": "Springlight Crown",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 140004,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Armor409",
+    "rarity": 2
+  },
+  "110414": {
+    "uid": 110414,
+    "name": "熊耳頭帶",
+    "nameEn": "Bear Ears Headband",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 140005,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Armor414",
+    "rarity": 2
+  },
+  "110504": {
+    "uid": 110504,
+    "name": "綠蔭洋裝",
+    "nameEn": "Verdure Dress",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 140003,
+        "count": 12
+      },
+      {
+        "uid": 150017,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Armor504",
+    "rarity": 3
+  },
+  "130509": {
+    "uid": 130509,
+    "name": "夜光蘑菇手電筒",
+    "nameEn": "Glowing Mushroom Flashlight",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140002,
+        "count": 12
+      },
+      {
+        "uid": 150016,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Weapon509",
+    "rarity": 3
+  },
+  "110509": {
+    "uid": 110509,
+    "name": "保證匿名巴拉克拉法帽",
+    "nameEn": "Anonymous Balaclava",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 140004,
+        "count": 12
+      },
+      {
+        "uid": 150018,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Armor509",
+    "rarity": 3
+  },
+  "110514": {
+    "uid": 110514,
+    "name": "綠色帆布鞋",
+    "nameEn": "Green Canvas Sneakers",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 140005,
+        "count": 12
+      },
+      {
+        "uid": 150019,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Armor514",
+    "rarity": 3
+  },
+  "110604": {
+    "uid": 110604,
+    "name": "郊遊洋裝",
+    "nameEn": "Outing Dress",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 150017,
+        "count": 14
+      },
+      {
+        "uid": 150024,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Armor604",
+    "rarity": 3
+  },
+  "130609": {
+    "uid": 130609,
+    "name": "三人出局",
+    "nameEn": "1-2-3 Inning",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 150016,
+        "count": 14
+      },
+      {
+        "uid": 150023,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Weapon609",
+    "rarity": 3
+  },
+  "110609": {
+    "uid": 110609,
+    "name": "天空之花花冠",
+    "nameEn": "Skyflower Crown",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 150018,
+        "count": 14
+      },
+      {
+        "uid": 150025,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Armor609",
+    "rarity": 3
+  },
+  "110614": {
+    "uid": 110614,
+    "name": "超級貓咪頭帶",
+    "nameEn": "Super Meow Headband",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 150019,
+        "count": 14
+      },
+      {
+        "uid": 150026,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Armor614",
+    "rarity": 3
+  },
+  "110704": {
+    "uid": 110704,
+    "name": "夏天禮服",
+    "nameEn": "Summer Dress",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 140010,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Armor704",
+    "rarity": 4
+  },
+  "130709": {
+    "uid": 130709,
+    "name": "三振出局",
+    "nameEn": "Three Outs",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140009,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Weapon709",
+    "rarity": 4
+  },
+  "110709": {
+    "uid": 110709,
+    "name": "玻璃頭冠",
+    "nameEn": "Glass Tiara",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 140011,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Armor709",
+    "rarity": 4
+  },
+  "110714": {
+    "uid": 110714,
+    "name": "荷葉邊頭帶",
+    "nameEn": "Frill Headband",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 140012,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Armor714",
+    "rarity": 4
+  },
+  "110804": {
+    "uid": 110804,
+    "name": "晚禮服",
+    "nameEn": "Evening Gown",
+    "type": "body",
+    "recipe": [
+      {
+        "uid": 140010,
+        "count": 18
+      },
+      {
+        "uid": 150031,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Armor804",
+    "rarity": 4
+  },
+  "130809": {
+    "uid": 130809,
+    "name": "可愛心形麥克風",
+    "nameEn": "Cutesy Heart Microphone",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140009,
+        "count": 18
+      },
+      {
+        "uid": 150030,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Weapon809",
+    "rarity": 4
+  },
+  "110809": {
+    "uid": 110809,
+    "name": "騎行飛翼頭盔",
+    "nameEn": "Bike Wing Helmet",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 140011,
+        "count": 18
+      },
+      {
+        "uid": 150032,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Armor809",
+    "rarity": 4
+  },
+  "110814": {
+    "uid": 110814,
+    "name": "U形潛水鏡",
+    "nameEn": "U-Crown Snorkel",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 140012,
+        "count": 18
+      },
+      {
+        "uid": 150033,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Armor814",
+    "rarity": 4
+  },
+  "110107": {
+    "uid": 110107,
+    "name": "鬆緊帶短褲",
+    "nameEn": "Elastic Shorts",
+    "type": "hat",
+    "icon": "Equip_Icon_Armor107",
+    "rarity": 1
+  },
+  "110112": {
+    "uid": 110112,
+    "name": "小面具",
+    "nameEn": "Small Mask",
+    "type": "boots",
+    "icon": "Equip_Icon_Armor112",
+    "rarity": 1
+  },
+  "110207": {
+    "uid": 110207,
+    "name": "皮扣短褲",
+    "nameEn": "Buckled Shorts",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 110106,
+        "count": 4
+      },
+      {
+        "uid": 150004,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Armor207",
+    "rarity": 1
+  },
+  "110212": {
+    "uid": 110212,
+    "name": "裝飾面具",
+    "nameEn": "Decorative Mask",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 110111,
+        "count": 4
+      },
+      {
+        "uid": 150005,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Armor212",
+    "rarity": 1
+  },
+  "110307": {
+    "uid": 110307,
+    "name": "探險家短褲",
+    "nameEn": "Explorer's Shorts",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 150004,
+        "count": 8
+      },
+      {
+        "uid": 150011,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Armor307",
+    "rarity": 2
+  },
+  "110312": {
+    "uid": 110312,
+    "name": "派對面具",
+    "nameEn": "Party Mask",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 150005,
+        "count": 8
+      },
+      {
+        "uid": 150012,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Armor312",
+    "rarity": 2
+  },
+  "110407": {
+    "uid": 110407,
+    "name": "運動褲",
+    "nameEn": "Training Pants",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 140004,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Armor407",
+    "rarity": 2
+  },
+  "110412": {
+    "uid": 110412,
+    "name": "小熊面具",
+    "nameEn": "Teddy Bear Mask",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 140005,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Armor412",
+    "rarity": 2
+  },
+  "110507": {
+    "uid": 110507,
+    "name": "工作褲",
+    "nameEn": "Worker Pants",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 140004,
+        "count": 12
+      },
+      {
+        "uid": 150018,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Armor507",
+    "rarity": 3
+  },
+  "110512": {
+    "uid": 110512,
+    "name": "河豚泳鏡",
+    "nameEn": "Pufferfish Water Goggles",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 140005,
+        "count": 12
+      },
+      {
+        "uid": 150019,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Armor512",
+    "rarity": 3
+  },
+  "110607": {
+    "uid": 110607,
+    "name": "搖滾明星牛仔褲",
+    "nameEn": "Rockstar Jeans",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 150018,
+        "count": 14
+      },
+      {
+        "uid": 150025,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Armor607",
+    "rarity": 3
+  },
+  "110612": {
+    "uid": 110612,
+    "name": "獅子面具",
+    "nameEn": "Lion Mask",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 150019,
+        "count": 14
+      },
+      {
+        "uid": 150026,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Armor612",
+    "rarity": 3
+  },
+  "110707": {
+    "uid": 110707,
+    "name": "羽絨褲",
+    "nameEn": "Padded Pants",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 140011,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Armor707",
+    "rarity": 4
+  },
+  "110712": {
+    "uid": 110712,
+    "name": "沉壓面具",
+    "nameEn": "Cason Mask",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 140012,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Armor712",
+    "rarity": 4
+  },
+  "110807": {
+    "uid": 110807,
+    "name": "滑雪褲",
+    "nameEn": "Ski Pants",
+    "type": "hat",
+    "recipe": [
+      {
+        "uid": 140011,
+        "count": 18
+      },
+      {
+        "uid": 150032,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Armor807",
+    "rarity": 4
+  },
+  "110812": {
+    "uid": 110812,
+    "name": "皇冠潛水鏡",
+    "nameEn": "Crown Snorkel",
+    "type": "boots",
+    "recipe": [
+      {
+        "uid": 140012,
+        "count": 18
+      },
+      {
+        "uid": 150033,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Armor812",
+    "rarity": 4
+  },
+  "120105": {
+    "uid": 120105,
+    "name": "老舊梳子",
+    "nameEn": "Old Comb",
+    "type": "ring",
+    "icon": "Equip_Icon_Accessory105",
+    "rarity": 1
+  },
+  "120110": {
+    "uid": 120110,
+    "name": "糖珠耳環",
+    "nameEn": "Marble Candy Earrings",
+    "type": "accessory",
+    "icon": "Equip_Icon_Accessory110",
+    "rarity": 1
+  },
+  "120205": {
+    "uid": 120205,
+    "name": "斧頭梳子",
+    "nameEn": "Axe-Shaped Comb",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 120101,
+        "count": 4
+      },
+      {
+        "uid": 150006,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Accessory205",
+    "rarity": 1
+  },
+  "120305": {
+    "uid": 120305,
+    "name": "心願結手環",
+    "nameEn": "Knotted Wish Bracelet",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 150006,
+        "count": 8
+      },
+      {
+        "uid": 150013,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Accessory305",
+    "rarity": 2
+  },
+  "120405": {
+    "uid": 120405,
+    "name": "皮革手環",
+    "nameEn": "Leather Bracelet",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 140006,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Accessory405",
+    "rarity": 2
+  },
+  "120505": {
+    "uid": 120505,
+    "name": "束帶手環",
+    "nameEn": "Strap Bracelet",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 140006,
+        "count": 12
+      },
+      {
+        "uid": 150020,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Accessory505",
+    "rarity": 3
+  },
+  "120605": {
+    "uid": 120605,
+    "name": "金屬扣手環",
+    "nameEn": "Buckle Bracelet",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 150020,
+        "count": 14
+      },
+      {
+        "uid": 150027,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Accessory605",
+    "rarity": 3
+  },
+  "120705": {
+    "uid": 120705,
+    "name": "寶石裝飾手環",
+    "nameEn": "Gemstone Bracelet",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 140013,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Accessory705",
+    "rarity": 4
+  },
+  "120805": {
+    "uid": 120805,
+    "name": "金工手鍊",
+    "nameEn": "Goldsmith Bracelet",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 140013,
+        "count": 18
+      },
+      {
+        "uid": 150034,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Accessory805",
+    "rarity": 4
+  },
+  "130103": {
+    "uid": 130103,
+    "name": "小水槍",
+    "nameEn": "Petite Gun",
+    "type": "weapon",
+    "icon": "Equip_Icon_Weapon103",
+    "rarity": 1
+  },
+  "120101": {
+    "uid": 120101,
+    "name": "糖球戒指",
+    "nameEn": "Candy Ring",
+    "type": "ring",
+    "icon": "Equip_Icon_Accessory101",
+    "rarity": 1
+  },
+  "120106": {
+    "uid": 120106,
+    "name": "漩渦糖果項鍊",
+    "nameEn": "Bangle Candy Necklace",
+    "type": "accessory",
+    "icon": "Equip_Icon_Accessory106",
+    "rarity": 1
+  },
+  "130203": {
+    "uid": 130203,
+    "name": "黑麥法棍",
+    "nameEn": "Rye Baguette",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 130101,
+        "count": 4
+      },
+      {
+        "uid": 150001,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Weapon203",
+    "rarity": 1
+  },
+  "120201": {
+    "uid": 120201,
+    "name": "寶石糖果戒指",
+    "nameEn": "Gemstone Candy Ring",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 120101,
+        "count": 4
+      },
+      {
+        "uid": 150006,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Accessory201",
+    "rarity": 1
+  },
+  "130303": {
+    "uid": 130303,
+    "name": "麵條廚師的勺子",
+    "nameEn": "Noodle Chef's Ladle",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 150001,
+        "count": 8
+      },
+      {
+        "uid": 150008,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Weapon303",
+    "rarity": 2
+  },
+  "120301": {
+    "uid": 120301,
+    "name": "玻璃糖戒指",
+    "nameEn": "Glass Candy Ring",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 150006,
+        "count": 8
+      },
+      {
+        "uid": 150013,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Accessory301",
+    "rarity": 2
+  },
+  "130403": {
+    "uid": 130403,
+    "name": "故障的鋼筆",
+    "nameEn": "Broken Fountain Pen",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140001,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Weapon403",
+    "rarity": 2
+  },
+  "120401": {
+    "uid": 120401,
+    "name": "兔子寶石戒指",
+    "nameEn": "Bunny Gemstone Ring",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 140006,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Accessory401",
+    "rarity": 2
+  },
+  "130503": {
+    "uid": 130503,
+    "name": "微風手指虎",
+    "nameEn": "Breeze Knuckles",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140001,
+        "count": 12
+      },
+      {
+        "uid": 150015,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Weapon503",
+    "rarity": 3
+  },
+  "120501": {
+    "uid": 120501,
+    "name": "狐狸寶石戒指",
+    "nameEn": "Fox Gemstone Ring",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 140006,
+        "count": 12
+      },
+      {
+        "uid": 150020,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Accessory501",
+    "rarity": 3
+  },
+  "130603": {
+    "uid": 130603,
+    "name": "憤怒麵包師傅的法棍",
+    "nameEn": "Enraged Baker's Baguette",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 150015,
+        "count": 14
+      },
+      {
+        "uid": 150022,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Weapon603",
+    "rarity": 3
+  },
+  "120601": {
+    "uid": 120601,
+    "name": "獅子寶石戒指",
+    "nameEn": "Lion Gemstone Ring",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 150020,
+        "count": 14
+      },
+      {
+        "uid": 150027,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Accessory601",
+    "rarity": 3
+  },
+  "130703": {
+    "uid": 130703,
+    "name": "烤箱破壞者的法棍",
+    "nameEn": "Oven Destroyer's Baguette",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140008,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Weapon703",
+    "rarity": 4
+  },
+  "120701": {
+    "uid": 120701,
+    "name": "水晶戒指",
+    "nameEn": "Crystal Ring",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 140013,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Accessory701",
+    "rarity": 4
+  },
+  "130803": {
+    "uid": 130803,
+    "name": "蓬鬆羽毛筆",
+    "nameEn": "Fluffy Quill",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140008,
+        "count": 18
+      },
+      {
+        "uid": 150029,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Weapon803",
+    "rarity": 4
+  },
+  "120801": {
+    "uid": 120801,
+    "name": "紫水晶戒指",
+    "nameEn": "Amethyst Ring",
+    "type": "ring",
+    "recipe": [
+      {
+        "uid": 140013,
+        "count": 18
+      },
+      {
+        "uid": 150034,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Accessory801",
+    "rarity": 4
+  },
+  "130110": {
+    "uid": 130110,
+    "name": "故障的雨傘",
+    "nameEn": "Broken Umbrella",
+    "type": "weapon",
+    "icon": "Equip_Icon_Weapon110",
+    "rarity": 1
+  },
+  "130210": {
+    "uid": 130210,
+    "name": "瞄準射擊",
+    "nameEn": "Aimed Shot",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 130106,
+        "count": 4
+      },
+      {
+        "uid": 150002,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Weapon210",
+    "rarity": 1
+  },
+  "130310": {
+    "uid": 130310,
+    "name": "超鋒利麵包刀",
+    "nameEn": "Extreme Bread Knife",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 150002,
+        "count": 8
+      },
+      {
+        "uid": 150009,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Weapon310",
+    "rarity": 2
+  },
+  "130410": {
+    "uid": 130410,
+    "name": "戶外手電筒",
+    "nameEn": "Outdoor Flashlight",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140002,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Weapon410",
+    "rarity": 2
+  },
+  "130510": {
+    "uid": 130510,
+    "name": "三球三振",
+    "nameEn": "Good Morning, Good Afternoon, and Good Night",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140002,
+        "count": 12
+      },
+      {
+        "uid": 150016,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Weapon510",
+    "rarity": 3
+  },
+  "130610": {
+    "uid": 130610,
+    "name": "兔子雨傘",
+    "nameEn": "Bunny Umbrella",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 150016,
+        "count": 14
+      },
+      {
+        "uid": 150023,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Weapon610",
+    "rarity": 3
+  },
+  "130710": {
+    "uid": 130710,
+    "name": "正義體現",
+    "nameEn": "Justice Served",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140009,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Weapon710",
+    "rarity": 4
+  },
+  "130810": {
+    "uid": 130810,
+    "name": "霸者彈弓",
+    "nameEn": "Cold Game",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140009,
+        "count": 18
+      },
+      {
+        "uid": 150030,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Weapon810",
+    "rarity": 4
+  },
+  "130106": {
+    "uid": 130106,
+    "name": "能量飲",
+    "nameEn": "Energy Drink",
+    "type": "weapon",
+    "icon": "Equip_Icon_Weapon106",
+    "rarity": 1
+  },
+  "130206": {
+    "uid": 130206,
+    "name": "金屬手指虎",
+    "nameEn": "Metal Knuckles",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 130106,
+        "count": 4
+      },
+      {
+        "uid": 150002,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Weapon206",
+    "rarity": 1
+  },
+  "130306": {
+    "uid": 130306,
+    "name": "華麗麥克風",
+    "nameEn": "Fancy Microphone",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 150002,
+        "count": 8
+      },
+      {
+        "uid": 150009,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Weapon306",
+    "rarity": 2
+  },
+  "130406": {
+    "uid": 130406,
+    "name": "水中散彈槍",
+    "nameEn": "Aqua Shotgun",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140002,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Weapon406",
+    "rarity": 2
+  },
+  "130506": {
+    "uid": 130506,
+    "name": "小黃瓜飲",
+    "nameEn": "Cucumberade",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140002,
+        "count": 12
+      },
+      {
+        "uid": 150016,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Weapon506",
+    "rarity": 3
+  },
+  "130606": {
+    "uid": 130606,
+    "name": "水中爆擊槍",
+    "nameEn": "Aqua Crash",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 150016,
+        "count": 14
+      },
+      {
+        "uid": 150023,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Weapon606",
+    "rarity": 3
+  },
+  "130706": {
+    "uid": 130706,
+    "name": "啜泣的燈籠",
+    "nameEn": "Wailing Lantern",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140009,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Weapon706",
+    "rarity": 4
+  },
+  "130806": {
+    "uid": 130806,
+    "name": "爆爆手指虎",
+    "nameEn": "Popping Knuckles",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140009,
+        "count": 18
+      },
+      {
+        "uid": 150030,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Weapon806",
+    "rarity": 4
+  },
+  "130105": {
+    "uid": 130105,
+    "name": "玩具手指虎",
+    "nameEn": "Toy Knuckles",
+    "type": "weapon",
+    "icon": "Equip_Icon_Weapon105",
+    "rarity": 1
+  },
+  "130205": {
+    "uid": 130205,
+    "name": "蛋糕用麵包刀",
+    "nameEn": "Cake Knife",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 130101,
+        "count": 4
+      },
+      {
+        "uid": 150001,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Weapon205",
+    "rarity": 1
+  },
+  "130305": {
+    "uid": 130305,
+    "name": "棉花糖手指虎",
+    "nameEn": "Cotton Candy Knuckles",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 150001,
+        "count": 8
+      },
+      {
+        "uid": 150008,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Weapon305",
+    "rarity": 2
+  },
+  "130405": {
+    "uid": 130405,
+    "name": "手指虎手套",
+    "nameEn": "Knuckle Gloves",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140001,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Weapon405",
+    "rarity": 2
+  },
+  "130505": {
+    "uid": 130505,
+    "name": "作家的鋼筆",
+    "nameEn": "Writer's Fountain Pen",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140001,
+        "count": 12
+      },
+      {
+        "uid": 150015,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Weapon505",
+    "rarity": 3
+  },
+  "130605": {
+    "uid": 130605,
+    "name": "彗星刀刃",
+    "nameEn": "Comet-Forged",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 150015,
+        "count": 14
+      },
+      {
+        "uid": 150022,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Weapon605",
+    "rarity": 3
+  },
+  "130705": {
+    "uid": 130705,
+    "name": "庫柏曼手指虎",
+    "nameEn": "Cooperman Knuckles",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140008,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Weapon705",
+    "rarity": 4
+  },
+  "130805": {
+    "uid": 130805,
+    "name": "水中噴射槍",
+    "nameEn": "Aqua Blast",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140008,
+        "count": 18
+      },
+      {
+        "uid": 150029,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Weapon805",
+    "rarity": 4
+  },
+  "130108": {
+    "uid": 130108,
+    "name": "老舊勺子",
+    "nameEn": "Old Ladle",
+    "type": "weapon",
+    "icon": "Equip_Icon_Weapon108",
+    "rarity": 1
+  },
+  "130208": {
+    "uid": 130208,
+    "name": "一鍵自動雨傘",
+    "nameEn": "Auto-Open Umbrella",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 130106,
+        "count": 4
+      },
+      {
+        "uid": 150002,
+        "count": 10
+      }
+    ],
+    "icon": "Equip_Icon_Weapon208",
+    "rarity": 1
+  },
+  "130308": {
+    "uid": 130308,
+    "name": "薄荷水D",
+    "nameEn": "Mintygen-D",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 150002,
+        "count": 8
+      },
+      {
+        "uid": 150009,
+        "count": 18
+      }
+    ],
+    "icon": "Equip_Icon_Weapon308",
+    "rarity": 2
+  },
+  "130408": {
+    "uid": 130408,
+    "name": "啊！飲用水",
+    "nameEn": "Bread Bull",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140002,
+        "count": 20
+      }
+    ],
+    "icon": "Equip_Icon_Weapon408",
+    "rarity": 2
+  },
+  "130508": {
+    "uid": 130508,
+    "name": "星星平底鍋",
+    "nameEn": "Star Pan",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140002,
+        "count": 12
+      },
+      {
+        "uid": 150016,
+        "count": 30
+      }
+    ],
+    "icon": "Equip_Icon_Weapon508",
+    "rarity": 3
+  },
+  "130608": {
+    "uid": 130608,
+    "name": "雙翼平底鍋",
+    "nameEn": "Twin Wing Pan",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 150016,
+        "count": 14
+      },
+      {
+        "uid": 150023,
+        "count": 36
+      }
+    ],
+    "icon": "Equip_Icon_Weapon608",
+    "rarity": 3
+  },
+  "130708": {
+    "uid": 130708,
+    "name": "無視烤箱平底鍋",
+    "nameEn": "Oven-Snubbing Pan",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140009,
+        "count": 42
+      }
+    ],
+    "icon": "Equip_Icon_Weapon708",
+    "rarity": 4
+  },
+  "130808": {
+    "uid": 130808,
+    "name": "夢幻葡萄碳酸飲",
+    "nameEn": "Delight Grape-Flavored Soda",
+    "type": "weapon",
+    "recipe": [
+      {
+        "uid": 140009,
+        "count": 18
+      },
+      {
+        "uid": 150030,
+        "count": 46
+      }
+    ],
+    "icon": "Equip_Icon_Weapon808",
+    "rarity": 4
+  }
+}

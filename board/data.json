@@ -1,0 +1,1297 @@
+{
+  "characterBoards": {
+    "愛麗絲": {
+      "layer1": [
+        "crit",
+        "hp"
+      ],
+      "layer2": [
+        "crit",
+        "defense",
+        "critResist"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "hp",
+        "defense"
+      ]
+    },
+    "阿萊特": {
+      "layer1": [
+        "crit",
+        "critResist"
+      ],
+      "layer2": [
+        "crit",
+        "hp",
+        "critResist"
+      ],
+      "layer3": [
+        "crit",
+        "hp",
+        "defense",
+        "critResist"
+      ]
+    },
+    "艾蜜莉雅": {
+      "layer1": [
+        "critResist",
+        "defense"
+      ],
+      "layer2": [
+        "attack",
+        "crit",
+        "hp"
+      ],
+      "layer3": [
+        "attack",
+        "hp",
+        "defense",
+        "critResist"
+      ]
+    },
+    "綾": {
+      "layer1": [
+        "attack",
+        "defense"
+      ],
+      "layer2": [
+        "attack",
+        "hp",
+        "defense"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "hp",
+        "critResist"
+      ]
+    },
+    "貝麗塔": {
+      "layer1": [
+        "crit",
+        "hp"
+      ],
+      "layer2": [
+        "crit",
+        "defense",
+        "critResist"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "hp",
+        "defense"
+      ]
+    },
+    "班尼": {
+      "layer1": [
+        "crit",
+        "hp"
+      ],
+      "layer2": [
+        "crit",
+        "defense",
+        "critResist"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "hp",
+        "defense"
+      ]
+    },
+    "大木頭": {
+      "layer1": [
+        "attack",
+        "hp"
+      ],
+      "layer2": [
+        "attack",
+        "defense",
+        "critResist"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "defense",
+        "critResist"
+      ]
+    },
+    "康娜": {
+      "layer1": [
+        "critResist",
+        "defense"
+      ],
+      "layer2": [
+        "attack",
+        "crit",
+        "hp"
+      ],
+      "layer3": [
+        "attack",
+        "hp",
+        "defense",
+        "critResist"
+      ]
+    },
+    "卡蓮": {
+      "layer1": [
+        "crit",
+        "critResist"
+      ],
+      "layer2": [
+        "crit",
+        "hp",
+        "critResist"
+      ],
+      "layer3": [
+        "crit",
+        "hp",
+        "defense",
+        "critResist"
+      ]
+    },
+    "庫洛艾": {
+      "layer1": [
+        "crit",
+        "hp"
+      ],
+      "layer2": [
+        "crit",
+        "defense",
+        "critResist"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "hp",
+        "defense"
+      ]
+    },
+    "橋菲": {
+      "layer1": [
+        "critResist",
+        "defense"
+      ],
+      "layer2": [
+        "attack",
+        "crit",
+        "hp"
+      ],
+      "layer3": [
+        "attack",
+        "hp",
+        "defense",
+        "critResist"
+      ]
+    },
+    "路易": {
+      "layer1": [
+        "attack",
+        "hp"
+      ],
+      "layer2": [
+        "attack",
+        "defense",
+        "critResist"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "defense",
+        "critResist"
+      ]
+    },
+    "蒂亞娜": {
+      "layer1": [
+        "crit",
+        "critResist"
+      ],
+      "layer2": [
+        "crit",
+        "hp",
+        "critResist"
+      ],
+      "layer3": [
+        "crit",
+        "hp",
+        "defense",
+        "critResist"
+      ]
+    },
+    "艾爾芬": {
+      "layer1": [
+        "attack",
+        "defense"
+      ],
+      "layer2": [
+        "attack",
+        "hp",
+        "defense"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "hp",
+        "critResist"
+      ]
+    },
+    "艾斯皮": {
+      "layer1": [
+        "crit",
+        "critResist"
+      ],
+      "layer2": [
+        "crit",
+        "hp",
+        "critResist"
+      ],
+      "layer3": [
+        "crit",
+        "hp",
+        "defense",
+        "critResist"
+      ]
+    },
+    "佩斯塔": {
+      "layer1": [
+        "attack",
+        "defense"
+      ],
+      "layer2": [
+        "attack",
+        "hp",
+        "defense"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "hp",
+        "critResist"
+      ]
+    },
+    "芙莉可": {
+      "layer1": [
+        "attack",
+        "hp"
+      ],
+      "layer2": [
+        "attack",
+        "defense",
+        "critResist"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "defense",
+        "critResist"
+      ]
+    },
+    "加薇雅": {
+      "layer1": [
+        "attack",
+        "hp"
+      ],
+      "layer2": [
+        "attack",
+        "defense",
+        "critResist"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "defense",
+        "critResist"
+      ]
+    },
+    "海莉": {
+      "layer1": [
+        "critResist",
+        "defense"
+      ],
+      "layer2": [
+        "attack",
+        "crit",
+        "hp"
+      ],
+      "layer3": [
+        "attack",
+        "hp",
+        "defense",
+        "critResist"
+      ]
+    },
+    "伊弗利特": {
+      "layer1": [
+        "critResist",
+        "defense"
+      ],
+      "layer2": [
+        "attack",
+        "crit",
+        "hp"
+      ],
+      "layer3": [
+        "attack",
+        "hp",
+        "defense",
+        "critResist"
+      ]
+    },
+    "傑德": {
+      "layer1": [
+        "critResist",
+        "defense"
+      ],
+      "layer2": [
+        "attack",
+        "crit",
+        "hp"
+      ],
+      "layer3": [
+        "attack",
+        "hp",
+        "defense",
+        "critResist"
+      ]
+    },
+    "茱蜜": {
+      "layer1": [
+        "attack",
+        "defense"
+      ],
+      "layer2": [
+        "attack",
+        "hp",
+        "defense"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "hp",
+        "critResist"
+      ]
+    },
+    "基狄恩": {
+      "layer1": [
+        "critResist",
+        "defense"
+      ],
+      "layer2": [
+        "attack",
+        "crit",
+        "hp"
+      ],
+      "layer3": [
+        "attack",
+        "hp",
+        "defense",
+        "critResist"
+      ]
+    },
+    "柯米": {
+      "layer1": [
+        "critResist",
+        "defense"
+      ],
+      "layer2": [
+        "attack",
+        "crit",
+        "hp"
+      ],
+      "layer3": [
+        "attack",
+        "hp",
+        "defense",
+        "critResist"
+      ]
+    },
+    "雷吉": {
+      "layer1": [
+        "critResist",
+        "defense"
+      ],
+      "layer2": [
+        "attack",
+        "crit",
+        "hp"
+      ],
+      "layer3": [
+        "attack",
+        "hp",
+        "defense",
+        "critResist"
+      ]
+    },
+    "萊薇": {
+      "layer1": [
+        "crit",
+        "critResist"
+      ],
+      "layer2": [
+        "crit",
+        "hp",
+        "critResist"
+      ],
+      "layer3": [
+        "crit",
+        "hp",
+        "defense",
+        "critResist"
+      ]
+    },
+    "大師2號": {
+      "layer1": [
+        "crit",
+        "hp"
+      ],
+      "layer2": [
+        "crit",
+        "defense",
+        "critResist"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "hp",
+        "defense"
+      ]
+    },
+    "馬爾": {
+      "layer1": [
+        "attack",
+        "hp"
+      ],
+      "layer2": [
+        "attack",
+        "defense",
+        "critResist"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "defense",
+        "critResist"
+      ]
+    },
+    "梅森": {
+      "layer1": [
+        "crit",
+        "critResist"
+      ],
+      "layer2": [
+        "crit",
+        "hp",
+        "critResist"
+      ],
+      "layer3": [
+        "crit",
+        "hp",
+        "defense",
+        "critResist"
+      ]
+    },
+    "瑪麗": {
+      "layer1": [
+        "attack",
+        "hp"
+      ],
+      "layer2": [
+        "attack",
+        "defense",
+        "critResist"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "defense",
+        "critResist"
+      ]
+    },
+    "瑪約": {
+      "layer1": [
+        "critResist",
+        "defense"
+      ],
+      "layer2": [
+        "attack",
+        "crit",
+        "hp"
+      ],
+      "layer3": [
+        "attack",
+        "hp",
+        "defense",
+        "critResist"
+      ]
+    },
+    "梅露娜": {
+      "layer1": [
+        "attack",
+        "hp"
+      ],
+      "layer2": [
+        "attack",
+        "defense",
+        "critResist"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "defense",
+        "critResist"
+      ]
+    },
+    "桃桃": {
+      "layer1": [
+        "attack",
+        "hp"
+      ],
+      "layer2": [
+        "attack",
+        "defense",
+        "critResist"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "defense",
+        "critResist"
+      ]
+    },
+    "米雪": {
+      "layer1": [
+        "attack",
+        "hp"
+      ],
+      "layer2": [
+        "attack",
+        "defense",
+        "critResist"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "defense",
+        "critResist"
+      ]
+    },
+    "帕特拉": {
+      "layer1": [
+        "attack",
+        "defense"
+      ],
+      "layer2": [
+        "attack",
+        "hp",
+        "defense"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "hp",
+        "critResist"
+      ]
+    },
+    "皮可菈": {
+      "layer1": [
+        "critResist",
+        "defense"
+      ],
+      "layer2": [
+        "attack",
+        "crit",
+        "hp"
+      ],
+      "layer3": [
+        "attack",
+        "hp",
+        "defense",
+        "critResist"
+      ]
+    },
+    "珀榭": {
+      "layer1": [
+        "critResist",
+        "defense"
+      ],
+      "layer2": [
+        "attack",
+        "crit",
+        "hp"
+      ],
+      "layer3": [
+        "attack",
+        "hp",
+        "defense",
+        "critResist"
+      ]
+    },
+    "琳": {
+      "layer1": [
+        "crit",
+        "critResist"
+      ],
+      "layer2": [
+        "crit",
+        "hp",
+        "critResist"
+      ],
+      "layer3": [
+        "crit",
+        "hp",
+        "defense",
+        "critResist"
+      ]
+    },
+    "路德": {
+      "layer1": [
+        "crit",
+        "hp"
+      ],
+      "layer2": [
+        "crit",
+        "defense",
+        "critResist"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "hp",
+        "defense"
+      ]
+    },
+    "盧波": {
+      "layer1": [
+        "crit",
+        "critResist"
+      ],
+      "layer2": [
+        "crit",
+        "hp",
+        "critResist"
+      ],
+      "layer3": [
+        "crit",
+        "hp",
+        "defense",
+        "critResist"
+      ]
+    },
+    "莎莉": {
+      "layer1": [
+        "crit",
+        "hp"
+      ],
+      "layer2": [
+        "crit",
+        "defense",
+        "critResist"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "hp",
+        "defense"
+      ]
+    },
+    "謝蒂": {
+      "layer1": [
+        "attack",
+        "defense"
+      ],
+      "layer2": [
+        "attack",
+        "hp",
+        "defense"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "hp",
+        "critResist"
+      ]
+    },
+    "希菲爾": {
+      "layer1": [
+        "crit",
+        "hp"
+      ],
+      "layer2": [
+        "crit",
+        "defense",
+        "critResist"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "hp",
+        "defense"
+      ]
+    },
+    "希瑟圖": {
+      "layer1": [
+        "crit",
+        "critResist"
+      ],
+      "layer2": [
+        "crit",
+        "hp",
+        "critResist"
+      ],
+      "layer3": [
+        "crit",
+        "hp",
+        "defense",
+        "critResist"
+      ]
+    },
+    "斯皮奇": {
+      "layer1": [
+        "attack",
+        "defense"
+      ],
+      "layer2": [
+        "attack",
+        "hp",
+        "defense"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "hp",
+        "critResist"
+      ]
+    },
+    "希拉": {
+      "layer1": [
+        "attack",
+        "hp"
+      ],
+      "layer2": [
+        "attack",
+        "defense",
+        "critResist"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "defense",
+        "critResist"
+      ]
+    },
+    "泰達": {
+      "layer1": [
+        "attack",
+        "hp"
+      ],
+      "layer2": [
+        "attack",
+        "defense",
+        "critResist"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "defense",
+        "critResist"
+      ]
+    },
+    "羽伊": {
+      "layer1": [
+        "crit",
+        "critResist"
+      ],
+      "layer2": [
+        "crit",
+        "hp",
+        "critResist"
+      ],
+      "layer3": [
+        "crit",
+        "hp",
+        "defense",
+        "critResist"
+      ]
+    },
+    "佩佩": {
+      "layer1": [
+        "crit",
+        "critResist"
+      ],
+      "layer2": [
+        "crit",
+        "hp",
+        "critResist"
+      ],
+      "layer3": [
+        "crit",
+        "hp",
+        "defense",
+        "critResist"
+      ]
+    },
+    "貝魯": {
+      "layer1": [
+        "attack",
+        "defense"
+      ],
+      "layer2": [
+        "attack",
+        "hp",
+        "defense"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "hp",
+        "critResist"
+      ]
+    },
+    "薇薇": {
+      "layer1": [
+        "crit",
+        "hp"
+      ],
+      "layer2": [
+        "crit",
+        "defense",
+        "critResist"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "hp",
+        "defense"
+      ]
+    },
+    "劉美美": {
+      "layer1": [
+        "crit",
+        "hp"
+      ],
+      "layer2": [
+        "crit",
+        "defense",
+        "critResist"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "hp",
+        "defense"
+      ]
+    },
+    "xX錫安Xx": {
+      "layer1": [
+        "critResist",
+        "defense"
+      ],
+      "layer2": [
+        "attack",
+        "crit",
+        "hp"
+      ],
+      "layer3": [
+        "attack",
+        "hp",
+        "defense",
+        "critResist"
+      ]
+    },
+    "優米": {
+      "layer1": [
+        "attack",
+        "defense"
+      ],
+      "layer2": [
+        "attack",
+        "hp",
+        "defense"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "hp",
+        "critResist"
+      ]
+    },
+    "奶油": {
+      "layer1": [
+        "attack",
+        "defense"
+      ],
+      "layer2": [
+        "attack",
+        "hp",
+        "defense"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "hp",
+        "critResist"
+      ]
+    },
+    "希爾德": {
+      "layer1": [
+        "attack",
+        "hp"
+      ],
+      "layer2": [
+        "attack",
+        "defense",
+        "critResist"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "defense",
+        "critResist"
+      ]
+    },
+    "艾琳娜": {
+      "layer1": [
+        "attack",
+        "defense"
+      ],
+      "layer2": [
+        "attack",
+        "hp",
+        "defense"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "hp",
+        "critResist"
+      ]
+    },
+    "莉茲": {
+      "layer1": [
+        "attack",
+        "hp"
+      ],
+      "layer2": [
+        "attack",
+        "defense",
+        "critResist"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "defense",
+        "critResist"
+      ]
+    },
+    "艾皮卡": {
+      "layer1": [
+        "crit",
+        "critResist"
+      ],
+      "layer2": [
+        "crit",
+        "hp",
+        "critResist"
+      ],
+      "layer3": [
+        "crit",
+        "hp",
+        "defense",
+        "critResist"
+      ]
+    },
+    "布蘭切": {
+      "layer1": [
+        "crit",
+        "hp"
+      ],
+      "layer2": [
+        "crit",
+        "defense",
+        "critResist"
+      ],
+      "layer3": [
+        "attack",
+        "crit",
+        "hp",
+        "defense"
+      ]
+    },
+    "艾舒爾": {
+      "layer1": [
+        "crit",
+        "critResist"
+      ],
+      "layer2": [
+        "crit",
+        "hp",
+        "critResist"
+      ],
+      "layer3": [
+        "crit",
+        "hp",
+        "defense",
+        "critResist"
+      ]
+    },
+    "洛涅": {
+      "layer1": [
+        "crit",
+        "hp"
+      ],
+      "layer2": [
+        "crit",
+        "defense",
+        "critResist"
+      ],
+      "layer3": [
+        "crit",
+        "hp",
+        "defense",
+        "attack"
+      ]
+    },
+    "奈雅": {
+      "layer1": [
+        "crit",
+        "hp"
+      ],
+      "layer2": [
+        "crit",
+        "defense",
+        "critResist"
+      ],
+      "layer3": [
+        "crit",
+        "hp",
+        "defense",
+        "attack"
+      ]
+    },
+    "修帕": {
+      "layer1": [
+        "crit",
+        "critResist"
+      ],
+      "layer2": [
+        "crit",
+        "hp",
+        "critResist"
+      ],
+      "layer3": [
+        "crit",
+        "hp",
+        "defense",
+        "critResist"
+      ]
+    },
+    "伊德": {
+      "layer1": [
+        "attack",
+        "defense"
+      ],
+      "layer2": [
+        "attack",
+        "hp",
+        "defense"
+      ],
+      "layer3": [
+        "attack",
+        "hp",
+        "crit",
+        "critResist"
+      ]
+    },
+    "斯諾奇": {
+      "layer1": [
+        "attack",
+        "defense"
+      ],
+      "layer2": [
+        "attack",
+        "hp",
+        "defense"
+      ],
+      "layer3": [
+        "attack",
+        "hp",
+        "crit",
+        "critResist"
+      ]
+    },
+    "瑟琳娜": {
+      "layer1": [
+        "attack",
+        "defense"
+      ],
+      "layer2": [
+        "attack",
+        "hp",
+        "defense"
+      ],
+      "layer3": [
+        "attack",
+        "hp",
+        "crit",
+        "critResist"
+      ]
+    },
+    "卡洛特": {
+      "layer1": [
+        "hp",
+        "attack"
+      ],
+      "layer2": [
+        "attack",
+        "defense",
+        "critResist"
+      ],
+      "layer3": [
+        "attack",
+        "defense",
+        "critResist",
+        "crit"
+      ]
+    },
+    "寧琉": {
+      "layer1": [
+        "attack",
+        "defense"
+      ],
+      "layer2": [
+        "hp",
+        "attack",
+        "defense"
+      ],
+      "layer3": [
+        "critResist",
+        "crit",
+        "hp",
+        "attack"
+      ]
+    }
+  },
+  "boardConfig": {
+    "layer1": {
+      "name": "第一層",
+      "bonusPerCell": 3,
+      "background": null
+    },
+    "layer2": {
+      "name": "第二層",
+      "bonusPerCell": 4,
+      "background": "assets/icons/board_base_2.png"
+    },
+    "layer3": {
+      "name": "第三層",
+      "bonusPerCell": 5,
+      "background": "assets/icons/board_base_3.png"
+    }
+  },
+  "cellTypes": {
+    "attack": {
+      "name": "攻擊力",
+      "color": "#ff6b6b",
+      "icon": "assets/icons/board_atk.png",
+      "costPerLayer": {
+        "layer1": 100,
+        "layer2": 200,
+        "layer3": 300
+      }
+    },
+    "crit": {
+      "name": "暴擊",
+      "color": "#fab005",
+      "icon": "assets/icons/board_crit.png",
+      "costPerLayer": {
+        "layer1": 100,
+        "layer2": 200,
+        "layer3": 300
+      }
+    },
+    "hp": {
+      "name": "HP",
+      "color": "#ff8787",
+      "icon": "assets/icons/board_hp.png",
+      "costPerLayer": {
+        "layer1": 100,
+        "layer2": 200,
+        "layer3": 300
+      }
+    },
+    "critResist": {
+      "name": "暴擊抵抗",
+      "color": "#74c0fc",
+      "icon": "assets/icons/board_critResist.png",
+      "costPerLayer": {
+        "layer1": 100,
+        "layer2": 200,
+        "layer3": 300
+      }
+    },
+    "defense": {
+      "name": "防禦力",
+      "color": "#da77f2",
+      "icon": "assets/icons/board_def.png",
+      "costPerLayer": {
+        "layer1": 100,
+        "layer2": 200,
+        "layer3": 300
+      }
+    }
+  },
+  "personalities": {
+    "天真": {
+      "icon": "assets/icons/unit_personality_naive.png"
+    },
+    "冷靜": {
+      "icon": "assets/icons/unit_personality_cool.png"
+    },
+    "憂鬱": {
+      "icon": "assets/icons/unit_personality_gloomy.png"
+    },
+    "活潑": {
+      "icon": "assets/icons/unit_personality_jolly.png"
+    },
+    "狂亂": {
+      "icon": "assets/icons/unit_personality_mad.png"
+    }
+  },
+  "races": [
+    "妖精",
+    "龍族",
+    "魔靈",
+    "精靈",
+    "獸人",
+    "魔女",
+    "幽靈",
+    "???"
+  ],
+  "attackTypes": {
+    "物理": {
+      "icon": "assets/icons/unit_attack_physic.png"
+    },
+    "魔法": {
+      "icon": "assets/icons/unit_attack_magic.png"
+    }
+  },
+  "deployRows": {
+    "前排": {
+      "icon": "assets/icons/unit_position_front.png"
+    },
+    "中排": {
+      "icon": "assets/icons/unit_position_middle.png"
+    },
+    "後排": {
+      "icon": "assets/icons/unit_position_back.png"
+    }
+  },
+  "roles": [
+    "輸出",
+    "坦克",
+    "輔助"
+  ]
+}
