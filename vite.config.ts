@@ -48,7 +48,6 @@ export default defineConfig({
     assetsDir: 'assets',
     chunkSizeWarningLimit: 1000,
     rolldownOptions: {
-      external: ['workbox-window'],
       output: {
         manualChunks(id: string) {
           const n = id.replace(/\\/g, '/')
