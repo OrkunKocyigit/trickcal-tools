@@ -51,12 +51,10 @@ const router = createRouter({
   }
 })
 
-// 路由守衛：更新頁面標題
-router.beforeEach((to, _from, next) => {
+router.beforeEach((to) => {
   if (to.meta.title) {
     document.title = to.meta.title as string
   }
-  next()
 })
 
 export default router
