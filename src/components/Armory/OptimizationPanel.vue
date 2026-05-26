@@ -60,7 +60,7 @@
             <span v-for="mat in eq101ReplacedMats" :key="mat.uid" class="plan-drop plan-drop-eq101">
               <img
                 :src="getGearImageUrl(mat.name)"
-                :alt="mat.name"
+                :alt="matDisplayName(mat)"
                 class="drop-icon"
                 loading="lazy"
                 @error="($event.target as HTMLImageElement).style.display = 'none'"
@@ -151,7 +151,12 @@ function cancelEdit101() {
 const totalRuns = computed(() => props.plan.reduce((sum, r) => sum + r.runs, 0))
 
 function dropName(d: StageDrop): string {
-  return locale.value === 'en' ? d.nameEn : d.name
+  const raw = locale.value === 'en' ? d.nameEn : d.name
+  return raw.replace(/\\n/g, ' ')
+}
+
+function matDisplayName(mat: Eq101ReplacedMat): string {
+  return mat.name.replace(/\\n/g, ' ')
 }
 </script>
 
