@@ -180,7 +180,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch, onMounted } from 'vue'
+import { ref, computed, watch, onMounted, nextTick } from 'vue'
 import { useBoardStore } from '@/stores/board'
 import AppLayout from '@/components/Layout/AppLayout.vue'
 import LayerSummary from '@/components/Board/LayerSummary.vue'
@@ -234,11 +234,12 @@ const cellTypes = computed(() => {
 const filteredCharacters = computed(() => {
   if (!boardStore.characters || boardStore.characters.length === 0) return []
   
-  return boardStore.characters.filter(char => {
+  const query = searchQuery.value.trim().toLowerCase()
+
+  let chars = boardStore.characters.filter(char => {
     const boardTypes = char.boardTypes?.[boardStore.currentLayer]
     if (!boardTypes || boardTypes.length === 0) return false
 
-    const query = searchQuery.value.trim().toLowerCase()
     if (query) {
       const nameMatch = char.name.toLowerCase().includes(query)
       const enMatch = char.en.toLowerCase().includes(query)
@@ -247,6 +248,12 @@ const filteredCharacters = computed(() => {
 
     return boardTypes.includes(boardStore.currentCellType)
   })
+
+  if (query) {
+    chars.sort(sortBySearchRank(query))
+  }
+
+  return chars
 })
 
 const cellStats = computed(() => {
@@ -268,13 +275,16 @@ const searchSuggestions = computed(() => {
 
   const query = searchQuery.value.trim().toLowerCase()
 
-  return boardStore.characters.filter(char => {
-    const boardTypes = char.boardTypes?.[boardStore.currentLayer]
-    if (!boardTypes || boardTypes.length === 0) return false
-    const nameMatch = char.name.toLowerCase().includes(query)
-    const enMatch = char.en.toLowerCase().includes(query)
-    return nameMatch || enMatch
-  }).slice(0, 3)
+  return boardStore.characters
+    .filter(char => {
+      const boardTypes = char.boardTypes?.[boardStore.currentLayer]
+      if (!boardTypes || boardTypes.length === 0) return false
+      const nameMatch = char.name.toLowerCase().includes(query)
+      const enMatch = char.en.toLowerCase().includes(query)
+      return nameMatch || enMatch
+    })
+    .sort(sortBySearchRank(query))
+    .slice(0, 3)
 })
 
 const showSearchDropdown = computed(() =>
@@ -312,6 +322,20 @@ function selectSearchResult(char: Character) {
   searchFocused.value = false
 }
 
+function sortBySearchRank(query: string) {
+  const q = query.toLowerCase()
+  return (a: Character, b: Character): number => {
+    const an = a.name.toLowerCase()
+    const bn = b.name.toLowerCase()
+    const ae = a.en.toLowerCase()
+    const be = b.en.toLowerCase()
+
+    const ra = an.startsWith(q) ? 0 : ae.startsWith(q) ? 1 : an.includes(q) ? 2 : ae.includes(q) ? 3 : 4
+    const rb = bn.startsWith(q) ? 0 : be.startsWith(q) ? 1 : bn.includes(q) ? 2 : be.includes(q) ? 3 : 4
+    return ra - rb
+  }
+}
+
 function handleCharacterClick(char: Character) {
   boardStore.toggleCellActivation(char, boardStore.currentCellType)
 }
@@ -323,6 +347,7 @@ function handleCharacterRightClick(char: Character) {
 function closeProfile() {
   profileCharacter.value = null
   searchQuery.value = ''
+  nextTick(() => searchRef.value?.querySelector('input')?.focus())
 }
 
 function toggleLeftPanel() {
