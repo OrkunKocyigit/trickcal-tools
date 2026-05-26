@@ -9,7 +9,6 @@
     "build": "vite build",
     "preview": "vite preview",
     "type-check": "tsc --noEmit",
-    "postbuild": "node scripts/generate-version.cjs",
     "deploy": "node scripts/deploy.cjs",
     "postinstall": "node -e \"require('fs').copyFileSync('node_modules/highs/build/highs.wasm','public/highs.wasm')\""
   },
@@ -28,6 +27,7 @@
     "sharp": "^0.34.4",
     "typescript": "^6.0.0",
     "vite": "^8.0.0",
-    "vite-plugin-compression2": "^2.0.0"
+    "vite-plugin-compression2": "^2.0.0",
+    "vite-plugin-pwa": "^1.3.0"
   }
 }

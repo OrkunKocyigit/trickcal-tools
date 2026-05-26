@@ -113,6 +113,7 @@ export const useArmoryStore = defineStore('armory', () => {
   const totalStamina = ref(0)
   const optimizing = ref(false)
   const optimizationProgress = ref(0)
+  const solverError = ref<string | null>(null)
   const infeasibleMaterials = ref<number[]>([])
   const equipment101Count = ref(0)
   const equipment101Used = ref(0)
@@ -345,6 +346,7 @@ export const useArmoryStore = defineStore('armory', () => {
     materialNeeds.value = mats
     plan.value = []
     totalStamina.value = 0
+    solverError.value = null
     infeasibleMaterials.value = []
 
     scheduleOptimization()
@@ -654,6 +656,7 @@ export const useArmoryStore = defineStore('armory', () => {
     stageCodeByVarKey: Map<string, string>,
     varsMap: Map<string, { code: string; drops: { uid: number; rate: number }[] }>,
   ) {
+    solverError.value = null
     optimizing.value = true
     optimizationProgress.value = 0
 
@@ -672,6 +675,7 @@ export const useArmoryStore = defineStore('armory', () => {
     const workerTimeout = setTimeout(() => {
       cleanup()
       console.error('Solver worker timed out after 60s')
+      solverError.value = 'Solver timed out. Try a simpler loadout.'
       plan.value = []
       totalStamina.value = 0
       optimizing.value = false
@@ -690,6 +694,7 @@ export const useArmoryStore = defineStore('armory', () => {
       const { result, error } = e.data
       if (error) {
         console.error('Solver worker error:', error)
+        solverError.value = 'Solver failed. Your device may not support WASM.'
         plan.value = []
         totalStamina.value = 0
         optimizing.value = false
@@ -706,6 +711,7 @@ export const useArmoryStore = defineStore('armory', () => {
 
       if (solution.Status !== 'Optimal') {
         console.warn('[armory] HiGHS status:', solution.Status)
+        solverError.value = `Solver returned ${solution.Status}. Try different inputs.`
         if (import.meta.env.DEV) {
           console.warn('[armory] non-optimal solution:', solution)
         }
@@ -761,6 +767,7 @@ export const useArmoryStore = defineStore('armory', () => {
     const onError = (e: ErrorEvent) => {
       cleanup()
       console.error('Solver worker error:', e.message)
+      solverError.value = 'Solver failed to initialize. Try a different browser.'
       plan.value = []
       totalStamina.value = 0
       optimizing.value = false
@@ -799,6 +806,7 @@ export const useArmoryStore = defineStore('armory', () => {
     totalStamina,
     optimizing,
     optimizationProgress,
+    solverError,
     infeasibleMaterials,
     canUpgrade,
     equipment101Count,

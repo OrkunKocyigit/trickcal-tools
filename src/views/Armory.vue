@@ -198,6 +198,7 @@
             :total-stamina="armoryStore.totalStamina"
             :optimizing="armoryStore.optimizing"
             :optimization-progress="armoryStore.optimizationProgress"
+            :solver-error="armoryStore.solverError"
             :unfarmable="armoryStore.infeasibleMaterials"
             :can-upgrade="armoryStore.canUpgrade"
             :equipment-101-count="armoryStore.equipment101Count"

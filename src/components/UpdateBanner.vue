@@ -26,12 +26,13 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   dismiss: []
+  refresh: []
 }>()
 
 const visible = computed(() => props.updateAvailable)
 
 function refresh() {
-  location.reload()
+  emit('refresh')
 }
 
 function onDismiss() {

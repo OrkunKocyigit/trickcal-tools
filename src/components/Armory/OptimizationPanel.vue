@@ -7,6 +7,8 @@
       <span class="progress-text">{{ optimizationProgress }}%</span>
     </div>
 
+    <div v-if="solverError" class="error-box">{{ solverError }}</div>
+
     <div v-if="unfarmable.length > 0" class="warning-box">
       {{ $t('armory.unfarmableWarning', { count: unfarmable.length }) }}
     </div>
@@ -111,6 +113,7 @@ const props = defineProps<{
   totalStamina: number
   optimizing: boolean
   optimizationProgress: number
+  solverError: string | null
   unfarmable: number[]
   canUpgrade: boolean
   equipment101Count: number
@@ -193,6 +196,15 @@ function matDisplayName(mat: Eq101ReplacedMat): string {
   color: var(--text-secondary);
   min-width: 2.5rem;
   text-align: right;
+}
+
+.error-box {
+  padding: 0.75rem;
+  background: var(--error-bg, rgba(239, 68, 68, 0.1));
+  border-left: 3px solid var(--error-color, #ef4444);
+  border-radius: 6px;
+  color: var(--error-color, #ef4444);
+  font-size: 0.8125rem;
 }
 
 .warning-box {

@@ -3,6 +3,7 @@
     <UpdateBanner
       :update-available="updateAvailable"
       @dismiss="dismiss"
+      @refresh="refresh"
     />
     <router-view />
   </div>
@@ -11,13 +12,13 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useThemeStore } from '@/stores/theme'
-import { useVersionCheck } from '@/composables/useVersionCheck'
+import { usePwaUpdate } from '@/composables/usePwaUpdate'
 import UpdateBanner from '@/components/UpdateBanner.vue'
 
 const themeStore = useThemeStore()
 const theme = computed(() => themeStore.currentTheme)
 
-const { updateAvailable, dismiss } = useVersionCheck()
+const { updateAvailable, refresh, dismiss } = usePwaUpdate()
 </script>
 
 <style>

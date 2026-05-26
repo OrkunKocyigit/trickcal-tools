@@ -2,11 +2,37 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { fileURLToPath, URL } from 'node:url'
 import { compression } from 'vite-plugin-compression2'
+import { VitePWA } from 'vite-plugin-pwa'
+
+const base = process.env.VITE_DEPLOY_TARGET === 'gh-pages' ? '/trickcal-tools/' : '/'
 
 export default defineConfig({
-  base: process.env.VITE_DEPLOY_TARGET === 'gh-pages' ? '/trickcal-tools/' : '/',
+  base,
   plugins: [
     vue(),
+    VitePWA({
+      registerType: 'prompt',
+      includeAssets: ['assets/favicons/favicon.webp'],
+      manifest: {
+        name: 'Trickcal 工具集',
+        short_name: 'Trickcal Tools',
+        description: '金蠟筆記錄本與掃蕩工具',
+        theme_color: '#ff5f72',
+        background_color: '#ff5f72',
+        display: 'standalone',
+        scope: base,
+        start_url: base,
+        icons: [
+          { src: `${base}assets/favicons/pwa-192x192.png`, sizes: '192x192', type: 'image/png' },
+          { src: `${base}assets/favicons/pwa-512x512.png`, sizes: '512x512', type: 'image/png' },
+        ],
+      },
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,json,webp,png,woff2,wasm}'],
+        navigateFallback: `${base}index.html`,
+        maximumFileSizeToCacheInBytes: 6 * 1024 * 1024,
+      },
+    }),
     compression({
       algorithms: ['gzip', 'brotliCompress'],
       threshold: 10240,
@@ -22,6 +48,7 @@ export default defineConfig({
     assetsDir: 'assets',
     chunkSizeWarningLimit: 1000,
     rolldownOptions: {
+      external: ['workbox-window'],
       output: {
         manualChunks(id: string) {
           const n = id.replace(/\\/g, '/')
