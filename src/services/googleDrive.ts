@@ -64,17 +64,32 @@ class GoogleDriveService {
         client_id: GOOGLE_CONFIG.CLIENT_ID,
         scope: GOOGLE_CONFIG.SCOPES,
         callback: (response: any) => {
-          // 這個 callback 只用於處理 token 刷新
-          // 實際的登入處理在 signIn() 方法中
+          // GIS 可能在背景自動刷新 token；此 callback 必須保存
           if (response.error) {
-            logger.error('Token 取得失敗:', response)
-            this.isSignedIn = false
-            this.accessToken = null
-            this.saveAuthState()
+            if (response.error !== 'id_token_expired') {
+              logger.error('Token 錯誤:', response)
+            }
+            // 只有在原本有 token 卻失敗時才清除（非首次載入）
+            if (this.accessToken) {
+              this.clearAuthState()
+            }
             return
           }
-          
-          logger.info('Token callback 被觸發')
+
+          if (response.access_token) {
+            // 背景刷新也需驗證 scope；若缺少關鍵 scope 則清除登入
+            if (!this.tokenHasDriveScope(response)) {
+              logger.warn('背景刷新的 token 缺少 drive.appdata scope，清除登入')
+              this.clearAuthState()
+              return
+            }
+
+            this.accessToken = response.access_token
+            this.tokenExpiryTime = Date.now() + (response.expires_in || 3600) * 1000
+            gapi.client.setToken({ access_token: this.accessToken })
+            this.saveAuthState()
+            logger.info('Token 已更新（背景刷新）')
+          }
         },
       })
 
@@ -139,6 +154,53 @@ class GoogleDriveService {
   }
 
   /**
+   * 檢查 token response 是否包含 drive.appdata scope
+   */
+  private tokenHasDriveScope(response: any): boolean {
+    if (!response || !response.scope) {
+      logger.warn('Token response 缺少 scope 欄位，無法驗證')
+      return true
+    }
+    const scopes = response.scope.split(' ')
+    const missing = GOOGLE_CONFIG.REQUIRED_SCOPES.filter((s: string) => !scopes.includes(s))
+    if (missing.length > 0) {
+      logger.warn(`Token 缺少必要 scope: ${missing.join(', ')}`)
+    }
+    return missing.length === 0
+  }
+
+  /**
+   * 偵測 gapi 錯誤是否為 accessNotConfigured（API 未啟用）
+   */
+  private isAccessNotConfiguredError(error: any): boolean {
+    if (!error) return false
+
+    // gapi 錯誤格式：result.error.errors[]
+    const errObj = error.result?.error || error.error || error
+    const errors = errObj.errors || []
+    if (errors.some((e: any) => e.reason === 'accessNotConfigured')) {
+      return true
+    }
+
+    // 也可能在訊息中
+    const msg = errObj.message || error.message || ''
+    return msg.includes('accessNotConfigured') || msg.includes('Drive API has not been used')
+  }
+
+  /**
+   * 清除登入狀態
+   */
+  private clearAuthState() {
+    this.accessToken = null
+    this.isSignedIn = false
+    this.tokenExpiryTime = 0
+    this.currentUser = null
+    this.saveAuthState()
+    localStorage.removeItem('sync_status')
+    gapi.client.setToken(null)
+  }
+
+  /**
    * 登入 Google
    */
   async signIn(): Promise<void> {
@@ -151,12 +213,24 @@ class GoogleDriveService {
         // 更新 callback 來處理 Promise
         const originalCallback = this.tokenClient.callback
         this.tokenClient.callback = async (response: any) => {
+          // 恢復原始 callback 要放在最前面，確保 GIS 下次可用
+          this.tokenClient.callback = originalCallback
+
           if (response.error) {
             logger.error('Google 登入失敗:', response)
             reject(new Error(response.error))
             return
           }
-          
+
+          // 驗證 scope 包含 drive.appdata
+          if (!this.tokenHasDriveScope(response)) {
+            reject(new Error(
+              '缺少 Google Drive 權限。授權時請允許「查看應用程式資料夾」，'
+              + '或在 Google 帳戶設定中確認已授予 drive.appdata 權限。'
+            ))
+            return
+          }
+
           this.accessToken = response.access_token
           this.isSignedIn = true
           this.tokenExpiryTime = Date.now() + (response.expires_in || 3600) * 1000
@@ -169,9 +243,6 @@ class GoogleDriveService {
           this.saveAuthState()
           
           logger.info('Google 登入成功')
-          
-          // 恢復原始 callback
-          this.tokenClient.callback = originalCallback
           resolve()
         }
 
@@ -197,15 +268,7 @@ class GoogleDriveService {
         })
       }
       
-      this.accessToken = null
-      this.isSignedIn = false
-      this.currentUser = null
-      this.tokenExpiryTime = 0
-      gapi.client.setToken(null)
-      
-      // 清除保存的狀態
-      this.saveAuthState()
-      
+      this.clearAuthState()
       logger.info('Google 登出成功')
     } catch (error) {
       logger.error('Google 登出失敗:', error)
@@ -319,19 +382,24 @@ class GoogleDriveService {
       return
     }
 
+    // Token 過期或即將過期，嘗試靜默刷新但驗證 scope
     return new Promise((resolve, reject) => {
       const originalCallback = this.tokenClient.callback
       this.tokenClient.callback = (response: any) => {
         this.tokenClient.callback = originalCallback
         if (response.error) {
-          this.isSignedIn = false
-          this.accessToken = null
-          this.tokenExpiryTime = 0
-          this.currentUser = null
-          this.saveAuthState()
+          this.clearAuthState()
           reject(new Error('登入狀態已過期，請重新登入'))
           return
         }
+
+        // 驗證刷新後的 token 仍包含 drive.appdata
+        if (!this.tokenHasDriveScope(response)) {
+          this.clearAuthState()
+          reject(new Error('權限不足：缺少 Google Drive 存取權限。請重新登入並允許所有必要權限。'))
+          return
+        }
+
         this.accessToken = response.access_token
         this.tokenExpiryTime = Date.now() + (response.expires_in || 3600) * 1000
         gapi.client.setToken({ access_token: this.accessToken })
@@ -353,6 +421,16 @@ class GoogleDriveService {
   }
 
   /**
+   * 拋出「Google Drive API 未啟用」錯誤
+   */
+  private throwAccessNotConfiguredError(): never {
+    throw new Error(
+      'Google Drive API 尚未啟用。請前往 Google Cloud Console '
+      + '→ 資料庫 → Google Drive API → 啟用，然後重試。'
+    )
+  }
+
+  /**
    * 搜尋備份檔案
    */
   async findBackupFile(): Promise<any> {
@@ -369,6 +447,9 @@ class GoogleDriveService {
       return files.length > 0 ? files[0] : null
     } catch (error) {
       logger.error('搜尋備份檔案失敗:', error)
+      if (this.isAccessNotConfiguredError(error)) {
+        this.throwAccessNotConfiguredError()
+      }
       throw error
     }
   }
@@ -389,6 +470,9 @@ class GoogleDriveService {
       return response.result as any as BackupData
     } catch (error) {
       logger.error('下載備份檔案失敗:', error)
+      if (this.isAccessNotConfiguredError(error)) {
+        this.throwAccessNotConfiguredError()
+      }
       throw error
     }
   }
@@ -450,6 +534,9 @@ class GoogleDriveService {
       return response.result.id
     } catch (error) {
       logger.error('上傳備份檔案失敗:', error)
+      if (this.isAccessNotConfiguredError(error)) {
+        this.throwAccessNotConfiguredError()
+      }
       throw error
     }
   }
@@ -467,6 +554,9 @@ class GoogleDriveService {
       logger.info('刪除 Google Drive 備份成功')
     } catch (error) {
       logger.error('刪除備份檔案失敗:', error)
+      if (this.isAccessNotConfiguredError(error)) {
+        this.throwAccessNotConfiguredError()
+      }
       throw error
     }
   }

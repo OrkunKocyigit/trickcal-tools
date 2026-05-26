@@ -236,7 +236,9 @@
     "restoreSuccess": "복원 성공!",
     "restoreFailed": "복원 실패: {error}",
     "signInFailed": "로그인 실패: {error}",
-    "signOutFailed": "로그아웃 실패: {error}"
+    "signOutFailed": "로그아웃 실패: {error}",
+    "driveApiNotConfigured": "Google Drive API가 활성화되지 않았습니다. Google Cloud Console → 라이브러리 → Google Drive API → 사용으로 이동하세요.",
+    "missingDriveScope": "Google Drive 권한이 부족합니다. 다시 로그인하여 모든 필수 권한을 허용하세요."
   }
 }
 

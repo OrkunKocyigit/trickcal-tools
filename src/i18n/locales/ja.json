@@ -236,7 +236,9 @@
     "restoreSuccess": "復元成功！",
     "restoreFailed": "復元失敗：{error}",
     "signInFailed": "ログイン失敗：{error}",
-    "signOutFailed": "ログアウト失敗：{error}"
+    "signOutFailed": "ログアウト失敗：{error}",
+    "driveApiNotConfigured": "Google Drive API が有効になっていません。Google Cloud Console → ライブラリ → Google Drive API → 有効にする。",
+    "missingDriveScope": "Google Drive 権限が不足しています。再ログインしてすべての権限を許可してください。"
   }
 }
 

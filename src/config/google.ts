@@ -12,12 +12,19 @@
  * 7. 複製用戶端 ID 並貼到下方 CLIENT_ID
  */
 
+export const DRIVE_APPDATA_SCOPE = 'https://www.googleapis.com/auth/drive.appdata'
+export const USERINFO_PROFILE_SCOPE = 'https://www.googleapis.com/auth/userinfo.profile'
+export const USERINFO_EMAIL_SCOPE = 'https://www.googleapis.com/auth/userinfo.email'
+
 export const GOOGLE_CONFIG = {
   // 請替換為您的 Google OAuth Client ID
   CLIENT_ID: import.meta.env.VITE_GOOGLE_CLIENT_ID || 'YOUR_GOOGLE_CLIENT_ID',
   
   // OAuth 範圍 - 訪問應用專屬資料夾和用戶基本資訊
-  SCOPES: 'https://www.googleapis.com/auth/drive.appdata https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email',
+  SCOPES: `${DRIVE_APPDATA_SCOPE} ${USERINFO_PROFILE_SCOPE} ${USERINFO_EMAIL_SCOPE}`,
+  
+  // 需要驗證的必要 OAuth 範圍
+  REQUIRED_SCOPES: [DRIVE_APPDATA_SCOPE],
   
   // Discovery docs
   DISCOVERY_DOCS: ['https://www.googleapis.com/discovery/v1/apis/drive/v3/rest'],

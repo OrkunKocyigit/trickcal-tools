@@ -236,7 +236,9 @@
     "restoreSuccess": "Restore successful!",
     "restoreFailed": "Restore failed: {error}",
     "signInFailed": "Sign in failed: {error}",
-    "signOutFailed": "Sign out failed: {error}"
+    "signOutFailed": "Sign out failed: {error}",
+    "driveApiNotConfigured": "Google Drive API is not enabled. Please go to Google Cloud Console → Library → Google Drive API → Enable.",
+    "missingDriveScope": "Google Drive permission is required. Please re-sign in and allow all requested permissions."
   }
 }
 

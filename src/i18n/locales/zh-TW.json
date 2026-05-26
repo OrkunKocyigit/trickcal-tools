@@ -236,7 +236,9 @@
     "restoreSuccess": "恢復成功！",
     "restoreFailed": "恢復失敗：{error}",
     "signInFailed": "登入失敗：{error}",
-    "signOutFailed": "登出失敗：{error}"
+    "signOutFailed": "登出失敗：{error}",
+    "driveApiNotConfigured": "Google Drive API 尚未啟用。請前往 Google Cloud Console → 資料庫 → Google Drive API → 啟用。",
+    "missingDriveScope": "缺少 Google Drive 權限。請重新登入並允許所有必要權限。"
   }
 }
 
