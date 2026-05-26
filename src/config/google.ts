@@ -16,9 +16,6 @@ export const GOOGLE_CONFIG = {
   // 請替換為您的 Google OAuth Client ID
   CLIENT_ID: import.meta.env.VITE_GOOGLE_CLIENT_ID || 'YOUR_GOOGLE_CLIENT_ID',
   
-  // API Key (可選，用於公開資料訪問)
-  API_KEY: import.meta.env.VITE_GOOGLE_API_KEY || '',
-  
   // OAuth 範圍 - 訪問應用專屬資料夾和用戶基本資訊
   SCOPES: 'https://www.googleapis.com/auth/drive.appdata https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email',
   

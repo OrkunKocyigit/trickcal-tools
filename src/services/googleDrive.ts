@@ -47,7 +47,6 @@ class GoogleDriveService {
         gapi.load('client', async () => {
           try {
             await gapi.client.init({
-              apiKey: GOOGLE_CONFIG.API_KEY,
               discoveryDocs: GOOGLE_CONFIG.DISCOVERY_DOCS,
             })
             resolve()
@@ -313,12 +312,51 @@ class GoogleDriveService {
   }
 
   /**
-   * 搜尋備份檔案
+   * 確保 token 有效，過期則嘗試靜默刷新
    */
-  async findBackupFile(): Promise<any> {
+  private async ensureValidToken(): Promise<void> {
+    if (this.tokenExpiryTime && Date.now() < this.tokenExpiryTime) {
+      return
+    }
+
+    return new Promise((resolve, reject) => {
+      const originalCallback = this.tokenClient.callback
+      this.tokenClient.callback = (response: any) => {
+        this.tokenClient.callback = originalCallback
+        if (response.error) {
+          this.isSignedIn = false
+          this.accessToken = null
+          this.tokenExpiryTime = 0
+          this.currentUser = null
+          this.saveAuthState()
+          reject(new Error('登入狀態已過期，請重新登入'))
+          return
+        }
+        this.accessToken = response.access_token
+        this.tokenExpiryTime = Date.now() + (response.expires_in || 3600) * 1000
+        gapi.client.setToken({ access_token: this.accessToken })
+        this.saveAuthState()
+        resolve()
+      }
+      this.tokenClient.requestAccessToken({ prompt: '' })
+    })
+  }
+
+  /**
+   * 確保已登入且 token 有效
+   */
+  private async requireValidAuth(): Promise<void> {
     if (!this.isSignedIn) {
       throw new Error('請先登入 Google')
     }
+    await this.ensureValidToken()
+  }
+
+  /**
+   * 搜尋備份檔案
+   */
+  async findBackupFile(): Promise<any> {
+    await this.requireValidAuth()
 
     try {
       const response = await gapi.client.drive.files.list({
@@ -339,9 +377,7 @@ class GoogleDriveService {
    * 下載備份檔案
    */
   async downloadBackup(fileId: string): Promise<BackupData> {
-    if (!this.isSignedIn) {
-      throw new Error('請先登入 Google')
-    }
+    await this.requireValidAuth()
 
     try {
       const response = await gapi.client.drive.files.get({
@@ -361,9 +397,7 @@ class GoogleDriveService {
    * 上傳備份檔案
    */
   async uploadBackup(data: BackupData, existingFileId?: string): Promise<string> {
-    if (!this.isSignedIn) {
-      throw new Error('請先登入 Google')
-    }
+    await this.requireValidAuth()
 
     try {
       const boundary = '-------314159265358979323846'
@@ -424,9 +458,7 @@ class GoogleDriveService {
    * 刪除備份檔案
    */
   async deleteBackup(fileId: string): Promise<void> {
-    if (!this.isSignedIn) {
-      throw new Error('請先登入 Google')
-    }
+    await this.requireValidAuth()
 
     try {
       await gapi.client.drive.files.delete({
