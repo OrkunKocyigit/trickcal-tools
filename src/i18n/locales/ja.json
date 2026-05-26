@@ -54,7 +54,8 @@
   },
   "board": {
     "layerPanel": "レイヤーパネル",
-    "statsPanel": "統計パネル"
+    "statsPanel": "統計パネル",
+    "searchPlaceholder": "キャラクターを検索..."
   },
   "panel": {
     "layerSummary": "層の概要",
@@ -71,6 +72,30 @@
     "allLayersNeed": "全層の必要量",
     "currentLayerBonus": "現在の層のボーナス",
     "allLayersBonus": "全層のボーナス"
+  },
+  "profile": {
+    "bonusPerCell": "ボーナス"
+  },
+  "deployRows": {
+    "前排": "前列",
+    "中排": "中列",
+    "後排": "後列"
+  },
+  "roles": {
+    "輸出": "アタッカー",
+    "坦克": "タンク",
+    "輔助": "サポーター"
+  },
+  "attackTypes": {
+    "物理": "物理",
+    "魔法": "魔法"
+  },
+  "personalities": {
+    "天真": "天真",
+    "冷靜": "冷静",
+    "憂鬱": "憂鬱",
+    "活潑": "活発",
+    "狂亂": "狂乱"
   },
   "settings": {
     "title": "キャラクター設定",

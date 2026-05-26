@@ -54,7 +54,8 @@
   },
   "board": {
     "layerPanel": "Layer Panel",
-    "statsPanel": "Stats Panel"
+    "statsPanel": "Stats Panel",
+    "searchPlaceholder": "Search characters..."
   },
   "panel": {
     "layerSummary": "Layer Summary",
@@ -71,6 +72,30 @@
     "allLayersNeed": "All Layers Need",
     "currentLayerBonus": "Current Layer Bonus",
     "allLayersBonus": "All Layers Bonus"
+  },
+  "profile": {
+    "bonusPerCell": "Bonus"
+  },
+  "deployRows": {
+    "前排": "Front",
+    "中排": "Middle",
+    "後排": "Back"
+  },
+  "roles": {
+    "輸出": "DPS",
+    "坦克": "Tank",
+    "輔助": "Support"
+  },
+  "attackTypes": {
+    "物理": "Physical",
+    "魔法": "Magic"
+  },
+  "personalities": {
+    "天真": "Innocent",
+    "冷靜": "Composed",
+    "憂鬱": "Depressed",
+    "活潑": "Vivacious",
+    "狂亂": "Mad"
   },
   "settings": {
     "title": "Character Settings",

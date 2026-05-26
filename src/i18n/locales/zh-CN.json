@@ -54,7 +54,8 @@
   },
   "board": {
     "layerPanel": "层级选择",
-    "statsPanel": "统计信息"
+    "statsPanel": "统计信息",
+    "searchPlaceholder": "搜索角色..."
   },
   "panel": {
     "layerSummary": "层级总览",
@@ -71,6 +72,30 @@
     "allLayersNeed": "全部层级需求",
     "currentLayerBonus": "当前层级总加成",
     "allLayersBonus": "全部层级总加成"
+  },
+  "profile": {
+    "bonusPerCell": "加成"
+  },
+  "deployRows": {
+    "前排": "前排",
+    "中排": "中排",
+    "後排": "后排"
+  },
+  "roles": {
+    "輸出": "输出",
+    "坦克": "坦克",
+    "輔助": "辅助"
+  },
+  "attackTypes": {
+    "物理": "物理",
+    "魔法": "魔法"
+  },
+  "personalities": {
+    "天真": "天真",
+    "冷靜": "冷静",
+    "憂鬱": "忧郁",
+    "活潑": "活泼",
+    "狂亂": "狂乱"
   },
   "settings": {
     "title": "角色设置",

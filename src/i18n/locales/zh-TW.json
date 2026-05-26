@@ -54,7 +54,8 @@
   },
   "board": {
     "layerPanel": "層級選擇",
-    "statsPanel": "統計資訊"
+    "statsPanel": "統計資訊",
+    "searchPlaceholder": "搜尋角色..."
   },
   "panel": {
     "layerSummary": "層級總覽",
@@ -71,6 +72,30 @@
     "allLayersNeed": "全部層級需求",
     "currentLayerBonus": "當前層級總加成",
     "allLayersBonus": "全部層級總加成"
+  },
+  "profile": {
+    "bonusPerCell": "加成"
+  },
+  "deployRows": {
+    "前排": "前排",
+    "中排": "中排",
+    "後排": "後排"
+  },
+  "roles": {
+    "輸出": "輸出",
+    "坦克": "坦克",
+    "輔助": "輔助"
+  },
+  "attackTypes": {
+    "物理": "物理",
+    "魔法": "魔法"
+  },
+  "personalities": {
+    "天真": "天真",
+    "冷靜": "冷靜",
+    "憂鬱": "憂鬱",
+    "活潑": "活潑",
+    "狂亂": "狂亂"
   },
   "settings": {
     "title": "角色設置",

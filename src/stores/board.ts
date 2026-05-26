@@ -204,8 +204,9 @@ export const useBoardStore = defineStore('board', () => {
   }
 
   // 切換格子啟動狀態
-  function toggleCellActivation(character: Character, cellType: string) {
-    const cellKey = `${character.name}_${currentLayer.value}_${cellType}`
+  function toggleCellActivation(character: Character, cellType: string, layer?: 'layer1' | 'layer2' | 'layer3') {
+    const targetLayer = layer ?? currentLayer.value
+    const cellKey = `${character.name}_${targetLayer}_${cellType}`
     const isOwned = userProgress.value.ownedCharacters.has(character.name)
 
     if (!isOwned) {
@@ -213,6 +214,7 @@ export const useBoardStore = defineStore('board', () => {
       const rosterStore = useRosterStore()
       rosterStore.ensureUnitProgress(character.name)
       rosterStore.saveData()
+      userProgress.value.activatedCells[cellKey] = true
     } else if (!userProgress.value.activatedCells[cellKey]) {
       userProgress.value.activatedCells[cellKey] = true
     } else {

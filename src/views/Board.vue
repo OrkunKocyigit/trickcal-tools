@@ -51,7 +51,35 @@
           </div>
 
           <div class="board-stage-body">
-            <!-- 格子類型分頁 -->
+            <!-- 搜尋輸入 -->
+          <div class="board-search" ref="searchRef">
+            <input
+              v-model="searchQuery"
+              type="text"
+              class="search-input"
+              :placeholder="$t('board.searchPlaceholder')"
+              @focus="onSearchFocus($event)"
+              @blur="onSearchBlur"
+              @keydown.escape="closeSearchDropdown"
+              @keydown.enter="handleSearchEnter"
+            />
+            <div v-if="showSearchDropdown" class="search-dropdown">
+              <div
+                v-for="char in searchSuggestions"
+                :key="char.name"
+                class="search-dropdown-item"
+                @mousedown.prevent="selectSearchResult(char)"
+              >
+                <span class="dropdown-name">{{ displayCharName(char) }}</span>
+                <span class="dropdown-en">{{ locale.startsWith('zh') ? char.en : char.name }}</span>
+              </div>
+              <div v-if="searchSuggestions.length === 0" class="search-dropdown-empty">
+                {{ searchQuery.trim() ? $t('errors.noData') : '' }}
+              </div>
+            </div>
+          </div>
+
+          <!-- 格子類型分頁 -->
             <div class="board-pagination">
               <button
                 v-for="cellType in cellTypes"
@@ -79,6 +107,7 @@
                 :character="char"
                 :cell-type="boardStore.currentCellType"
                 @click="handleCharacterClick(char)"
+                @right-click="handleCharacterRightClick($event)"
               />
             </div>
 
@@ -139,6 +168,13 @@
 
       <!-- 設置面板 -->
       <CharacterSettings v-model:show="showSettings" />
+
+      <!-- 角色設定檔面板 -->
+      <CharacterProfileModal
+        v-if="profileCharacter"
+        :character="profileCharacter"
+        @close="closeProfile"
+      />
     </div>
   </AppLayout>
 </template>
@@ -154,23 +190,62 @@ import CellTypeFooter from '@/components/Board/CellTypeFooter.vue'
 import OwnershipStats from '@/components/Board/OwnershipStats.vue'
 import ResourceSummary from '@/components/Board/ResourceSummary.vue'
 import CharacterSettings from '@/components/Board/CharacterSettings.vue'
+import CharacterProfileModal from '@/components/Board/CharacterProfileModal.vue'
 import FloatingButton from '@/components/Board/FloatingButton.vue'
 import type { Character } from '@/stores/board'
 import { getAssetUrl } from '@/utils/assets'
+import { useI18n } from 'vue-i18n'
 
 const boardStore = useBoardStore()
+const { locale } = useI18n()
 const showSettings = ref(false)
 const leftPanelOpen = ref(false)
 const rightPanelOpen = ref(false)
+const profileCharacter = ref<Character | null>(null)
+const searchQuery = ref('')
+const searchRef = ref<HTMLElement | null>(null)
+const searchFocused = ref(false)
 
-const cellTypes = ['attack', 'crit', 'hp', 'critResist', 'defense']
+const cellOrder = ['attack', 'crit', 'hp', 'critResist', 'defense']
+
+const cellTypes = computed(() => {
+  if (!boardStore.characters || boardStore.characters.length === 0) return cellOrder
+
+  const query = searchQuery.value.trim().toLowerCase()
+
+  const types = new Set<string>()
+  boardStore.characters.forEach(char => {
+    const boardTypes = char.boardTypes?.[boardStore.currentLayer]
+    if (!boardTypes || boardTypes.length === 0) return
+
+    if (query) {
+      const nameMatch = char.name.toLowerCase().includes(query)
+      const enMatch = char.en.toLowerCase().includes(query)
+      if (!nameMatch && !enMatch) return
+    }
+
+    boardTypes.forEach(t => types.add(t))
+  })
+
+  if (types.size === 0) return []
+  return cellOrder.filter(t => types.has(t))
+})
 
 const filteredCharacters = computed(() => {
   if (!boardStore.characters || boardStore.characters.length === 0) return []
   
   return boardStore.characters.filter(char => {
     const boardTypes = char.boardTypes?.[boardStore.currentLayer]
-    return boardTypes && boardTypes.includes(boardStore.currentCellType)
+    if (!boardTypes || boardTypes.length === 0) return false
+
+    const query = searchQuery.value.trim().toLowerCase()
+    if (query) {
+      const nameMatch = char.name.toLowerCase().includes(query)
+      const enMatch = char.en.toLowerCase().includes(query)
+      return nameMatch || enMatch
+    }
+
+    return boardTypes.includes(boardStore.currentCellType)
   })
 })
 
@@ -188,8 +263,66 @@ const cellStats = computed(() => {
   return { total, activated }
 })
 
+const searchSuggestions = computed(() => {
+  if (!searchQuery.value.trim() || !boardStore.characters) return []
+
+  const query = searchQuery.value.trim().toLowerCase()
+
+  return boardStore.characters.filter(char => {
+    const boardTypes = char.boardTypes?.[boardStore.currentLayer]
+    if (!boardTypes || boardTypes.length === 0) return false
+    const nameMatch = char.name.toLowerCase().includes(query)
+    const enMatch = char.en.toLowerCase().includes(query)
+    return nameMatch || enMatch
+  }).slice(0, 3)
+})
+
+const showSearchDropdown = computed(() =>
+  searchFocused.value && searchQuery.value.trim().length > 0
+)
+
+function onSearchFocus(e: Event) {
+  searchFocused.value = true
+  ;(e.target as HTMLInputElement)?.select()
+}
+
+function onSearchBlur() {
+  setTimeout(() => { searchFocused.value = false }, 200)
+}
+
+function closeSearchDropdown() {
+  searchFocused.value = false
+  ;(searchRef.value?.querySelector('input') as HTMLInputElement)?.blur()
+}
+
+function displayCharName(char: Character): string {
+  return locale.value.startsWith('zh') ? char.name : char.en
+}
+
+function handleSearchEnter() {
+  const first = searchSuggestions.value[0]
+  if (!first) return
+  searchQuery.value = displayCharName(first)
+  searchFocused.value = false
+  profileCharacter.value = first
+}
+
+function selectSearchResult(char: Character) {
+  searchQuery.value = displayCharName(char)
+  searchFocused.value = false
+}
+
 function handleCharacterClick(char: Character) {
   boardStore.toggleCellActivation(char, boardStore.currentCellType)
+}
+
+function handleCharacterRightClick(char: Character) {
+  profileCharacter.value = char
+}
+
+function closeProfile() {
+  profileCharacter.value = null
+  searchQuery.value = ''
 }
 
 function toggleLeftPanel() {
@@ -227,7 +360,6 @@ onMounted(async () => {
 
 .with-background {
   position: relative;
-  overflow: hidden;
 }
 
 .background-image {
@@ -382,6 +514,91 @@ onMounted(async () => {
   background: var(--primary-color);
   color: white;
   border-color: var(--primary-color);
+}
+
+.board-stage-body {
+  overflow: visible;
+}
+
+.board-search {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-input:focus {
+  border-color: var(--primary-color);
+}
+
+.search-dropdown {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 4px;
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.search-dropdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.625rem 0.875rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.search-dropdown-item:hover {
+  background: var(--hover-bg);
+}
+
+.search-dropdown-item:first-child {
+  border-radius: 8px 8px 0 0;
+}
+
+.search-dropdown-item:last-child {
+  border-radius: 0 0 8px 8px;
+}
+
+.dropdown-name {
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.dropdown-en {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.search-dropdown-empty {
+  padding: 0.875rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.8125rem;
 }
 
 .board-grid {

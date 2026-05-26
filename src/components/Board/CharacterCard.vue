@@ -6,6 +6,7 @@
       activated: isActivated,
       [`personality-${personalityClass}`]: true
     }"
+    @contextmenu.prevent="emit('rightClick', character)"
   >
     <div class="character-avatar">
       <img 
@@ -76,6 +77,10 @@ import { getAssetUrl, getCharacterImageUrl, getIconUrl } from '@/utils/assets'
 const props = defineProps<{
   character: Character
   cellType: string
+}>()
+
+const emit = defineEmits<{
+  rightClick: [character: Character]
 }>()
 
 const boardStore = useBoardStore()

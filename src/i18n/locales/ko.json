@@ -54,7 +54,8 @@
   },
   "board": {
     "layerPanel": "레이어 패널",
-    "statsPanel": "통계 패널"
+    "statsPanel": "통계 패널",
+    "searchPlaceholder": "캐릭터 검색..."
   },
   "panel": {
     "layerSummary": "레이어 요약",
@@ -71,6 +72,30 @@
     "allLayersNeed": "모든 레이어 필요량",
     "currentLayerBonus": "현재 레이어 보너스",
     "allLayersBonus": "모든 레이어 보너스"
+  },
+  "profile": {
+    "bonusPerCell": "보너스"
+  },
+  "deployRows": {
+    "前排": "전열",
+    "中排": "중열",
+    "後排": "후열"
+  },
+  "roles": {
+    "輸出": "딜러",
+    "坦克": "탱커",
+    "輔助": "서포터"
+  },
+  "attackTypes": {
+    "物理": "물리",
+    "魔法": "마법"
+  },
+  "personalities": {
+    "天真": "천진",
+    "冷靜": "냉정",
+    "憂鬱": "우울",
+    "活潑": "활발",
+    "狂亂": "광란"
   },
   "settings": {
     "title": "캐릭터 설정",
