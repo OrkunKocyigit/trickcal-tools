@@ -22,7 +22,6 @@
     "description": "Simple and convenient"
   },
   "tools": {
-    "heading": "Tools",
     "board": {
       "name": "Golden Crayon Board",
       "description": "Manage character ownership, track board progress, and calculate bonuses."

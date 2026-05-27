@@ -22,7 +22,6 @@
     "description": "簡單使用，方便快捷"
   },
   "tools": {
-    "heading": "工具列表",
     "board": {
       "name": "金蠟筆記錄本",
       "description": "整理角色擁有狀態、確認著色版格子需求與加成統計。"

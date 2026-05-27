@@ -22,7 +22,6 @@
     "description": "간단하고 편리함"
   },
   "tools": {
-    "heading": "도구 목록",
     "board": {
       "name": "골드 크레용 보드",
       "description": "캐릭터 소유 상태를 관리하고 보드 진행 상황을 추적하며 보너스를 계산합니다."

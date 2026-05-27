@@ -22,7 +22,6 @@
     "description": "简单使用，方便快捷"
   },
   "tools": {
-    "heading": "工具列表",
     "board": {
       "name": "金蜡笔笔记本",
       "description": "整理角色拥有状态、确认着色版格子需求与加成统计。"
