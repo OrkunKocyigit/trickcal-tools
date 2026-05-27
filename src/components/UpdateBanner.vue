@@ -3,11 +3,11 @@
     <div v-if="visible" class="update-banner">
       <span class="update-banner__text">
         <span class="update-banner__icon">📦</span>
-        New version available
+        {{ $t('updateBanner.available') }}
       </span>
       <div class="update-banner__actions">
         <button class="update-banner__refresh-btn" @click="refresh">
-          Refresh
+          {{ $t('updateBanner.refresh') }}
         </button>
         <button class="update-banner__dismiss-btn" @click="onDismiss" aria-label="Dismiss">
           &times;

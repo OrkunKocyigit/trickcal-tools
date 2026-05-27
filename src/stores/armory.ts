@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import { Logger } from '@/utils/logger'
+import i18n from '@/i18n'
 import { useRosterStore } from './roster'
 import { useMaterialInventoryStore } from './materialInventory'
 import { useOwnedGearStore } from './ownedGear'
@@ -219,7 +220,8 @@ export const useArmoryStore = defineStore('armory', () => {
     if (entry) return { name: entry.name, nameEn: entry.nameEn, type: entry.type }
     const matEntry = materialDb.value[String(uid)]
     if (matEntry) return { name: matEntry.name, nameEn: matEntry.nameEn, type: 'material' }
-    return { name: `Unknown (${uid})`, nameEn: `Unknown (${uid})`, type: 'unknown' }
+    const fallback = i18n.global.t('errors.unknownUid', { uid })
+    return { name: fallback, nameEn: fallback, type: 'unknown' }
   }
 
   function getNameToUidMap(): Map<string, number> {
@@ -670,7 +672,7 @@ export const useArmoryStore = defineStore('armory', () => {
     const workerTimeout = setTimeout(() => {
       cleanup()
       console.error('Solver worker timed out after 60s')
-      solverError.value = 'Solver timed out. Try a simpler loadout.'
+      solverError.value = i18n.global.t('errors.solverTimeout')
       plan.value = []
       totalStamina.value = 0
       optimizing.value = false
@@ -689,7 +691,7 @@ export const useArmoryStore = defineStore('armory', () => {
       const { result, error } = e.data
       if (error) {
         console.error('Solver worker error:', error)
-        solverError.value = 'Solver failed. Your device may not support WASM.'
+        solverError.value = i18n.global.t('errors.solverWasmFail')
         plan.value = []
         totalStamina.value = 0
         optimizing.value = false
@@ -706,7 +708,7 @@ export const useArmoryStore = defineStore('armory', () => {
 
       if (solution.Status !== 'Optimal') {
         console.warn('[armory] HiGHS status:', solution.Status)
-        solverError.value = `Solver returned ${solution.Status}. Try different inputs.`
+        solverError.value = i18n.global.t('errors.solverStatus', { status: solution.Status })
         if (import.meta.env.DEV) {
           console.warn('[armory] non-optimal solution:', solution)
         }
@@ -777,7 +779,7 @@ export const useArmoryStore = defineStore('armory', () => {
     const onError = (e: ErrorEvent) => {
       cleanup()
       console.error('Solver worker error:', e.message)
-      solverError.value = 'Solver failed to initialize. Try a different browser.'
+      solverError.value = i18n.global.t('errors.solverInitFail')
       plan.value = []
       totalStamina.value = 0
       optimizing.value = false

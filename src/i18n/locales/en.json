@@ -73,7 +73,11 @@
     "allLayersBonus": "All Layers Bonus"
   },
   "profile": {
-    "bonusPerCell": "Bonus"
+    "bonusPerCell": "Bonus",
+    "title": "CHARACTER PROFILE",
+    "owned": "OWNED",
+    "notOwned": "NOT OWNED",
+    "boardTitle": "CRAYON BOARD"
   },
   "deployRows": {
     "前排": "Front",
@@ -110,7 +114,9 @@
     "totalBonus": "Total Bonus",
     "crayonsNeeded": "Crayons Needed",
     "author": "Author",
-    "copyright": "Copyright"
+    "copyright": "Copyright",
+    "authorValue": "nos, OrkunKocyigit",
+    "copyrightValue": "EpidGames & Bilibili"
   },
   "wiki": {
     "title": "Game Wiki",
@@ -137,8 +143,67 @@
     "warning": "{count} materials cannot be matched, please check data",
     "alternativeStagesHint": "💡 If you want to farm equipment blueprints too, consider these stages:"
   },
+  "updateBanner": {
+    "available": "New version available",
+    "refresh": "Refresh"
+  },
+  "restoreDialog": {
+    "title": "Cloud Backup Found",
+    "message": "We found a previous backup in your Google Drive.",
+    "backupTime": "Backup Time:",
+    "ownedChars": "Owned Characters:",
+    "selectedMats": "Selected Materials:",
+    "itemsSuffix": "",
+    "localData": "Local Data",
+    "cloudData": "Cloud Data",
+    "warning": "Restoring cloud data will overwrite your current local data. This action cannot be undone.",
+    "keepLocal": "Keep Using Local Data",
+    "restoring": "Restoring...",
+    "restoreCloud": "Restore Cloud Data",
+    "success": "Restore successful!",
+    "fail": "Restore failed: {error}",
+    "unknown": "Unknown"
+  },
+  "conflictDialog": {
+    "title": "Data Conflict",
+    "itemsSuffix": "",
+    "message": "Your local data and cloud data were both modified recently. We cannot automatically determine which one to use. Please select which version to keep:",
+    "localData": "Local Data",
+    "cloudData": "Cloud Data",
+    "ownedChars": "Owned Characters:",
+    "selectedMats": "Selected Materials:",
+    "updatedTime": "Updated:",
+    "justNow": "Just now",
+    "minsAgo": "{mins} min ago",
+    "hoursAgo": "{hours} hr ago",
+    "useLocal": "Use Local Data",
+    "useCloud": "Use Cloud Data",
+    "warning": "Choosing one version will overwrite the other. This action cannot be undone.",
+    "cancel": "Decide Later",
+    "successLocal": "Local data saved to cloud!",
+    "successCloud": "Cloud data applied locally!",
+    "fail": "Operation failed: {error}",
+    "unknown": "Unknown"
+  },
   "errors": {
-    "noData": "No data to display"
+    "noData": "No data to display",
+    "fetchChangelog": "Failed to fetch changelog",
+    "unknown": "Unknown error",
+    "needSignIn": "Please sign in to Google first",
+    "tokenExpired": "Login session has expired, please sign in again",
+    "insufficientScope": "Insufficient permissions: missing Google Drive access. Please sign in again and allow all required permissions.",
+    "initFailed": "Initialization failed",
+    "loginFailed": "Login failed",
+    "logoutFailed": "Logout failed",
+    "uploadFailedShort": "Upload failed",
+    "downloadFailedShort": "Download failed",
+    "noBackup": "No cloud backup to restore",
+    "noConflict": "No conflict data",
+    "solverTimeout": "Solver timed out. Try a simpler loadout.",
+    "solverWasmFail": "Solver failed. Your device may not support WASM.",
+    "solverStatus": "Solver returned {status}. Try different inputs.",
+    "solverInitFail": "Solver failed to initialize. Try a different browser.",
+    "unknownUid": "Unknown ({uid})"
   },
   "armory": {
     "title": "Armory",
@@ -171,7 +236,8 @@
     "manageOwnedGear": "Manage Owned Gear",
     "upgrade": "Upgrade Character",
     "equipment101": "Equipment 101",
-    "hideFulfilled": "Hide fulfilled"
+    "hideFulfilled": "Hide fulfilled",
+    "max": "MAX"
   },
   "food": {
     "characters": "Characters",
@@ -220,7 +286,12 @@
     }
   },
   "changelog": {
-    "title": "Changelog"
+    "title": "Changelog",
+    "pageTitle": "Changelog",
+    "pageDescription": "Record of project updates and improvements",
+    "loading": "Loading...",
+    "loadError": "Failed to load: {error}",
+    "empty": "No changelog entries yet."
   },
   "sync": {
     "signIn": "Sign in with Google",

@@ -73,7 +73,11 @@
     "allLayersBonus": "全層のボーナス"
   },
   "profile": {
-    "bonusPerCell": "ボーナス"
+    "bonusPerCell": "ボーナス",
+    "title": "CHARACTER PROFILE",
+    "owned": "OWNED",
+    "notOwned": "NOT OWNED",
+    "boardTitle": "CRAYON BOARD"
   },
   "deployRows": {
     "前排": "前列",
@@ -110,7 +114,9 @@
     "totalBonus": "合計ボーナス",
     "crayonsNeeded": "必要なクレヨン",
     "author": "作成者",
-    "copyright": "版権"
+    "copyright": "版権",
+    "authorValue": "nos, OrkunKocyigit",
+    "copyrightValue": "EpidGames & Bilibili"
   },
   "wiki": {
     "title": "ゲーム Wiki",
@@ -137,8 +143,67 @@
     "warning": "{count} 個の素材が一致しません、データを確認してください",
     "alternativeStagesHint": "💡 装備設計図も一緒に集めたい場合は、以下のステージを検討してください："
   },
+  "updateBanner": {
+    "available": "新しいバージョンがあります",
+    "refresh": "更新"
+  },
+  "restoreDialog": {
+    "title": "クラウドバックアップを発見",
+    "message": "Google Drive に以前のバックアップデータが見つかりました。",
+    "backupTime": "バックアップ時間：",
+    "ownedChars": "所有キャラクター：",
+    "selectedMats": "選択済み素材：",
+    "itemsSuffix": " 個",
+    "localData": "ローカルデータ",
+    "cloudData": "クラウドデータ",
+    "warning": "⚠️ クラウドデータを復元すると現在のローカルデータが上書きされます。この操作は元に戻せません。",
+    "keepLocal": "ローカルデータを維持",
+    "restoring": "復元中...",
+    "restoreCloud": "クラウドデータを復元",
+    "success": "復元成功！",
+    "fail": "復元失敗：{error}",
+    "unknown": "不明"
+  },
+  "conflictDialog": {
+    "title": "データ競合",
+    "itemsSuffix": " 個",
+    "message": "ローカルデータとクラウドデータが両方とも最近変更されています。自動的に判断できません。保持するバージョンを選択してください：",
+    "localData": "ローカルデータ",
+    "cloudData": "クラウドデータ",
+    "ownedChars": "所有キャラクター：",
+    "selectedMats": "選択済み素材：",
+    "updatedTime": "更新時間：",
+    "justNow": "たった今",
+    "minsAgo": "{mins} 分前",
+    "hoursAgo": "{hours} 時間前",
+    "useLocal": "ローカルデータを使用",
+    "useCloud": "クラウドデータを使用",
+    "warning": "一方のバージョンを選択すると、もう一方のデータは上書きされます。この操作は元に戻せません。",
+    "cancel": "後で決定",
+    "successLocal": "ローカルデータをクラウドに保存しました！",
+    "successCloud": "クラウドデータをローカルに適用しました！",
+    "fail": "操作失敗：{error}",
+    "unknown": "不明"
+  },
   "errors": {
-    "noData": "表示するデータがありません"
+    "noData": "表示するデータがありません",
+    "fetchChangelog": "変更履歴の取得に失敗しました",
+    "unknown": "不明なエラー",
+    "needSignIn": "先に Google にログインしてください",
+    "tokenExpired": "ログインセッションが期限切れです。再ログインしてください",
+    "insufficientScope": "権限不足：Google Drive アクセス権限がありません。再ログインして必要な権限を許可してください。",
+    "initFailed": "初期化失敗",
+    "loginFailed": "ログイン失敗",
+    "logoutFailed": "ログアウト失敗",
+    "uploadFailedShort": "アップロード失敗",
+    "downloadFailedShort": "ダウンロード失敗",
+    "noBackup": "復元可能なクラウドバックアップがありません",
+    "noConflict": "競合データがありません",
+    "solverTimeout": "タイムアウトしました。装備構成を簡素化してみてください。",
+    "solverWasmFail": "計算失敗。お使いのデバイスは WASM をサポートしていない可能性があります。",
+    "solverStatus": "ソルバーが {status} を返しました。別の入力を試してください。",
+    "solverInitFail": "ソルバーの初期化に失敗しました。別のブラウザをお試しください。",
+    "unknownUid": "不明（{uid}）"
   },
   "armory": {
     "title": "装備工房",
@@ -171,10 +236,8 @@
     "manageOwnedGear": "所持装備を管理",
     "upgrade": "キャラを強化",
     "equipment101": "Equipment 101",
-    "hideFulfilled": "Hide fulfilled"
-  },
-  "changelog": {
-    "title": "変更履歴"
+    "hideFulfilled": "Hide fulfilled",
+    "max": "MAX"
   },
   "food": {
     "characters": "キャラクター",
@@ -238,6 +301,14 @@
     "signOutFailed": "ログアウト失敗：{error}",
     "driveApiNotConfigured": "Google Drive API が有効になっていません。Google Cloud Console → ライブラリ → Google Drive API → 有効にする。",
     "missingDriveScope": "Google Drive 権限が不足しています。再ログインしてすべての権限を許可してください。"
+  },
+  "changelog": {
+    "title": "変更履歴",
+    "pageTitle": "変更履歴",
+    "pageDescription": "プロジェクトの更新と改善の記録",
+    "loading": "読み込み中...",
+    "loadError": "読み込み失敗：{error}",
+    "empty": "変更履歴はまだありません"
   }
 }
 

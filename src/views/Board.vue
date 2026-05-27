@@ -14,7 +14,7 @@
         <!-- 左側面板：層級總覽 -->
         <aside class="panel layer-panel" :class="{ 'mobile-open': leftPanelOpen }">
           <div class="panel-header">
-            <h3>{{ $t('board.layerPanel') || '層級選擇' }}</h3>
+            <h3>{{ $t('board.layerPanel') }}</h3>
             <button 
               class="panel-close" 
               @click="leftPanelOpen = false"
@@ -123,7 +123,7 @@
         <!-- 右側面板：統計 -->
         <aside class="panel insight-panel" :class="{ 'mobile-open': rightPanelOpen }">
           <div class="panel-header">
-            <h3>{{ $t('board.statsPanel') || '統計資訊' }}</h3>
+            <h3>{{ $t('board.statsPanel') }}</h3>
             <button 
               class="panel-close" 
               @click="rightPanelOpen = false"
@@ -147,13 +147,13 @@
       <div class="mobile-fab-group">
         <FloatingButton
           icon="layers"
-          :label="$t('board.layerPanel') || '層級選擇'"
+          :label="$t('board.layerPanel')"
           :is-active="leftPanelOpen"
           @click="toggleLeftPanel"
         />
         <FloatingButton
           icon="stats"
-          :label="$t('board.statsPanel') || '統計資訊'"
+          :label="$t('board.statsPanel')"
           :is-active="rightPanelOpen"
           @click="toggleRightPanel"
         />

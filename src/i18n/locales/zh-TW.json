@@ -73,7 +73,11 @@
     "allLayersBonus": "全部層級總加成"
   },
   "profile": {
-    "bonusPerCell": "加成"
+    "bonusPerCell": "加成",
+    "title": "CHARACTER PROFILE",
+    "owned": "OWNED",
+    "notOwned": "NOT OWNED",
+    "boardTitle": "CRAYON BOARD"
   },
   "deployRows": {
     "前排": "前排",
@@ -110,7 +114,9 @@
     "totalBonus": "總加成",
     "crayonsNeeded": "所需金蠟筆",
     "author": "工具製作",
-    "copyright": "遊戲版權"
+    "copyright": "遊戲版權",
+    "authorValue": "nos, OrkunKocyigit",
+    "copyrightValue": "EpidGames & Bilibili"
   },
   "wiki": {
     "title": "遊戲 Wiki",
@@ -137,8 +143,67 @@
     "warning": "有 {count} 個素材無法匹配任一關卡，請檢查資料",
     "alternativeStagesHint": "💡 若想順便刷其他裝備圖紙，可以考慮以下關卡："
   },
+  "updateBanner": {
+    "available": "New version available",
+    "refresh": "Refresh"
+  },
+  "restoreDialog": {
+    "title": "發現雲端備份",
+    "message": "我們在您的 Google Drive 中發現了之前的備份數據。",
+    "backupTime": "備份時間：",
+    "ownedChars": "擁有角色：",
+    "selectedMats": "已選素材：",
+    "itemsSuffix": " 個",
+    "localData": "本地數據",
+    "cloudData": "雲端數據",
+    "warning": "⚠️ 恢復雲端數據將會覆蓋您當前的本地數據，此操作無法撤銷。",
+    "keepLocal": "繼續使用本地數據",
+    "restoring": "恢復中...",
+    "restoreCloud": "恢復雲端數據",
+    "success": "恢復成功！",
+    "fail": "恢復失敗：{error}",
+    "unknown": "未知"
+  },
+  "conflictDialog": {
+    "title": "數據衝突",
+    "itemsSuffix": " 個",
+    "message": "您的本地數據和雲端數據都在最近被修改過，時間差異很小，我們無法自動判斷應該使用哪一個。請選擇您想要保留的版本：",
+    "localData": "本地數據",
+    "cloudData": "雲端數據",
+    "ownedChars": "擁有角色：",
+    "selectedMats": "已選素材：",
+    "updatedTime": "更新時間：",
+    "justNow": "剛剛",
+    "minsAgo": "{mins} 分鐘前",
+    "hoursAgo": "{hours} 小時前",
+    "useLocal": "使用本地數據",
+    "useCloud": "使用雲端數據",
+    "warning": "選擇一個版本後，另一個版本的數據將會被覆蓋。此操作無法撤銷，請謹慎選擇。",
+    "cancel": "稍後決定",
+    "successLocal": "已使用本地數據覆蓋雲端！",
+    "successCloud": "已使用雲端數據覆蓋本地！",
+    "fail": "操作失敗：{error}",
+    "unknown": "未知"
+  },
   "errors": {
-    "noData": "無資料可顯示"
+    "noData": "無資料可顯示",
+    "fetchChangelog": "無法載入開發日誌",
+    "unknown": "未知錯誤",
+    "needSignIn": "請先登入 Google",
+    "tokenExpired": "登入狀態已過期，請重新登入",
+    "insufficientScope": "權限不足：缺少 Google Drive 存取權限。請重新登入並允許所有必要權限。",
+    "initFailed": "初始化失敗",
+    "loginFailed": "登入失敗",
+    "logoutFailed": "登出失敗",
+    "uploadFailedShort": "上傳失敗",
+    "downloadFailedShort": "下載失敗",
+    "noBackup": "無雲端備份可恢復",
+    "noConflict": "無衝突數據",
+    "solverTimeout": "計算逾時，請嘗試簡化您的裝備組合。",
+    "solverWasmFail": "計算失敗，您的裝置可能不支援 WASM。",
+    "solverStatus": "計算器回傳 {status}。請嘗試不同的輸入。",
+    "solverInitFail": "計算器初始化失敗，請嘗試其他瀏覽器。",
+    "unknownUid": "未知（{uid}）"
   },
   "armory": {
     "title": "裝備工坊",
@@ -171,7 +236,8 @@
     "manageOwnedGear": "管理已擁有裝備",
     "upgrade": "升級角色",
     "equipment101": "Equipment 101",
-    "hideFulfilled": "Hide fulfilled"
+    "hideFulfilled": "Hide fulfilled",
+    "max": "MAX"
   },
   "food": {
     "characters": "角色",
@@ -220,7 +286,12 @@
     }
   },
   "changelog": {
-    "title": "開發日誌"
+    "title": "開發日誌",
+    "pageTitle": "開發日誌",
+    "pageDescription": "記錄專案的更新與改進歷程",
+    "loading": "載入中...",
+    "loadError": "載入失敗：{error}",
+    "empty": "目前沒有任何開發日誌"
   },
   "sync": {
     "signIn": "Google 登入",

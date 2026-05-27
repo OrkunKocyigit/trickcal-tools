@@ -3,19 +3,19 @@
     <div class="changelog-root">
       <div class="site-container">
         <header class="changelog-header">
-          <h1 class="page-title">開發日誌</h1>
-          <p class="page-description">記錄專案的更新與改進歷程</p>
+          <h1 class="page-title">{{ $t('changelog.pageTitle') }}</h1>
+          <p class="page-description">{{ $t('changelog.pageDescription') }}</p>
         </header>
 
         <!-- 載入中狀態 -->
         <div v-if="loading" class="loading-state">
           <div class="loading-spinner"></div>
-          <p>載入中...</p>
+          <p>{{ $t('changelog.loading') }}</p>
         </div>
 
         <!-- 錯誤狀態 -->
         <div v-else-if="error" class="error-state">
-          <p>載入失敗: {{ error }}</p>
+          <p>{{ $t('changelog.loadError', { error }) }}</p>
         </div>
 
         <!-- Markdown 內容 -->
@@ -23,7 +23,7 @@
 
         <!-- 空狀態 -->
         <div v-else class="empty-state">
-          <p>目前沒有任何開發日誌</p>
+          <p>{{ $t('changelog.empty') }}</p>
         </div>
       </div>
     </div>

@@ -1,41 +1,42 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+import i18n from '@/i18n'
 
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'Home',
     component: () => import('@/views/Home.vue'),
-    meta: { title: 'Trickcal 工具集' }
+    meta: { titleKey: 'nav.home' }
   },
   {
     path: '/board',
     name: 'Board',
     component: () => import('@/views/Board.vue'),
-    meta: { title: '金蠟筆記錄本' }
+    meta: { titleKey: 'nav.board' }
   },
   {
     path: '/sweep',
     name: 'Sweep',
     component: () => import('@/views/Sweep.vue'),
-    meta: { title: '掃蕩工具' }
+    meta: { titleKey: 'nav.sweep' }
   },
   {
     path: '/food',
     name: 'Food',
     component: () => import('@/views/Food.vue'),
-    meta: { title: '食物喜好' }
+    meta: { titleKey: 'nav.food' }
   },
   {
     path: '/armory',
     name: 'Armory',
     component: () => import('@/views/Armory.vue'),
-    meta: { title: '裝備工坊' }
+    meta: { titleKey: 'nav.armory' }
   },
   {
     path: '/changelog',
     name: 'Changelog',
     component: () => import('@/views/Changelog.vue'),
-    meta: { title: '開發日誌' }
+    meta: { titleKey: 'changelog.title' }
   },
   {
     path: '/:pathMatch(.*)*',
@@ -52,8 +53,8 @@ const router = createRouter({
 })
 
 router.beforeEach((to) => {
-  if (to.meta.title) {
-    document.title = to.meta.title as string
+  if (to.meta.titleKey) {
+    document.title = i18n.global.t(to.meta.titleKey as string)
   }
 })
 

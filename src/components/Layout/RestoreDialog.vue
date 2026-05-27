@@ -9,35 +9,35 @@
               <path d="M12 16V12M12 8H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <h2 class="dialog-title">發現雲端備份</h2>
+          <h2 class="dialog-title">{{ $t('restoreDialog.title') }}</h2>
         </div>
 
         <div class="dialog-body">
           <p class="dialog-message">
-            我們在您的 Google Drive 中發現了之前的備份數據。
+            {{ $t('restoreDialog.message') }}
           </p>
 
           <div class="backup-info">
             <div class="info-item">
-              <span class="info-label">備份時間：</span>
+              <span class="info-label">{{ $t('restoreDialog.backupTime') }}</span>
               <span class="info-value">{{ formatDate(syncStore.cloudBackupData?.lastSync) }}</span>
             </div>
             <div class="info-item">
-              <span class="info-label">擁有角色：</span>
-              <span class="info-value">{{ cloudOwnedCount }} 個</span>
+              <span class="info-label">{{ $t('restoreDialog.ownedChars') }}</span>
+              <span class="info-value">{{ cloudOwnedCount }}{{ $t('restoreDialog.itemsSuffix') }}</span>
             </div>
             <div class="info-item">
-              <span class="info-label">已選素材：</span>
-              <span class="info-value">{{ cloudMaterialsCount }} 個</span>
+              <span class="info-label">{{ $t('restoreDialog.selectedMats') }}</span>
+              <span class="info-value">{{ cloudMaterialsCount }}{{ $t('restoreDialog.itemsSuffix') }}</span>
             </div>
           </div>
 
           <div class="comparison">
             <div class="comparison-column">
-              <h4>本地數據</h4>
+              <h4>{{ $t('restoreDialog.localData') }}</h4>
               <div class="comparison-stats">
-                <div>角色：{{ localOwnedCount }} 個</div>
-                <div>素材：{{ localMaterialsCount }} 個</div>
+                <div>{{ $t('restoreDialog.ownedChars') }}{{ localOwnedCount }}{{ $t('restoreDialog.itemsSuffix') }}</div>
+                <div>{{ $t('restoreDialog.selectedMats') }}{{ localMaterialsCount }}{{ $t('restoreDialog.itemsSuffix') }}</div>
               </div>
             </div>
             <div class="comparison-divider">
@@ -46,26 +46,26 @@
               </svg>
             </div>
             <div class="comparison-column">
-              <h4>雲端數據</h4>
+              <h4>{{ $t('restoreDialog.cloudData') }}</h4>
               <div class="comparison-stats">
-                <div>角色：{{ cloudOwnedCount }} 個</div>
-                <div>素材：{{ cloudMaterialsCount }} 個</div>
+                <div>{{ $t('restoreDialog.ownedChars') }}{{ cloudOwnedCount }}{{ $t('restoreDialog.itemsSuffix') }}</div>
+                <div>{{ $t('restoreDialog.selectedMats') }}{{ cloudMaterialsCount }}{{ $t('restoreDialog.itemsSuffix') }}</div>
               </div>
             </div>
           </div>
 
           <p class="dialog-warning">
-            ⚠️ 恢復雲端數據將會覆蓋您當前的本地數據，此操作無法撤銷。
+            {{ $t('restoreDialog.warning') }}
           </p>
         </div>
 
         <div class="dialog-footer">
           <button class="btn btn-secondary" @click="handleDismiss" :disabled="isRestoring">
-            繼續使用本地數據
+            {{ $t('restoreDialog.keepLocal') }}
           </button>
           <button class="btn btn-primary" @click="handleRestore" :disabled="isRestoring">
-            <span v-if="isRestoring">恢復中...</span>
-            <span v-else>恢復雲端數據</span>
+            <span v-if="isRestoring">{{ $t('restoreDialog.restoring') }}</span>
+            <span v-else>{{ $t('restoreDialog.restoreCloud') }}</span>
           </button>
         </div>
       </div>
@@ -75,9 +75,12 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { useSyncStore } from '@/stores/sync'
 import { useBoardStore } from '@/stores/board'
 import { useSweepStore } from '@/stores/sweep'
+
+const { t } = useI18n()
 
 const syncStore = useSyncStore()
 const boardStore = useBoardStore()
@@ -99,7 +102,7 @@ const cloudMaterialsCount = computed(() => {
 })
 
 function formatDate(dateString: string | undefined) {
-  if (!dateString) return '未知'
+  if (!dateString) return t('restoreDialog.unknown')
   const date = new Date(dateString)
   return date.toLocaleString('zh-TW', {
     year: 'numeric',
@@ -114,9 +117,9 @@ async function handleRestore() {
   try {
     isRestoring.value = true
     await syncStore.restoreFromCloud(syncStore.cloudBackupData)
-    alert('恢復成功！')
+    alert(t('restoreDialog.success'))
   } catch (error) {
-    alert('恢復失敗：' + (error instanceof Error ? error.message : '未知錯誤'))
+    alert(t('restoreDialog.fail', { error: error instanceof Error ? error.message : t('restoreDialog.unknown') }))
   } finally {
     isRestoring.value = false
   }

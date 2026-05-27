@@ -10,37 +10,37 @@
               <line x1="12" y1="17" x2="12.01" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <h2 class="dialog-title">數據衝突</h2>
+          <h2 class="dialog-title">{{ $t('conflictDialog.title') }}</h2>
         </div>
 
         <div class="dialog-body">
           <p class="dialog-message">
-            您的本地數據和雲端數據都在最近被修改過，時間差異很小，我們無法自動判斷應該使用哪一個。請選擇您想要保留的版本：
+            {{ $t('conflictDialog.message') }}
           </p>
 
           <div class="comparison-grid">
             <div class="data-card local">
-              <h3>
+                <h3>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                   <rect x="3" y="3" width="7" height="7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   <rect x="14" y="3" width="7" height="7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   <rect x="14" y="14" width="7" height="7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   <rect x="3" y="14" width="7" height="7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                本地數據
+                {{ $t('conflictDialog.localData') }}
               </h3>
               <div class="data-stats">
                 <div class="stat-item">
-                  <span class="stat-label">擁有角色：</span>
-                  <span class="stat-value">{{ localOwnedCount }} 個</span>
+                  <span class="stat-label">{{ $t('conflictDialog.ownedChars') }}</span>
+                  <span class="stat-value">{{ localOwnedCount }}{{ $t('conflictDialog.itemsSuffix') }}</span>
                 </div>
                 <div class="stat-item">
-                  <span class="stat-label">已選素材：</span>
-                  <span class="stat-value">{{ localMaterialsCount }} 個</span>
+                  <span class="stat-label">{{ $t('conflictDialog.selectedMats') }}</span>
+                  <span class="stat-value">{{ localMaterialsCount }}{{ $t('conflictDialog.itemsSuffix') }}</span>
                 </div>
                 <div class="stat-item">
-                  <span class="stat-label">更新時間：</span>
-                  <span class="stat-value">剛剛</span>
+                  <span class="stat-label">{{ $t('conflictDialog.updatedTime') }}</span>
+                  <span class="stat-value">{{ $t('conflictDialog.justNow') }}</span>
                 </div>
               </div>
               <button 
@@ -48,28 +48,28 @@
                 @click="handleUseLocal"
                 :disabled="isResolving"
               >
-                使用本地數據
+                {{ $t('conflictDialog.useLocal') }}
               </button>
             </div>
 
             <div class="data-card cloud">
-              <h3>
+                <h3>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                   <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                雲端數據
+                {{ $t('conflictDialog.cloudData') }}
               </h3>
               <div class="data-stats">
                 <div class="stat-item">
-                  <span class="stat-label">擁有角色：</span>
-                  <span class="stat-value">{{ cloudOwnedCount }} 個</span>
+                  <span class="stat-label">{{ $t('conflictDialog.ownedChars') }}</span>
+                  <span class="stat-value">{{ cloudOwnedCount }}{{ $t('conflictDialog.itemsSuffix') }}</span>
                 </div>
                 <div class="stat-item">
-                  <span class="stat-label">已選素材：</span>
-                  <span class="stat-value">{{ cloudMaterialsCount }} 個</span>
+                  <span class="stat-label">{{ $t('conflictDialog.selectedMats') }}</span>
+                  <span class="stat-value">{{ cloudMaterialsCount }}{{ $t('conflictDialog.itemsSuffix') }}</span>
                 </div>
                 <div class="stat-item">
-                  <span class="stat-label">更新時間：</span>
+                  <span class="stat-label">{{ $t('conflictDialog.updatedTime') }}</span>
                   <span class="stat-value">{{ formatDate(syncStore.conflictData?.lastSync) }}</span>
                 </div>
               </div>
@@ -78,7 +78,7 @@
                 @click="handleUseCloud"
                 :disabled="isResolving"
               >
-                使用雲端數據
+                {{ $t('conflictDialog.useCloud') }}
               </button>
             </div>
           </div>
@@ -89,13 +89,13 @@
               <line x1="12" y1="8" x2="12" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               <line x1="12" y1="16" x2="12.01" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            <p>選擇一個版本後，另一個版本的數據將會被覆蓋。此操作無法撤銷，請謹慎選擇。</p>
+            <p>{{ $t('conflictDialog.warning') }}</p>
           </div>
         </div>
 
         <div class="dialog-footer">
           <button class="btn btn-secondary" @click="handleCancel" :disabled="isResolving">
-            稍後決定
+            {{ $t('conflictDialog.cancel') }}
           </button>
         </div>
       </div>
@@ -105,9 +105,12 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { useSyncStore } from '@/stores/sync'
 import { useBoardStore } from '@/stores/board'
 import { useSweepStore } from '@/stores/sweep'
+
+const { t } = useI18n()
 
 const syncStore = useSyncStore()
 const boardStore = useBoardStore()
@@ -129,15 +132,15 @@ const cloudMaterialsCount = computed(() => {
 })
 
 function formatDate(dateString: string | undefined) {
-  if (!dateString) return '未知'
+  if (!dateString) return t('conflictDialog.unknown')
   const date = new Date(dateString)
   const now = new Date()
   const diffMs = now.getTime() - date.getTime()
   const diffMins = Math.floor(diffMs / 60000)
   
-  if (diffMins < 1) return '剛剛'
-  if (diffMins < 60) return `${diffMins} 分鐘前`
-  if (diffMins < 1440) return `${Math.floor(diffMins / 60)} 小時前`
+  if (diffMins < 1) return t('conflictDialog.justNow')
+  if (diffMins < 60) return t('conflictDialog.minsAgo', { mins: diffMins })
+  if (diffMins < 1440) return t('conflictDialog.hoursAgo', { hours: Math.floor(diffMins / 60) })
   
   return date.toLocaleString('zh-TW', {
     month: '2-digit',
@@ -151,9 +154,9 @@ async function handleUseLocal() {
   try {
     isResolving.value = true
     await syncStore.resolveConflictWithLocal()
-    alert('已使用本地數據覆蓋雲端！')
+    alert(t('conflictDialog.successLocal'))
   } catch (error) {
-    alert('操作失敗：' + (error instanceof Error ? error.message : '未知錯誤'))
+    alert(t('conflictDialog.fail', { error: error instanceof Error ? error.message : t('conflictDialog.unknown') }))
   } finally {
     isResolving.value = false
   }
@@ -163,9 +166,9 @@ async function handleUseCloud() {
   try {
     isResolving.value = true
     await syncStore.resolveConflictWithCloud()
-    alert('已使用雲端數據覆蓋本地！')
+    alert(t('conflictDialog.successCloud'))
   } catch (error) {
-    alert('操作失敗：' + (error instanceof Error ? error.message : '未知錯誤'))
+    alert(t('conflictDialog.fail', { error: error instanceof Error ? error.message : t('conflictDialog.unknown') }))
   } finally {
     isResolving.value = false
   }

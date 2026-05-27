@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
+import i18n from '@/i18n'
 
 export const useChangelogStore = defineStore('changelog', () => {
   const content = ref<string>('')
@@ -18,11 +19,11 @@ export const useChangelogStore = defineStore('changelog', () => {
     try {
       const response = await fetch('/CHANGELOG.md')
       if (!response.ok) {
-        throw new Error('Failed to fetch changelog')
+        throw new Error(i18n.global.t('errors.fetchChangelog'))
       }
       content.value = await response.text()
     } catch (e) {
-      error.value = e instanceof Error ? e.message : 'Unknown error'
+      error.value = e instanceof Error ? e.message : i18n.global.t('errors.unknown')
       console.error('Error loading changelog:', e)
     } finally {
       loading.value = false

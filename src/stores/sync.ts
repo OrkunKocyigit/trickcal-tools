@@ -5,6 +5,7 @@
 
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
+import i18n from '@/i18n'
 import { syncManager, type SyncStatus } from '@/services/syncManager'
 import { useBoardStore } from './board'
 import { useSweepStore } from './sweep'
@@ -210,7 +211,7 @@ export const useSyncStore = defineStore('sync', () => {
       const dataToRestore = cloudData || (await syncManager.downloadFromCloud())
       
       if (!dataToRestore) {
-        throw new Error('無雲端備份可恢復')
+        throw new Error(i18n.global.t('errors.noBackup'))
       }
 
       applyCloudData(dataToRestore)
@@ -245,7 +246,7 @@ export const useSyncStore = defineStore('sync', () => {
   async function resolveConflictWithCloud() {
     try {
       if (!conflictData.value) {
-        throw new Error('無衝突數據')
+        throw new Error(i18n.global.t('errors.noConflict'))
       }
       await restoreFromCloud(conflictData.value)
     } catch (error) {

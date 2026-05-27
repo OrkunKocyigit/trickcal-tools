@@ -6,6 +6,7 @@
 
 import { GOOGLE_CONFIG, BACKUP_FILENAME } from '@/config/google'
 import { logger } from '@/utils/logger'
+import i18n from '@/i18n'
 
 // 宣告全域變數
 declare const google: any
@@ -224,10 +225,7 @@ class GoogleDriveService {
 
           // 驗證 scope 包含 drive.appdata
           if (!this.tokenHasDriveScope(response)) {
-            reject(new Error(
-              '缺少 Google Drive 權限。授權時請允許「查看應用程式資料夾」，'
-              + '或在 Google 帳戶設定中確認已授予 drive.appdata 權限。'
-            ))
+            reject(new Error(i18n.global.t('sync.missingDriveScope')))
             return
           }
 
@@ -389,14 +387,14 @@ class GoogleDriveService {
         this.tokenClient.callback = originalCallback
         if (response.error) {
           this.clearAuthState()
-          reject(new Error('登入狀態已過期，請重新登入'))
+          reject(new Error(i18n.global.t('errors.tokenExpired')))
           return
         }
 
         // 驗證刷新後的 token 仍包含 drive.appdata
         if (!this.tokenHasDriveScope(response)) {
           this.clearAuthState()
-          reject(new Error('權限不足：缺少 Google Drive 存取權限。請重新登入並允許所有必要權限。'))
+          reject(new Error(i18n.global.t('errors.insufficientScope')))
           return
         }
 
@@ -415,7 +413,7 @@ class GoogleDriveService {
    */
   private async requireValidAuth(): Promise<void> {
     if (!this.isSignedIn) {
-      throw new Error('請先登入 Google')
+      throw new Error(i18n.global.t('errors.needSignIn'))
     }
     await this.ensureValidToken()
   }
@@ -424,10 +422,7 @@ class GoogleDriveService {
    * 拋出「Google Drive API 未啟用」錯誤
    */
   private throwAccessNotConfiguredError(): never {
-    throw new Error(
-      'Google Drive API 尚未啟用。請前往 Google Cloud Console '
-      + '→ 資料庫 → Google Drive API → 啟用，然後重試。'
-    )
+    throw new Error(i18n.global.t('sync.driveApiNotConfigured'))
   }
 
   /**

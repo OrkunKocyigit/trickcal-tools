@@ -5,7 +5,7 @@
         <div class="profile-header">
           <div class="header-left">
             <button class="btn-close" @click="close" aria-label="Close">&times;</button>
-            <span class="header-title">CHARACTER PROFILE</span>
+            <span class="header-title">{{ $t('profile.title') }}</span>
           </div>
 
         </div>
@@ -73,12 +73,12 @@
               </div>
 
               <button class="ownership-btn" :class="{ owned: isOwned }" @click="toggleOwnership">
-                {{ isOwned ? 'OWNED' : 'NOT OWNED' }}
+                {{ isOwned ? $t('profile.owned') : $t('profile.notOwned') }}
               </button>
             </div>
 
             <div class="board-panel">
-              <h3 class="board-title">CRAYON BOARD</h3>
+              <h3 class="board-title">{{ $t('profile.boardTitle') }}</h3>
 
               <div v-for="layer in layers" :key="layer" class="board-section">
                 <div class="layer-header">

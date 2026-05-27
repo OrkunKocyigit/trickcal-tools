@@ -155,7 +155,7 @@
                     {{ r }}
                   </button>
                 </div>
-                <span v-else class="max-label">MAX</span>
+                <span v-else class="max-label">{{ $t('armory.max') }}</span>
               </div>
             </div>
           </section>

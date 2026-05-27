@@ -13,24 +13,24 @@
         <!-- 左侧面板：角色列表 -->
         <section class="panel character-panel">
           <header>
-            <h2>{{ $t('food.characters') || '角色' }}</h2>
+            <h2>{{ $t('food.characters') }}</h2>
             <button 
               v-if="selectedCharacter || selectedFood" 
               class="clear-selection" 
               type="button" 
               @click="clearSelection"
             >
-              {{ $t('food.clear') || '清除选择' }}
+              {{ $t('food.clear') }}
             </button>
           </header>
 
           <div class="search-row">
-            <label for="character-search">{{ $t('food.searchCharacter') || '搜索角色' }}</label>
+            <label for="character-search">{{ $t('food.searchCharacter') }}</label>
             <input
               id="character-search"
               v-model="characterSearchTerm"
               type="search"
-              :placeholder="$t('food.searchCharacterPlaceholder') || '输入角色名称'"
+              :placeholder="$t('food.searchCharacterPlaceholder')"
             />
           </div>
 
@@ -100,16 +100,16 @@
         <!-- 右侧面板：食物列表 -->
         <section class="panel food-panel">
           <header>
-            <h2>{{ $t('food.foods') || '食物' }}</h2>
+            <h2>{{ $t('food.foods') }}</h2>
           </header>
 
           <div class="search-row">
-            <label for="food-search">{{ $t('food.searchFood') || '搜索食物' }}</label>
+            <label for="food-search">{{ $t('food.searchFood') }}</label>
             <input
               id="food-search"
               v-model="foodSearchTerm"
               type="search"
-              :placeholder="$t('food.searchFoodPlaceholder') || '输入食物名称'"
+              :placeholder="$t('food.searchFoodPlaceholder')"
             />
           </div>
 

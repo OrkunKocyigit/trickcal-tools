@@ -6,6 +6,7 @@
 import { googleDrive, type BackupData } from './googleDrive'
 import { BACKUP_VERSION } from '@/config/google'
 import { logger } from '@/utils/logger'
+import i18n from '@/i18n'
 
 export interface SyncStatus {
   isInitialized: boolean
@@ -113,7 +114,7 @@ class SyncManager {
     } catch (error) {
       logger.error('同步管理器初始化失敗:', error)
       this.updateStatus({
-        lastError: error instanceof Error ? error.message : '初始化失敗',
+        lastError: error instanceof Error ? error.message : i18n.global.t('errors.initFailed'),
       })
       throw error
     }
@@ -134,7 +135,7 @@ class SyncManager {
       logger.error('登入失敗:', error)
       this.updateStatus({
         isSignedIn: false,
-        lastError: error instanceof Error ? error.message : '登入失敗',
+        lastError: error instanceof Error ? error.message : i18n.global.t('errors.loginFailed'),
       })
       throw error
     }
@@ -157,7 +158,7 @@ class SyncManager {
     } catch (error) {
       logger.error('登出失敗:', error)
       this.updateStatus({
-        lastError: error instanceof Error ? error.message : '登出失敗',
+        lastError: error instanceof Error ? error.message : i18n.global.t('errors.logoutFailed'),
       })
       throw error
     }
@@ -215,7 +216,7 @@ class SyncManager {
    */
   async uploadToCloud(boardData: any, sweepData: any, rosterData: any = {}): Promise<void> {
     if (!this.status.isSignedIn) {
-      throw new Error('請先登入 Google')
+      throw new Error(i18n.global.t('errors.needSignIn'))
     }
 
     this.updateStatus({ isSyncing: true, lastError: null })
@@ -241,7 +242,7 @@ class SyncManager {
       logger.error('上傳到雲端失敗:', error)
       this.updateStatus({
         isSyncing: false,
-        lastError: error instanceof Error ? error.message : '上傳失敗',
+        lastError: error instanceof Error ? error.message : i18n.global.t('errors.uploadFailedShort'),
       })
       throw error
     }
@@ -252,7 +253,7 @@ class SyncManager {
    */
   async downloadFromCloud(): Promise<BackupData | null> {
     if (!this.status.isSignedIn) {
-      throw new Error('請先登入 Google')
+      throw new Error(i18n.global.t('errors.needSignIn'))
     }
 
     this.updateStatus({ isSyncing: true, lastError: null })
@@ -279,7 +280,7 @@ class SyncManager {
       logger.error('從雲端下載失敗:', error)
       this.updateStatus({
         isSyncing: false,
-        lastError: error instanceof Error ? error.message : '下載失敗',
+        lastError: error instanceof Error ? error.message : i18n.global.t('errors.downloadFailedShort'),
       })
       throw error
     }
@@ -290,7 +291,7 @@ class SyncManager {
    */
   async deleteCloudBackup(): Promise<void> {
     if (!this.status.isSignedIn) {
-      throw new Error('請先登入 Google')
+      throw new Error(i18n.global.t('errors.needSignIn'))
     }
 
     try {

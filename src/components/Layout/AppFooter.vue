@@ -4,11 +4,11 @@
       <div class="footer-info">
         <p class="footer-text">
           <span class="footer-label">{{ $t('footer.author') }}：</span>
-          <span class="footer-value">nos, OrkunKocyigit</span>
+          <span class="footer-value">{{ $t('footer.authorValue') }}</span>
         </p>
         <p class="footer-text">
           <span class="footer-label">{{ $t('footer.copyright') }}：</span>
-          <span class="footer-value">EpidGames&Bilibili</span>
+          <span class="footer-value">{{ $t('footer.copyrightValue') }}</span>
         </p>
         <router-link to="/changelog" class="changelog-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
