@@ -365,11 +365,6 @@ export const useArmoryStore = defineStore('armory', () => {
     return index
   }
 
-  function stageSortKey(stage: string): string {
-    const [ch, stNum] = stage.split('-').map(Number)
-    return String(ch).padStart(4, '0') + '-' + String(stNum).padStart(4, '0')
-  }
-
   let _solverWorker: Worker | null = null
   let _optimizeTimer: ReturnType<typeof setTimeout> | null = null
 
@@ -753,7 +748,22 @@ export const useArmoryStore = defineStore('armory', () => {
         })
       }
 
-      planRows.sort((a, b) => stageSortKey(a.stage).localeCompare(stageSortKey(b.stage)))
+      const uidRankMap = new Map<number, number>()
+      let maxRank = 0
+      for (const entry of Object.values(sweepData.value)) {
+        uidRankMap.set(entry.uid, entry.rank)
+        if (entry.rank > maxRank) maxRank = entry.rank
+      }
+      const stageAvgRank = (row: StagePlanRow): number => {
+        const ranks = [...new Set(row.expectedDrops.map(d => uidRankMap.get(d.uid) ?? maxRank))]
+        if (ranks.length === 0) return 0
+        return ranks.length === 1 ? ranks[0] : ranks.reduce((s, r) => s + r, 0) / ranks.length
+      }
+      planRows.sort((a, b) => {
+        const diff = stageAvgRank(a) - stageAvgRank(b)
+        if (diff !== 0) return diff
+        return b.runs - a.runs
+      })
 
       plan.value = planRows
       totalStamina.value = total
@@ -827,6 +837,5 @@ export const useArmoryStore = defineStore('armory', () => {
     setMaterialCount,
     getGearNameByUid,
     getNameToUidMap,
-    stageSortKey,
   }
 })
