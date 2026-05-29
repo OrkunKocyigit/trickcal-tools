@@ -2,281 +2,393 @@
   "110101": {
     "uid": 110101,
     "name": "領口鬆垮的T恤",
-    "nameEn": "Stretched-Out Neck Shirt"
-  },
-  "150003": {
-    "uid": 150003,
-    "name": "盔甲圖紙（2階）",
-    "nameEn": "Armor Design (Tier 2)"
-  },
-  "130106": {
-    "uid": 130106,
-    "name": "能量飲",
-    "nameEn": "Energy Drink"
-  },
-  "150002": {
-    "uid": 150002,
-    "name": "魔法武器圖紙（2階）",
-    "nameEn": "Magical Weapon Design (Tier 2)"
+    "nameEn": "Stretched-Out Neck Shirt",
+    "icon": "Equip_Icon_Armor101",
+    "rarity": 1
   },
   "110106": {
     "uid": 110106,
     "name": "紅色套脖泳圈",
-    "nameEn": "Red Neck Tube"
-  },
-  "150004": {
-    "uid": 150004,
-    "name": "帽子圖紙（2階）",
-    "nameEn": "Hat Design (Tier 2)"
+    "nameEn": "Red Neck Tube",
+    "icon": "Equip_Icon_Armor106",
+    "rarity": 1
   },
   "110111": {
     "uid": 110111,
     "name": "老舊眼鏡",
-    "nameEn": "Old Glasses"
-  },
-  "150005": {
-    "uid": 150005,
-    "name": "靴子圖紙（2階）",
-    "nameEn": "Boots Design (Tier 2)"
+    "nameEn": "Old Glasses",
+    "icon": "Equip_Icon_Armor111",
+    "rarity": 1
   },
   "120101": {
     "uid": 120101,
     "name": "糖球戒指",
-    "nameEn": "Candy Ring"
-  },
-  "150006": {
-    "uid": 150006,
-    "name": "璀璨的飾品圖紙（2階）",
-    "nameEn": "Brilliant Accessory Design\\n(Tier 2)"
+    "nameEn": "Candy Ring",
+    "icon": "Equip_Icon_Accessory101",
+    "rarity": 1
   },
   "120106": {
     "uid": 120106,
     "name": "漩渦糖果項鍊",
-    "nameEn": "Bangle Candy Necklace"
-  },
-  "150007": {
-    "uid": 150007,
-    "name": "燦爛的飾品圖紙（2階）",
-    "nameEn": "Shining Accessory Design (Tier 2)"
-  },
-  "150010": {
-    "uid": 150010,
-    "name": "盔甲圖紙（3階）",
-    "nameEn": "Armor Design (Tier 3)"
-  },
-  "150009": {
-    "uid": 150009,
-    "name": "魔法武器圖紙（3階）",
-    "nameEn": "Magical Weapon Design (Tier 3)"
-  },
-  "150011": {
-    "uid": 150011,
-    "name": "帽子圖紙（3階）",
-    "nameEn": "Hat Design (Tier 3)"
-  },
-  "150012": {
-    "uid": 150012,
-    "name": "靴子圖紙（3階）",
-    "nameEn": "Boots Design (Tier 3)"
-  },
-  "150013": {
-    "uid": 150013,
-    "name": "璀璨的飾品碎片圖紙（3階）",
-    "nameEn": "Brilliant Accessory Design\\n(Tier 3)"
-  },
-  "150014": {
-    "uid": 150014,
-    "name": "燦爛的飾品碎片圖紙（3階）",
-    "nameEn": "Shining Accessory Design (Tier 3)"
-  },
-  "140003": {
-    "uid": 140003,
-    "name": "盔甲碎片（4階）",
-    "nameEn": "Armor Shard (Tier 4)"
-  },
-  "140002": {
-    "uid": 140002,
-    "name": "魔法武器碎片（4階）",
-    "nameEn": "Magical Weapon Shard (Tier 4)"
-  },
-  "140004": {
-    "uid": 140004,
-    "name": "帽子碎片（4階）",
-    "nameEn": "Hat Shard (Tier 4)"
-  },
-  "140005": {
-    "uid": 140005,
-    "name": "靴子碎片（4階）",
-    "nameEn": "Boots Shard (Tier 4)"
-  },
-  "140006": {
-    "uid": 140006,
-    "name": "璀璨的飾品碎片（4階）",
-    "nameEn": "Brilliant Accessory Shard\\n(Tier 4)"
-  },
-  "140007": {
-    "uid": 140007,
-    "name": "燦爛的飾品碎片（4階）",
-    "nameEn": "Shining Accessory Shard (Tier 4)"
-  },
-  "150017": {
-    "uid": 150017,
-    "name": "盔甲圖紙（5階）",
-    "nameEn": "Armor Design (Tier 5)"
-  },
-  "150016": {
-    "uid": 150016,
-    "name": "魔法武器圖紙（5階）",
-    "nameEn": "Magical Weapon Design (Tier 5)"
-  },
-  "150018": {
-    "uid": 150018,
-    "name": "帽子圖紙（5階）",
-    "nameEn": "Hat Design (Tier 5)"
-  },
-  "150019": {
-    "uid": 150019,
-    "name": "靴子圖紙（5階）",
-    "nameEn": "Boots Design (Tier 5)"
-  },
-  "150020": {
-    "uid": 150020,
-    "name": "璀璨的飾品圖紙（5階）",
-    "nameEn": "Brilliant Accessory Design\\n(Tier 5)"
-  },
-  "150021": {
-    "uid": 150021,
-    "name": "燦爛的飾品圖紙（5階）",
-    "nameEn": "Shining Accessory Design (Tier 5)"
-  },
-  "150024": {
-    "uid": 150024,
-    "name": "盔甲圖紙（6階）",
-    "nameEn": "Armor Design (Tier 6)"
-  },
-  "150023": {
-    "uid": 150023,
-    "name": "魔法武器圖紙（6階）",
-    "nameEn": "Magical Weapon Design (Tier 6)"
-  },
-  "150025": {
-    "uid": 150025,
-    "name": "帽子圖紙（6階）",
-    "nameEn": "Hat Design (Tier 6)"
-  },
-  "150026": {
-    "uid": 150026,
-    "name": "靴子圖紙（6階）",
-    "nameEn": "Boots Design (Tier 6)"
-  },
-  "150027": {
-    "uid": 150027,
-    "name": "璀璨的飾品碎片圖紙（6階）",
-    "nameEn": "Brilliant Accessory Design\\n(Tier 6)"
-  },
-  "150028": {
-    "uid": 150028,
-    "name": "燦爛的飾品碎片圖紙（6階）",
-    "nameEn": "Shining Accessory Design (Tier 6)"
-  },
-  "140010": {
-    "uid": 140010,
-    "name": "盔甲碎片（7階）",
-    "nameEn": "Armor Shard (Tier 7)"
-  },
-  "140009": {
-    "uid": 140009,
-    "name": "魔法武器碎片（7階）",
-    "nameEn": "Magical Weapon Shard (Tier 7)"
-  },
-  "140011": {
-    "uid": 140011,
-    "name": "帽子碎片（7階）",
-    "nameEn": "Hat Shard (Tier 7)"
-  },
-  "140012": {
-    "uid": 140012,
-    "name": "靴子碎片（7階）",
-    "nameEn": "Boots Shard (Tier 7)"
-  },
-  "140013": {
-    "uid": 140013,
-    "name": "璀璨的飾品碎片（7階）",
-    "nameEn": "Brilliant Accessory Shard\\n(Tier 7)"
-  },
-  "140014": {
-    "uid": 140014,
-    "name": "燦爛的飾品碎片（7階）",
-    "nameEn": "Shining Accessory Shard (Tier 7)"
-  },
-  "150031": {
-    "uid": 150031,
-    "name": "盔甲圖紙（8階）",
-    "nameEn": "Armor Design (Tier 8)"
-  },
-  "150030": {
-    "uid": 150030,
-    "name": "魔法武器圖紙（8階）",
-    "nameEn": "Magical Weapon Design (Tier 8)"
-  },
-  "150032": {
-    "uid": 150032,
-    "name": "帽子圖紙（8階）",
-    "nameEn": "Hat Design (Tier 8)"
-  },
-  "150033": {
-    "uid": 150033,
-    "name": "靴子圖紙（8階）",
-    "nameEn": "Boots Design (Tier 8)"
-  },
-  "150034": {
-    "uid": 150034,
-    "name": "璀璨的飾品圖紙（8階）",
-    "nameEn": "Brilliant Accessory Design\\n(Tier 8)"
-  },
-  "150035": {
-    "uid": 150035,
-    "name": "燦爛的飾品圖紙（8階）",
-    "nameEn": "Shining Accessory Design (Tier 8)"
+    "nameEn": "Bangle Candy Necklace",
+    "icon": "Equip_Icon_Accessory106",
+    "rarity": 1
   },
   "130101": {
     "uid": 130101,
     "name": "拳擊手套",
-    "nameEn": "Boxing Gloves"
+    "nameEn": "Boxing Gloves",
+    "icon": "Equip_Icon_Weapon101",
+    "rarity": 1
   },
-  "150001": {
-    "uid": 150001,
-    "name": "物理武器圖紙（2階）",
-    "nameEn": "Physical Weapon Design (Tier 2)"
-  },
-  "150008": {
-    "uid": 150008,
-    "name": "物理武器圖紙（3階）",
-    "nameEn": "Physical Weapon Design (Tier 3)"
+  "130106": {
+    "uid": 130106,
+    "name": "能量飲",
+    "nameEn": "Energy Drink",
+    "icon": "Equip_Icon_Weapon106",
+    "rarity": 1
   },
   "140001": {
     "uid": 140001,
     "name": "物理武器碎片（4階）",
-    "nameEn": "Physical Weapon Shard (Tier 4)"
+    "nameEn": "Physical Weapon Shard (Tier 4)",
+    "icon": "Equip_Piece_Icon_Weapon401",
+    "rarity": 2
   },
-  "150015": {
-    "uid": 150015,
-    "name": "物理武器圖紙（5階）",
-    "nameEn": "Physical Weapon Design (Tier 5)"
+  "140002": {
+    "uid": 140002,
+    "name": "魔法武器碎片（4階）",
+    "nameEn": "Magical Weapon Shard (Tier 4)",
+    "icon": "Equip_Piece_Icon_Weapon402",
+    "rarity": 2
   },
-  "150022": {
-    "uid": 150022,
-    "name": "物理武器圖紙（6階）",
-    "nameEn": "Physical Weapon Design (Tier 6)"
+  "140003": {
+    "uid": 140003,
+    "name": "盔甲碎片（4階）",
+    "nameEn": "Armor Shard (Tier 4)",
+    "icon": "Equip_Piece_Icon_Armor403",
+    "rarity": 2
+  },
+  "140004": {
+    "uid": 140004,
+    "name": "帽子碎片（4階）",
+    "nameEn": "Hat Shard (Tier 4)",
+    "icon": "Equip_Piece_Icon_Armor401",
+    "rarity": 2
+  },
+  "140005": {
+    "uid": 140005,
+    "name": "靴子碎片（4階）",
+    "nameEn": "Boots Shard (Tier 4)",
+    "icon": "Equip_Piece_Icon_Armor402",
+    "rarity": 2
+  },
+  "140006": {
+    "uid": 140006,
+    "name": "璀璨的飾品碎片（4階）",
+    "nameEn": "Brilliant Accessory Shard\\n(Tier 4)",
+    "icon": "Equip_Piece_Icon_Accessory401",
+    "rarity": 2
+  },
+  "140007": {
+    "uid": 140007,
+    "name": "燦爛的飾品碎片（4階）",
+    "nameEn": "Shining Accessory Shard (Tier 4)",
+    "icon": "Equip_Piece_Icon_Accessory402",
+    "rarity": 2
   },
   "140008": {
     "uid": 140008,
     "name": "物理武器碎片（7階）",
-    "nameEn": "Physical Weapon Shard (Tier 7)"
+    "nameEn": "Physical Weapon Shard (Tier 7)",
+    "icon": "Equip_Piece_Icon_Weapon701",
+    "rarity": 4
+  },
+  "140009": {
+    "uid": 140009,
+    "name": "魔法武器碎片（7階）",
+    "nameEn": "Magical Weapon Shard (Tier 7)",
+    "icon": "Equip_Piece_Icon_Weapon702",
+    "rarity": 4
+  },
+  "140010": {
+    "uid": 140010,
+    "name": "盔甲碎片（7階）",
+    "nameEn": "Armor Shard (Tier 7)",
+    "icon": "Equip_Piece_Icon_Armor703",
+    "rarity": 4
+  },
+  "140011": {
+    "uid": 140011,
+    "name": "帽子碎片（7階）",
+    "nameEn": "Hat Shard (Tier 7)",
+    "icon": "Equip_Piece_Icon_Armor701",
+    "rarity": 4
+  },
+  "140012": {
+    "uid": 140012,
+    "name": "靴子碎片（7階）",
+    "nameEn": "Boots Shard (Tier 7)",
+    "icon": "Equip_Piece_Icon_Armor702",
+    "rarity": 4
+  },
+  "140013": {
+    "uid": 140013,
+    "name": "璀璨的飾品碎片（7階）",
+    "nameEn": "Brilliant Accessory Shard\\n(Tier 7)",
+    "icon": "Equip_Piece_Icon_Accessory701",
+    "rarity": 4
+  },
+  "140014": {
+    "uid": 140014,
+    "name": "燦爛的飾品碎片（7階）",
+    "nameEn": "Shining Accessory Shard (Tier 7)",
+    "icon": "Equip_Piece_Icon_Accessory702",
+    "rarity": 4
+  },
+  "150001": {
+    "uid": 150001,
+    "name": "物理武器圖紙（2階）",
+    "nameEn": "Physical Weapon Design (Tier 2)",
+    "icon": "Equip_Recipe_Icon_Weapon201",
+    "rarity": 1
+  },
+  "150002": {
+    "uid": 150002,
+    "name": "魔法武器圖紙（2階）",
+    "nameEn": "Magical Weapon Design (Tier 2)",
+    "icon": "Equip_Recipe_Icon_Weapon202",
+    "rarity": 1
+  },
+  "150003": {
+    "uid": 150003,
+    "name": "盔甲圖紙（2階）",
+    "nameEn": "Armor Design (Tier 2)",
+    "icon": "Equip_Recipe_Icon_Armor203",
+    "rarity": 1
+  },
+  "150004": {
+    "uid": 150004,
+    "name": "帽子圖紙（2階）",
+    "nameEn": "Hat Design (Tier 2)",
+    "icon": "Equip_Recipe_Icon_Armor201",
+    "rarity": 1
+  },
+  "150005": {
+    "uid": 150005,
+    "name": "靴子圖紙（2階）",
+    "nameEn": "Boots Design (Tier 2)",
+    "icon": "Equip_Recipe_Icon_Armor202",
+    "rarity": 1
+  },
+  "150006": {
+    "uid": 150006,
+    "name": "璀璨的飾品圖紙（2階）",
+    "nameEn": "Brilliant Accessory Design\\n(Tier 2)",
+    "icon": "Equip_Recipe_Icon_Accessory201",
+    "rarity": 1
+  },
+  "150007": {
+    "uid": 150007,
+    "name": "燦爛的飾品圖紙（2階）",
+    "nameEn": "Shining Accessory Design (Tier 2)",
+    "icon": "Equip_Recipe_Icon_Accessory202",
+    "rarity": 1
+  },
+  "150008": {
+    "uid": 150008,
+    "name": "物理武器圖紙（3階）",
+    "nameEn": "Physical Weapon Design (Tier 3)",
+    "icon": "Equip_Recipe_Icon_Weapon301",
+    "rarity": 2
+  },
+  "150009": {
+    "uid": 150009,
+    "name": "魔法武器圖紙（3階）",
+    "nameEn": "Magical Weapon Design (Tier 3)",
+    "icon": "Equip_Recipe_Icon_Weapon302",
+    "rarity": 2
+  },
+  "150010": {
+    "uid": 150010,
+    "name": "盔甲圖紙（3階）",
+    "nameEn": "Armor Design (Tier 3)",
+    "icon": "Equip_Recipe_Icon_Armor301",
+    "rarity": 2
+  },
+  "150011": {
+    "uid": 150011,
+    "name": "帽子圖紙（3階）",
+    "nameEn": "Hat Design (Tier 3)",
+    "icon": "Equip_Recipe_Icon_Armor302",
+    "rarity": 2
+  },
+  "150012": {
+    "uid": 150012,
+    "name": "靴子圖紙（3階）",
+    "nameEn": "Boots Design (Tier 3)",
+    "icon": "Equip_Recipe_Icon_Armor303",
+    "rarity": 2
+  },
+  "150013": {
+    "uid": 150013,
+    "name": "璀璨的飾品碎片圖紙（3階）",
+    "nameEn": "Brilliant Accessory Design\\n(Tier 3)",
+    "icon": "Equip_Recipe_Icon_Accessory301",
+    "rarity": 2
+  },
+  "150014": {
+    "uid": 150014,
+    "name": "燦爛的飾品碎片圖紙（3階）",
+    "nameEn": "Shining Accessory Design (Tier 3)",
+    "icon": "Equip_Recipe_Icon_Accessory302",
+    "rarity": 2
+  },
+  "150015": {
+    "uid": 150015,
+    "name": "物理武器圖紙（5階）",
+    "nameEn": "Physical Weapon Design (Tier 5)",
+    "icon": "Equip_Recipe_Icon_Weapon501",
+    "rarity": 3
+  },
+  "150016": {
+    "uid": 150016,
+    "name": "魔法武器圖紙（5階）",
+    "nameEn": "Magical Weapon Design (Tier 5)",
+    "icon": "Equip_Recipe_Icon_Weapon502",
+    "rarity": 3
+  },
+  "150017": {
+    "uid": 150017,
+    "name": "盔甲圖紙（5階）",
+    "nameEn": "Armor Design (Tier 5)",
+    "icon": "Equip_Recipe_Icon_Armor501",
+    "rarity": 3
+  },
+  "150018": {
+    "uid": 150018,
+    "name": "帽子圖紙（5階）",
+    "nameEn": "Hat Design (Tier 5)",
+    "icon": "Equip_Recipe_Icon_Armor502",
+    "rarity": 3
+  },
+  "150019": {
+    "uid": 150019,
+    "name": "靴子圖紙（5階）",
+    "nameEn": "Boots Design (Tier 5)",
+    "icon": "Equip_Recipe_Icon_Armor503",
+    "rarity": 3
+  },
+  "150020": {
+    "uid": 150020,
+    "name": "璀璨的飾品圖紙（5階）",
+    "nameEn": "Brilliant Accessory Design\\n(Tier 5)",
+    "icon": "Equip_Recipe_Icon_Accessory501",
+    "rarity": 3
+  },
+  "150021": {
+    "uid": 150021,
+    "name": "燦爛的飾品圖紙（5階）",
+    "nameEn": "Shining Accessory Design (Tier 5)",
+    "icon": "Equip_Recipe_Icon_Accessory502",
+    "rarity": 3
+  },
+  "150022": {
+    "uid": 150022,
+    "name": "物理武器圖紙（6階）",
+    "nameEn": "Physical Weapon Design (Tier 6)",
+    "icon": "Equip_Recipe_Icon_Weapon601",
+    "rarity": 3
+  },
+  "150023": {
+    "uid": 150023,
+    "name": "魔法武器圖紙（6階）",
+    "nameEn": "Magical Weapon Design (Tier 6)",
+    "icon": "Equip_Recipe_Icon_Weapon602",
+    "rarity": 3
+  },
+  "150024": {
+    "uid": 150024,
+    "name": "盔甲圖紙（6階）",
+    "nameEn": "Armor Design (Tier 6)",
+    "icon": "Equip_Recipe_Icon_Armor601",
+    "rarity": 3
+  },
+  "150025": {
+    "uid": 150025,
+    "name": "帽子圖紙（6階）",
+    "nameEn": "Hat Design (Tier 6)",
+    "icon": "Equip_Recipe_Icon_Armor602",
+    "rarity": 3
+  },
+  "150026": {
+    "uid": 150026,
+    "name": "靴子圖紙（6階）",
+    "nameEn": "Boots Design (Tier 6)",
+    "icon": "Equip_Recipe_Icon_Armor603",
+    "rarity": 3
+  },
+  "150027": {
+    "uid": 150027,
+    "name": "璀璨的飾品碎片圖紙（6階）",
+    "nameEn": "Brilliant Accessory Design\\n(Tier 6)",
+    "icon": "Equip_Recipe_Icon_Accessory601",
+    "rarity": 3
+  },
+  "150028": {
+    "uid": 150028,
+    "name": "燦爛的飾品碎片圖紙（6階）",
+    "nameEn": "Shining Accessory Design (Tier 6)",
+    "icon": "Equip_Recipe_Icon_Accessory602",
+    "rarity": 3
   },
   "150029": {
     "uid": 150029,
     "name": "物理武器圖紙（8階）",
-    "nameEn": "Physical Weapon Design (Tier 8)"
+    "nameEn": "Physical Weapon Design (Tier 8)",
+    "icon": "Equip_Recipe_Icon_Weapon801",
+    "rarity": 4
+  },
+  "150030": {
+    "uid": 150030,
+    "name": "魔法武器圖紙（8階）",
+    "nameEn": "Magical Weapon Design (Tier 8)",
+    "icon": "Equip_Recipe_Icon_Weapon802",
+    "rarity": 4
+  },
+  "150031": {
+    "uid": 150031,
+    "name": "盔甲圖紙（8階）",
+    "nameEn": "Armor Design (Tier 8)",
+    "icon": "Equip_Recipe_Icon_Armor801",
+    "rarity": 4
+  },
+  "150032": {
+    "uid": 150032,
+    "name": "帽子圖紙（8階）",
+    "nameEn": "Hat Design (Tier 8)",
+    "icon": "Equip_Recipe_Icon_Armor802",
+    "rarity": 4
+  },
+  "150033": {
+    "uid": 150033,
+    "name": "靴子圖紙（8階）",
+    "nameEn": "Boots Design (Tier 8)",
+    "icon": "Equip_Recipe_Icon_Armor803",
+    "rarity": 4
+  },
+  "150034": {
+    "uid": 150034,
+    "name": "璀璨的飾品圖紙（8階）",
+    "nameEn": "Brilliant Accessory Design\\n(Tier 8)",
+    "icon": "Equip_Recipe_Icon_Accessory801",
+    "rarity": 4
+  },
+  "150035": {
+    "uid": 150035,
+    "name": "燦爛的飾品圖紙（8階）",
+    "nameEn": "Shining Accessory Design (Tier 8)",
+    "icon": "Equip_Recipe_Icon_Accessory802",
+    "rarity": 4
   }
 }

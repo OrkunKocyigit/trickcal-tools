@@ -2187,7 +2187,7 @@
     "name": "梅森",
     "en": "Maison",
     "personality": "狂亂",
-    "stars": 2,
+    "stars": 1,
     "attackType": "物理",
     "deployRow": "後排",
     "role": "輸出",
@@ -3199,7 +3199,7 @@
   },
   "謝蒂": {
     "name": "謝蒂",
-    "en": "Shadi",
+    "en": "Shaydi",
     "personality": "狂亂",
     "stars": 3,
     "attackType": "物理",
@@ -4139,9 +4139,9 @@
     "personality": "憂鬱",
     "stars": 3,
     "attackType": "魔法",
-    "deployRow": "後排",
+    "deployRow": "中排",
     "role": "輔助",
-    "race": "???",
+    "race": "？？？",
     "id": 10092,
     "maxRank": 8,
     "gear": [
@@ -4525,7 +4525,7 @@
   },
   "艾皮卡": {
     "name": "艾皮卡",
-    "en": "Epika",
+    "en": "Epica",
     "personality": "活潑",
     "stars": 3,
     "attackType": "物理",
@@ -4993,7 +4993,7 @@
   },
   "伊德": {
     "name": "伊德",
-    "en": "Ed",
+    "en": "ED",
     "personality": "冷靜",
     "stars": 3,
     "attackType": "魔法",
