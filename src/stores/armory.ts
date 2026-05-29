@@ -137,8 +137,8 @@ export const useArmoryStore = defineStore('armory', () => {
 
     for (const [uid, rankMap] of rn) {
       let have = miStore.getCount(uid)
-      if (gearDb.value[String(uid)] && ogStore.isOwned(uid)) {
-        have += 1
+      if (gearDb.value[String(uid)]) {
+        have += ogStore.getCount(uid)
       }
 
       // Allocate inventory from highest-cost rank to lowest
@@ -290,7 +290,8 @@ export const useArmoryStore = defineStore('armory', () => {
       for (let s = 0; s < rankGear.length; s++) {
         const uid = rankGear[s]
         const info = getGearNameByUid(uid)
-        const alreadyOwned = ogStore.isOwned(uid)
+        const ownedCount = ogStore.getCount(uid)
+        const alreadyOwned = ownedCount > 0
         const gearEntry = gearDb.value[String(uid)]
         const recipe = gearEntry?.recipe || []
 
@@ -326,8 +327,8 @@ export const useArmoryStore = defineStore('armory', () => {
     for (const [uid, need] of aggregatedMaterials) {
       const info = getGearNameByUid(uid)
       let have = miStore.getCount(uid)
-      if (gearDb.value[String(uid)] && ogStore.isOwned(uid)) {
-        have += 1
+      if (gearDb.value[String(uid)]) {
+        have += ogStore.getCount(uid)
       }
       const rankMap = rn.get(uid)
       const minRank = rankMap ? Math.min(...rankMap.keys()) : 99
@@ -398,16 +399,17 @@ export const useArmoryStore = defineStore('armory', () => {
       if (!rankGear) continue
       for (let s = 0; s < rankGear.length; s++) {
         const uid = rankGear[s] as number
-        if (ogStore.isOwned(uid)) continue
+        if (ogStore.getCount(uid) > 0) continue
 
         const gearEntry = gearDb.value[String(uid)]
         if (gearEntry?.recipe) {
           for (const mat of gearEntry.recipe) {
             let remaining = mat.count
             // Deduct owned sub-material gear first
-            if (gearDb.value[String(mat.uid)] && ogStore.isOwned(mat.uid)) {
-              ogStore.setOwned(mat.uid, false)
-              remaining -= 1
+            if (gearDb.value[String(mat.uid)] && ogStore.getCount(mat.uid) > 0) {
+              const usedOwned = Math.min(remaining, ogStore.getCount(mat.uid))
+              ogStore.addCount(mat.uid, -usedOwned)
+              remaining -= usedOwned
             }
             // Deduct from inventory
             const inv = miStore.getCount(mat.uid)
@@ -423,7 +425,9 @@ export const useArmoryStore = defineStore('armory', () => {
           }
         }
 
-        ogStore.setOwned(uid, true)
+        if (ogStore.getCount(uid) <= 0) {
+          ogStore.setCount(uid, 1)
+        }
         const info = getGearNameByUid(uid)
         rosterStore.setEquippedGear(name, s, info.name)
       }
@@ -509,7 +513,7 @@ export const useArmoryStore = defineStore('armory', () => {
         const matKey = `m${uid}`
         if (!constraintsMap.has(matKey)) continue
         let have = miStore.getCount(uid)
-        if (gearDb.value[String(uid)] && ogStore2.isOwned(uid)) have += 1
+        if (gearDb.value[String(uid)]) have += ogStore2.getCount(uid)
         const sortedRanks = [...rankMap.entries()].sort(
           (a, b) => (EQUIPMENT_101_COST[b[0]] || 99) - (EQUIPMENT_101_COST[a[0]] || 99),
         )

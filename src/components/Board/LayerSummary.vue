@@ -15,7 +15,7 @@
             :stroke-dashoffset="Math.PI * 104 * (1 - completionRate / 100)"
           ></circle>
         </svg>
-        <span class="progress-text">{{ completionRate }}%</span>
+        <span class="progress-text" :class="{ full: completionRate === 100 }">{{ completionRate }}%</span>
       </div>
 
       <div class="summary-details">
@@ -173,6 +173,16 @@ const totalBonus = computed(() => stats.value.totalBonus)
   font-size: 1.125rem;
   font-weight: 700;
   color: var(--text-primary);
+  white-space: nowrap;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  width: 4.5ch;
+  text-align: center;
+}
+
+.progress-text.full {
+  font-size: 1rem;
 }
 
 .summary-details {
@@ -201,8 +211,9 @@ const totalBonus = computed(() => stats.value.totalBonus)
 }
 
 .cell-type-item {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 16ch;
+  column-gap: 1rem;
   align-items: center;
   padding: 0.625rem 0;
   border-bottom: 1px solid var(--border-color);
@@ -216,6 +227,7 @@ const totalBonus = computed(() => stats.value.totalBonus)
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--text-primary);
+  min-width: 0;
 }
 
 .cell-type-stats {
@@ -224,6 +236,9 @@ const totalBonus = computed(() => stats.value.totalBonus)
   flex-direction: column;
   align-items: flex-end;
   gap: 0.25rem;
+  font-variant-numeric: tabular-nums;
+  width: 16ch;
+  padding-right: 0.5rem;
 }
 
 .stat-count {
@@ -235,13 +250,20 @@ const totalBonus = computed(() => stats.value.totalBonus)
 .stat-percentages {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 0.375rem;
   font-size: 0.8125rem;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  width: 100%;
 }
 
 .stat-rate {
   color: var(--primary-color);
   font-weight: 600;
+  display: inline-block;
+  min-width: 6ch;
+  text-align: right;
 }
 
 .stat-divider {
@@ -251,6 +273,9 @@ const totalBonus = computed(() => stats.value.totalBonus)
 .stat-bonus {
   color: var(--success-color);
   font-weight: 600;
+  display: inline-block;
+  min-width: 7ch;
+  text-align: right;
 }
 </style>
 

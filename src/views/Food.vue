@@ -131,9 +131,10 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { useFoodStore } from '@/stores/food'
 import { useCharactersStore } from '@/stores/characters'
-import { useFoodTranslations } from '@/composables/useFoodTranslations'
+import { useFoodTranslations, matchesFoodSearch } from '@/composables/useFoodTranslations'
 import AppLayout from '@/components/Layout/AppLayout.vue'
 import FoodCard from '@/components/Food/FoodCard.vue'
 import FoodCharacterCard from '@/components/Food/FoodCharacterCard.vue'
@@ -141,7 +142,8 @@ import { getAssetUrl } from '@/utils/assets'
 
 const foodStore = useFoodStore()
 const charactersStore = useCharactersStore()
-const { loadTranslations, preferenceLabels } = useFoodTranslations()
+const { locale } = useI18n()
+const { loadTranslations, preferenceLabels, translateFood } = useFoodTranslations()
 
 const characterSearchTerm = ref('')
 const foodSearchTerm = ref('')
@@ -185,8 +187,9 @@ const filteredCharacters = computed(() => {
 })
 
 const filteredFoods = computed(() => {
-  let foods = foodStore.allFoods
-  
+  let foods = [...foodStore.allFoods]
+  const term = foodSearchTerm.value.trim()
+
   // 如果选中了角色，只显示该角色相关的食物
   if (selectedCharacter.value) {
     const preferences = foodStore.getCharacterFoodPreferences(selectedCharacter.value)
@@ -199,13 +202,26 @@ const filteredFoods = computed(() => {
       foods = foods.filter(food => relatedFoods.has(food))
     }
   }
-  
+
   // 再根据搜索词过滤
-  if (foodSearchTerm.value) {
-    const term = foodSearchTerm.value.toLowerCase()
-    foods = foods.filter(food => food.toLowerCase().includes(term))
+  if (term) {
+    foods = foods.filter(food => matchesFoodSearch(food, term, translateFood(food)))
   }
-  
+
+  foods.sort((a, b) => {
+    if (selectedCharacter.value) {
+      const prefA = foodPreferenceWeight(getFoodPreferenceForCharacter(selectedCharacter.value, a))
+      const prefB = foodPreferenceWeight(getFoodPreferenceForCharacter(selectedCharacter.value, b))
+      if (prefA !== prefB) return prefA - prefB
+    }
+
+    const rarityA = foodRarityWeight(foodStore.foodsMetadata[a]?.rarity || 'common')
+    const rarityB = foodRarityWeight(foodStore.foodsMetadata[b]?.rarity || 'common')
+    if (rarityA !== rarityB) return rarityA - rarityB
+
+    return translateFood(a).localeCompare(translateFood(b), locale.value)
+  })
+
   return foods
 })
 
@@ -218,6 +234,26 @@ const charactersForSelectedFood = computed(() => {
   }
   return foodStore.getCharactersForFood(selectedFood.value)
 })
+
+function foodRarityWeight(rarity: string): number {
+  switch (rarity) {
+    case 'common': return 1
+    case 'uncommon': return 2
+    case 'rare': return 3
+    case 'epic': return 4
+    case 'legendary': return 5
+    default: return 99
+  }
+}
+
+function foodPreferenceWeight(level: ReturnType<typeof getFoodPreferenceForCharacter>): number {
+  switch (level) {
+    case 'dislike': return 1
+    case 'like': return 2
+    case 'veryLike': return 3
+    default: return 4
+  }
+}
 
 // 方法
 function getCharacterByName(name: string) {

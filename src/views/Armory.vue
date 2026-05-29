@@ -361,7 +361,7 @@ function slotGearDisplayName(slotIndex: number): string {
 function isSlotOwned(slotIndex: number): boolean {
   const uid = getSlotGearUid(slotIndex)
   if (!uid) return false
-  if (ownedGearStore.isOwned(uid)) return true
+  if (ownedGearStore.getCount(uid) > 0) return true
   const roster = rosterStore.rosterData[selectedChar.value]
   if (!roster) return false
   const equippedName = roster.equipment[slotIndex]
@@ -372,7 +372,9 @@ function isSlotOwned(slotIndex: number): boolean {
 }
 
 function slotCheck(slotIndex: number): string {
-  return isSlotOwned(slotIndex) ? '✓' : '○'
+  const uid = getSlotGearUid(slotIndex)
+  if (!uid) return '0'
+  return `×${ownedGearStore.getCount(uid)}`
 }
 
 function gearSlotClass(slotIndex: number): Record<string, boolean> {
@@ -616,10 +618,11 @@ function closeRankDropdown() {
 }
 
 .slot-check {
-  width: 20px;
   height: 20px;
+  min-width: 2.5rem;
+  padding: 0 0.375rem;
   border: 1px solid var(--border-color);
-  border-radius: 50%;
+  border-radius: 999px;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -11,13 +11,12 @@
           <div v-for="rank in rankList" :key="rank" class="rank-group">
             <div class="rank-group-header">Rank {{ rank }}</div>
             <div class="gear-grid">
-              <div
-                v-for="g in gearByRank(rank)"
-                :key="g.uid"
-                class="gear-card"
-                :class="{ owned: g.owned }"
-                @click="toggle(g.uid)"
-              >
+                <div
+                  v-for="g in gearByRank(rank)"
+                  :key="g.uid"
+                  class="gear-card"
+                  :class="{ owned: g.owned }"
+                >
                 <img
                   :src="getGearImageUrl(g.name)"
                   :alt="g.name"
@@ -27,7 +26,25 @@
                 />
                 <div class="gear-name">{{ locale === 'en' ? g.nameEn : g.name }}</div>
                 <div class="gear-slot">{{ $t(`armory.slot${g.slotIdx}`) }}</div>
-                <div class="gear-check">{{ g.owned ? '✓' : '○' }}</div>
+                <div class="gear-count-row">
+                  <button class="gear-count-btn" type="button" @click.stop="dec(g.uid)">−</button>
+                  <span
+                    v-if="editingUid !== g.uid"
+                    class="gear-count"
+                    @click.stop="startEdit(g.uid)"
+                  >{{ g.count }}</span>
+                  <input
+                    v-else
+                    type="number"
+                    min="0"
+                    class="gear-count-input"
+                    :value="g.count"
+                    @blur="commitEdit(g.uid, ($event.target as HTMLInputElement).value)"
+                    @keydown.enter="commitEdit(g.uid, ($event.target as HTMLInputElement).value)"
+                    @keydown.escape="cancelEdit"
+                  />
+                  <button class="gear-count-btn" type="button" @click.stop="inc(g.uid)">+</button>
+                </div>
               </div>
             </div>
           </div>
@@ -38,7 +55,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, nextTick, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useArmoryStore } from '@/stores/armory'
 import { useOwnedGearStore } from '@/stores/ownedGear'
@@ -48,6 +65,7 @@ import { getGearImageUrl } from '@/utils/assets'
 const { locale } = useI18n()
 const armoryStore = useArmoryStore()
 const ownedGearStore = useOwnedGearStore()
+const editingUid = ref<number | null>(null)
 
 defineEmits<{
   close: []
@@ -59,6 +77,7 @@ interface GearSlotInfo {
   nameEn: string
   slotIdx: number
   owned: boolean
+  count: number
 }
 
 const rankList = computed(() => {
@@ -91,12 +110,44 @@ function gearByRank(rank: number): GearSlotInfo[] {
       nameEn: info.nameEn,
       slotIdx,
       owned: ownedGearStore.isOwned(uid),
+      count: ownedGearStore.getCount(uid),
     }
   })
 }
 
-function toggle(uid: number) {
-  ownedGearStore.toggleOwned(uid)
+function startEdit(uid: number) {
+  editingUid.value = uid
+  nextTick(() => {
+    const el = document.querySelector('.gear-count-input') as HTMLInputElement | null
+    el?.focus()
+    el?.select()
+  })
+}
+
+function commitEdit(uid: number, raw: string) {
+  editingUid.value = null
+  const count = parseInt(raw, 10)
+  if (!isNaN(count) && count >= 0) {
+    ownedGearStore.setCount(uid, count)
+    const charName = armoryStore.selectedCharacter
+    if (charName) ensureOwnedInBoard(charName)
+    armoryStore.computeRequirements()
+  }
+}
+
+function cancelEdit() {
+  editingUid.value = null
+}
+
+function inc(uid: number) {
+  ownedGearStore.addCount(uid, 1)
+  const charName = armoryStore.selectedCharacter
+  if (charName) ensureOwnedInBoard(charName)
+  armoryStore.computeRequirements()
+}
+
+function dec(uid: number) {
+  ownedGearStore.addCount(uid, -1)
   const charName = armoryStore.selectedCharacter
   if (charName) ensureOwnedInBoard(charName)
   armoryStore.computeRequirements()
@@ -194,7 +245,7 @@ function toggle(uid: number) {
   background: var(--panel-bg);
   border: 1px solid var(--border-color);
   border-radius: 8px;
-  cursor: pointer;
+  cursor: default;
   transition: all 0.2s;
   opacity: 0.85;
 }
@@ -232,21 +283,56 @@ function toggle(uid: number) {
   color: var(--text-secondary);
 }
 
-.gear-check {
+.gear-count-row {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.gear-count-btn {
   width: 18px;
   height: 18px;
   border: 1px solid var(--border-color);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.625rem;
-  color: var(--text-secondary);
+  border-radius: 4px;
+  background: var(--button-bg);
+  color: var(--text-primary);
+  font-size: 0.75rem;
+  cursor: pointer;
+  padding: 0;
 }
 
-.gear-card.owned .gear-check {
-  background: var(--primary-color);
-  border-color: var(--primary-color);
-  color: #fff;
+.gear-count {
+  min-width: 1.5rem;
+  text-align: center;
+  font-size: 0.625rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0 0.125rem;
+}
+
+.gear-count-input {
+  width: 3rem;
+  padding: 1px 3px;
+  border: 1px solid var(--primary-color);
+  border-radius: 3px;
+  background: var(--card-bg);
+  color: var(--text-primary);
+  font-size: 0.625rem;
+  font-family: var(--site-font);
+  text-align: center;
+  outline: none;
+  box-sizing: border-box;
+  -moz-appearance: textfield;
+}
+
+.gear-count-input::-webkit-inner-spin-button,
+.gear-count-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.gear-card.owned .gear-count {
+  color: var(--primary-color);
 }
 </style>

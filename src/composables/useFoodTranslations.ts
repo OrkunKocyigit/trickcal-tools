@@ -1,5 +1,42 @@
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import zhTW from '@/i18n/locales/zh-TW.json'
+import zhCN from '@/i18n/locales/zh-CN.json'
+import en from '@/i18n/locales/en.json'
+import ja from '@/i18n/locales/ja.json'
+import ko from '@/i18n/locales/ko.json'
+
+type FoodLocale = { food?: { items?: Record<string, string> } }
+
+const FOOD_LOCALE_MESSAGES: FoodLocale[] = [zhTW, zhCN, en, ja, ko] as FoodLocale[]
+
+function normalizeFoodSearchText(text: string): string {
+  return text
+    .normalize('NFKC')
+    .toLowerCase()
+    .replace(/[\s\-_]+/g, '')
+}
+
+function getFoodSearchTerms(foodName: string, currentTranslation: string): string[] {
+  const terms = new Set<string>([foodName, currentTranslation])
+
+  for (const locale of FOOD_LOCALE_MESSAGES) {
+    const item = locale.food?.items?.[foodName]
+    if (typeof item === 'string' && item.trim()) {
+      terms.add(item)
+    }
+  }
+
+  return [...terms]
+}
+
+export function matchesFoodSearch(foodName: string, query: string, currentTranslation: string): boolean {
+  const needle = normalizeFoodSearchText(query)
+  if (!needle) return true
+
+  return getFoodSearchTerms(foodName, currentTranslation)
+    .some(term => normalizeFoodSearchText(term).includes(needle))
+}
 
 /**
  * 食物翻譯 composable
