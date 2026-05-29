@@ -50,3 +50,7 @@ clearup/
 docs/
 
 **/__pycache__
+
+# Bundled updater binary
+scripts/updater/trickcal-tools.exe
+scripts/updater/.venv/

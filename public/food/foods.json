@@ -1,182 +1,302 @@
 {
   "UFC炸胡蘿蔔": {
-    "rarity": "common"
-  },
-  "棉花糖馬卡龍": {
-    "rarity": "common"
-  },
-  "檸檬茶": {
-    "rarity": "common"
-  },
-  "焦糖爆米花": {
-    "rarity": "common"
-  },
-  "獸糧罐頭": {
-    "rarity": "common"
-  },
-  "肉桂口味糖果": {
-    "rarity": "common"
-  },
-  "草莓蛋糕": {
-    "rarity": "common"
-  },
-  "蜂蜜罐": {
-    "rarity": "common"
-  },
-  "龍族糖果": {
-    "rarity": "common"
+    "rarity": "common",
+    "name": "UFC炸胡蘿蔔",
+    "nameEn": "UFC Fried Carrots"
   },
   "太空食品": {
-    "rarity": "common"
+    "rarity": "common",
+    "name": "太空食品",
+    "nameEn": "Space Food"
+  },
+  "棉花糖馬卡龍": {
+    "rarity": "common",
+    "name": "棉花糖馬卡龍",
+    "nameEn": "Mallow Mocharon"
+  },
+  "檸檬茶": {
+    "rarity": "common",
+    "name": "檸檬茶",
+    "nameEn": "Lemon Tea"
+  },
+  "焦糖爆米花": {
+    "rarity": "common",
+    "name": "焦糖爆米花",
+    "nameEn": "Caramel Popcorn"
+  },
+  "獸糧罐頭": {
+    "rarity": "common",
+    "name": "獸糧罐頭",
+    "nameEn": "Canned Chow"
+  },
+  "肉桂口味糖球": {
+    "rarity": "common",
+    "name": "肉桂口味糖球",
+    "nameEn": "Cinnamon Candy"
+  },
+  "草莓蛋糕": {
+    "rarity": "common",
+    "name": "草莓蛋糕",
+    "nameEn": "Strawberry Cake"
+  },
+  "蜂蜜罐": {
+    "rarity": "common",
+    "name": "蜂蜜罐",
+    "nameEn": "A Pot of Honey"
+  },
+  "龍族糖果": {
+    "rarity": "common",
+    "name": "龍族糖果",
+    "nameEn": "Dragon Candy"
+  },
+  "ANSA太空食品": {
+    "rarity": "uncommon",
+    "name": "ANSA太空食品",
+    "nameEn": "ANSA Space Food"
+  },
+  "UFC炸蔬菜": {
+    "rarity": "uncommon",
+    "name": "UFC炸蔬菜",
+    "nameEn": "UFC Fried Veggies"
   },
   "一口草生菜包": {
-    "rarity": "uncommon"
+    "rarity": "uncommon",
+    "name": "一口草生菜包",
+    "nameEn": "Snapmaw Ssam"
+  },
+  "低糖棉花糖馬卡龍": {
+    "rarity": "uncommon",
+    "name": "低糖棉花糖馬卡龍",
+    "nameEn": "Low-Sugar Marshmallow Mocharon"
   },
   "南瓜濃湯": {
-    "rarity": "uncommon"
+    "rarity": "uncommon",
+    "name": "南瓜濃湯",
+    "nameEn": "Pumpkin Soup"
   },
   "扭結麵包": {
-    "rarity": "uncommon"
+    "rarity": "uncommon",
+    "name": "扭結麵包",
+    "nameEn": "Knotted Bread"
   },
   "椰子松針粥": {
-    "rarity": "uncommon"
+    "rarity": "uncommon",
+    "name": "椰子松針粥",
+    "nameEn": "Coconut Pine Porridge"
   },
   "海藻沙拉": {
-    "rarity": "uncommon"
+    "rarity": "uncommon",
+    "name": "海藻沙拉",
+    "nameEn": "Seaweed Salad"
   },
   "溫熱的冰美式咖啡": {
-    "rarity": "uncommon"
+    "rarity": "uncommon",
+    "name": "溫熱的冰美式咖啡",
+    "nameEn": "Frozen Hot Americano"
   },
   "焦糖布丁": {
-    "rarity": "uncommon"
+    "rarity": "uncommon",
+    "name": "焦糖布丁",
+    "nameEn": "Creme Brulee"
+  },
+  "甜甜蜂蜜罐": {
+    "rarity": "uncommon",
+    "name": "甜甜蜂蜜罐",
+    "nameEn": "Honey Pot of Honey"
   },
   "空氣炸豬排": {
-    "rarity": "uncommon"
+    "rarity": "uncommon",
+    "name": "空氣炸豬排",
+    "nameEn": "Air Cutlet"
+  },
+  "肉桂口味健康糖球": {
+    "rarity": "uncommon",
+    "name": "肉桂口味健康糖球",
+    "nameEn": "Healthy Cinnamon Candy"
+  },
+  "草莓切片蛋糕": {
+    "rarity": "uncommon",
+    "name": "草莓切片蛋糕",
+    "nameEn": "Once-bitten Strawberry Cake"
   },
   "蜂蜜大蒜鮭魚": {
-    "rarity": "uncommon"
+    "rarity": "uncommon",
+    "name": "蜂蜜大蒜鮭魚",
+    "nameEn": "Honey Garlic Salmon"
+  },
+  "追劇焦糖爆米花": {
+    "rarity": "uncommon",
+    "name": "追劇焦糖爆米花",
+    "nameEn": "Elflix Caramel Popcorn"
   },
   "金糖葫蘆": {
-    "rarity": "uncommon"
+    "rarity": "uncommon",
+    "name": "金糖葫蘆",
+    "nameEn": "Golden Crystallized Fruit"
   },
-  "UFC 야채 튀김": {
-    "rarity": "uncommon"
+  "高級獸糧罐頭": {
+    "rarity": "uncommon",
+    "name": "高級獸糧罐頭",
+    "nameEn": "Premium Canned Chow"
   },
-  "계피맛 건강 알사탕": {
-    "rarity": "uncommon"
-  },
-  "꿀꿀단지": {
-    "rarity": "uncommon"
-  },
-  "와앙 딸기 케이크": {
-    "rarity": "uncommon"
-  },
-  "저당 마시멜로 마카롱": {
-    "rarity": "uncommon"
-  },
-  "용족 세공 사탕": {
-    "rarity": "uncommon"
-  },
-  "ANSA 우주식량": {
-    "rarity": "uncommon"
-  },
-  "고급 캔 사료": {
-    "rarity": "uncommon"
-  },
-  "엘플릭스 캬라멜 팝콘": {
-    "rarity": "uncommon"
+  "龍族氣死你糖果": {
+    "rarity": "uncommon",
+    "name": "龍族氣死你糖果",
+    "nameEn": "Dragon Dragoff Candy"
   },
   "一碗米飯": {
-    "rarity": "rare"
+    "rarity": "rare",
+    "name": "一碗米飯",
+    "nameEn": "A Bowl of Rice"
   },
-  "哈蜜瓜博孔奇尼起司": {
-    "rarity": "rare"
+  "兩口草生菜包": {
+    "rarity": "rare",
+    "name": "兩口草生菜包",
+    "nameEn": "Snap-snapmaw Rolls"
+  },
+  "哈密瓜博孔奇尼起司": {
+    "rarity": "rare",
+    "name": "哈密瓜博孔奇尼起司",
+    "nameEn": "Melon Bocconcini"
+  },
+  "夏威夷海藻蓋飯": {
+    "rarity": "rare",
+    "name": "夏威夷海藻蓋飯",
+    "nameEn": "Seaweed Poke"
   },
   "寶石塔": {
-    "rarity": "rare"
+    "rarity": "rare",
+    "name": "寶石塔",
+    "nameEn": "Gemstone Tart"
   },
   "巧克力冰淇淋": {
-    "rarity": "rare"
+    "rarity": "rare",
+    "name": "巧克力冰淇淋",
+    "nameEn": "Chocolate Ice Cream"
   },
   "幽靈布丁": {
-    "rarity": "rare"
+    "rarity": "rare",
+    "name": "幽靈布丁",
+    "nameEn": "Phantom Pudding"
+  },
+  "愛心扭結麵包": {
+    "rarity": "rare",
+    "name": "愛心扭結麵包",
+    "nameEn": "Heart-shaped Knotted Bread"
+  },
+  "有機檸檬茶": {
+    "rarity": "rare",
+    "name": "有機檸檬茶",
+    "nameEn": "Organic Lemon Tea"
+  },
+  "椰子萬能青汁": {
+    "rarity": "rare",
+    "name": "椰子萬能青汁",
+    "nameEn": "Ultimate Coconut Green Juice"
+  },
+  "氫氣炸豬排": {
+    "rarity": "rare",
+    "name": "氫氣炸豬排",
+    "nameEn": "Hydrogen Cutlet"
+  },
+  "滾燙的冰美式咖啡": {
+    "rarity": "rare",
+    "name": "滾燙的冰美式咖啡",
+    "nameEn": "Frozen Burning Americano"
   },
   "烤漫畫肉": {
-    "rarity": "rare"
+    "rarity": "rare",
+    "name": "烤漫畫肉",
+    "nameEn": "Manga Meat"
+  },
+  "燉南瓜": {
+    "rarity": "rare",
+    "name": "燉南瓜",
+    "nameEn": "Pumpkin Stew"
+  },
+  "白金糖葫蘆": {
+    "rarity": "rare",
+    "name": "白金糖葫蘆",
+    "nameEn": "Platinum Candied Fruit"
+  },
+  "皇家蜂蜜大蒜鮭魚": {
+    "rarity": "rare",
+    "name": "皇家蜂蜜大蒜鮭魚",
+    "nameEn": "Royal Honey Garlic Salmon"
   },
   "石榴果實": {
-    "rarity": "rare"
+    "rarity": "rare",
+    "name": "石榴果實",
+    "nameEn": "Garnet Fruit"
   },
-  "秘密葡萄汁": {
-    "rarity": "rare"
+  "祕密葡萄汁": {
+    "rarity": "rare",
+    "name": "祕密葡萄汁",
+    "nameEn": "Secret Grape Juice"
   },
   "薄荷巧克力冰淇淋": {
-    "rarity": "rare"
+    "rarity": "rare",
+    "name": "薄荷巧克力冰淇淋",
+    "nameEn": "Mint Chocolate Ice Cream"
+  },
+  "軟軟焦糖布丁": {
+    "rarity": "rare",
+    "name": "軟軟焦糖布丁",
+    "nameEn": "Soft Crème Brûlée"
   },
   "麵茶": {
-    "rarity": "rare"
+    "rarity": "rare",
+    "name": "麵茶",
+    "nameEn": "Roasted Multigrain Tea"
   },
-  "뜨거운 냉동 아메리카노": {
-    "rarity": "rare"
+  "927穀麵茶": {
+    "rarity": "legendary",
+    "name": "927穀麵茶",
+    "nameEn": "927 Multigrain Drink Mix"
   },
-  "해초 포케": {
-    "rarity": "rare"
+  "一碗糯米飯": {
+    "rarity": "legendary",
+    "name": "一碗糯米飯",
+    "nameEn": "Bowl of Sticky Rice"
   },
-  "로얄 허니갈릭 살몬": {
-    "rarity": "rare"
+  "一級祕密葡萄汁": {
+    "rarity": "legendary",
+    "name": "一級祕密葡萄汁",
+    "nameEn": "Top Secret Grape Juice"
   },
-  "호박 스튜": {
-    "rarity": "rare"
+  "三重薄荷巧克力冰淇淋": {
+    "rarity": "legendary",
+    "name": "三重薄荷巧克力冰淇淋",
+    "nameEn": "Triple Mint Chocolate Ice Cream"
   },
-  "수소 커틀릿": {
-    "rarity": "rare"
+  "寶物蛋塔": {
+    "rarity": "legendary",
+    "name": "寶物蛋塔",
+    "nameEn": "Jeweled Tart"
   },
-  "백금탕후루": {
-    "rarity": "rare"
+  "惡靈布丁": {
+    "rarity": "legendary",
+    "name": "惡靈布丁",
+    "nameEn": "Evil Phantom Pudding"
   },
-  "유기농 레몬차": {
-    "rarity": "rare"
+  "深黑巧克力冰淇淋": {
+    "rarity": "legendary",
+    "name": "深黑巧克力冰淇淋",
+    "nameEn": "Deep-dark Chocolate Ice Cream"
   },
-  "하트 매듭 빵": {
-    "rarity": "rare"
+  "烤海賊漫畫肉": {
+    "rarity": "legendary",
+    "name": "烤海賊漫畫肉",
+    "nameEn": "Pirate Manga Meat"
   },
-  "코코넛 만능 녹즙": {
-    "rarity": "rare"
+  "石榴甜茶": {
+    "rarity": "legendary",
+    "name": "石榴甜茶",
+    "nameEn": "Garnet Fruit Punch"
   },
-  "소프트 크림 브륄레": {
-    "rarity": "rare"
-  },
-  "두입초 쌈": {
-    "rarity": "rare"
-  },
-  "트리플 민트 초코 아이스크림": {
-    "rarity": "legendary"
-  },
-  "해적 만화 고기 구이": {
-    "rarity": "legendary"
-  },
-  "머스크 멜론 보코치니": {
-    "rarity": "legendary"
-  },
-  "보물 타르트": {
-    "rarity": "legendary"
-  },
-  "1급 비밀의 포도주스": {
-    "rarity": "legendary"
-  },
-  "찹쌀밥 한 공기": {
-    "rarity": "legendary"
-  },
-  "악령 푸딩": {
-    "rarity": "legendary"
-  },
-  "딥다크 초콜릿 아이스크림": {
-    "rarity": "legendary"
-  },
-  "927곡 미숫가루": {
-    "rarity": "legendary"
-  },
-  "석류석 화채": {
-    "rarity": "legendary"
+  "麝香甜瓜博孔奇尼起司": {
+    "rarity": "legendary",
+    "name": "麝香甜瓜博孔奇尼起司",
+    "nameEn": "Musk Melon Bocconcini"
   }
 }

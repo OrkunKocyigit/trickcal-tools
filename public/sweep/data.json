@@ -1,107 +1,6 @@
 {
-  "可回收紙袋": {
-    "rank": 1,
-    "stages": [
-      {
-        "code": "1-4",
-        "dropRate": 0.825
-      },
-      {
-        "code": "2-4",
-        "dropRate": 0.825
-      },
-      {
-        "code": "2-10",
-        "dropRate": 0.825
-      },
-      {
-        "code": "4-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "5-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "6-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "8-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "9-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "9-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "11-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "12-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "13-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "15-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "16-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "16-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "18-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "19-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "20-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "22-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "23-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "23-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "25-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "26-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "27-5",
-        "dropRate": 0.6848
-      }
-    ],
-    "uid": 110110
-  },
-  "堅硬的法棍": {
+  "領口鬆垮的T恤": {
+    "uid": 110101,
     "rank": 1,
     "stages": [
       {
@@ -109,11 +8,11 @@
         "dropRate": 0.825
       },
       {
-        "code": "1-7",
+        "code": "2-10",
         "dropRate": 0.825
       },
       {
-        "code": "3-6",
+        "code": "3-10",
         "dropRate": 0.6848
       },
       {
@@ -121,2995 +20,89 @@
         "dropRate": 0.6848
       },
       {
-        "code": "5-2",
+        "code": "6-5",
         "dropRate": 0.6848
-      },
-      {
-        "code": "7-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "8-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "8-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "10-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "11-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "12-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "14-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "15-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "15-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "17-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "18-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "19-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "21-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "22-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "22-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "24-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "25-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "26-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "28-1",
-        "dropRate": 0.6848
-      }
-    ],
-    "uid": 130102
-  },
-  "小水槍": {
-    "rank": 1,
-    "stages": [
-      {
-        "code": "1-2",
-        "dropRate": 0.825
-      },
-      {
-        "code": "1-8",
-        "dropRate": 0.825
-      },
-      {
-        "code": "3-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "4-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "5-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "7-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "8-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "8-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "10-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "11-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "12-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "14-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "15-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "15-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "17-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "18-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "19-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "21-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "22-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "22-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "24-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "25-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "26-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "28-2",
-        "dropRate": 0.6848
-      }
-    ],
-    "uid": 130103
-  },
-  "小面具": {
-    "rank": 1,
-    "stages": [
-      {
-        "code": "1-6",
-        "dropRate": 0.825
-      },
-      {
-        "code": "2-6",
-        "dropRate": 0.825
-      },
-      {
-        "code": "3-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "5-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "6-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "6-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "8-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "9-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "10-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "12-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "13-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "13-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "15-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "16-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "17-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "19-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "20-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "20-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "22-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "23-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "24-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "26-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "27-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "27-7",
-        "dropRate": 0.6848
-      }
-    ],
-    "uid": 110112
-  },
-  "小麵包刀": {
-    "rank": 1,
-    "stages": [
-      {
-        "code": "1-6",
-        "dropRate": 0.825
-      },
-      {
-        "code": "2-2",
-        "dropRate": 0.825
-      },
-      {
-        "code": "4-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "5-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "5-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "7-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "8-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "9-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "11-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "12-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "12-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "14-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "15-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "16-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "18-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "19-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "19-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "21-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "22-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "23-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "25-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "26-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "26-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "28-6",
-        "dropRate": 0.6848
-      }
-    ],
-    "uid": 130107
-  },
-  "帽子圖紙（2階）": {
-    "rank": 2,
-    "stages": [
-      {
-        "code": "3-4",
-        "dropRate": 0.83
-      },
-      {
-        "code": "3-7",
-        "dropRate": 0.83
-      },
-      {
-        "code": "4-1",
-        "dropRate": 0.83
-      },
-      {
-        "code": "4-8",
-        "dropRate": 0.83
-      },
-      {
-        "code": "4-10",
-        "dropRate": 0.83
-      },
-      {
-        "code": "5-5",
-        "dropRate": 0.83
-      },
-      {
-        "code": "6-2",
-        "dropRate": 0.83
-      },
-      {
-        "code": "6-9",
-        "dropRate": 0.83
-      }
-    ],
-    "uid": 150004
-  },
-  "帽子圖紙（3階）": {
-    "rank": 3,
-    "stages": [
-      {
-        "code": "5-4",
-        "dropRate": 0.83
-      },
-      {
-        "code": "6-1",
-        "dropRate": 0.83
-      },
-      {
-        "code": "6-8",
-        "dropRate": 0.83
       },
       {
         "code": "7-5",
-        "dropRate": 0.83
-      },
-      {
-        "code": "8-2",
-        "dropRate": 0.83
-      },
-      {
-        "code": "8-9",
-        "dropRate": 0.83
-      },
-      {
-        "code": "9-6",
-        "dropRate": 0.83
-      },
-      {
-        "code": "10-3",
-        "dropRate": 0.83
-      }
-    ],
-    "uid": 150011
-  },
-  "帽子圖紙（5階）": {
-    "rank": 5,
-    "stages": [
-      {
-        "code": "13-5",
-        "dropRate": 0.83
-      },
-      {
-        "code": "14-2",
-        "dropRate": 0.83
-      },
-      {
-        "code": "14-9",
-        "dropRate": 0.83
-      },
-      {
-        "code": "15-5",
-        "dropRate": 0.83
-      },
-      {
-        "code": "15-6",
-        "dropRate": 0.83
-      },
-      {
-        "code": "16-2",
-        "dropRate": 0.83
-      },
-      {
-        "code": "16-3",
-        "dropRate": 0.83
-      },
-      {
-        "code": "16-9",
-        "dropRate": 0.83
-      },
-      {
-        "code": "16-10",
-        "dropRate": 0.83
-      },
-      {
-        "code": "17-6",
-        "dropRate": 0.83
-      },
-      {
-        "code": "18-3",
-        "dropRate": 0.83
-      }
-    ],
-    "uid": 150018
-  },
-  "帽子圖紙（6階）": {
-    "rank": 6,
-    "stages": [
-      {
-        "code": "17-5",
-        "dropRate": 0.83
-      },
-      {
-        "code": "18-2",
-        "dropRate": 0.83
-      },
-      {
-        "code": "18-9",
-        "dropRate": 0.83
-      },
-      {
-        "code": "19-5",
-        "dropRate": 0.83
-      },
-      {
-        "code": "19-6",
-        "dropRate": 0.83
-      },
-      {
-        "code": "20-2",
-        "dropRate": 0.83
-      },
-      {
-        "code": "20-3",
-        "dropRate": 0.83
-      },
-      {
-        "code": "20-9",
-        "dropRate": 0.83
-      },
-      {
-        "code": "21-6",
-        "dropRate": 0.83
-      },
-      {
-        "code": "22-3",
-        "dropRate": 0.83
-      },
-      {
-        "code": "22-10",
-        "dropRate": 0.83
-      }
-    ],
-    "uid": 150025
-  },
-  "帽子圖紙（8階）": {
-    "rank": 8,
-    "stages": [
-      {
-        "code": "25-6",
-        "dropRate": 0.83
-      },
-      {
-        "code": "26-3",
-        "dropRate": 0.83
-      },
-      {
-        "code": "26-10",
-        "dropRate": 0.83
-      },
-      {
-        "code": "27-5",
-        "dropRate": 0.83
-      },
-      {
-        "code": "27-8",
-        "dropRate": 0.83
-      },
-      {
-        "code": "27-10",
-        "dropRate": 0.83
-      },
-      {
-        "code": "28-5",
-        "dropRate": 0.83
-      },
-      {
-        "code": "28-7",
-        "dropRate": 0.83
-      }
-    ],
-    "uid": 150032
-  },
-  "帽子碎片（4階）": {
-    "rank": 4,
-    "stages": [
-      {
-        "code": "9-4",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "10-1",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "10-8",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "11-5",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "11-6",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "11-8",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "12-2",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "12-3",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "12-9",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "12-10",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "13-6",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "14-3",
-        "dropRate": 0.7263
-      }
-    ],
-    "uid": 140004
-  },
-  "帽子碎片（7階）": {
-    "rank": 7,
-    "stages": [
-      {
-        "code": "21-5",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "22-2",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "22-9",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "23-5",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "23-7",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "24-2",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "24-4",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "24-9",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "25-4",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "26-1",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "26-10",
-        "dropRate": 0.7263
-      }
-    ],
-    "uid": 140011
-  },
-  "平凡的居家服": {
-    "rank": 1,
-    "stages": [
-      {
-        "code": "1-3",
-        "dropRate": 0.825
-      },
-      {
-        "code": "3-2",
         "dropRate": 0.6848
-      },
-      {
-        "code": "4-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "4-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "6-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "7-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "8-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "10-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "11-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "11-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "13-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "14-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "15-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "17-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "18-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "18-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "20-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "21-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "22-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "24-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "25-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "25-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "27-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "28-7",
-        "dropRate": 0.6848
-      }
-    ],
-    "uid": 110103
-  },
-  "平凡的拖鞋": {
-    "rank": 1,
-    "stages": [
-      {
-        "code": "1-8",
-        "dropRate": 0.825
-      },
-      {
-        "code": "2-8",
-        "dropRate": 0.825
-      },
-      {
-        "code": "3-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "5-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "6-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "6-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "8-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "9-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "10-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "12-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "13-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "13-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "15-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "16-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "17-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "19-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "20-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "20-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "22-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "23-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "24-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "26-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "27-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "27-9",
-        "dropRate": 0.6848
-      }
-    ],
-    "uid": 110114
-  },
-  "扔石彈弓": {
-    "rank": 1,
-    "stages": [
-      {
-        "code": "1-8",
-        "dropRate": 0.825
-      },
-      {
-        "code": "2-4",
-        "dropRate": 0.825
-      },
-      {
-        "code": "4-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "5-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "5-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "7-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "8-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "9-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "11-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "12-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "12-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "14-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "15-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "16-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "18-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "19-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "19-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "21-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "22-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "23-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "25-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "26-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "26-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "28-8",
-        "dropRate": 0.6848
-      }
-    ],
-    "uid": 130109
-  },
-  "拳擊手套": {
-    "rank": 1,
-    "stages": [
-      {
-        "code": "1-6",
-        "dropRate": 0.825
-      },
-      {
-        "code": "3-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "4-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "5-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "6-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "7-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "8-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "10-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "11-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "12-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "13-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "14-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "15-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "17-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "18-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "19-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "20-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "21-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "22-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "24-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "25-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "26-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "27-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "28-10",
-        "dropRate": 0.6848
-      }
-    ],
-    "uid": 130101
-  },
-  "故障的雨傘": {
-    "rank": 1,
-    "stages": [
-      {
-        "code": "1-9",
-        "dropRate": 0.825
-      },
-      {
-        "code": "2-5",
-        "dropRate": 0.825
-      },
-      {
-        "code": "4-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "5-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "5-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "7-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "8-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "9-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "11-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "12-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "12-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "14-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "15-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "16-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "18-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "19-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "19-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "21-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "22-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "23-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "25-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "26-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "26-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "28-9",
-        "dropRate": 0.6848
-      }
-    ],
-    "uid": 130110
-  },
-  "泳鏡": {
-    "rank": 1,
-    "stages": [
-      {
-        "code": "1-7",
-        "dropRate": 0.825
-      },
-      {
-        "code": "2-7",
-        "dropRate": 0.825
-      },
-      {
-        "code": "3-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "5-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "6-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "6-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "8-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "9-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "10-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "12-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "13-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "13-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "15-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "16-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "17-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "19-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "20-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "20-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "22-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "23-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "24-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "26-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "27-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "27-8",
-        "dropRate": 0.6848
-      }
-    ],
-    "uid": 110113
-  },
-  "涼感脖套": {
-    "rank": 1,
-    "stages": [
-      {
-        "code": "2-7",
-        "dropRate": 0.825
-      },
-      {
-        "code": "3-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "4-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "6-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "7-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "7-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "9-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "10-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "11-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "13-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "14-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "14-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "16-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "17-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "18-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "20-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "21-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "21-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "23-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "24-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "25-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "27-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "28-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "28-8",
-        "dropRate": 0.6848
-      }
-    ],
-    "uid": 120108
-  },
-  "漩渦糖果項鍊": {
-    "rank": 1,
-    "stages": [
-      {
-        "code": "2-5",
-        "dropRate": 0.825
-      },
-      {
-        "code": "3-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "4-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "5-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "6-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "7-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "9-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "10-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "11-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "12-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "13-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "14-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "16-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "17-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "18-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "19-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "20-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "21-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "23-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "24-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "25-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "26-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "27-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "28-6",
-        "dropRate": 0.6848
-      }
-    ],
-    "uid": 120106
-  },
-  "燦爛的飾品圖紙（2階）": {
-    "rank": 2,
-    "stages": [
-      {
-        "code": "3-3",
-        "dropRate": 0.83
-      },
-      {
-        "code": "3-7",
-        "dropRate": 0.83
-      },
-      {
-        "code": "3-9",
-        "dropRate": 0.83
-      },
-      {
-        "code": "4-4",
-        "dropRate": 0.83
-      },
-      {
-        "code": "4-5",
-        "dropRate": 0.83
-      },
-      {
-        "code": "5-1",
-        "dropRate": 0.83
-      },
-      {
-        "code": "5-8",
-        "dropRate": 0.83
-      },
-      {
-        "code": "6-5",
-        "dropRate": 0.83
-      }
-    ],
-    "uid": 150007
-  },
-  "燦爛的飾品圖紙（5階）": {
-    "rank": 5,
-    "stages": [
-      {
-        "code": "13-2",
-        "dropRate": 0.83
-      },
-      {
-        "code": "13-9",
-        "dropRate": 0.83
-      },
-      {
-        "code": "14-6",
-        "dropRate": 0.83
-      },
-      {
-        "code": "15-2",
-        "dropRate": 0.83
-      },
-      {
-        "code": "15-3",
-        "dropRate": 0.83
-      },
-      {
-        "code": "15-9",
-        "dropRate": 0.83
-      },
-      {
-        "code": "15-10",
-        "dropRate": 0.83
-      },
-      {
-        "code": "16-6",
-        "dropRate": 0.83
-      },
-      {
-        "code": "16-7",
-        "dropRate": 0.83
-      },
-      {
-        "code": "17-3",
-        "dropRate": 0.83
-      },
-      {
-        "code": "17-10",
-        "dropRate": 0.83
-      },
-      {
-        "code": "18-7",
-        "dropRate": 0.83
-      }
-    ],
-    "uid": 150021
-  },
-  "燦爛的飾品圖紙（8階）": {
-    "rank": 8,
-    "stages": [
-      {
-        "code": "25-3",
-        "dropRate": 0.83
-      },
-      {
-        "code": "25-10",
-        "dropRate": 0.83
-      },
-      {
-        "code": "26-7",
-        "dropRate": 0.83
-      },
-      {
-        "code": "27-2",
-        "dropRate": 0.83
-      },
-      {
-        "code": "27-5",
-        "dropRate": 0.83
-      },
-      {
-        "code": "27-7",
-        "dropRate": 0.83
-      },
-      {
-        "code": "28-2",
-        "dropRate": 0.83
-      },
-      {
-        "code": "28-9",
-        "dropRate": 0.83
-      }
-    ],
-    "uid": 150035
-  },
-  "燦爛的飾品碎片圖紙（3階）": {
-    "rank": 3,
-    "stages": [
-      {
-        "code": "5-7",
-        "dropRate": 0.83
-      },
-      {
-        "code": "6-4",
-        "dropRate": 0.83
-      },
-      {
-        "code": "7-1",
-        "dropRate": 0.83
-      },
-      {
-        "code": "7-2",
-        "dropRate": 0.83
-      },
-      {
-        "code": "7-8",
-        "dropRate": 0.83
-      },
-      {
-        "code": "7-9",
-        "dropRate": 0.83
-      },
-      {
-        "code": "8-5",
-        "dropRate": 0.83
-      },
-      {
-        "code": "8-6",
-        "dropRate": 0.83
-      },
-      {
-        "code": "9-3",
-        "dropRate": 0.83
-      },
-      {
-        "code": "9-9",
-        "dropRate": 0.83
-      },
-      {
-        "code": "9-10",
-        "dropRate": 0.83
-      },
-      {
-        "code": "10-7",
-        "dropRate": 0.83
-      }
-    ],
-    "uid": 150014
-  },
-  "燦爛的飾品碎片圖紙（6階）": {
-    "rank": 6,
-    "stages": [
-      {
-        "code": "17-2",
-        "dropRate": 0.83
-      },
-      {
-        "code": "17-9",
-        "dropRate": 0.83
-      },
-      {
-        "code": "18-6",
-        "dropRate": 0.83
-      },
-      {
-        "code": "19-2",
-        "dropRate": 0.83
-      },
-      {
-        "code": "19-3",
-        "dropRate": 0.83
-      },
-      {
-        "code": "19-9",
-        "dropRate": 0.83
-      },
-      {
-        "code": "19-10",
-        "dropRate": 0.83
-      },
-      {
-        "code": "20-6",
-        "dropRate": 0.83
-      },
-      {
-        "code": "20-7",
-        "dropRate": 0.83
-      },
-      {
-        "code": "21-3",
-        "dropRate": 0.83
-      },
-      {
-        "code": "21-10",
-        "dropRate": 0.83
-      },
-      {
-        "code": "22-7",
-        "dropRate": 0.83
-      }
-    ],
-    "uid": 150028
-  },
-  "燦爛的飾品碎片（4階）": {
-    "rank": 4,
-    "stages": [
-      {
-        "code": "9-7",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "10-4",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "11-1",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "11-2",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "11-9",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "12-6",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "12-7",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "13-3",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "13-9",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "13-10",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "14-7",
-        "dropRate": 0.7263
-      }
-    ],
-    "uid": 140007
-  },
-  "燦爛的飾品碎片（7階）": {
-    "rank": 7,
-    "stages": [
-      {
-        "code": "21-2",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "21-9",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "22-6",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "23-2",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "23-4",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "23-9",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "24-1",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "24-6",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "24-8",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "25-1",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "25-8",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "26-5",
-        "dropRate": 0.7263
-      }
-    ],
-    "uid": 140014
-  },
-  "物理武器圖紙（2階）": {
-    "rank": 2,
-    "stages": [
-      {
-        "code": "3-1",
-        "dropRate": 0.83
-      },
-      {
-        "code": "3-4",
-        "dropRate": 0.83
-      },
-      {
-        "code": "3-8",
-        "dropRate": 0.83
-      },
-      {
-        "code": "3-10",
-        "dropRate": 0.83
-      },
-      {
-        "code": "4-5",
-        "dropRate": 0.83
-      },
-      {
-        "code": "4-6",
-        "dropRate": 0.83
-      },
-      {
-        "code": "5-2",
-        "dropRate": 0.83
-      },
-      {
-        "code": "5-9",
-        "dropRate": 0.83
-      },
-      {
-        "code": "6-6",
-        "dropRate": 0.83
-      }
-    ],
-    "uid": 150001
-  },
-  "物理武器圖紙（3階）": {
-    "rank": 3,
-    "stages": [
-      {
-        "code": "5-1",
-        "dropRate": 0.83
-      },
-      {
-        "code": "5-8",
-        "dropRate": 0.83
-      },
-      {
-        "code": "6-5",
-        "dropRate": 0.83
-      },
-      {
-        "code": "7-2",
-        "dropRate": 0.83
-      },
-      {
-        "code": "7-3",
-        "dropRate": 0.83
-      },
-      {
-        "code": "7-7",
-        "dropRate": 0.83
-      },
-      {
-        "code": "7-9",
-        "dropRate": 0.83
-      },
-      {
-        "code": "7-10",
-        "dropRate": 0.83
-      },
-      {
-        "code": "8-4",
-        "dropRate": 0.83
-      },
-      {
-        "code": "8-6",
-        "dropRate": 0.83
-      },
-      {
-        "code": "8-7",
-        "dropRate": 0.83
-      }
-    ],
-    "uid": 150008
-  },
-  "物理武器圖紙（5階）": {
-    "rank": 5,
-    "stages": [
-      {
-        "code": "13-1",
-        "dropRate": 0.83
-      },
-      {
-        "code": "13-8",
-        "dropRate": 0.83
-      },
-      {
-        "code": "14-5",
-        "dropRate": 0.83
-      },
-      {
-        "code": "15-1",
-        "dropRate": 0.83
-      },
-      {
-        "code": "15-7",
-        "dropRate": 0.83
-      },
-      {
-        "code": "15-8",
-        "dropRate": 0.83
-      },
-      {
-        "code": "16-5",
-        "dropRate": 0.83
-      },
-      {
-        "code": "16-6",
-        "dropRate": 0.83
-      },
-      {
-        "code": "17-1",
-        "dropRate": 0.83
-      },
-      {
-        "code": "17-9",
-        "dropRate": 0.83
-      },
-      {
-        "code": "18-6",
-        "dropRate": 0.83
-      },
-      {
-        "code": "18-10",
-        "dropRate": 0.83
-      }
-    ],
-    "uid": 150015
-  },
-  "物理武器圖紙（6階）": {
-    "rank": 6,
-    "stages": [
-      {
-        "code": "17-1",
-        "dropRate": 0.83
-      },
-      {
-        "code": "17-8",
-        "dropRate": 0.83
-      },
-      {
-        "code": "18-4",
-        "dropRate": 0.83
-      },
-      {
-        "code": "19-1",
-        "dropRate": 0.83
-      },
-      {
-        "code": "19-8",
-        "dropRate": 0.83
-      },
-      {
-        "code": "20-5",
-        "dropRate": 0.83
-      },
-      {
-        "code": "20-6",
-        "dropRate": 0.83
-      },
-      {
-        "code": "20-10",
-        "dropRate": 0.83
-      },
-      {
-        "code": "21-1",
-        "dropRate": 0.83
-      },
-      {
-        "code": "21-9",
-        "dropRate": 0.83
-      },
-      {
-        "code": "22-6",
-        "dropRate": 0.83
-      }
-    ],
-    "uid": 150022
-  },
-  "物理武器圖紙（8階）": {
-    "rank": 8,
-    "stages": [
-      {
-        "code": "25-8",
-        "dropRate": 0.83
-      },
-      {
-        "code": "26-6",
-        "dropRate": 0.83
-      },
-      {
-        "code": "27-4",
-        "dropRate": 0.83
-      },
-      {
-        "code": "27-6",
-        "dropRate": 0.83
-      },
-      {
-        "code": "27-10",
-        "dropRate": 0.83
-      },
-      {
-        "code": "28-1",
-        "dropRate": 0.83
-      },
-      {
-        "code": "28-3",
-        "dropRate": 0.83
-      },
-      {
-        "code": "28-4",
-        "dropRate": 0.83
-      },
-      {
-        "code": "28-10",
-        "dropRate": 0.83
-      }
-    ],
-    "uid": 150029
-  },
-  "物理武器碎片（4階）": {
-    "rank": 4,
-    "stages": [
-      {
-        "code": "9-1",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "9-8",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "10-5",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "11-2",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "11-3",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "11-8",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "11-10",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "12-1",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "12-7",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "12-8",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "14-5",
-        "dropRate": 0.7263
-      }
-    ],
-    "uid": 140001
-  },
-  "物理武器碎片（7階）": {
-    "rank": 7,
-    "stages": [
-      {
-        "code": "21-7",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "22-5",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "23-1",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "23-3",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "23-8",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "23-9",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "23-10",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "24-5",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "24-10",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "26-3",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "26-7",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "26-9",
-        "dropRate": 0.7263
-      }
-    ],
-    "uid": 140008
-  },
-  "玩具手指虎": {
-    "rank": 1,
-    "stages": [
-      {
-        "code": "1-4",
-        "dropRate": 0.825
-      },
-      {
-        "code": "1-10",
-        "dropRate": 0.825
-      },
-      {
-        "code": "3-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "4-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "5-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "7-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "8-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "8-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "10-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "11-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "12-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "14-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "15-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "15-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "17-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "18-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "19-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "21-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "22-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "22-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "24-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "25-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "26-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "28-4",
-        "dropRate": 0.6848
-      }
-    ],
-    "uid": 130105
-  },
-  "璀璨的飾品圖紙（2階）": {
-    "rank": 2,
-    "stages": [
-      {
-        "code": "3-2",
-        "dropRate": 0.83
-      },
-      {
-        "code": "3-6",
-        "dropRate": 0.83
-      },
-      {
-        "code": "3-8",
-        "dropRate": 0.83
-      },
-      {
-        "code": "4-3",
-        "dropRate": 0.83
-      },
-      {
-        "code": "4-4",
-        "dropRate": 0.83
-      },
-      {
-        "code": "4-9",
-        "dropRate": 0.83
-      },
-      {
-        "code": "4-10",
-        "dropRate": 0.83
-      },
-      {
-        "code": "5-7",
-        "dropRate": 0.83
-      },
-      {
-        "code": "6-4",
-        "dropRate": 0.83
-      }
-    ],
-    "uid": 150006
-  },
-  "璀璨的飾品圖紙（5階）": {
-    "rank": 5,
-    "stages": [
-      {
-        "code": "13-7",
-        "dropRate": 0.83
-      },
-      {
-        "code": "14-4",
-        "dropRate": 0.83
-      },
-      {
-        "code": "15-1",
-        "dropRate": 0.83
-      },
-      {
-        "code": "15-2",
-        "dropRate": 0.83
-      },
-      {
-        "code": "15-8",
-        "dropRate": 0.83
-      },
-      {
-        "code": "15-9",
-        "dropRate": 0.83
-      },
-      {
-        "code": "16-4",
-        "dropRate": 0.83
-      },
-      {
-        "code": "16-5",
-        "dropRate": 0.83
-      },
-      {
-        "code": "16-9",
-        "dropRate": 0.83
-      },
-      {
-        "code": "17-2",
-        "dropRate": 0.83
-      },
-      {
-        "code": "17-8",
-        "dropRate": 0.83
-      },
-      {
-        "code": "18-5",
-        "dropRate": 0.83
-      }
-    ],
-    "uid": 150020
-  },
-  "璀璨的飾品圖紙（8階）": {
-    "rank": 8,
-    "stages": [
-      {
-        "code": "25-1",
-        "dropRate": 0.83
-      },
-      {
-        "code": "25-2",
-        "dropRate": 0.83
-      },
-      {
-        "code": "25-9",
-        "dropRate": 0.83
-      },
-      {
-        "code": "26-5",
-        "dropRate": 0.83
-      },
-      {
-        "code": "27-1",
-        "dropRate": 0.83
-      },
-      {
-        "code": "27-3",
-        "dropRate": 0.83
-      },
-      {
-        "code": "28-7",
-        "dropRate": 0.83
-      },
-      {
-        "code": "28-8",
-        "dropRate": 0.83
-      },
-      {
-        "code": "28-9",
-        "dropRate": 0.83
-      }
-    ],
-    "uid": 150034
-  },
-  "璀璨的飾品碎片圖紙（3階）": {
-    "rank": 3,
-    "stages": [
-      {
-        "code": "5-6",
-        "dropRate": 0.83
-      },
-      {
-        "code": "6-3",
-        "dropRate": 0.83
-      },
-      {
-        "code": "6-10",
-        "dropRate": 0.83
-      },
-      {
-        "code": "7-7",
-        "dropRate": 0.83
-      },
-      {
-        "code": "8-4",
-        "dropRate": 0.83
-      },
-      {
-        "code": "8-5",
-        "dropRate": 0.83
-      },
-      {
-        "code": "9-2",
-        "dropRate": 0.83
-      },
-      {
-        "code": "9-8",
-        "dropRate": 0.83
-      },
-      {
-        "code": "10-5",
-        "dropRate": 0.83
-      },
-      {
-        "code": "10-6",
-        "dropRate": 0.83
-      },
-      {
-        "code": "10-9",
-        "dropRate": 0.83
-      },
-      {
-        "code": "10-10",
-        "dropRate": 0.83
-      }
-    ],
-    "uid": 150013
-  },
-  "璀璨的飾品碎片圖紙（6階）": {
-    "rank": 6,
-    "stages": [
-      {
-        "code": "17-7",
-        "dropRate": 0.83
-      },
-      {
-        "code": "18-5",
-        "dropRate": 0.83
-      },
-      {
-        "code": "19-2",
-        "dropRate": 0.83
-      },
-      {
-        "code": "19-7",
-        "dropRate": 0.83
-      },
-      {
-        "code": "19-8",
-        "dropRate": 0.83
-      },
-      {
-        "code": "20-4",
-        "dropRate": 0.83
-      },
-      {
-        "code": "20-5",
-        "dropRate": 0.83
-      },
-      {
-        "code": "20-9",
-        "dropRate": 0.83
-      },
-      {
-        "code": "21-2",
-        "dropRate": 0.83
-      },
-      {
-        "code": "21-8",
-        "dropRate": 0.83
-      },
-      {
-        "code": "22-5",
-        "dropRate": 0.83
-      },
-      {
-        "code": "22-9",
-        "dropRate": 0.83
-      }
-    ],
-    "uid": 150027
-  },
-  "璀璨的飾品碎片（4階）": {
-    "rank": 4,
-    "stages": [
-      {
-        "code": "9-6",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "10-3",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "10-10",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "11-7",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "11-9",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "12-4",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "12-5",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "13-2",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "13-8",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "14-6",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "14-10",
-        "dropRate": 0.7263
-      }
-    ],
-    "uid": 140006
-  },
-  "璀璨的飾品碎片（7階）": {
-    "rank": 7,
-    "stages": [
-      {
-        "code": "21-1",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "21-8",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "22-4",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "23-2",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "24-4",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "24-6",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "24-7",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "25-6",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "26-4",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "26-8",
-        "dropRate": 0.7263
-      }
-    ],
-    "uid": 140013
-  },
-  "盔甲圖紙（2階）": {
-    "rank": 2,
-    "stages": [
-      {
-        "code": "3-3",
-        "dropRate": 0.83
-      },
-      {
-        "code": "3-6",
-        "dropRate": 0.83
-      },
-      {
-        "code": "3-10",
-        "dropRate": 0.83
-      },
-      {
-        "code": "4-2",
-        "dropRate": 0.83
-      },
-      {
-        "code": "4-7",
-        "dropRate": 0.83
-      },
-      {
-        "code": "4-8",
-        "dropRate": 0.83
-      },
-      {
-        "code": "5-4",
-        "dropRate": 0.83
-      },
-      {
-        "code": "6-1",
-        "dropRate": 0.83
-      },
-      {
-        "code": "6-8",
-        "dropRate": 0.83
-      }
-    ],
-    "uid": 150003
-  },
-  "盔甲圖紙（3階）": {
-    "rank": 3,
-    "stages": [
-      {
-        "code": "5-3",
-        "dropRate": 0.83
-      },
-      {
-        "code": "5-10",
-        "dropRate": 0.83
-      },
-      {
-        "code": "6-7",
-        "dropRate": 0.83
-      },
-      {
-        "code": "7-4",
-        "dropRate": 0.83
       },
       {
         "code": "8-1",
-        "dropRate": 0.83
-      },
-      {
-        "code": "8-8",
-        "dropRate": 0.83
-      },
-      {
-        "code": "9-1",
-        "dropRate": 0.83
-      },
-      {
-        "code": "9-5",
-        "dropRate": 0.83
-      },
-      {
-        "code": "10-2",
-        "dropRate": 0.83
-      }
-    ],
-    "uid": 150010
-  },
-  "盔甲圖紙（5階）": {
-    "rank": 5,
-    "stages": [
-      {
-        "code": "13-4",
-        "dropRate": 0.83
-      },
-      {
-        "code": "14-1",
-        "dropRate": 0.83
-      },
-      {
-        "code": "14-8",
-        "dropRate": 0.83
-      },
-      {
-        "code": "15-4",
-        "dropRate": 0.83
-      },
-      {
-        "code": "15-5",
-        "dropRate": 0.83
-      },
-      {
-        "code": "16-1",
-        "dropRate": 0.83
-      },
-      {
-        "code": "16-2",
-        "dropRate": 0.83
-      },
-      {
-        "code": "16-8",
-        "dropRate": 0.83
-      },
-      {
-        "code": "17-5",
-        "dropRate": 0.83
-      },
-      {
-        "code": "18-2",
-        "dropRate": 0.83
-      }
-    ],
-    "uid": 150017
-  },
-  "盔甲圖紙（6階）": {
-    "rank": 6,
-    "stages": [
-      {
-        "code": "17-4",
-        "dropRate": 0.83
-      },
-      {
-        "code": "18-1",
-        "dropRate": 0.83
-      },
-      {
-        "code": "18-8",
-        "dropRate": 0.83
-      },
-      {
-        "code": "19-1",
-        "dropRate": 0.83
-      },
-      {
-        "code": "19-3",
-        "dropRate": 0.83
-      },
-      {
-        "code": "19-4",
-        "dropRate": 0.83
-      },
-      {
-        "code": "19-5",
-        "dropRate": 0.83
-      },
-      {
-        "code": "20-1",
-        "dropRate": 0.83
-      },
-      {
-        "code": "20-2",
-        "dropRate": 0.83
-      },
-      {
-        "code": "20-8",
-        "dropRate": 0.83
-      },
-      {
-        "code": "21-5",
-        "dropRate": 0.83
-      },
-      {
-        "code": "22-2",
-        "dropRate": 0.83
-      }
-    ],
-    "uid": 150024
-  },
-  "盔甲圖紙（8階）": {
-    "rank": 8,
-    "stages": [
-      {
-        "code": "25-5",
-        "dropRate": 0.83
-      },
-      {
-        "code": "26-2",
-        "dropRate": 0.83
-      },
-      {
-        "code": "26-9",
-        "dropRate": 0.83
-      },
-      {
-        "code": "27-2",
-        "dropRate": 0.83
-      },
-      {
-        "code": "27-4",
-        "dropRate": 0.83
-      },
-      {
-        "code": "27-7",
-        "dropRate": 0.83
-      },
-      {
-        "code": "27-9",
-        "dropRate": 0.83
-      },
-      {
-        "code": "28-2",
-        "dropRate": 0.83
-      },
-      {
-        "code": "28-4",
-        "dropRate": 0.83
-      },
-      {
-        "code": "28-6",
-        "dropRate": 0.83
-      }
-    ],
-    "uid": 150031
-  },
-  "盔甲碎片（4階）": {
-    "rank": 4,
-    "stages": [
-      {
-        "code": "9-3",
-        "dropRate": 0.7263
+        "dropRate": 0.6848
       },
       {
         "code": "9-10",
-        "dropRate": 0.7263
+        "dropRate": 0.6848
       },
       {
-        "code": "10-7",
-        "dropRate": 0.7263
+        "code": "10-10",
+        "dropRate": 0.6848
       },
       {
-        "code": "11-3",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "11-4",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "11-5",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "12-1",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "12-2",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "12-8",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "12-9",
-        "dropRate": 0.7263
+        "code": "11-6",
+        "dropRate": 0.6848
       },
       {
         "code": "13-5",
-        "dropRate": 0.7263
+        "dropRate": 0.6848
       },
       {
-        "code": "14-2",
-        "dropRate": 0.7263
-      }
-    ],
-    "uid": 140003
-  },
-  "盔甲碎片（7階）": {
-    "rank": 7,
-    "stages": [
+        "code": "14-5",
+        "dropRate": 0.6848
+      },
       {
-        "code": "21-4",
-        "dropRate": 0.7263
+        "code": "15-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "16-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "17-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "18-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "20-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "21-5",
+        "dropRate": 0.6848
       },
       {
         "code": "22-1",
-        "dropRate": 0.7263
+        "dropRate": 0.6848
       },
       {
-        "code": "22-8",
-        "dropRate": 0.7263
+        "code": "23-10",
+        "dropRate": 0.6848
       },
       {
-        "code": "23-1",
-        "dropRate": 0.7263
+        "code": "24-10",
+        "dropRate": 0.6848
       },
       {
-        "code": "23-4",
-        "dropRate": 0.7263
+        "code": "25-6",
+        "dropRate": 0.6848
       },
       {
-        "code": "23-6",
-        "dropRate": 0.7263
+        "code": "27-5",
+        "dropRate": 0.6848
       },
       {
-        "code": "23-7",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "24-1",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "24-3",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "24-8",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "25-3",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "25-10",
-        "dropRate": 0.7263
+        "code": "28-5",
+        "dropRate": 0.6848
       }
-    ],
-    "uid": 140010
+    ]
   },
   "破舊的披風": {
+    "uid": 110102,
     "rank": 1,
     "stages": [
       {
@@ -3208,520 +201,112 @@
         "code": "28-6",
         "dropRate": 0.6848
       }
-    ],
-    "uid": 110102
+    ]
   },
-  "糖珠耳環": {
+  "平凡的居家服": {
+    "uid": 110103,
     "rank": 1,
     "stages": [
       {
-        "code": "2-9",
+        "code": "1-3",
         "dropRate": 0.825
       },
       {
-        "code": "3-9",
+        "code": "3-2",
         "dropRate": 0.6848
       },
       {
-        "code": "4-5",
+        "code": "4-2",
         "dropRate": 0.6848
       },
       {
-        "code": "6-4",
+        "code": "4-8",
         "dropRate": 0.6848
       },
       {
-        "code": "7-4",
+        "code": "6-7",
         "dropRate": 0.6848
       },
       {
-        "code": "7-10",
+        "code": "7-7",
         "dropRate": 0.6848
       },
       {
-        "code": "9-9",
+        "code": "8-3",
         "dropRate": 0.6848
       },
       {
-        "code": "10-9",
+        "code": "10-2",
         "dropRate": 0.6848
       },
       {
-        "code": "11-5",
+        "code": "11-2",
         "dropRate": 0.6848
       },
       {
-        "code": "13-4",
+        "code": "11-8",
         "dropRate": 0.6848
       },
       {
-        "code": "14-4",
+        "code": "13-7",
         "dropRate": 0.6848
       },
       {
-        "code": "14-10",
+        "code": "14-7",
         "dropRate": 0.6848
       },
       {
-        "code": "16-9",
+        "code": "15-3",
         "dropRate": 0.6848
       },
       {
-        "code": "17-9",
+        "code": "17-2",
         "dropRate": 0.6848
       },
       {
-        "code": "18-5",
+        "code": "18-2",
         "dropRate": 0.6848
       },
       {
-        "code": "20-4",
+        "code": "18-8",
         "dropRate": 0.6848
       },
       {
-        "code": "21-4",
+        "code": "20-7",
         "dropRate": 0.6848
       },
       {
-        "code": "21-10",
+        "code": "21-7",
         "dropRate": 0.6848
       },
       {
-        "code": "23-9",
+        "code": "22-3",
         "dropRate": 0.6848
       },
       {
-        "code": "24-9",
+        "code": "24-2",
         "dropRate": 0.6848
       },
       {
-        "code": "25-5",
+        "code": "25-2",
         "dropRate": 0.6848
       },
       {
-        "code": "27-4",
+        "code": "25-8",
         "dropRate": 0.6848
       },
       {
-        "code": "28-4",
+        "code": "27-7",
         "dropRate": 0.6848
       },
       {
-        "code": "28-10",
+        "code": "28-7",
         "dropRate": 0.6848
       }
-    ],
-    "uid": 120110
-  },
-  "糖球戒指": {
-    "rank": 1,
-    "stages": [
-      {
-        "code": "1-10",
-        "dropRate": 0.825
-      },
-      {
-        "code": "2-10",
-        "dropRate": 0.825
-      },
-      {
-        "code": "3-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "5-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "6-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "7-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "8-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "9-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "10-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "12-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "13-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "14-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "15-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "16-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "17-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "19-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "20-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "21-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "22-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "23-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "24-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "26-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "27-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "28-1",
-        "dropRate": 0.6848
-      }
-    ],
-    "uid": 120101
-  },
-  "紅布腰帶": {
-    "rank": 1,
-    "stages": [
-      {
-        "code": "1-2",
-        "dropRate": 0.825
-      },
-      {
-        "code": "2-2",
-        "dropRate": 0.825
-      },
-      {
-        "code": "2-8",
-        "dropRate": 0.825
-      },
-      {
-        "code": "4-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "5-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "6-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "8-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "9-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "9-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "11-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "12-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "13-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "15-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "16-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "16-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "18-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "19-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "20-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "22-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "23-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "23-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "25-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "26-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "27-3",
-        "dropRate": 0.6848
-      }
-    ],
-    "uid": 110108
-  },
-  "紅色圍裙": {
-    "rank": 1,
-    "stages": [
-      {
-        "code": "1-5",
-        "dropRate": 0.825
-      },
-      {
-        "code": "3-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "4-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "4-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "6-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "7-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "8-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "10-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "11-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "11-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "13-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "14-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "15-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "17-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "18-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "18-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "20-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "21-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "22-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "24-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "25-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "25-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "27-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "28-9",
-        "dropRate": 0.6848
-      }
-    ],
-    "uid": 110105
-  },
-  "紅色套脖泳圈": {
-    "rank": 1,
-    "stages": [
-      {
-        "code": "1-10",
-        "dropRate": 0.825
-      },
-      {
-        "code": "2-6",
-        "dropRate": 0.825
-      },
-      {
-        "code": "4-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "5-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "6-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "7-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "8-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "9-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "11-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "12-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "13-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "14-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "15-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "16-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "18-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "19-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "20-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "21-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "22-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "23-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "25-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "26-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "27-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "28-10",
-        "dropRate": 0.6848
-      }
-    ],
-    "uid": 110106
+    ]
   },
   "紅色裙子": {
+    "uid": 110104,
     "rank": 1,
     "stages": [
       {
@@ -3820,626 +405,14 @@
         "code": "28-8",
         "dropRate": 0.6848
       }
-    ],
-    "uid": 110104
+    ]
   },
-  "紅色鉛筆": {
+  "紅色圍裙": {
+    "uid": 110105,
     "rank": 1,
     "stages": [
       {
-        "code": "1-3",
-        "dropRate": 0.825
-      },
-      {
-        "code": "1-9",
-        "dropRate": 0.825
-      },
-      {
-        "code": "3-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "4-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "5-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "7-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "8-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "8-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "10-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "11-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "12-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "14-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "15-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "15-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "17-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "18-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "19-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "21-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "22-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "22-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "24-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "25-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "26-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "28-3",
-        "dropRate": 0.6848
-      }
-    ],
-    "uid": 130104
-  },
-  "細線戒指": {
-    "rank": 1,
-    "stages": [
-      {
-        "code": "2-1",
-        "dropRate": 0.825
-      },
-      {
-        "code": "3-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "3-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "5-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "6-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "7-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "9-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "10-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "10-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "12-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "13-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "14-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "16-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "17-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "17-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "19-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "20-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "21-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "23-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "24-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "24-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "26-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "27-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "28-2",
-        "dropRate": 0.6848
-      }
-    ],
-    "uid": 120102
-  },
-  "細線手環": {
-    "rank": 1,
-    "stages": [
-      {
-        "code": "2-3",
-        "dropRate": 0.825
-      },
-      {
-        "code": "3-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "3-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "5-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "6-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "7-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "9-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "10-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "10-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "12-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "13-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "14-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "16-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "17-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "17-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "19-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "20-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "21-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "23-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "24-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "24-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "26-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "27-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "28-4",
-        "dropRate": 0.6848
-      }
-    ],
-    "uid": 120104
-  },
-  "老舊勺子": {
-    "rank": 1,
-    "stages": [
-      {
-        "code": "1-7",
-        "dropRate": 0.825
-      },
-      {
-        "code": "2-3",
-        "dropRate": 0.825
-      },
-      {
-        "code": "4-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "5-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "5-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "7-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "8-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "9-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "11-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "12-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "12-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "14-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "15-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "16-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "18-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "19-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "19-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "21-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "22-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "23-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "25-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "26-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "26-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "28-7",
-        "dropRate": 0.6848
-      }
-    ],
-    "uid": 130108
-  },
-  "老舊拖鞋": {
-    "rank": 1,
-    "stages": [
-      {
-        "code": "1-9",
-        "dropRate": 0.825
-      },
-      {
-        "code": "2-9",
-        "dropRate": 0.825
-      },
-      {
-        "code": "3-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "5-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "6-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "6-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "8-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "9-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "10-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "12-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "13-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "13-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "15-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "16-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "17-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "19-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "20-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "20-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "22-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "23-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "24-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "26-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "27-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "27-10",
-        "dropRate": 0.6848
-      }
-    ],
-    "uid": 110115
-  },
-  "老舊杯子": {
-    "rank": 1,
-    "stages": [
-      {
-        "code": "2-6",
-        "dropRate": 0.825
-      },
-      {
-        "code": "3-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "4-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "6-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "7-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "7-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "9-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "10-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "11-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "13-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "14-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "14-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "16-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "17-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "18-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "20-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "21-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "21-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "23-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "24-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "25-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "27-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "28-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "28-7",
-        "dropRate": 0.6848
-      }
-    ],
-    "uid": 120107
-  },
-  "老舊梳子": {
-    "rank": 1,
-    "stages": [
-      {
-        "code": "2-4",
+        "code": "1-5",
         "dropRate": 0.825
       },
       {
@@ -4447,109 +420,7 @@
         "dropRate": 0.6848
       },
       {
-        "code": "3-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "5-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "6-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "7-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "9-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "10-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "10-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "12-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "13-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "14-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "16-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "17-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "17-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "19-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "20-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "21-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "23-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "24-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "24-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "26-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "27-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "28-5",
-        "dropRate": 0.6848
-      }
-    ],
-    "uid": 120105
-  },
-  "老舊眼鏡": {
-    "rank": 1,
-    "stages": [
-      {
-        "code": "1-5",
-        "dropRate": 0.825
-      },
-      {
-        "code": "2-5",
-        "dropRate": 0.825
-      },
-      {
-        "code": "3-1",
+        "code": "4-4",
         "dropRate": 0.6848
       },
       {
@@ -4557,211 +428,7 @@
         "dropRate": 0.6848
       },
       {
-        "code": "5-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "6-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "8-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "9-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "10-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "11-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "12-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "13-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "15-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "16-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "17-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "18-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "19-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "20-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "22-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "23-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "24-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "25-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "26-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "27-6",
-        "dropRate": 0.6848
-      }
-    ],
-    "uid": 110111
-  },
-  "老舊腕帶": {
-    "rank": 1,
-    "stages": [
-      {
-        "code": "2-2",
-        "dropRate": 0.825
-      },
-      {
-        "code": "3-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "3-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "5-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "6-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "7-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "9-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "10-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "10-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "12-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "13-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "14-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "16-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "17-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "17-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "19-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "20-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "21-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "23-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "24-2",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "24-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "26-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "27-7",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "28-3",
-        "dropRate": 0.6848
-      }
-    ],
-    "uid": 120103
-  },
-  "老舊零錢包": {
-    "rank": 1,
-    "stages": [
-      {
-        "code": "2-8",
-        "dropRate": 0.825
-      },
-      {
-        "code": "3-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "4-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "6-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "7-3",
+        "code": "6-9",
         "dropRate": 0.6848
       },
       {
@@ -4769,11 +436,11 @@
         "dropRate": 0.6848
       },
       {
-        "code": "9-8",
+        "code": "8-5",
         "dropRate": 0.6848
       },
       {
-        "code": "10-8",
+        "code": "10-4",
         "dropRate": 0.6848
       },
       {
@@ -4781,11 +448,11 @@
         "dropRate": 0.6848
       },
       {
-        "code": "13-3",
+        "code": "11-10",
         "dropRate": 0.6848
       },
       {
-        "code": "14-3",
+        "code": "13-9",
         "dropRate": 0.6848
       },
       {
@@ -4793,11 +460,11 @@
         "dropRate": 0.6848
       },
       {
-        "code": "16-8",
+        "code": "15-5",
         "dropRate": 0.6848
       },
       {
-        "code": "17-8",
+        "code": "17-4",
         "dropRate": 0.6848
       },
       {
@@ -4805,11 +472,11 @@
         "dropRate": 0.6848
       },
       {
-        "code": "20-3",
+        "code": "18-10",
         "dropRate": 0.6848
       },
       {
-        "code": "21-3",
+        "code": "20-9",
         "dropRate": 0.6848
       },
       {
@@ -4817,11 +484,11 @@
         "dropRate": 0.6848
       },
       {
-        "code": "23-8",
+        "code": "22-5",
         "dropRate": 0.6848
       },
       {
-        "code": "24-8",
+        "code": "24-4",
         "dropRate": 0.6848
       },
       {
@@ -4829,641 +496,123 @@
         "dropRate": 0.6848
       },
       {
-        "code": "27-3",
+        "code": "25-10",
         "dropRate": 0.6848
       },
       {
-        "code": "28-3",
+        "code": "27-9",
         "dropRate": 0.6848
       },
       {
         "code": "28-9",
         "dropRate": 0.6848
       }
-    ],
-    "uid": 120109
+    ]
   },
-  "能量飲": {
+  "紅色套脖泳圈": {
+    "uid": 110106,
     "rank": 1,
     "stages": [
       {
-        "code": "1-5",
+        "code": "1-10",
         "dropRate": 0.825
       },
       {
-        "code": "2-1",
+        "code": "2-6",
         "dropRate": 0.825
       },
       {
-        "code": "3-10",
+        "code": "4-5",
         "dropRate": 0.6848
       },
-      {
-        "code": "4-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "5-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "7-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "8-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "9-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "10-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "11-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "12-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "14-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "15-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "16-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "17-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "18-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "19-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "21-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "22-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "23-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "24-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "25-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "26-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "28-5",
-        "dropRate": 0.6848
-      }
-    ],
-    "uid": 130106
-  },
-  "趕製的尖頂帽": {
-    "rank": 1,
-    "stages": [
-      {
-        "code": "1-3",
-        "dropRate": 0.825
-      },
-      {
-        "code": "2-3",
-        "dropRate": 0.825
-      },
-      {
-        "code": "2-9",
-        "dropRate": 0.825
-      },
-      {
-        "code": "4-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "5-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "6-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "8-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "9-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "9-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "11-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "12-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "13-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "15-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "16-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "16-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "18-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "19-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "20-4",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "22-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "23-3",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "23-9",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "25-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "26-8",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "27-4",
-        "dropRate": 0.6848
-      }
-    ],
-    "uid": 110109
-  },
-  "靴子圖紙（2階）": {
-    "rank": 2,
-    "stages": [
-      {
-        "code": "3-1",
-        "dropRate": 0.83
-      },
-      {
-        "code": "3-5",
-        "dropRate": 0.83
-      },
-      {
-        "code": "4-2",
-        "dropRate": 0.83
-      },
-      {
-        "code": "4-3",
-        "dropRate": 0.83
-      },
-      {
-        "code": "4-9",
-        "dropRate": 0.83
-      },
-      {
-        "code": "5-6",
-        "dropRate": 0.83
-      },
-      {
-        "code": "6-3",
-        "dropRate": 0.83
-      },
-      {
-        "code": "6-10",
-        "dropRate": 0.83
-      }
-    ],
-    "uid": 150005
-  },
-  "靴子圖紙（3階）": {
-    "rank": 3,
-    "stages": [
       {
         "code": "5-5",
-        "dropRate": 0.83
+        "dropRate": 0.6848
       },
       {
-        "code": "6-2",
-        "dropRate": 0.83
+        "code": "6-1",
+        "dropRate": 0.6848
       },
       {
-        "code": "6-9",
-        "dropRate": 0.83
-      },
-      {
-        "code": "7-6",
-        "dropRate": 0.83
-      },
-      {
-        "code": "8-3",
-        "dropRate": 0.83
+        "code": "7-10",
+        "dropRate": 0.6848
       },
       {
         "code": "8-10",
-        "dropRate": 0.83
+        "dropRate": 0.6848
       },
       {
-        "code": "9-7",
-        "dropRate": 0.83
+        "code": "9-6",
+        "dropRate": 0.6848
       },
       {
-        "code": "10-4",
-        "dropRate": 0.83
-      }
-    ],
-    "uid": 150012
-  },
-  "靴子圖紙（5階）": {
-    "rank": 5,
-    "stages": [
-      {
-        "code": "13-6",
-        "dropRate": 0.83
-      },
-      {
-        "code": "14-3",
-        "dropRate": 0.83
-      },
-      {
-        "code": "14-10",
-        "dropRate": 0.83
-      },
-      {
-        "code": "15-6",
-        "dropRate": 0.83
-      },
-      {
-        "code": "15-7",
-        "dropRate": 0.83
-      },
-      {
-        "code": "16-3",
-        "dropRate": 0.83
-      },
-      {
-        "code": "16-4",
-        "dropRate": 0.83
-      },
-      {
-        "code": "16-10",
-        "dropRate": 0.83
-      },
-      {
-        "code": "17-7",
-        "dropRate": 0.83
-      },
-      {
-        "code": "18-4",
-        "dropRate": 0.83
-      },
-      {
-        "code": "18-9",
-        "dropRate": 0.83
-      }
-    ],
-    "uid": 150019
-  },
-  "靴子圖紙（6階）": {
-    "rank": 6,
-    "stages": [
-      {
-        "code": "17-6",
-        "dropRate": 0.83
-      },
-      {
-        "code": "18-3",
-        "dropRate": 0.83
-      },
-      {
-        "code": "18-10",
-        "dropRate": 0.83
-      },
-      {
-        "code": "19-6",
-        "dropRate": 0.83
-      },
-      {
-        "code": "19-7",
-        "dropRate": 0.83
-      },
-      {
-        "code": "19-9",
-        "dropRate": 0.83
-      },
-      {
-        "code": "20-3",
-        "dropRate": 0.83
-      },
-      {
-        "code": "20-4",
-        "dropRate": 0.83
-      },
-      {
-        "code": "20-10",
-        "dropRate": 0.83
-      },
-      {
-        "code": "21-7",
-        "dropRate": 0.83
-      },
-      {
-        "code": "22-4",
-        "dropRate": 0.83
-      }
-    ],
-    "uid": 150026
-  },
-  "靴子圖紙（8階）": {
-    "rank": 8,
-    "stages": [
-      {
-        "code": "25-7",
-        "dropRate": 0.83
-      },
-      {
-        "code": "26-4",
-        "dropRate": 0.83
-      },
-      {
-        "code": "27-1",
-        "dropRate": 0.83
-      },
-      {
-        "code": "27-9",
-        "dropRate": 0.83
-      },
-      {
-        "code": "28-1",
-        "dropRate": 0.83
-      },
-      {
-        "code": "28-6",
-        "dropRate": 0.83
-      },
-      {
-        "code": "28-8",
-        "dropRate": 0.83
-      }
-    ],
-    "uid": 150033
-  },
-  "靴子碎片（4階）": {
-    "rank": 4,
-    "stages": [
-      {
-        "code": "9-5",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "10-2",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "10-9",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "11-6",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "11-7",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "12-3",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "12-4",
-        "dropRate": 0.7263
+        "code": "11-5",
+        "dropRate": 0.6848
       },
       {
         "code": "12-5",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "12-10",
-        "dropRate": 0.7263
+        "dropRate": 0.6848
       },
       {
         "code": "13-1",
-        "dropRate": 0.7263
+        "dropRate": 0.6848
       },
       {
-        "code": "13-7",
-        "dropRate": 0.7263
+        "code": "14-10",
+        "dropRate": 0.6848
       },
       {
-        "code": "14-4",
-        "dropRate": 0.7263
-      }
-    ],
-    "uid": 140005
-  },
-  "靴子碎片（7階）": {
-    "rank": 7,
-    "stages": [
-      {
-        "code": "21-6",
-        "dropRate": 0.7263
+        "code": "15-10",
+        "dropRate": 0.6848
       },
       {
-        "code": "22-3",
-        "dropRate": 0.7263
+        "code": "16-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "18-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "19-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "20-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "21-10",
+        "dropRate": 0.6848
       },
       {
         "code": "22-10",
-        "dropRate": 0.7263
+        "dropRate": 0.6848
       },
       {
         "code": "23-6",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "23-8",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "24-3",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "24-5",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "24-10",
-        "dropRate": 0.7263
+        "dropRate": 0.6848
       },
       {
         "code": "25-5",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "25-7",
-        "dropRate": 0.7263
-      },
-      {
-        "code": "26-2",
-        "dropRate": 0.7263
-      }
-    ],
-    "uid": 140012
-  },
-  "領口鬆垮的T恤": {
-    "rank": 1,
-    "stages": [
-      {
-        "code": "1-1",
-        "dropRate": 0.825
-      },
-      {
-        "code": "2-10",
-        "dropRate": 0.825
-      },
-      {
-        "code": "3-10",
         "dropRate": 0.6848
       },
       {
-        "code": "4-6",
+        "code": "26-5",
         "dropRate": 0.6848
       },
       {
-        "code": "6-5",
+        "code": "27-1",
         "dropRate": 0.6848
       },
       {
-        "code": "7-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "8-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "9-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "10-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "11-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "13-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "14-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "15-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "16-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "17-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "18-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "20-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "21-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "22-1",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "23-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "24-10",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "25-6",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "27-5",
-        "dropRate": 0.6848
-      },
-      {
-        "code": "28-5",
+        "code": "28-10",
         "dropRate": 0.6848
       }
-    ],
-    "uid": 110101
+    ]
   },
   "鬆緊帶短褲": {
+    "uid": 110107,
     "rank": 1,
     "stages": [
       {
@@ -5562,10 +711,2908 @@
         "code": "27-2",
         "dropRate": 0.6848
       }
-    ],
-    "uid": 110107
+    ]
+  },
+  "紅布腰帶": {
+    "uid": 110108,
+    "rank": 1,
+    "stages": [
+      {
+        "code": "1-2",
+        "dropRate": 0.825
+      },
+      {
+        "code": "2-2",
+        "dropRate": 0.825
+      },
+      {
+        "code": "2-8",
+        "dropRate": 0.825
+      },
+      {
+        "code": "4-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "5-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "6-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "8-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "9-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "9-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "11-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "12-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "13-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "15-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "16-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "16-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "18-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "19-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "20-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "22-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "23-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "23-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "25-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "26-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "27-3",
+        "dropRate": 0.6848
+      }
+    ]
+  },
+  "趕製的尖頂帽": {
+    "uid": 110109,
+    "rank": 1,
+    "stages": [
+      {
+        "code": "1-3",
+        "dropRate": 0.825
+      },
+      {
+        "code": "2-3",
+        "dropRate": 0.825
+      },
+      {
+        "code": "2-9",
+        "dropRate": 0.825
+      },
+      {
+        "code": "4-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "5-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "6-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "8-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "9-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "9-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "11-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "12-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "13-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "15-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "16-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "16-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "18-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "19-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "20-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "22-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "23-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "23-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "25-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "26-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "27-4",
+        "dropRate": 0.6848
+      }
+    ]
+  },
+  "可回收紙袋": {
+    "uid": 110110,
+    "rank": 1,
+    "stages": [
+      {
+        "code": "1-4",
+        "dropRate": 0.825
+      },
+      {
+        "code": "2-4",
+        "dropRate": 0.825
+      },
+      {
+        "code": "2-10",
+        "dropRate": 0.825
+      },
+      {
+        "code": "4-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "5-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "6-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "8-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "9-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "9-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "11-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "12-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "13-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "15-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "16-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "16-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "18-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "19-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "20-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "22-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "23-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "23-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "25-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "26-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "27-5",
+        "dropRate": 0.6848
+      }
+    ]
+  },
+  "老舊眼鏡": {
+    "uid": 110111,
+    "rank": 1,
+    "stages": [
+      {
+        "code": "1-5",
+        "dropRate": 0.825
+      },
+      {
+        "code": "2-5",
+        "dropRate": 0.825
+      },
+      {
+        "code": "3-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "4-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "5-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "6-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "8-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "9-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "10-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "11-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "12-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "13-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "15-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "16-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "17-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "18-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "19-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "20-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "22-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "23-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "24-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "25-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "26-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "27-6",
+        "dropRate": 0.6848
+      }
+    ]
+  },
+  "小面具": {
+    "uid": 110112,
+    "rank": 1,
+    "stages": [
+      {
+        "code": "1-6",
+        "dropRate": 0.825
+      },
+      {
+        "code": "2-6",
+        "dropRate": 0.825
+      },
+      {
+        "code": "3-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "5-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "6-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "6-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "8-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "9-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "10-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "12-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "13-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "13-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "15-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "16-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "17-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "19-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "20-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "20-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "22-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "23-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "24-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "26-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "27-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "27-7",
+        "dropRate": 0.6848
+      }
+    ]
+  },
+  "泳鏡": {
+    "uid": 110113,
+    "rank": 1,
+    "stages": [
+      {
+        "code": "1-7",
+        "dropRate": 0.825
+      },
+      {
+        "code": "2-7",
+        "dropRate": 0.825
+      },
+      {
+        "code": "3-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "5-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "6-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "6-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "8-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "9-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "10-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "12-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "13-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "13-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "15-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "16-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "17-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "19-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "20-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "20-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "22-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "23-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "24-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "26-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "27-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "27-8",
+        "dropRate": 0.6848
+      }
+    ]
+  },
+  "平凡的拖鞋": {
+    "uid": 110114,
+    "rank": 1,
+    "stages": [
+      {
+        "code": "1-8",
+        "dropRate": 0.825
+      },
+      {
+        "code": "2-8",
+        "dropRate": 0.825
+      },
+      {
+        "code": "3-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "5-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "6-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "6-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "8-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "9-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "10-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "12-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "13-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "13-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "15-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "16-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "17-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "19-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "20-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "20-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "22-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "23-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "24-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "26-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "27-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "27-9",
+        "dropRate": 0.6848
+      }
+    ]
+  },
+  "老舊拖鞋": {
+    "uid": 110115,
+    "rank": 1,
+    "stages": [
+      {
+        "code": "1-9",
+        "dropRate": 0.825
+      },
+      {
+        "code": "2-9",
+        "dropRate": 0.825
+      },
+      {
+        "code": "3-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "5-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "6-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "6-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "8-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "9-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "10-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "12-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "13-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "13-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "15-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "16-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "17-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "19-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "20-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "20-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "22-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "23-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "24-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "26-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "27-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "27-10",
+        "dropRate": 0.6848
+      }
+    ]
+  },
+  "糖球戒指": {
+    "uid": 120101,
+    "rank": 1,
+    "stages": [
+      {
+        "code": "1-10",
+        "dropRate": 0.825
+      },
+      {
+        "code": "2-10",
+        "dropRate": 0.825
+      },
+      {
+        "code": "3-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "5-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "6-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "7-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "8-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "9-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "10-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "12-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "13-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "14-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "15-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "16-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "17-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "19-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "20-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "21-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "22-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "23-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "24-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "26-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "27-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "28-1",
+        "dropRate": 0.6848
+      }
+    ]
+  },
+  "細線戒指": {
+    "uid": 120102,
+    "rank": 1,
+    "stages": [
+      {
+        "code": "2-1",
+        "dropRate": 0.825
+      },
+      {
+        "code": "3-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "3-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "5-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "6-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "7-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "9-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "10-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "10-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "12-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "13-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "14-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "16-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "17-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "17-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "19-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "20-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "21-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "23-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "24-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "24-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "26-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "27-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "28-2",
+        "dropRate": 0.6848
+      }
+    ]
+  },
+  "老舊腕帶": {
+    "uid": 120103,
+    "rank": 1,
+    "stages": [
+      {
+        "code": "2-2",
+        "dropRate": 0.825
+      },
+      {
+        "code": "3-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "3-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "5-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "6-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "7-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "9-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "10-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "10-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "12-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "13-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "14-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "16-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "17-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "17-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "19-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "20-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "21-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "23-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "24-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "24-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "26-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "27-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "28-3",
+        "dropRate": 0.6848
+      }
+    ]
+  },
+  "細線手環": {
+    "uid": 120104,
+    "rank": 1,
+    "stages": [
+      {
+        "code": "2-3",
+        "dropRate": 0.825
+      },
+      {
+        "code": "3-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "3-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "5-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "6-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "7-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "9-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "10-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "10-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "12-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "13-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "14-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "16-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "17-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "17-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "19-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "20-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "21-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "23-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "24-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "24-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "26-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "27-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "28-4",
+        "dropRate": 0.6848
+      }
+    ]
+  },
+  "老舊梳子": {
+    "uid": 120105,
+    "rank": 1,
+    "stages": [
+      {
+        "code": "2-4",
+        "dropRate": 0.825
+      },
+      {
+        "code": "3-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "3-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "5-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "6-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "7-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "9-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "10-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "10-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "12-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "13-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "14-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "16-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "17-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "17-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "19-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "20-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "21-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "23-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "24-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "24-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "26-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "27-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "28-5",
+        "dropRate": 0.6848
+      }
+    ]
+  },
+  "漩渦糖果項鍊": {
+    "uid": 120106,
+    "rank": 1,
+    "stages": [
+      {
+        "code": "2-5",
+        "dropRate": 0.825
+      },
+      {
+        "code": "3-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "4-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "5-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "6-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "7-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "9-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "10-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "11-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "12-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "13-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "14-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "16-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "17-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "18-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "19-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "20-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "21-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "23-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "24-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "25-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "26-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "27-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "28-6",
+        "dropRate": 0.6848
+      }
+    ]
+  },
+  "老舊杯子": {
+    "uid": 120107,
+    "rank": 1,
+    "stages": [
+      {
+        "code": "2-6",
+        "dropRate": 0.825
+      },
+      {
+        "code": "3-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "4-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "6-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "7-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "7-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "9-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "10-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "11-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "13-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "14-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "14-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "16-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "17-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "18-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "20-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "21-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "21-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "23-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "24-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "25-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "27-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "28-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "28-7",
+        "dropRate": 0.6848
+      }
+    ]
+  },
+  "涼感脖套": {
+    "uid": 120108,
+    "rank": 1,
+    "stages": [
+      {
+        "code": "2-7",
+        "dropRate": 0.825
+      },
+      {
+        "code": "3-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "4-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "6-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "7-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "7-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "9-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "10-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "11-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "13-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "14-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "14-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "16-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "17-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "18-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "20-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "21-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "21-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "23-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "24-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "25-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "27-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "28-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "28-8",
+        "dropRate": 0.6848
+      }
+    ]
+  },
+  "老舊零錢包": {
+    "uid": 120109,
+    "rank": 1,
+    "stages": [
+      {
+        "code": "2-8",
+        "dropRate": 0.825
+      },
+      {
+        "code": "3-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "4-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "6-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "7-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "7-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "9-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "10-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "11-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "13-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "14-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "14-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "16-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "17-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "18-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "20-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "21-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "21-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "23-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "24-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "25-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "27-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "28-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "28-9",
+        "dropRate": 0.6848
+      }
+    ]
+  },
+  "糖珠耳環": {
+    "uid": 120110,
+    "rank": 1,
+    "stages": [
+      {
+        "code": "2-9",
+        "dropRate": 0.825
+      },
+      {
+        "code": "3-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "4-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "6-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "7-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "7-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "9-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "10-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "11-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "13-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "14-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "14-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "16-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "17-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "18-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "20-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "21-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "21-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "23-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "24-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "25-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "27-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "28-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "28-10",
+        "dropRate": 0.6848
+      }
+    ]
+  },
+  "拳擊手套": {
+    "uid": 130101,
+    "rank": 1,
+    "stages": [
+      {
+        "code": "1-6",
+        "dropRate": 0.825
+      },
+      {
+        "code": "3-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "4-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "5-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "6-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "7-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "8-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "10-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "11-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "12-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "13-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "14-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "15-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "17-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "18-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "19-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "20-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "21-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "22-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "24-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "25-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "26-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "27-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "28-10",
+        "dropRate": 0.6848
+      }
+    ]
+  },
+  "堅硬的法棍": {
+    "uid": 130102,
+    "rank": 1,
+    "stages": [
+      {
+        "code": "1-1",
+        "dropRate": 0.825
+      },
+      {
+        "code": "1-7",
+        "dropRate": 0.825
+      },
+      {
+        "code": "3-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "4-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "5-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "7-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "8-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "8-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "10-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "11-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "12-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "14-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "15-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "15-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "17-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "18-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "19-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "21-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "22-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "22-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "24-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "25-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "26-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "28-1",
+        "dropRate": 0.6848
+      }
+    ]
+  },
+  "小水槍": {
+    "uid": 130103,
+    "rank": 1,
+    "stages": [
+      {
+        "code": "1-2",
+        "dropRate": 0.825
+      },
+      {
+        "code": "1-8",
+        "dropRate": 0.825
+      },
+      {
+        "code": "3-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "4-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "5-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "7-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "8-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "8-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "10-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "11-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "12-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "14-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "15-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "15-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "17-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "18-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "19-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "21-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "22-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "22-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "24-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "25-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "26-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "28-2",
+        "dropRate": 0.6848
+      }
+    ]
+  },
+  "紅色鉛筆": {
+    "uid": 130104,
+    "rank": 1,
+    "stages": [
+      {
+        "code": "1-3",
+        "dropRate": 0.825
+      },
+      {
+        "code": "1-9",
+        "dropRate": 0.825
+      },
+      {
+        "code": "3-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "4-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "5-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "7-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "8-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "8-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "10-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "11-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "12-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "14-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "15-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "15-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "17-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "18-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "19-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "21-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "22-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "22-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "24-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "25-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "26-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "28-3",
+        "dropRate": 0.6848
+      }
+    ]
+  },
+  "玩具手指虎": {
+    "uid": 130105,
+    "rank": 1,
+    "stages": [
+      {
+        "code": "1-4",
+        "dropRate": 0.825
+      },
+      {
+        "code": "1-10",
+        "dropRate": 0.825
+      },
+      {
+        "code": "3-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "4-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "5-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "7-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "8-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "8-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "10-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "11-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "12-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "14-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "15-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "15-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "17-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "18-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "19-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "21-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "22-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "22-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "24-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "25-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "26-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "28-4",
+        "dropRate": 0.6848
+      }
+    ]
+  },
+  "能量飲": {
+    "uid": 130106,
+    "rank": 1,
+    "stages": [
+      {
+        "code": "1-5",
+        "dropRate": 0.825
+      },
+      {
+        "code": "2-1",
+        "dropRate": 0.825
+      },
+      {
+        "code": "3-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "4-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "5-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "7-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "8-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "9-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "10-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "11-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "12-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "14-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "15-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "16-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "17-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "18-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "19-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "21-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "22-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "23-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "24-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "25-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "26-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "28-5",
+        "dropRate": 0.6848
+      }
+    ]
+  },
+  "小麵包刀": {
+    "uid": 130107,
+    "rank": 1,
+    "stages": [
+      {
+        "code": "1-6",
+        "dropRate": 0.825
+      },
+      {
+        "code": "2-2",
+        "dropRate": 0.825
+      },
+      {
+        "code": "4-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "5-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "5-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "7-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "8-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "9-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "11-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "12-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "12-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "14-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "15-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "16-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "18-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "19-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "19-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "21-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "22-6",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "23-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "25-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "26-1",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "26-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "28-6",
+        "dropRate": 0.6848
+      }
+    ]
+  },
+  "老舊勺子": {
+    "uid": 130108,
+    "rank": 1,
+    "stages": [
+      {
+        "code": "1-7",
+        "dropRate": 0.825
+      },
+      {
+        "code": "2-3",
+        "dropRate": 0.825
+      },
+      {
+        "code": "4-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "5-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "5-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "7-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "8-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "9-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "11-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "12-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "12-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "14-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "15-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "16-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "18-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "19-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "19-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "21-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "22-7",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "23-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "25-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "26-2",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "26-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "28-7",
+        "dropRate": 0.6848
+      }
+    ]
+  },
+  "扔石彈弓": {
+    "uid": 130109,
+    "rank": 1,
+    "stages": [
+      {
+        "code": "1-8",
+        "dropRate": 0.825
+      },
+      {
+        "code": "2-4",
+        "dropRate": 0.825
+      },
+      {
+        "code": "4-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "5-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "5-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "7-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "8-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "9-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "11-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "12-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "12-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "14-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "15-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "16-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "18-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "19-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "19-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "21-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "22-8",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "23-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "25-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "26-3",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "26-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "28-8",
+        "dropRate": 0.6848
+      }
+    ]
+  },
+  "故障的雨傘": {
+    "uid": 130110,
+    "rank": 1,
+    "stages": [
+      {
+        "code": "1-9",
+        "dropRate": 0.825
+      },
+      {
+        "code": "2-5",
+        "dropRate": 0.825
+      },
+      {
+        "code": "4-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "5-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "5-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "7-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "8-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "9-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "11-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "12-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "12-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "14-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "15-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "16-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "18-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "19-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "19-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "21-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "22-9",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "23-5",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "25-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "26-4",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "26-10",
+        "dropRate": 0.6848
+      },
+      {
+        "code": "28-9",
+        "dropRate": 0.6848
+      }
+    ]
+  },
+  "物理武器圖紙（2階）": {
+    "uid": 150001,
+    "rank": 2,
+    "stages": [
+      {
+        "code": "3-1",
+        "dropRate": 0.83
+      },
+      {
+        "code": "3-4",
+        "dropRate": 0.83
+      },
+      {
+        "code": "3-8",
+        "dropRate": 0.83
+      },
+      {
+        "code": "3-10",
+        "dropRate": 0.83
+      },
+      {
+        "code": "4-5",
+        "dropRate": 0.83
+      },
+      {
+        "code": "4-6",
+        "dropRate": 0.83
+      },
+      {
+        "code": "5-2",
+        "dropRate": 0.83
+      },
+      {
+        "code": "5-9",
+        "dropRate": 0.83
+      },
+      {
+        "code": "6-6",
+        "dropRate": 0.83
+      }
+    ]
   },
   "魔法武器圖紙（2階）": {
+    "uid": 150002,
     "rank": 2,
     "stages": [
       {
@@ -5604,10 +3651,258 @@
         "code": "6-7",
         "dropRate": 0.83
       }
-    ],
-    "uid": 150002
+    ]
+  },
+  "盔甲圖紙（2階）": {
+    "uid": 150003,
+    "rank": 2,
+    "stages": [
+      {
+        "code": "3-3",
+        "dropRate": 0.83
+      },
+      {
+        "code": "3-6",
+        "dropRate": 0.83
+      },
+      {
+        "code": "3-10",
+        "dropRate": 0.83
+      },
+      {
+        "code": "4-2",
+        "dropRate": 0.83
+      },
+      {
+        "code": "4-7",
+        "dropRate": 0.83
+      },
+      {
+        "code": "4-8",
+        "dropRate": 0.83
+      },
+      {
+        "code": "5-4",
+        "dropRate": 0.83
+      },
+      {
+        "code": "6-1",
+        "dropRate": 0.83
+      },
+      {
+        "code": "6-8",
+        "dropRate": 0.83
+      }
+    ]
+  },
+  "帽子圖紙（2階）": {
+    "uid": 150004,
+    "rank": 2,
+    "stages": [
+      {
+        "code": "3-4",
+        "dropRate": 0.83
+      },
+      {
+        "code": "3-7",
+        "dropRate": 0.83
+      },
+      {
+        "code": "4-1",
+        "dropRate": 0.83
+      },
+      {
+        "code": "4-8",
+        "dropRate": 0.83
+      },
+      {
+        "code": "4-10",
+        "dropRate": 0.83
+      },
+      {
+        "code": "5-5",
+        "dropRate": 0.83
+      },
+      {
+        "code": "6-2",
+        "dropRate": 0.83
+      },
+      {
+        "code": "6-9",
+        "dropRate": 0.83
+      }
+    ]
+  },
+  "靴子圖紙（2階）": {
+    "uid": 150005,
+    "rank": 2,
+    "stages": [
+      {
+        "code": "3-1",
+        "dropRate": 0.83
+      },
+      {
+        "code": "3-5",
+        "dropRate": 0.83
+      },
+      {
+        "code": "4-2",
+        "dropRate": 0.83
+      },
+      {
+        "code": "4-3",
+        "dropRate": 0.83
+      },
+      {
+        "code": "4-9",
+        "dropRate": 0.83
+      },
+      {
+        "code": "5-6",
+        "dropRate": 0.83
+      },
+      {
+        "code": "6-3",
+        "dropRate": 0.83
+      },
+      {
+        "code": "6-10",
+        "dropRate": 0.83
+      }
+    ]
+  },
+  "璀璨的飾品圖紙（2階）": {
+    "uid": 150006,
+    "rank": 2,
+    "stages": [
+      {
+        "code": "3-2",
+        "dropRate": 0.83
+      },
+      {
+        "code": "3-6",
+        "dropRate": 0.83
+      },
+      {
+        "code": "3-8",
+        "dropRate": 0.83
+      },
+      {
+        "code": "4-3",
+        "dropRate": 0.83
+      },
+      {
+        "code": "4-4",
+        "dropRate": 0.83
+      },
+      {
+        "code": "4-9",
+        "dropRate": 0.83
+      },
+      {
+        "code": "4-10",
+        "dropRate": 0.83
+      },
+      {
+        "code": "5-7",
+        "dropRate": 0.83
+      },
+      {
+        "code": "6-4",
+        "dropRate": 0.83
+      }
+    ]
+  },
+  "燦爛的飾品圖紙（2階）": {
+    "uid": 150007,
+    "rank": 2,
+    "stages": [
+      {
+        "code": "3-3",
+        "dropRate": 0.83
+      },
+      {
+        "code": "3-7",
+        "dropRate": 0.83
+      },
+      {
+        "code": "3-9",
+        "dropRate": 0.83
+      },
+      {
+        "code": "4-4",
+        "dropRate": 0.83
+      },
+      {
+        "code": "4-5",
+        "dropRate": 0.83
+      },
+      {
+        "code": "5-1",
+        "dropRate": 0.83
+      },
+      {
+        "code": "5-8",
+        "dropRate": 0.83
+      },
+      {
+        "code": "6-5",
+        "dropRate": 0.83
+      }
+    ]
+  },
+  "物理武器圖紙（3階）": {
+    "uid": 150008,
+    "rank": 3,
+    "stages": [
+      {
+        "code": "5-1",
+        "dropRate": 0.83
+      },
+      {
+        "code": "5-8",
+        "dropRate": 0.83
+      },
+      {
+        "code": "6-5",
+        "dropRate": 0.83
+      },
+      {
+        "code": "7-2",
+        "dropRate": 0.83
+      },
+      {
+        "code": "7-3",
+        "dropRate": 0.83
+      },
+      {
+        "code": "7-7",
+        "dropRate": 0.83
+      },
+      {
+        "code": "7-9",
+        "dropRate": 0.83
+      },
+      {
+        "code": "7-10",
+        "dropRate": 0.83
+      },
+      {
+        "code": "8-4",
+        "dropRate": 0.83
+      },
+      {
+        "code": "8-6",
+        "dropRate": 0.83
+      },
+      {
+        "code": "8-7",
+        "dropRate": 0.83
+      }
+    ]
   },
   "魔法武器圖紙（3階）": {
+    "uid": 150009,
     "rank": 3,
     "stages": [
       {
@@ -5654,10 +3949,652 @@
         "code": "10-8",
         "dropRate": 0.83
       }
-    ],
-    "uid": 150009
+    ]
+  },
+  "盔甲圖紙（3階）": {
+    "uid": 150010,
+    "rank": 3,
+    "stages": [
+      {
+        "code": "5-3",
+        "dropRate": 0.83
+      },
+      {
+        "code": "5-10",
+        "dropRate": 0.83
+      },
+      {
+        "code": "6-7",
+        "dropRate": 0.83
+      },
+      {
+        "code": "7-4",
+        "dropRate": 0.83
+      },
+      {
+        "code": "8-1",
+        "dropRate": 0.83
+      },
+      {
+        "code": "8-8",
+        "dropRate": 0.83
+      },
+      {
+        "code": "9-1",
+        "dropRate": 0.83
+      },
+      {
+        "code": "9-5",
+        "dropRate": 0.83
+      },
+      {
+        "code": "10-2",
+        "dropRate": 0.83
+      }
+    ]
+  },
+  "帽子圖紙（3階）": {
+    "uid": 150011,
+    "rank": 3,
+    "stages": [
+      {
+        "code": "5-4",
+        "dropRate": 0.83
+      },
+      {
+        "code": "6-1",
+        "dropRate": 0.83
+      },
+      {
+        "code": "6-8",
+        "dropRate": 0.83
+      },
+      {
+        "code": "7-5",
+        "dropRate": 0.83
+      },
+      {
+        "code": "8-2",
+        "dropRate": 0.83
+      },
+      {
+        "code": "8-9",
+        "dropRate": 0.83
+      },
+      {
+        "code": "9-6",
+        "dropRate": 0.83
+      },
+      {
+        "code": "10-3",
+        "dropRate": 0.83
+      }
+    ]
+  },
+  "靴子圖紙（3階）": {
+    "uid": 150012,
+    "rank": 3,
+    "stages": [
+      {
+        "code": "5-5",
+        "dropRate": 0.83
+      },
+      {
+        "code": "6-2",
+        "dropRate": 0.83
+      },
+      {
+        "code": "6-9",
+        "dropRate": 0.83
+      },
+      {
+        "code": "7-6",
+        "dropRate": 0.83
+      },
+      {
+        "code": "8-3",
+        "dropRate": 0.83
+      },
+      {
+        "code": "8-10",
+        "dropRate": 0.83
+      },
+      {
+        "code": "9-7",
+        "dropRate": 0.83
+      },
+      {
+        "code": "10-4",
+        "dropRate": 0.83
+      }
+    ]
+  },
+  "璀璨的飾品碎片圖紙（3階）": {
+    "uid": 150013,
+    "rank": 3,
+    "stages": [
+      {
+        "code": "5-6",
+        "dropRate": 0.83
+      },
+      {
+        "code": "6-3",
+        "dropRate": 0.83
+      },
+      {
+        "code": "6-10",
+        "dropRate": 0.83
+      },
+      {
+        "code": "7-7",
+        "dropRate": 0.83
+      },
+      {
+        "code": "8-4",
+        "dropRate": 0.83
+      },
+      {
+        "code": "8-5",
+        "dropRate": 0.83
+      },
+      {
+        "code": "9-2",
+        "dropRate": 0.83
+      },
+      {
+        "code": "9-8",
+        "dropRate": 0.83
+      },
+      {
+        "code": "10-5",
+        "dropRate": 0.83
+      },
+      {
+        "code": "10-6",
+        "dropRate": 0.83
+      },
+      {
+        "code": "10-9",
+        "dropRate": 0.83
+      },
+      {
+        "code": "10-10",
+        "dropRate": 0.83
+      }
+    ]
+  },
+  "燦爛的飾品碎片圖紙（3階）": {
+    "uid": 150014,
+    "rank": 3,
+    "stages": [
+      {
+        "code": "5-7",
+        "dropRate": 0.83
+      },
+      {
+        "code": "6-4",
+        "dropRate": 0.83
+      },
+      {
+        "code": "7-1",
+        "dropRate": 0.83
+      },
+      {
+        "code": "7-2",
+        "dropRate": 0.83
+      },
+      {
+        "code": "7-8",
+        "dropRate": 0.83
+      },
+      {
+        "code": "7-9",
+        "dropRate": 0.83
+      },
+      {
+        "code": "8-5",
+        "dropRate": 0.83
+      },
+      {
+        "code": "8-6",
+        "dropRate": 0.83
+      },
+      {
+        "code": "9-3",
+        "dropRate": 0.83
+      },
+      {
+        "code": "9-9",
+        "dropRate": 0.83
+      },
+      {
+        "code": "9-10",
+        "dropRate": 0.83
+      },
+      {
+        "code": "10-7",
+        "dropRate": 0.83
+      }
+    ]
+  },
+  "物理武器碎片（4階）": {
+    "uid": 140001,
+    "rank": 4,
+    "stages": [
+      {
+        "code": "9-1",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "9-8",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "10-5",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "11-2",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "11-3",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "11-8",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "11-10",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "12-1",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "12-7",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "12-8",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "14-5",
+        "dropRate": 0.7263
+      }
+    ]
+  },
+  "魔法武器碎片（4階）": {
+    "uid": 140002,
+    "rank": 4,
+    "stages": [
+      {
+        "code": "9-2",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "9-9",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "10-6",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "11-1",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "11-4",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "11-10",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "12-6",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "13-4",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "14-1",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "14-8",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "14-9",
+        "dropRate": 0.7263
+      }
+    ]
+  },
+  "盔甲碎片（4階）": {
+    "uid": 140003,
+    "rank": 4,
+    "stages": [
+      {
+        "code": "9-3",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "9-10",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "10-7",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "11-3",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "11-4",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "11-5",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "12-1",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "12-2",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "12-8",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "12-9",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "13-5",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "14-2",
+        "dropRate": 0.7263
+      }
+    ]
+  },
+  "帽子碎片（4階）": {
+    "uid": 140004,
+    "rank": 4,
+    "stages": [
+      {
+        "code": "9-4",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "10-1",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "10-8",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "11-5",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "11-6",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "11-8",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "12-2",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "12-3",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "12-9",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "12-10",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "13-6",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "14-3",
+        "dropRate": 0.7263
+      }
+    ]
+  },
+  "靴子碎片（4階）": {
+    "uid": 140005,
+    "rank": 4,
+    "stages": [
+      {
+        "code": "9-5",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "10-2",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "10-9",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "11-6",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "11-7",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "12-3",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "12-4",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "12-5",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "12-10",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "13-1",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "13-7",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "14-4",
+        "dropRate": 0.7263
+      }
+    ]
+  },
+  "璀璨的飾品碎片（4階）": {
+    "uid": 140006,
+    "rank": 4,
+    "stages": [
+      {
+        "code": "9-6",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "10-3",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "10-10",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "11-7",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "11-9",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "12-4",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "12-5",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "13-2",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "13-8",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "14-6",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "14-10",
+        "dropRate": 0.7263
+      }
+    ]
+  },
+  "燦爛的飾品碎片（4階）": {
+    "uid": 140007,
+    "rank": 4,
+    "stages": [
+      {
+        "code": "9-7",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "10-4",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "11-1",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "11-2",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "11-9",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "12-6",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "12-7",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "13-3",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "13-9",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "13-10",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "14-7",
+        "dropRate": 0.7263
+      }
+    ]
+  },
+  "物理武器圖紙（5階）": {
+    "uid": 150015,
+    "rank": 5,
+    "stages": [
+      {
+        "code": "13-1",
+        "dropRate": 0.83
+      },
+      {
+        "code": "13-8",
+        "dropRate": 0.83
+      },
+      {
+        "code": "14-5",
+        "dropRate": 0.83
+      },
+      {
+        "code": "15-1",
+        "dropRate": 0.83
+      },
+      {
+        "code": "15-7",
+        "dropRate": 0.83
+      },
+      {
+        "code": "15-8",
+        "dropRate": 0.83
+      },
+      {
+        "code": "16-5",
+        "dropRate": 0.83
+      },
+      {
+        "code": "16-6",
+        "dropRate": 0.83
+      },
+      {
+        "code": "17-1",
+        "dropRate": 0.83
+      },
+      {
+        "code": "17-9",
+        "dropRate": 0.83
+      },
+      {
+        "code": "18-6",
+        "dropRate": 0.83
+      },
+      {
+        "code": "18-10",
+        "dropRate": 0.83
+      }
+    ]
   },
   "魔法武器圖紙（5階）": {
+    "uid": 150016,
     "rank": 5,
     "stages": [
       {
@@ -5708,10 +4645,314 @@
         "code": "18-8",
         "dropRate": 0.83
       }
-    ],
-    "uid": 150016
+    ]
+  },
+  "盔甲圖紙（5階）": {
+    "uid": 150017,
+    "rank": 5,
+    "stages": [
+      {
+        "code": "13-4",
+        "dropRate": 0.83
+      },
+      {
+        "code": "14-1",
+        "dropRate": 0.83
+      },
+      {
+        "code": "14-8",
+        "dropRate": 0.83
+      },
+      {
+        "code": "15-4",
+        "dropRate": 0.83
+      },
+      {
+        "code": "15-5",
+        "dropRate": 0.83
+      },
+      {
+        "code": "16-1",
+        "dropRate": 0.83
+      },
+      {
+        "code": "16-2",
+        "dropRate": 0.83
+      },
+      {
+        "code": "16-8",
+        "dropRate": 0.83
+      },
+      {
+        "code": "17-5",
+        "dropRate": 0.83
+      },
+      {
+        "code": "18-2",
+        "dropRate": 0.83
+      }
+    ]
+  },
+  "帽子圖紙（5階）": {
+    "uid": 150018,
+    "rank": 5,
+    "stages": [
+      {
+        "code": "13-5",
+        "dropRate": 0.83
+      },
+      {
+        "code": "14-2",
+        "dropRate": 0.83
+      },
+      {
+        "code": "14-9",
+        "dropRate": 0.83
+      },
+      {
+        "code": "15-5",
+        "dropRate": 0.83
+      },
+      {
+        "code": "15-6",
+        "dropRate": 0.83
+      },
+      {
+        "code": "16-2",
+        "dropRate": 0.83
+      },
+      {
+        "code": "16-3",
+        "dropRate": 0.83
+      },
+      {
+        "code": "16-9",
+        "dropRate": 0.83
+      },
+      {
+        "code": "16-10",
+        "dropRate": 0.83
+      },
+      {
+        "code": "17-6",
+        "dropRate": 0.83
+      },
+      {
+        "code": "18-3",
+        "dropRate": 0.83
+      }
+    ]
+  },
+  "靴子圖紙（5階）": {
+    "uid": 150019,
+    "rank": 5,
+    "stages": [
+      {
+        "code": "13-6",
+        "dropRate": 0.83
+      },
+      {
+        "code": "14-3",
+        "dropRate": 0.83
+      },
+      {
+        "code": "14-10",
+        "dropRate": 0.83
+      },
+      {
+        "code": "15-6",
+        "dropRate": 0.83
+      },
+      {
+        "code": "15-7",
+        "dropRate": 0.83
+      },
+      {
+        "code": "16-3",
+        "dropRate": 0.83
+      },
+      {
+        "code": "16-4",
+        "dropRate": 0.83
+      },
+      {
+        "code": "16-10",
+        "dropRate": 0.83
+      },
+      {
+        "code": "17-7",
+        "dropRate": 0.83
+      },
+      {
+        "code": "18-4",
+        "dropRate": 0.83
+      },
+      {
+        "code": "18-9",
+        "dropRate": 0.83
+      }
+    ]
+  },
+  "璀璨的飾品圖紙（5階）": {
+    "uid": 150020,
+    "rank": 5,
+    "stages": [
+      {
+        "code": "13-7",
+        "dropRate": 0.83
+      },
+      {
+        "code": "14-4",
+        "dropRate": 0.83
+      },
+      {
+        "code": "15-1",
+        "dropRate": 0.83
+      },
+      {
+        "code": "15-2",
+        "dropRate": 0.83
+      },
+      {
+        "code": "15-8",
+        "dropRate": 0.83
+      },
+      {
+        "code": "15-9",
+        "dropRate": 0.83
+      },
+      {
+        "code": "16-4",
+        "dropRate": 0.83
+      },
+      {
+        "code": "16-5",
+        "dropRate": 0.83
+      },
+      {
+        "code": "16-9",
+        "dropRate": 0.83
+      },
+      {
+        "code": "17-2",
+        "dropRate": 0.83
+      },
+      {
+        "code": "17-8",
+        "dropRate": 0.83
+      },
+      {
+        "code": "18-5",
+        "dropRate": 0.83
+      }
+    ]
+  },
+  "燦爛的飾品圖紙（5階）": {
+    "uid": 150021,
+    "rank": 5,
+    "stages": [
+      {
+        "code": "13-2",
+        "dropRate": 0.83
+      },
+      {
+        "code": "13-9",
+        "dropRate": 0.83
+      },
+      {
+        "code": "14-6",
+        "dropRate": 0.83
+      },
+      {
+        "code": "15-2",
+        "dropRate": 0.83
+      },
+      {
+        "code": "15-3",
+        "dropRate": 0.83
+      },
+      {
+        "code": "15-9",
+        "dropRate": 0.83
+      },
+      {
+        "code": "15-10",
+        "dropRate": 0.83
+      },
+      {
+        "code": "16-6",
+        "dropRate": 0.83
+      },
+      {
+        "code": "16-7",
+        "dropRate": 0.83
+      },
+      {
+        "code": "17-3",
+        "dropRate": 0.83
+      },
+      {
+        "code": "17-10",
+        "dropRate": 0.83
+      },
+      {
+        "code": "18-7",
+        "dropRate": 0.83
+      }
+    ]
+  },
+  "物理武器圖紙（6階）": {
+    "uid": 150022,
+    "rank": 6,
+    "stages": [
+      {
+        "code": "17-1",
+        "dropRate": 0.83
+      },
+      {
+        "code": "17-8",
+        "dropRate": 0.83
+      },
+      {
+        "code": "18-4",
+        "dropRate": 0.83
+      },
+      {
+        "code": "19-1",
+        "dropRate": 0.83
+      },
+      {
+        "code": "19-8",
+        "dropRate": 0.83
+      },
+      {
+        "code": "20-5",
+        "dropRate": 0.83
+      },
+      {
+        "code": "20-6",
+        "dropRate": 0.83
+      },
+      {
+        "code": "20-10",
+        "dropRate": 0.83
+      },
+      {
+        "code": "21-1",
+        "dropRate": 0.83
+      },
+      {
+        "code": "21-9",
+        "dropRate": 0.83
+      },
+      {
+        "code": "22-6",
+        "dropRate": 0.83
+      }
+    ]
   },
   "魔法武器圖紙（6階）": {
+    "uid": 150023,
     "rank": 6,
     "stages": [
       {
@@ -5758,102 +4999,326 @@
         "code": "22-8",
         "dropRate": 0.83
       }
-    ],
-    "uid": 150023
+    ]
   },
-  "魔法武器圖紙（8階）": {
-    "rank": 8,
+  "盔甲圖紙（6階）": {
+    "uid": 150024,
+    "rank": 6,
     "stages": [
       {
-        "code": "25-4",
+        "code": "17-4",
         "dropRate": 0.83
       },
       {
-        "code": "26-1",
+        "code": "18-1",
         "dropRate": 0.83
       },
       {
-        "code": "26-8",
+        "code": "18-8",
         "dropRate": 0.83
       },
       {
-        "code": "27-3",
+        "code": "19-1",
         "dropRate": 0.83
       },
       {
-        "code": "27-6",
+        "code": "19-3",
         "dropRate": 0.83
       },
       {
-        "code": "27-8",
+        "code": "19-4",
         "dropRate": 0.83
       },
       {
-        "code": "28-3",
+        "code": "19-5",
         "dropRate": 0.83
       },
       {
-        "code": "28-5",
+        "code": "20-1",
         "dropRate": 0.83
       },
       {
-        "code": "28-10",
+        "code": "20-2",
+        "dropRate": 0.83
+      },
+      {
+        "code": "20-8",
+        "dropRate": 0.83
+      },
+      {
+        "code": "21-5",
+        "dropRate": 0.83
+      },
+      {
+        "code": "22-2",
         "dropRate": 0.83
       }
-    ],
-    "uid": 150030
+    ]
   },
-  "魔法武器碎片（4階）": {
-    "rank": 4,
+  "帽子圖紙（6階）": {
+    "uid": 150025,
+    "rank": 6,
     "stages": [
       {
-        "code": "9-2",
+        "code": "17-5",
+        "dropRate": 0.83
+      },
+      {
+        "code": "18-2",
+        "dropRate": 0.83
+      },
+      {
+        "code": "18-9",
+        "dropRate": 0.83
+      },
+      {
+        "code": "19-5",
+        "dropRate": 0.83
+      },
+      {
+        "code": "19-6",
+        "dropRate": 0.83
+      },
+      {
+        "code": "20-2",
+        "dropRate": 0.83
+      },
+      {
+        "code": "20-3",
+        "dropRate": 0.83
+      },
+      {
+        "code": "20-9",
+        "dropRate": 0.83
+      },
+      {
+        "code": "21-6",
+        "dropRate": 0.83
+      },
+      {
+        "code": "22-3",
+        "dropRate": 0.83
+      },
+      {
+        "code": "22-10",
+        "dropRate": 0.83
+      }
+    ]
+  },
+  "靴子圖紙（6階）": {
+    "uid": 150026,
+    "rank": 6,
+    "stages": [
+      {
+        "code": "17-6",
+        "dropRate": 0.83
+      },
+      {
+        "code": "18-3",
+        "dropRate": 0.83
+      },
+      {
+        "code": "18-10",
+        "dropRate": 0.83
+      },
+      {
+        "code": "19-6",
+        "dropRate": 0.83
+      },
+      {
+        "code": "19-7",
+        "dropRate": 0.83
+      },
+      {
+        "code": "19-9",
+        "dropRate": 0.83
+      },
+      {
+        "code": "20-3",
+        "dropRate": 0.83
+      },
+      {
+        "code": "20-4",
+        "dropRate": 0.83
+      },
+      {
+        "code": "20-10",
+        "dropRate": 0.83
+      },
+      {
+        "code": "21-7",
+        "dropRate": 0.83
+      },
+      {
+        "code": "22-4",
+        "dropRate": 0.83
+      }
+    ]
+  },
+  "璀璨的飾品碎片圖紙（6階）": {
+    "uid": 150027,
+    "rank": 6,
+    "stages": [
+      {
+        "code": "17-7",
+        "dropRate": 0.83
+      },
+      {
+        "code": "18-5",
+        "dropRate": 0.83
+      },
+      {
+        "code": "19-2",
+        "dropRate": 0.83
+      },
+      {
+        "code": "19-7",
+        "dropRate": 0.83
+      },
+      {
+        "code": "19-8",
+        "dropRate": 0.83
+      },
+      {
+        "code": "20-4",
+        "dropRate": 0.83
+      },
+      {
+        "code": "20-5",
+        "dropRate": 0.83
+      },
+      {
+        "code": "20-9",
+        "dropRate": 0.83
+      },
+      {
+        "code": "21-2",
+        "dropRate": 0.83
+      },
+      {
+        "code": "21-8",
+        "dropRate": 0.83
+      },
+      {
+        "code": "22-5",
+        "dropRate": 0.83
+      },
+      {
+        "code": "22-9",
+        "dropRate": 0.83
+      }
+    ]
+  },
+  "燦爛的飾品碎片圖紙（6階）": {
+    "uid": 150028,
+    "rank": 6,
+    "stages": [
+      {
+        "code": "17-2",
+        "dropRate": 0.83
+      },
+      {
+        "code": "17-9",
+        "dropRate": 0.83
+      },
+      {
+        "code": "18-6",
+        "dropRate": 0.83
+      },
+      {
+        "code": "19-2",
+        "dropRate": 0.83
+      },
+      {
+        "code": "19-3",
+        "dropRate": 0.83
+      },
+      {
+        "code": "19-9",
+        "dropRate": 0.83
+      },
+      {
+        "code": "19-10",
+        "dropRate": 0.83
+      },
+      {
+        "code": "20-6",
+        "dropRate": 0.83
+      },
+      {
+        "code": "20-7",
+        "dropRate": 0.83
+      },
+      {
+        "code": "21-3",
+        "dropRate": 0.83
+      },
+      {
+        "code": "21-10",
+        "dropRate": 0.83
+      },
+      {
+        "code": "22-7",
+        "dropRate": 0.83
+      }
+    ]
+  },
+  "物理武器碎片（7階）": {
+    "uid": 140008,
+    "rank": 7,
+    "stages": [
+      {
+        "code": "21-7",
         "dropRate": 0.7263
       },
       {
-        "code": "9-9",
+        "code": "22-5",
         "dropRate": 0.7263
       },
       {
-        "code": "10-6",
+        "code": "23-1",
         "dropRate": 0.7263
       },
       {
-        "code": "11-1",
+        "code": "23-3",
         "dropRate": 0.7263
       },
       {
-        "code": "11-4",
+        "code": "23-8",
         "dropRate": 0.7263
       },
       {
-        "code": "11-10",
+        "code": "23-9",
         "dropRate": 0.7263
       },
       {
-        "code": "12-6",
+        "code": "23-10",
         "dropRate": 0.7263
       },
       {
-        "code": "13-4",
+        "code": "24-5",
         "dropRate": 0.7263
       },
       {
-        "code": "14-1",
+        "code": "24-10",
         "dropRate": 0.7263
       },
       {
-        "code": "14-8",
+        "code": "26-3",
         "dropRate": 0.7263
       },
       {
-        "code": "14-9",
+        "code": "26-7",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "26-9",
         "dropRate": 0.7263
       }
-    ],
-    "uid": 140002
+    ]
   },
   "魔法武器碎片（7階）": {
+    "uid": 140009,
     "rank": 7,
     "stages": [
       {
@@ -5904,7 +5369,542 @@
         "code": "26-6",
         "dropRate": 0.7263
       }
-    ],
-    "uid": 140009
+    ]
+  },
+  "盔甲碎片（7階）": {
+    "uid": 140010,
+    "rank": 7,
+    "stages": [
+      {
+        "code": "21-4",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "22-1",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "22-8",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "23-1",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "23-4",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "23-6",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "23-7",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "24-1",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "24-3",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "24-8",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "25-3",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "25-10",
+        "dropRate": 0.7263
+      }
+    ]
+  },
+  "帽子碎片（7階）": {
+    "uid": 140011,
+    "rank": 7,
+    "stages": [
+      {
+        "code": "21-5",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "22-2",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "22-9",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "23-5",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "23-7",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "24-2",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "24-4",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "24-9",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "25-4",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "26-1",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "26-10",
+        "dropRate": 0.7263
+      }
+    ]
+  },
+  "靴子碎片（7階）": {
+    "uid": 140012,
+    "rank": 7,
+    "stages": [
+      {
+        "code": "21-6",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "22-3",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "22-10",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "23-6",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "23-8",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "24-3",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "24-5",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "24-10",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "25-5",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "25-7",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "26-2",
+        "dropRate": 0.7263
+      }
+    ]
+  },
+  "璀璨的飾品碎片（7階）": {
+    "uid": 140013,
+    "rank": 7,
+    "stages": [
+      {
+        "code": "21-1",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "21-8",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "22-4",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "23-2",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "24-4",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "24-6",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "24-7",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "25-6",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "26-4",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "26-8",
+        "dropRate": 0.7263
+      }
+    ]
+  },
+  "燦爛的飾品碎片（7階）": {
+    "uid": 140014,
+    "rank": 7,
+    "stages": [
+      {
+        "code": "21-2",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "21-9",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "22-6",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "23-2",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "23-4",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "23-9",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "24-1",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "24-6",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "24-8",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "25-1",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "25-8",
+        "dropRate": 0.7263
+      },
+      {
+        "code": "26-5",
+        "dropRate": 0.7263
+      }
+    ]
+  },
+  "物理武器圖紙（8階）": {
+    "uid": 150029,
+    "rank": 8,
+    "stages": [
+      {
+        "code": "25-8",
+        "dropRate": 0.83
+      },
+      {
+        "code": "26-6",
+        "dropRate": 0.83
+      },
+      {
+        "code": "27-4",
+        "dropRate": 0.83
+      },
+      {
+        "code": "27-6",
+        "dropRate": 0.83
+      },
+      {
+        "code": "27-10",
+        "dropRate": 0.83
+      },
+      {
+        "code": "28-1",
+        "dropRate": 0.83
+      },
+      {
+        "code": "28-3",
+        "dropRate": 0.83
+      },
+      {
+        "code": "28-4",
+        "dropRate": 0.83
+      },
+      {
+        "code": "28-10",
+        "dropRate": 0.83
+      }
+    ]
+  },
+  "魔法武器圖紙（8階）": {
+    "uid": 150030,
+    "rank": 8,
+    "stages": [
+      {
+        "code": "25-4",
+        "dropRate": 0.83
+      },
+      {
+        "code": "26-1",
+        "dropRate": 0.83
+      },
+      {
+        "code": "26-8",
+        "dropRate": 0.83
+      },
+      {
+        "code": "27-3",
+        "dropRate": 0.83
+      },
+      {
+        "code": "27-6",
+        "dropRate": 0.83
+      },
+      {
+        "code": "27-8",
+        "dropRate": 0.83
+      },
+      {
+        "code": "28-3",
+        "dropRate": 0.83
+      },
+      {
+        "code": "28-5",
+        "dropRate": 0.83
+      },
+      {
+        "code": "28-10",
+        "dropRate": 0.83
+      }
+    ]
+  },
+  "盔甲圖紙（8階）": {
+    "uid": 150031,
+    "rank": 8,
+    "stages": [
+      {
+        "code": "25-5",
+        "dropRate": 0.83
+      },
+      {
+        "code": "26-2",
+        "dropRate": 0.83
+      },
+      {
+        "code": "26-9",
+        "dropRate": 0.83
+      },
+      {
+        "code": "27-2",
+        "dropRate": 0.83
+      },
+      {
+        "code": "27-4",
+        "dropRate": 0.83
+      },
+      {
+        "code": "27-7",
+        "dropRate": 0.83
+      },
+      {
+        "code": "27-9",
+        "dropRate": 0.83
+      },
+      {
+        "code": "28-2",
+        "dropRate": 0.83
+      },
+      {
+        "code": "28-4",
+        "dropRate": 0.83
+      },
+      {
+        "code": "28-6",
+        "dropRate": 0.83
+      }
+    ]
+  },
+  "帽子圖紙（8階）": {
+    "uid": 150032,
+    "rank": 8,
+    "stages": [
+      {
+        "code": "25-6",
+        "dropRate": 0.83
+      },
+      {
+        "code": "26-3",
+        "dropRate": 0.83
+      },
+      {
+        "code": "26-10",
+        "dropRate": 0.83
+      },
+      {
+        "code": "27-5",
+        "dropRate": 0.83
+      },
+      {
+        "code": "27-8",
+        "dropRate": 0.83
+      },
+      {
+        "code": "27-10",
+        "dropRate": 0.83
+      },
+      {
+        "code": "28-5",
+        "dropRate": 0.83
+      },
+      {
+        "code": "28-7",
+        "dropRate": 0.83
+      }
+    ]
+  },
+  "靴子圖紙（8階）": {
+    "uid": 150033,
+    "rank": 8,
+    "stages": [
+      {
+        "code": "25-7",
+        "dropRate": 0.83
+      },
+      {
+        "code": "26-4",
+        "dropRate": 0.83
+      },
+      {
+        "code": "27-1",
+        "dropRate": 0.83
+      },
+      {
+        "code": "27-9",
+        "dropRate": 0.83
+      },
+      {
+        "code": "28-1",
+        "dropRate": 0.83
+      },
+      {
+        "code": "28-6",
+        "dropRate": 0.83
+      },
+      {
+        "code": "28-8",
+        "dropRate": 0.83
+      }
+    ]
+  },
+  "璀璨的飾品圖紙（8階）": {
+    "uid": 150034,
+    "rank": 8,
+    "stages": [
+      {
+        "code": "25-1",
+        "dropRate": 0.83
+      },
+      {
+        "code": "25-2",
+        "dropRate": 0.83
+      },
+      {
+        "code": "25-9",
+        "dropRate": 0.83
+      },
+      {
+        "code": "26-5",
+        "dropRate": 0.83
+      },
+      {
+        "code": "27-1",
+        "dropRate": 0.83
+      },
+      {
+        "code": "27-3",
+        "dropRate": 0.83
+      },
+      {
+        "code": "28-7",
+        "dropRate": 0.83
+      },
+      {
+        "code": "28-8",
+        "dropRate": 0.83
+      },
+      {
+        "code": "28-9",
+        "dropRate": 0.83
+      }
+    ]
+  },
+  "燦爛的飾品圖紙（8階）": {
+    "uid": 150035,
+    "rank": 8,
+    "stages": [
+      {
+        "code": "25-3",
+        "dropRate": 0.83
+      },
+      {
+        "code": "25-10",
+        "dropRate": 0.83
+      },
+      {
+        "code": "26-7",
+        "dropRate": 0.83
+      },
+      {
+        "code": "27-2",
+        "dropRate": 0.83
+      },
+      {
+        "code": "27-5",
+        "dropRate": 0.83
+      },
+      {
+        "code": "27-7",
+        "dropRate": 0.83
+      },
+      {
+        "code": "28-2",
+        "dropRate": 0.83
+      },
+      {
+        "code": "28-9",
+        "dropRate": 0.83
+      }
+    ]
   }
 }
