@@ -16,7 +16,7 @@
     "postinstall": "node -e \"require('fs').copyFileSync('node_modules/highs/build/highs.wasm','public/highs.wasm')\""
   },
   "dependencies": {
-    "highs": "^1.8.0",
+    "highs": "^1.14.2",
     "marked": "^18.0.0",
     "pinia": "^3.0.0",
     "vue": "^3.5.35",
