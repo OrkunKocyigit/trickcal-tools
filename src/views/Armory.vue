@@ -49,7 +49,15 @@
                     :class="gearSlotClass(si)"
                     @click="toggleOwnedForSlot(si)"
                   >
-                    <div class="slot-check">{{ slotCheck(si) }}</div>
+                    <button
+                      class="slot-radio"
+                      :class="{ checked: isSlotOwned(si) }"
+                      type="button"
+                      @click.stop="toggleOwnedForSlot(si)"
+                      :aria-label="'Toggle ' + slotGearDisplayName(si)"
+                    >
+                      <span class="radio-dot"></span>
+                    </button>
                     <img
                       v-if="slotGearName(si)"
                       :src="getGearImageUrl(slotGearName(si))"
@@ -124,7 +132,15 @@
                     :class="gearSlotClass(si)"
                     @click="toggleOwnedForSlot(si)"
                   >
-                    <div class="slot-check">{{ slotCheck(si) }}</div>
+                    <button
+                      class="slot-radio"
+                      :class="{ checked: isSlotOwned(si) }"
+                      type="button"
+                      @click.stop="toggleOwnedForSlot(si)"
+                      :aria-label="'Toggle ' + slotGearDisplayName(si)"
+                    >
+                      <span class="radio-dot"></span>
+                    </button>
                     <img
                       v-if="slotGearName(si)"
                       :src="getGearImageUrl(slotGearName(si))"
@@ -371,12 +387,6 @@ function isSlotOwned(slotIndex: number): boolean {
   return rosterUid === uid
 }
 
-function slotCheck(slotIndex: number): string {
-  const uid = getSlotGearUid(slotIndex)
-  if (!uid) return '0'
-  return `×${ownedGearStore.getCount(uid)}`
-}
-
 function gearSlotClass(slotIndex: number): Record<string, boolean> {
   return { equipped: isSlotOwned(slotIndex) }
 }
@@ -617,24 +627,40 @@ function closeRankDropdown() {
   border-color: var(--primary-color);
 }
 
-.slot-check {
-  height: 20px;
-  min-width: 2.5rem;
-  padding: 0 0.375rem;
-  border: 1px solid var(--border-color);
-  border-radius: 999px;
+.slot-radio {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1.5px solid var(--text-secondary);
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.75rem;
-  flex-shrink: 0;
-  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+  padding: 0;
 }
 
-.gear-slot.equipped .slot-check {
-  background: var(--primary-color);
+.slot-radio .radio-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: transparent;
+  transition: background 0.2s;
+}
+
+.slot-radio.checked {
   border-color: var(--primary-color);
-  color: #fff;
+  background: var(--primary-color);
+}
+
+.slot-radio.checked .radio-dot {
+  background: #fff;
+}
+
+.slot-radio:hover {
+  border-color: var(--primary-color);
 }
 
 .slot-icon {
