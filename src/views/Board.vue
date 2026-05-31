@@ -195,9 +195,10 @@ import FloatingButton from '@/components/Board/FloatingButton.vue'
 import type { Character } from '@/stores/board'
 import { getAssetUrl } from '@/utils/assets'
 import { useI18n } from 'vue-i18n'
+import { toast } from '@/utils/toast'
 
 const boardStore = useBoardStore()
-const { locale } = useI18n()
+const { locale, t } = useI18n()
 const showSettings = ref(false)
 const leftPanelOpen = ref(false)
 const rightPanelOpen = ref(false)
@@ -372,6 +373,9 @@ function closeAllPanels() {
 onMounted(async () => {
   await boardStore.loadGameData()
   boardStore.loadUserProgress()
+  if (boardStore.progressError) {
+    toast.warning(t('board.progressLoadError'))
+  }
 })
 
 

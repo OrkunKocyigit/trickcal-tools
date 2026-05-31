@@ -52,9 +52,10 @@
     "defense": "Defense"
   },
   "board": {
-    "layerPanel": "Layer Panel",
-    "statsPanel": "Stats Panel",
-    "searchPlaceholder": "Search characters..."
+    "layerPanel": "Layer Select",
+    "statsPanel": "Statistics",
+    "searchPlaceholder": "Search characters...",
+    "progressLoadError": "Failed to load progress data — it may be corrupted. Check cloud backup or reconfigure."
   },
   "panel": {
     "layerSummary": "Layer Summary",
@@ -333,6 +334,7 @@
     "restoreFromCloud": "Restore from Cloud",
     "uploadSuccess": "Backup successful!",
     "uploadFailed": "Backup failed: {error}",
+    "uploadEmptyWarning": "Cloud backup has data but local has no characters. Uploading will overwrite the cloud backup. Continue?",
     "restoreSuccess": "Restore successful!",
     "restoreFailed": "Restore failed: {error}",
     "signInFailed": "Sign in failed: {error}",

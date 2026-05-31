@@ -198,8 +198,24 @@ export const useSyncStore = defineStore('sync', () => {
   /**
    * 上傳到雲端
    */
-  async function uploadToCloud() {
+  async function uploadToCloud(skipWarning = false) {
+    boardStore.ensureProgressLoaded()
     const localData = getLocalData()
+    const localOwned = localData.board?.ownedCharacters?.length ?? 0
+
+    if (!skipWarning) {
+      const cloudData = await checkCloudBackupStatus()
+      if (cloudData?.board) {
+        const cloudOwned = Array.isArray(cloudData.board.ownedCharacters)
+          ? cloudData.board.ownedCharacters.length
+          : 0
+        if (cloudOwned > 0 && localOwned === 0) {
+          const msg = i18n.global.t('sync.uploadEmptyWarning')
+          if (!confirm(msg)) return
+        }
+      }
+    }
+
     await syncManager.uploadToCloud(localData.board, localData.sweep, localData.roster)
   }
 
@@ -231,7 +247,7 @@ export const useSyncStore = defineStore('sync', () => {
    */
   async function resolveConflictWithLocal() {
     try {
-      await uploadToCloud()
+      await uploadToCloud(true)
       showConflictDialog.value = false
       conflictData.value = null
     } catch (error) {
@@ -281,6 +297,7 @@ export const useSyncStore = defineStore('sync', () => {
    */
   async function manualSync() {
     try {
+      boardStore.ensureProgressLoaded()
       const localData = getLocalData()
       const result = await syncManager.autoSync(
         localData.board,

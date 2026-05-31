@@ -78,6 +78,8 @@ export const useBoardStore = defineStore('board', () => {
     ownedCharacters: new Set(),
     activatedCells: {}
   })
+  const progressLoaded = ref(false)
+  const progressError = ref<string | null>(null)
 
   const currentLayer = ref<'layer1' | 'layer2' | 'layer3'>('layer1')
   const currentCellType = ref<string>('attack')
@@ -160,16 +162,35 @@ export const useBoardStore = defineStore('board', () => {
 
   // 載入用戶進度
   function loadUserProgress() {
+    progressError.value = null
     const saved = BoardProgressStorage.get()
     if (saved) {
       try {
+        if (typeof saved !== 'object') {
+          throw new Error('Invalid progress data format')
+        }
         userProgress.value = {
-          ownedCharacters: new Set(saved.ownedCharacters || []),
-          activatedCells: saved.activatedCells || {}
+          ownedCharacters: new Set(
+            Array.isArray(saved.ownedCharacters) ? saved.ownedCharacters : []
+          ),
+          activatedCells: (saved.activatedCells && typeof saved.activatedCells === 'object')
+            ? saved.activatedCells
+            : {}
         }
       } catch (error) {
+        const msg = error instanceof Error ? error.message : 'Unknown error'
         Logger.error('載入用戶進度失敗:', error)
+        progressError.value = msg
+        userProgress.value = { ownedCharacters: new Set(), activatedCells: {} }
       }
+    }
+    progressLoaded.value = true
+  }
+
+  // 確保進度已載入（供外部調用，如 armory）
+  function ensureProgressLoaded() {
+    if (!progressLoaded.value) {
+      loadUserProgress()
     }
   }
 
@@ -275,11 +296,14 @@ export const useBoardStore = defineStore('board', () => {
     boardData,
     characters,
     userProgress,
+    progressLoaded,
+    progressError,
     currentLayer,
     currentCellType,
     stats,
     loadGameData,
     loadUserProgress,
+    ensureProgressLoaded,
     saveUserProgress,
     toggleCharacterOwnership,
     toggleCellActivation,

@@ -52,9 +52,10 @@
     "defense": "防御力"
   },
   "board": {
-    "layerPanel": "レイヤーパネル",
-    "statsPanel": "統計パネル",
-    "searchPlaceholder": "キャラクターを検索..."
+    "layerPanel": "レイヤー選択",
+    "statsPanel": "統計",
+    "searchPlaceholder": "キャラクターを検索...",
+    "progressLoadError": "進捗データの読み込みに失敗しました。破損している可能性があります。クラウドバックアップを確認するか、再設定してください。"
   },
   "panel": {
     "layerSummary": "層の概要",
@@ -295,6 +296,7 @@
     "restoreFromCloud": "クラウドから復元",
     "uploadSuccess": "バックアップ成功！",
     "uploadFailed": "バックアップ失敗：{error}",
+    "uploadEmptyWarning": "クラウドにデータがありますが、ローカルにキャラクターデータがありません。アップロードするとクラウドのバックアップが上書きされます。続行しますか？",
     "restoreSuccess": "復元成功！",
     "restoreFailed": "復元失敗：{error}",
     "signInFailed": "ログイン失敗：{error}",

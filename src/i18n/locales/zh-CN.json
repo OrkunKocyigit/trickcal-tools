@@ -54,7 +54,8 @@
   "board": {
     "layerPanel": "层级选择",
     "statsPanel": "统计信息",
-    "searchPlaceholder": "搜索角色..."
+    "searchPlaceholder": "搜索角色...",
+    "progressLoadError": "进度数据加载失败，可能已损坏。请检查云端备份或重新设置。"
   },
   "panel": {
     "layerSummary": "层级总览",
@@ -303,6 +304,7 @@
     "restoreFromCloud": "从云端恢复",
     "uploadSuccess": "备份成功！",
     "uploadFailed": "备份失败：{error}",
+    "uploadEmptyWarning": "云端已有备份数据，但本地没有角色数据。上传将覆盖云端备份。确定继续？",
     "restoreSuccess": "恢复成功！",
     "restoreFailed": "恢复失败：{error}",
     "signInFailed": "登录失败：{error}",

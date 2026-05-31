@@ -22,6 +22,7 @@ const DEFAULT_UNIT: UnitProgress = {
 
 export function ensureOwnedInBoard(characterName: string) {
   const boardStore = useBoardStore()
+  boardStore.ensureProgressLoaded()
   if (!boardStore.userProgress.ownedCharacters.has(characterName)) {
     boardStore.userProgress.ownedCharacters.add(characterName)
     boardStore.saveUserProgress()
