@@ -99,6 +99,14 @@
               :total="cellStats.total"
             />
 
+            <!-- 隱藏已啟動篩選 -->
+            <div class="filter-row">
+              <label class="filter-checkbox">
+                <input type="checkbox" v-model="hideActivated" />
+                <span>{{ $t('board.hideActivated') }}</span>
+              </label>
+            </div>
+
             <!-- 角色網格 -->
             <div class="board-grid">
               <CharacterCard
@@ -206,6 +214,7 @@ const profileCharacter = ref<Character | null>(null)
 const searchQuery = ref('')
 const searchRef = ref<HTMLElement | null>(null)
 const searchFocused = ref(false)
+const hideActivated = ref(false)
 
 const cellOrder = ['attack', 'crit', 'hp', 'critResist', 'defense']
 
@@ -252,6 +261,13 @@ const filteredCharacters = computed(() => {
 
   if (query) {
     chars.sort(sortBySearchRank(query))
+  }
+
+  if (hideActivated.value) {
+    chars = chars.filter(char => {
+      const cellKey = `${char.name}_${boardStore.currentLayer}_${boardStore.currentCellType}`
+      return boardStore.userProgress.activatedCells[cellKey] !== true
+    })
   }
 
   return chars
@@ -634,6 +650,64 @@ onMounted(async () => {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   gap: 1rem;
+}
+
+.filter-row {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.filter-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  line-height: 1;
+}
+
+.filter-checkbox input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border-color);
+  border-radius: 5px;
+  background: var(--input-bg);
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.filter-checkbox input[type="checkbox"]:hover {
+  border-color: var(--primary-color);
+}
+
+.filter-checkbox input[type="checkbox"]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--primary-bg);
+}
+
+.filter-checkbox input[type="checkbox"]:checked {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.filter-checkbox input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 5px;
+  border-left: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: translate(-50%, -60%) rotate(-45deg);
 }
 
 /* 手機端浮動按鈕組 */

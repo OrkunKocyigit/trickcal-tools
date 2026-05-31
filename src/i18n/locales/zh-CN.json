@@ -55,7 +55,8 @@
     "layerPanel": "层级选择",
     "statsPanel": "统计信息",
     "searchPlaceholder": "搜索角色...",
-    "progressLoadError": "进度数据加载失败，可能已损坏。请检查云端备份或重新设置。"
+    "progressLoadError": "进度数据加载失败，可能已损坏。请检查云端备份或重新设置。",
+    "hideActivated": "隐藏已启动"
   },
   "panel": {
     "layerSummary": "层级总览",

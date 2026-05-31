@@ -55,7 +55,8 @@
     "layerPanel": "層級選擇",
     "statsPanel": "統計資訊",
     "searchPlaceholder": "搜尋角色...",
-    "progressLoadError": "進度資料載入失敗，可能已損毀。請檢查雲端備份或重新設定。"
+    "progressLoadError": "進度資料載入失敗，可能已損毀。請檢查雲端備份或重新設定。",
+    "hideActivated": "隱藏已啟動"
   },
   "panel": {
     "layerSummary": "層級總覽",

@@ -55,7 +55,8 @@
     "layerPanel": "Layer Select",
     "statsPanel": "Statistics",
     "searchPlaceholder": "Search characters...",
-    "progressLoadError": "Failed to load progress data — it may be corrupted. Check cloud backup or reconfigure."
+    "progressLoadError": "Failed to load progress data — it may be corrupted. Check cloud backup or reconfigure.",
+    "hideActivated": "Hide activated"
   },
   "panel": {
     "layerSummary": "Layer Summary",

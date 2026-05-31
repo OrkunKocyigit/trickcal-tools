@@ -55,7 +55,8 @@
     "layerPanel": "레이어 선택",
     "statsPanel": "통계",
     "searchPlaceholder": "캐릭터 검색...",
-    "progressLoadError": "진행 데이터를 불러오지 못했습니다. 손상되었을 수 있습니다. 클라우드 백업을 확인하거나 다시 설정하세요."
+    "progressLoadError": "진행 데이터를 불러오지 못했습니다. 손상되었을 수 있습니다. 클라우드 백업을 확인하거나 다시 설정하세요.",
+    "hideActivated": "활성화 숨기기"
   },
   "panel": {
     "layerSummary": "레이어 요약",

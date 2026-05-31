@@ -55,7 +55,8 @@
     "layerPanel": "レイヤー選択",
     "statsPanel": "統計",
     "searchPlaceholder": "キャラクターを検索...",
-    "progressLoadError": "進捗データの読み込みに失敗しました。破損している可能性があります。クラウドバックアップを確認するか、再設定してください。"
+    "progressLoadError": "進捗データの読み込みに失敗しました。破損している可能性があります。クラウドバックアップを確認するか、再設定してください。",
+    "hideActivated": "アクティブを隠す"
   },
   "panel": {
     "layerSummary": "層の概要",
