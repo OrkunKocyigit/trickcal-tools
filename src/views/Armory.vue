@@ -40,35 +40,8 @@
             <!-- State B: Selected -->
             <div v-else class="selected-state">
               <div class="slots-row">
-                <!-- Left slots: 0, 1, 5 -->
                 <div class="slot-column">
-                  <div
-                    v-for="si in [0, 1, 5]"
-                    :key="si"
-                    class="gear-slot"
-                    :class="gearSlotClass(si)"
-                    @click="toggleOwnedForSlot(si)"
-                  >
-                    <button
-                      class="slot-radio"
-                      :class="{ checked: isSlotOwned(si) }"
-                      type="button"
-                      @click.stop="toggleOwnedForSlot(si)"
-                      :aria-label="'Toggle ' + slotGearDisplayName(si)"
-                    >
-                      <span class="radio-dot"></span>
-                    </button>
-                    <img
-                      v-if="slotGearName(si)"
-                      :src="getGearImageUrl(slotGearName(si))"
-                      :alt="slotGearName(si)"
-                      class="slot-icon"
-                      loading="lazy"
-                      @error="($event.target as HTMLImageElement).style.display = 'none'"
-                    />
-                    <div class="slot-label">{{ $t(`armory.slot${si}`) }}</div>
-                    <div class="slot-gear-name">{{ slotGearDisplayName(si) }}</div>
-                  </div>
+                  <GearSlot v-for="si in [0, 1, 5]" :key="si" :slot-index="si" :selected-char="selectedChar" />
                 </div>
 
                 <!-- Center: Avatar + Character Info -->
@@ -123,35 +96,8 @@
                   </div>
                 </div>
 
-                <!-- Right slots: 2, 4, 3 -->
                 <div class="slot-column">
-                  <div
-                    v-for="si in [2, 4, 3]"
-                    :key="si"
-                    class="gear-slot"
-                    :class="gearSlotClass(si)"
-                    @click="toggleOwnedForSlot(si)"
-                  >
-                    <button
-                      class="slot-radio"
-                      :class="{ checked: isSlotOwned(si) }"
-                      type="button"
-                      @click.stop="toggleOwnedForSlot(si)"
-                      :aria-label="'Toggle ' + slotGearDisplayName(si)"
-                    >
-                      <span class="radio-dot"></span>
-                    </button>
-                    <img
-                      v-if="slotGearName(si)"
-                      :src="getGearImageUrl(slotGearName(si))"
-                      :alt="slotGearName(si)"
-                      class="slot-icon"
-                      loading="lazy"
-                      @error="($event.target as HTMLImageElement).style.display = 'none'"
-                    />
-                    <div class="slot-label">{{ $t(`armory.slot${si}`) }}</div>
-                    <div class="slot-gear-name">{{ slotGearDisplayName(si) }}</div>
-                  </div>
+                  <GearSlot v-for="si in [2, 4, 3]" :key="si" :slot-index="si" :selected-char="selectedChar" />
                 </div>
               </div>
 
@@ -240,16 +186,18 @@
 import { ref, computed, watch, nextTick, onMounted, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useArmoryStore } from '@/stores/armory'
-import { useRosterStore, ensureOwnedInBoard } from '@/stores/roster'
+import { useRosterStore } from '@/stores/roster'
 import { useOwnedGearStore } from '@/stores/ownedGear'
 import { useMaterialInventoryStore } from '@/stores/materialInventory'
 import AppLayout from '@/components/Layout/AppLayout.vue'
 import CharacterSelector from '@/components/Armory/CharacterSelector.vue'
+import GearSlot from '@/components/Armory/GearSlot.vue'
 import RequirementsPanel from '@/components/Armory/RequirementsPanel.vue'
 import OptimizationPanel from '@/components/Armory/OptimizationPanel.vue'
 import OwnedGearModal from '@/components/Armory/OwnedGearModal.vue'
-import { getAssetUrl, getCharacterImageUrl, getGearImageUrl } from '@/utils/assets'
+import { getAssetUrl, getCharacterImageUrl } from '@/utils/assets'
 import { HideFulfilledStorage } from '@/utils/storage'
+import { range } from '@/utils/helpers'
 
 const { locale } = useI18n()
 const armoryStore = useArmoryStore()
@@ -267,25 +215,13 @@ const rankDropdownStyle = ref({})
 
 const rankOptions = computed(() => {
   if (!selectedChar.value) return []
-  const char = armoryStore.charData[selectedChar.value]
-  const gear = char?.gear
-  if (!gear) {
-    const opts: number[] = []
-    for (let r = 2; r <= armoryStore.maxRank; r++) opts.push(r)
-    return opts
-  }
+  const gear = armoryStore.charData[selectedChar.value]?.gear
   const rankIdx = currentRank.value - 1
-  const rankGear = gear[rankIdx]
-  if (!rankGear) {
-    const opts: number[] = []
-    for (let r = 2; r <= armoryStore.maxRank; r++) opts.push(r)
-    return opts
-  }
+  const rankGear = gear?.[rankIdx]
+  if (!rankGear) return range(2, armoryStore.maxRank)
   const allEquipped = rankGear.every((uid: number) => ownedGearStore.isOwned(uid))
   const start = allEquipped ? currentRank.value + 1 : currentRank.value
-  const options: number[] = []
-  for (let r = start; r <= armoryStore.maxRank; r++) options.push(r)
-  return options
+  return range(start, armoryStore.maxRank)
 })
 
 const currentRank = computed(() => {
@@ -345,59 +281,6 @@ function nextRank() {
     rosterStore.setUnitRank(selectedChar.value, r.currentRank + 1)
     armoryStore.computeRequirements()
   }
-}
-
-function getSlotGearUid(slotIndex: number): number | null {
-  const charName = selectedChar.value
-  if (!charName) return null
-  const char = armoryStore.charData[charName]
-  if (!char) return null
-  const gear = char.gear
-  if (!gear) return null
-  const rank = currentRank.value
-  const rankIdx = rank - 1
-  if (!gear[rankIdx]) return null
-  return gear[rankIdx][slotIndex] as number
-}
-
-function slotGearName(slotIndex: number): string {
-  const uid = getSlotGearUid(slotIndex)
-  if (!uid) return ''
-  const info = armoryStore.getGearNameByUid(uid)
-  return info.name
-}
-
-function slotGearDisplayName(slotIndex: number): string {
-  const uid = getSlotGearUid(slotIndex)
-  if (!uid) return ''
-  const info = armoryStore.getGearNameByUid(uid)
-  return locale.value === 'en' ? info.nameEn : info.name
-}
-
-function isSlotOwned(slotIndex: number): boolean {
-  const uid = getSlotGearUid(slotIndex)
-  if (!uid) return false
-  if (ownedGearStore.getCount(uid) > 0) return true
-  const roster = rosterStore.rosterData[selectedChar.value]
-  if (!roster) return false
-  const equippedName = roster.equipment[slotIndex]
-  if (!equippedName) return false
-  const nameToUid = armoryStore.getNameToUidMap()
-  const rosterUid = nameToUid.get(equippedName)
-  return rosterUid === uid
-}
-
-function gearSlotClass(slotIndex: number): Record<string, boolean> {
-  return { equipped: isSlotOwned(slotIndex) }
-}
-
-function toggleOwnedForSlot(slotIndex: number) {
-  if (!selectedChar.value) return
-  const uid = getSlotGearUid(slotIndex)
-  if (!uid) return
-  ownedGearStore.toggleOwned(uid)
-  ensureOwnedInBoard(selectedChar.value)
-  armoryStore.computeRequirements()
 }
 
 function decMaterial(uid: number) {
@@ -603,88 +486,6 @@ function closeRankDropdown() {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-}
-
-.gear-slot {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 0.625rem;
-  background: var(--panel-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.2s;
-  opacity: 0.65;
-}
-
-.gear-slot.equipped {
-  opacity: 1;
-  border-color: var(--primary-color);
-}
-
-.gear-slot:hover {
-  border-color: var(--primary-color);
-}
-
-.slot-radio {
-  width: 10px;
-  height: 10px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  border: 1.5px solid var(--text-secondary);
-  background: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.2s;
-  padding: 0;
-}
-
-.slot-radio .radio-dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: transparent;
-  transition: background 0.2s;
-}
-
-.slot-radio.checked {
-  border-color: var(--primary-color);
-  background: var(--primary-color);
-}
-
-.slot-radio.checked .radio-dot {
-  background: #fff;
-}
-
-.slot-radio:hover {
-  border-color: var(--primary-color);
-}
-
-.slot-icon {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  flex-shrink: 0;
-  border-radius: 4px;
-  background: var(--card-bg);
-}
-
-.slot-label {
-  font-size: 0.6875rem;
-  color: var(--text-secondary);
-  min-width: 2.5rem;
-}
-
-.slot-gear-name {
-  font-size: 0.6875rem;
-  color: var(--text-primary);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  flex: 1;
 }
 
 .center-column {
