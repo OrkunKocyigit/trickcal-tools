@@ -125,7 +125,20 @@ export const useArmoryStore = defineStore('armory', () => {
     if (!selectedCharacter.value) return false
     const rosterStore = useRosterStore()
     const prog = rosterStore.getUnitProgress(selectedCharacter.value)
-    if (prog.currentRank >= targetRank.value) return false
+    if (prog.currentRank > targetRank.value) return false
+
+    // Allow upgrade at same rank if character has unowned gear at current rank
+    if (prog.currentRank === targetRank.value) {
+      const char = charData.value[selectedCharacter.value]
+      if (char?.gear) {
+        const rankGear = char.gear[prog.currentRank - 1]
+        if (rankGear) {
+          const ogStore = useOwnedGearStore()
+          const allOwned = rankGear.every((uid: number) => ogStore.getCount(uid) > 0)
+          if (allOwned) return false // maxed for this rank, nothing to upgrade
+        }
+      }
+    }
 
     // Check if materials are sufficient or coverable by 101
     const rn = rankedNeeds.value
@@ -390,7 +403,7 @@ export const useArmoryStore = defineStore('armory', () => {
     const progress = rosterStore.getUnitProgress(name)
     const fromRank = progress.currentRank
     const toRank = targetRank.value
-    if (fromRank >= toRank) return
+    if (fromRank > toRank) return
 
     // Execute upgrade: iterate rank upward, equip gear, deduct resources
     let total101Cost = 0
