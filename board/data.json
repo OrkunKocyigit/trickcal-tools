@@ -1172,6 +1172,23 @@
         "crit",
         "critResist"
       ]
+    },
+    "莉絲蒂": {
+      "layer1": [
+        "attack",
+        "defense"
+      ],
+      "layer2": [
+        "attack",
+        "defense",
+        "hp"
+      ],
+      "layer3": [
+        "attack",
+        "hp",
+        "crit",
+        "critResist"
+      ]
     }
   },
   "boardConfig": {

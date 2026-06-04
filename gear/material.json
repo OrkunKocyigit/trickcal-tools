@@ -390,5 +390,54 @@
     "nameEn": "Shining Accessory Design (Tier 8)",
     "icon": "Equip_Recipe_Icon_Accessory802",
     "rarity": 4
+  },
+  "150036": {
+    "uid": 150036,
+    "name": "物理武器圖紙（9階）",
+    "nameEn": "Physical Weapon Design (Tier 9)",
+    "icon": "Equip_Recipe_Icon_Weapon901",
+    "rarity": 5
+  },
+  "150037": {
+    "uid": 150037,
+    "name": "魔法武器圖紙（9階）",
+    "nameEn": "Magical Weapon Design (Tier 9)",
+    "icon": "Equip_Recipe_Icon_Weapon902",
+    "rarity": 5
+  },
+  "150038": {
+    "uid": 150038,
+    "name": "盔甲圖紙（9階）",
+    "nameEn": "Armor Design (Tier 9)",
+    "icon": "Equip_Recipe_Icon_Armor901",
+    "rarity": 5
+  },
+  "150039": {
+    "uid": 150039,
+    "name": "帽子圖紙（9階）",
+    "nameEn": "Hat Design (Tier 9)",
+    "icon": "Equip_Recipe_Icon_Armor902",
+    "rarity": 5
+  },
+  "150040": {
+    "uid": 150040,
+    "name": "靴子圖紙（9階）",
+    "nameEn": "Boots Design (Tier 9)",
+    "icon": "Equip_Recipe_Icon_Armor903",
+    "rarity": 5
+  },
+  "150041": {
+    "uid": 150041,
+    "name": "璀璨的飾品碎片圖紙（9階）",
+    "nameEn": "Brilliant Accessory Design\\n(Tier 9)",
+    "icon": "Equip_Recipe_Icon_Accessory901",
+    "rarity": 5
+  },
+  "150042": {
+    "uid": 150042,
+    "name": "燦爛的飾品圖紙（9階）",
+    "nameEn": "Shining Accessory Design (Tier 9)",
+    "icon": "Equip_Recipe_Icon_Accessory902",
+    "rarity": 5
   }
 }
