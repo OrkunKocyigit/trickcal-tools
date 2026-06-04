@@ -250,13 +250,17 @@ def copy_binary(src: Path, dest: Path) -> bool:
     return True
 
 
-def compose_equip_image(src: Path, dest: Path, rarity: int) -> bool:
+def compose_equip_image(src: Path, dest: Path, rarity: int, item_type: str = "gear") -> bool:
     if not src.exists():
         return False
 
-    bg_name = RAW_BG_FILES.get(int(rarity) if rarity is not None else 0)
+    rarity = int(rarity) if rarity is not None else 0
+    bg_name = RAW_BG_FILES.get(rarity)
     if bg_name is None:
-        return copy_binary(src, dest)
+        if rarity > 4:
+            bg_name = f"{item_type}_{rarity}"
+        else:
+            return copy_binary(src, dest)
 
     bg_path = SCRIPT_DIR / f"{bg_name}.webp"
     if not bg_path.exists():
@@ -351,7 +355,7 @@ def process_food_images(tool_foods: dict[str, Any], temp_assets: Path) -> None:
             copy_binary(src, dest)
 
 
-def process_equip_images(tool_items: dict[str, Any], temp_assets: Path) -> None:
+def process_equip_images(tool_items: dict[str, Any], temp_assets: Path, item_type: str = "gear") -> None:
     gear_src = temp_assets / "gears"
     material_src = temp_assets / "materials"
     dest_dir = PUBLIC_ROOT / "assets" / "gears"
@@ -365,7 +369,7 @@ def process_equip_images(tool_items: dict[str, Any], temp_assets: Path) -> None:
             src = material_src / f"{display_name}.webp"
         rarity = int(entry.get("rarity") or 1)
         dest = dest_dir / f"{display_name}.webp"
-        compose_equip_image(src, dest, rarity)
+        compose_equip_image(src, dest, rarity, item_type)
 
 
 def run_tool_extractor(work_dir: Path, version: str | None, no_images: bool) -> None:
@@ -433,8 +437,8 @@ def main() -> None:
 
         if not args.no_images:
             process_character_images(tool["assets"], ordered_chars, tool["characters"])
-            process_equip_images(tool["gear"], tool["assets"])
-            process_equip_images(tool["material"], tool["assets"])
+            process_equip_images(tool["gear"], tool["assets"], "gear")
+            process_equip_images(tool["material"], tool["assets"], "material")
             process_food_images(tool["foods"], tool["assets"])
 
 
