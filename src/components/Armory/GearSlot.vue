@@ -30,7 +30,7 @@
 import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useArmoryStore } from '@/stores/armory'
-import { useRosterStore, ensureOwnedInBoard } from '@/stores/roster'
+import { useRosterStore } from '@/stores/roster'
 import { useOwnedGearStore } from '@/stores/ownedGear'
 import { getGearImageUrl } from '@/utils/assets'
 
@@ -74,14 +74,16 @@ const slotGearDisplayName = computed(() => {
 const isSlotOwned = computed(() => {
   const uid = slotGearUid.value
   if (!uid) return false
-  if (ownedGearStore.getCount(uid) > 0) return true
   const roster = rosterStore.rosterData[props.selectedChar]
-  if (!roster) return false
-  const equippedName = roster.equipment[props.slotIndex]
-  if (!equippedName) return false
-  const nameToUid = armoryStore.getNameToUidMap()
-  const rosterUid = nameToUid.get(equippedName)
-  return rosterUid === uid
+  if (roster) {
+    const equippedName = roster.equipment[props.slotIndex]
+    if (equippedName) {
+      const nameToUid = armoryStore.getNameToUidMap()
+      const rosterUid = nameToUid.get(equippedName)
+      if (rosterUid === uid) return true
+    }
+  }
+  return false
 })
 
 const gearSlotClass = computed(() => ({
@@ -91,8 +93,17 @@ const gearSlotClass = computed(() => ({
 function toggleOwnedForSlot() {
   const uid = slotGearUid.value
   if (!uid) return
-  ownedGearStore.toggleOwned(uid)
-  ensureOwnedInBoard(props.selectedChar)
+  const name = slotGearName.value
+  if (!name) return
+  const currentEquipped = rosterStore.rosterData[props.selectedChar]?.equipment[props.slotIndex]
+  if (currentEquipped === name) {
+    rosterStore.setEquippedGear(props.selectedChar, props.slotIndex, null)
+  } else {
+    rosterStore.setEquippedGear(props.selectedChar, props.slotIndex, name)
+    if (ownedGearStore.getCount(uid) > 0) {
+      ownedGearStore.addCount(uid, -1)
+    }
+  }
   armoryStore.computeRequirements()
 }
 </script>
@@ -109,10 +120,12 @@ function toggleOwnedForSlot() {
   cursor: pointer;
   transition: all 0.2s;
   opacity: 0.65;
+  filter: grayscale(0.85);
 }
 
 .gear-slot.equipped {
   opacity: 1;
+  filter: none;
   border-color: var(--primary-color);
 }
 

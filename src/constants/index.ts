@@ -27,6 +27,8 @@ export const STORAGE_KEYS = {
   SELECTED_CHARACTER: 'trickcal_armory_selected_char',
   /** 裝備工坊隱藏已滿足素材 */
   HIDE_FULFILLED: 'trickcal_armory_hide_fulfilled',
+  /** 裝備工坊 v2 遷移標記 */
+  GEAR_MIGRATED_V2: 'trickcal_gear_migrated_v2',
 } as const
 
 /**

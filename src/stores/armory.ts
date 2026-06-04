@@ -5,7 +5,8 @@ import i18n from '@/i18n'
 import { useRosterStore } from './roster'
 import { useMaterialInventoryStore } from './materialInventory'
 import { useOwnedGearStore } from './ownedGear'
-import { Equipment101Storage, SelectedCharacterStorage } from '@/utils/storage'
+import { Equipment101Storage, SelectedCharacterStorage, Storage } from '@/utils/storage'
+import { STORAGE_KEYS } from '@/constants'
 
 const STAMINA_PER_RUN = 10
 
@@ -134,7 +135,12 @@ export const useArmoryStore = defineStore('armory', () => {
         const rankGear = char.gear[prog.currentRank - 1]
         if (rankGear) {
           const ogStore = useOwnedGearStore()
-          const allOwned = rankGear.every((uid: number) => ogStore.getCount(uid) > 0)
+          const roster = rosterStore.rosterData[selectedCharacter.value]
+          const nameToUid = getNameToUidMap()
+          const allOwned = rankGear.every((uid: number, s: number) => {
+            if (roster?.equipment[s] && nameToUid.get(roster.equipment[s]!) === uid) return true
+            return ogStore.getCount(uid) > 0
+          })
           if (allOwned) return false // maxed for this rank, nothing to upgrade
         }
       }
@@ -207,6 +213,13 @@ export const useArmoryStore = defineStore('armory', () => {
       miStore.loadData()
       const ogStore = useOwnedGearStore()
       ogStore.loadData()
+
+      // One-time migration: clear ownedGearStore artifacts from old system
+      if (!Storage.get(STORAGE_KEYS.GEAR_MIGRATED_V2)) {
+        ogStore.clearAll()
+        Storage.set(STORAGE_KEYS.GEAR_MIGRATED_V2, true)
+        Logger.info('[armory] migrated ownedGearStore for v2')
+      }
 
       isLoaded.value = true
     } catch (error) {
@@ -284,6 +297,7 @@ export const useArmoryStore = defineStore('armory', () => {
     const progress = rosterStore.getUnitProgress(charName)
     const currentRank = progress.currentRank
     const target = targetRank.value
+    const charRoster = rosterStore.rosterData[charName]
 
     if (target < currentRank) {
       requirements.value = []
@@ -304,7 +318,8 @@ export const useArmoryStore = defineStore('armory', () => {
         const uid = rankGear[s]
         const info = getGearNameByUid(uid)
         const ownedCount = ogStore.getCount(uid)
-        const alreadyOwned = ownedCount > 0
+        const equippedName = charRoster?.equipment[s]
+        const alreadyOwned = ownedCount > 0 || (equippedName === info.name)
         const gearEntry = gearDb.value[String(uid)]
         const recipe = gearEntry?.recipe || []
 
@@ -405,6 +420,8 @@ export const useArmoryStore = defineStore('armory', () => {
     const toRank = targetRank.value
     if (fromRank > toRank) return
 
+    const charRoster = rosterStore.rosterData[name]
+
     // Execute upgrade: iterate rank upward, equip gear, deduct resources
     let total101Cost = 0
     for (let r = fromRank; r <= toRank; r++) {
@@ -412,8 +429,19 @@ export const useArmoryStore = defineStore('armory', () => {
       if (!rankGear) continue
       for (let s = 0; s < rankGear.length; s++) {
         const uid = rankGear[s] as number
-        if (ogStore.getCount(uid) > 0) continue
+        const info = getGearNameByUid(uid)
 
+        // Already equipped via roster → skip
+        if (charRoster?.equipment[s] === info.name) continue
+
+        // Priority 1: consume full gear from ownedGearStore
+        if (ogStore.getCount(uid) > 0) {
+          ogStore.addCount(uid, -1)
+          rosterStore.setEquippedGear(name, s, info.name)
+          continue
+        }
+
+        // Priority 2: craft from recipe materials
         const gearEntry = gearDb.value[String(uid)]
         if (gearEntry?.recipe) {
           for (const mat of gearEntry.recipe) {
@@ -438,10 +466,6 @@ export const useArmoryStore = defineStore('armory', () => {
           }
         }
 
-        if (ogStore.getCount(uid) <= 0) {
-          ogStore.setCount(uid, 1)
-        }
-        const info = getGearNameByUid(uid)
         rosterStore.setEquippedGear(name, s, info.name)
       }
     }

@@ -219,7 +219,12 @@ const rankOptions = computed(() => {
   const rankIdx = currentRank.value - 1
   const rankGear = gear?.[rankIdx]
   if (!rankGear) return range(2, armoryStore.maxRank)
-  const allEquipped = rankGear.every((uid: number) => ownedGearStore.isOwned(uid))
+  const roster = rosterStore.rosterData[selectedChar.value]
+  const nameToUid = armoryStore.getNameToUidMap()
+  const allEquipped = rankGear.every((uid: number, s: number) => {
+    if (roster?.equipment[s] && nameToUid.get(roster.equipment[s]!) === uid) return true
+    return ownedGearStore.isOwned(uid)
+  })
   const start = allEquipped ? currentRank.value + 1 : currentRank.value
   return range(start, armoryStore.maxRank)
 })

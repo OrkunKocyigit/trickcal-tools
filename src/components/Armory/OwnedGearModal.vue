@@ -15,7 +15,7 @@
                   v-for="g in gearByRank(rank)"
                   :key="g.uid"
                   class="gear-card"
-                  :class="{ owned: g.owned }"
+                  :class="{ owned: g.count > 0 }"
                 >
                 <img
                   :src="getGearImageUrl(g.name)"
@@ -24,7 +24,7 @@
                   loading="lazy"
                   @error="($event.target as HTMLImageElement).style.display = 'none'"
                 />
-                <div class="gear-name">{{ locale === 'en' ? g.nameEn : g.name }}</div>
+                <div class="gear-name">{{ displayName(g) }}</div>
                 <div class="gear-slot">{{ $t(`armory.slot${g.slotIdx}`) }}</div>
                 <div class="gear-count-row">
                   <button class="gear-count-btn" type="button" @click.stop="dec(g.uid)">−</button>
@@ -59,24 +59,24 @@ import { computed, nextTick, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useArmoryStore } from '@/stores/armory'
 import { useOwnedGearStore } from '@/stores/ownedGear'
-import { ensureOwnedInBoard } from '@/stores/roster'
+import { useRosterStore } from '@/stores/roster'
 import { getGearImageUrl } from '@/utils/assets'
 
 const { locale } = useI18n()
 const armoryStore = useArmoryStore()
 const ownedGearStore = useOwnedGearStore()
+const rosterStore = useRosterStore()
 const editingUid = ref<number | null>(null)
 
 defineEmits<{
   close: []
 }>()
 
-interface GearSlotInfo {
+interface GearDisplayInfo {
   uid: number
   name: string
   nameEn: string
   slotIdx: number
-  owned: boolean
   count: number
 }
 
@@ -85,20 +85,24 @@ const rankList = computed(() => {
   if (!charName) return []
   const char = armoryStore.charData[charName]
   if (!char) return []
-  const gear = (char as any)?.gear
+  const gear = char.gear
   if (!gear) return []
-  return gear.map((_: unknown, idx: number) => idx + 1).filter((r: number) => {
-    const g = gear[r - 1]
-    return g && g.length === 6
-  })
+  const currentRank = rosterStore.getUnitProgress(charName).currentRank
+  return gear
+    .map((_: unknown, idx: number) => idx + 1)
+    .filter((r: number) => {
+      if (r < currentRank) return false
+      const rankGear = gear[r - 1]
+      return Array.isArray(rankGear) && rankGear.length > 0
+    })
 })
 
-function gearByRank(rank: number): GearSlotInfo[] {
+function gearByRank(rank: number): GearDisplayInfo[] {
   const charName = armoryStore.selectedCharacter
   if (!charName) return []
   const char = armoryStore.charData[charName]
   if (!char) return []
-  const gear = (char as any)?.gear
+  const gear = char.gear
   if (!gear) return []
   const rankGear = gear[rank - 1]
   if (!rankGear) return []
@@ -109,10 +113,22 @@ function gearByRank(rank: number): GearSlotInfo[] {
       name: info.name,
       nameEn: info.nameEn,
       slotIdx,
-      owned: ownedGearStore.isOwned(uid),
       count: ownedGearStore.getCount(uid),
     }
   })
+}
+
+function isEquippedByCurrentChar(uid: number): boolean {
+  const charName = armoryStore.selectedCharacter
+  if (!charName) return false
+  const info = armoryStore.getGearNameByUid(uid)
+  const roster = rosterStore.rosterData[charName]
+  if (!roster) return false
+  return roster.equipment.some(e => e === info.name)
+}
+
+function displayName(g: GearDisplayInfo): string {
+  return locale.value === 'en' ? g.nameEn : g.name
 }
 
 function startEdit(uid: number) {
@@ -128,10 +144,12 @@ function commitEdit(uid: number, raw: string) {
   editingUid.value = null
   const count = parseInt(raw, 10)
   if (!isNaN(count) && count >= 0) {
+    const prev = ownedGearStore.getCount(uid)
     ownedGearStore.setCount(uid, count)
-    const charName = armoryStore.selectedCharacter
-    if (charName) ensureOwnedInBoard(charName)
-    armoryStore.computeRequirements()
+    const crossed = (prev === 0) !== (count === 0)
+    if (crossed && !isEquippedByCurrentChar(uid)) {
+      armoryStore.computeRequirements()
+    }
   }
 }
 
@@ -140,17 +158,19 @@ function cancelEdit() {
 }
 
 function inc(uid: number) {
+  const prev = ownedGearStore.getCount(uid)
   ownedGearStore.addCount(uid, 1)
-  const charName = armoryStore.selectedCharacter
-  if (charName) ensureOwnedInBoard(charName)
-  armoryStore.computeRequirements()
+  if (prev === 0 && !isEquippedByCurrentChar(uid)) {
+    armoryStore.computeRequirements()
+  }
 }
 
 function dec(uid: number) {
+  const prev = ownedGearStore.getCount(uid)
   ownedGearStore.addCount(uid, -1)
-  const charName = armoryStore.selectedCharacter
-  if (charName) ensureOwnedInBoard(charName)
-  armoryStore.computeRequirements()
+  if (prev === 1 && !isEquippedByCurrentChar(uid)) {
+    armoryStore.computeRequirements()
+  }
 }
 </script>
 
