@@ -1189,6 +1189,23 @@
         "crit",
         "critResist"
       ]
+    },
+    "雷內瓦": {
+      "layer1": [
+        "attack",
+        "defense"
+      ],
+      "layer2": [
+        "attack",
+        "defense",
+        "hp"
+      ],
+      "layer3": [
+        "attack",
+        "hp",
+        "crit",
+        "critResist"
+      ]
     }
   },
   "boardConfig": {
