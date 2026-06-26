@@ -29,6 +29,8 @@ export const STORAGE_KEYS = {
   HIDE_FULFILLED: 'trickcal_armory_hide_fulfilled',
   /** 裝備工坊 v2 遷移標記 */
   GEAR_MIGRATED_V2: 'trickcal_gear_migrated_v2',
+  /** 裝備工坊各角色目標 rank */
+  ARMORY_TARGET_RANKS: 'trickcal_armory_target_ranks',
 } as const
 
 /**

@@ -205,15 +205,25 @@ export const SelectedCharacterStorage = {
   },
 }
 
-/**
- * 裝備工坊隱藏已滿足素材
- */
 export const HideFulfilledStorage = {
+  /** 裝備工坊隱藏已滿足素材 */
   get: (): boolean => {
     return Storage.get<boolean>(STORAGE_KEYS.HIDE_FULFILLED) ?? false
   },
   set: (hide: boolean): boolean => {
     return Storage.set(STORAGE_KEYS.HIDE_FULFILLED, hide)
+  },
+}
+
+/**
+ * 裝備工坊各角色目標 rank
+ */
+export const TargetRankStorage = {
+  get: (): Record<string, number> => {
+    return Storage.get<Record<string, number>>(STORAGE_KEYS.ARMORY_TARGET_RANKS) || {}
+  },
+  set: (data: Record<string, number>): boolean => {
+    return Storage.set(STORAGE_KEYS.ARMORY_TARGET_RANKS, data)
   },
 }
 

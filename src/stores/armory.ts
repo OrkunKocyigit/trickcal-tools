@@ -5,7 +5,7 @@ import i18n from '@/i18n'
 import { useRosterStore } from './roster'
 import { useMaterialInventoryStore } from './materialInventory'
 import { useOwnedGearStore } from './ownedGear'
-import { Equipment101Storage, SelectedCharacterStorage, Storage } from '@/utils/storage'
+import { Equipment101Storage, SelectedCharacterStorage, Storage, TargetRankStorage } from '@/utils/storage'
 import { STORAGE_KEYS } from '@/constants'
 
 const STAMINA_PER_RUN = 10
@@ -264,12 +264,18 @@ export const useArmoryStore = defineStore('armory', () => {
   function selectCharacter(name: string) {
     selectedCharacter.value = name
     SelectedCharacterStorage.set(name)
-    targetRank.value = maxRank.value
+    const saved = TargetRankStorage.get()
+    targetRank.value = saved[name] ?? maxRank.value
     computeRequirements()
   }
 
   function setTargetRank(rank: number) {
     targetRank.value = Math.max(1, Math.min(maxRank.value, rank))
+    if (selectedCharacter.value) {
+      const saved = TargetRankStorage.get()
+      saved[selectedCharacter.value] = targetRank.value
+      TargetRankStorage.set(saved)
+    }
     computeRequirements()
   }
 
