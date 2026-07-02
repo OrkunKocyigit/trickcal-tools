@@ -1206,6 +1206,23 @@
         "crit",
         "critResist"
       ]
+    },
+    "芭瓏": {
+      "layer1": [
+        "defense",
+        "critResist"
+      ],
+      "layer2": [
+        "attack",
+        "hp",
+        "crit"
+      ],
+      "layer3": [
+        "attack",
+        "defense",
+        "hp",
+        "critResist"
+      ]
     }
   },
   "boardConfig": {
