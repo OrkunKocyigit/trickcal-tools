@@ -5,6 +5,13 @@ import { OwnedGearStorage } from '@/utils/storage'
 export const useOwnedGearStore = defineStore('ownedGear', () => {
   const ownedCounts = ref<Record<number, number>>({})
 
+  const saved = OwnedGearStorage.get()
+  const counts: Record<number, number> = {}
+  for (const uid of saved) {
+    counts[uid] = (counts[uid] || 0) + 1
+  }
+  ownedCounts.value = counts
+
   function loadData() {
     const saved = OwnedGearStorage.get()
     const counts: Record<number, number> = {}

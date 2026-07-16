@@ -5,6 +5,11 @@ import { MaterialInventoryStorage } from '@/utils/storage'
 export const useMaterialInventoryStore = defineStore('materialInventory', () => {
   const inventory = ref<Record<number, number>>({})
 
+  const saved = MaterialInventoryStorage.get()
+  if (saved) {
+    inventory.value = saved
+  }
+
   function loadData() {
     const saved = MaterialInventoryStorage.get()
     if (saved) {

@@ -207,14 +207,8 @@ export const useArmoryStore = defineStore('armory', () => {
       charData.value = await charResp.json() as CharactersData
       sweepData.value = await sweepResp.json() as SweepData
 
-      const rosterStore = useRosterStore()
-      rosterStore.loadData()
-      const miStore = useMaterialInventoryStore()
-      miStore.loadData()
       const ogStore = useOwnedGearStore()
-      ogStore.loadData()
 
-      // One-time migration: clear ownedGearStore artifacts from old system
       if (!Storage.get(STORAGE_KEYS.GEAR_MIGRATED_V2)) {
         ogStore.clearAll()
         Storage.set(STORAGE_KEYS.GEAR_MIGRATED_V2, true)

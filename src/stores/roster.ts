@@ -32,6 +32,11 @@ export function ensureOwnedInBoard(characterName: string) {
 export const useRosterStore = defineStore('roster', () => {
   const rosterData = ref<RosterData>({})
 
+  const saved = RosterStorage.get<RosterData>()
+  if (saved) {
+    rosterData.value = saved
+  }
+
   function loadData() {
     const saved = RosterStorage.get<RosterData>()
     if (saved) {
