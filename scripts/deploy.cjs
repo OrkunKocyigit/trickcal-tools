@@ -10,10 +10,14 @@ const ghpages = require('gh-pages');
 const path = require('path');
 const fs = require('fs');
 
-const rl = readline.createInterface({
+function isNonConfirm() {
+  return process.env.CI === 'true' || process.env.NON_CONFIRM === 'true';
+}
+
+const rl = !isNonConfirm() ? readline.createInterface({
   input: process.stdin,
   output: process.stdout
-});
+}) : null;
 
 // Color output
 const colors = {
@@ -44,6 +48,10 @@ function execCommand(command, silent = false) {
 }
 
 function question(prompt) {
+  if (isNonConfirm()) {
+    console.log(`${colors.cyan}${prompt}${colors.reset} y (auto)`);
+    return Promise.resolve('y');
+  }
   return new Promise((resolve) => {
     rl.question(`${colors.cyan}${prompt}${colors.reset}`, resolve);
   });
@@ -378,6 +386,13 @@ async function showHelp() {
 }
 
 async function main() {
+  if (isNonConfirm()) {
+    log('\n🚀 CI mode detected — running quick deploy...', 'cyan');
+    await quickDeploy();
+    process.exit(0);
+    return;
+  }
+
   while (true) {
     const choice = await showMenu();
     
@@ -429,7 +444,7 @@ log('\n🚀 Starting Trickcal Deploy Manager...', 'cyan');
 setTimeout(() => {
   main().catch(error => {
     log(`\n❌ Error: ${error.message}`, 'red');
-    rl.close();
+    if (rl) rl.close();
     process.exit(1);
   });
 }, 500);
