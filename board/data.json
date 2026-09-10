@@ -1291,6 +1291,40 @@
         "crit",
         "critResist"
       ]
+    },
+    "芭莉耶": {
+      "layer1": [
+        "hp",
+        "crit"
+      ],
+      "layer2": [
+        "defense",
+        "crit",
+        "critResist"
+      ],
+      "layer3": [
+        "attack",
+        "defense",
+        "hp",
+        "crit"
+      ]
+    },
+    "雪蘭": {
+      "layer1": [
+        "defense",
+        "critResist"
+      ],
+      "layer2": [
+        "attack",
+        "hp",
+        "crit"
+      ],
+      "layer3": [
+        "attack",
+        "defense",
+        "hp",
+        "critResist"
+      ]
     }
   },
   "boardConfig": {
