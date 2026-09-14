@@ -6485,27 +6485,27 @@
       },
       {
         "code": "31-1",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "31-4",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "31-10",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "32-3",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "32-6",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "32-9",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       }
     ]
   },
@@ -6527,27 +6527,27 @@
       },
       {
         "code": "31-2",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "31-5",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "31-8",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "32-1",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "32-7",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "32-10",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       }
     ]
   },
@@ -6565,27 +6565,27 @@
       },
       {
         "code": "31-1",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "31-5",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "31-8",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "32-2",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "32-6",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "32-8",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       }
     ]
   },
@@ -6607,27 +6607,27 @@
       },
       {
         "code": "31-2",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "31-6",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "31-9",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "32-3",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "32-7",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "32-9",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       }
     ]
   },
@@ -6649,27 +6649,27 @@
       },
       {
         "code": "31-3",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "31-7",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "31-10",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "32-4",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "32-8",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "32-10",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       }
     ]
   },
@@ -6691,23 +6691,23 @@
       },
       {
         "code": "31-4",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "31-7",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "31-9",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "32-2",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "32-5",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       }
     ]
   },
@@ -6729,23 +6729,23 @@
       },
       {
         "code": "31-3",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "31-6",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "32-1",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "32-4",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       },
       {
         "code": "32-5",
-        "dropRate": 0.6848
+        "dropRate": 0.83
       }
     ]
   }
