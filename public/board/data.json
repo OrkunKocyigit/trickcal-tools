@@ -1325,6 +1325,23 @@
         "hp",
         "critResist"
       ]
+    },
+    "瓊安": {
+      "layer1": [
+        "hp",
+        "crit"
+      ],
+      "layer2": [
+        "defense",
+        "crit",
+        "critResist"
+      ],
+      "layer3": [
+        "attack",
+        "defense",
+        "hp",
+        "crit"
+      ]
     }
   },
   "boardConfig": {
