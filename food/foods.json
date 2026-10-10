@@ -89,15 +89,15 @@
     "name": "海藻沙拉",
     "nameEn": "Seaweed Salad"
   },
-  "溫熱的冰美式咖啡": {
-    "rarity": "uncommon",
-    "name": "溫熱的冰美式咖啡",
-    "nameEn": "Frozen Hot Americano"
-  },
   "焦糖布丁": {
     "rarity": "uncommon",
     "name": "焦糖布丁",
     "nameEn": "Creme Brulee"
+  },
+  "熱呼呼的冰美式": {
+    "rarity": "uncommon",
+    "name": "熱呼呼的冰美式",
+    "nameEn": "Frozen Hot Americano"
   },
   "甜甜蜂蜜罐": {
     "rarity": "uncommon",
