@@ -12,28 +12,27 @@
     "build": "vite build",
     "preview": "vite preview",
     "type-check": "vue-tsc --noEmit",
-    "deploy": "node scripts/deploy.cjs",
-    "postinstall": "node -e \"require('fs').copyFileSync('node_modules/highs/build/highs.wasm','public/highs.wasm')\""
+    "deploy": "node scripts/deploy.cjs"
   },
   "dependencies": {
-    "highs": "^1.14.2",
-    "marked": "^18.0.6",
-    "pinia": "^4.0.2",
-    "vue": "^3.5.40",
-    "vue-i18n": "^11.4.6",
-    "vue-router": "^5.2.0"
+    "highs": "^1.15.4",
+    "marked": "^18.1.1",
+    "pinia": "^4.1.0",
+    "vue": "^3.5.44",
+    "vue-i18n": "^11.4.16",
+    "vue-router": "^5.4.0"
   },
   "devDependencies": {
-    "@types/node": "^26.1.1",
-    "@vitejs/plugin-vue": "^6.0.8",
-    "@vue/devtools-api": "^8.1.5",
+    "@types/node": "^26.6.5",
+    "@vitejs/plugin-vue": "^6.0.10",
+    "@vue/devtools-api": "^8.2.1",
     "gh-pages": "^6.3.0",
-    "sharp": "^0.35.3",
+    "sharp": "^0.35.5",
     "typescript": "^6.0.3",
-    "vite": "^8.1.5",
+    "vite": "^8.3.5",
     "vite-plugin-compression2": "^2.5.3",
-    "vite-plugin-pwa": "^1.3.0",
-    "vue-tsc": "^3.3.7",
+    "vite-plugin-pwa": "^2.0.0",
+    "vue-tsc": "^3.3.13",
     "workbox-window": "^7.4.1"
   }
 }

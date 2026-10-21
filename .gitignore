@@ -16,9 +16,6 @@ dist-ssr
 *.local
 *.tsbuildinfo
 
-# WASM binaries copied from node_modules
-public/highs.wasm
-
 # Environment variables
 .env
 .env.local
