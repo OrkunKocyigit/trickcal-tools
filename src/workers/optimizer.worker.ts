@@ -8,9 +8,7 @@ async function getSolver(): Promise<Highs> {
   if (!highs) {
     if (isDev) console.log('[solver] initializing HiGHS WASM...')
     const t0 = performance.now()
-    highs = await highsLoader({
-      locateFile: () => `${import.meta.env.BASE_URL}highs.wasm`,
-    })
+    highs = await highsLoader()
     if (isDev) console.log(`[solver] HiGHS ready in ${(performance.now() - t0).toFixed(0)}ms`)
   }
   return highs
