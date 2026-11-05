@@ -1393,6 +1393,23 @@
         "crit",
         "critResist"
       ]
+    },
+    "波朗": {
+      "layer1": [
+        "crit",
+        "critResist"
+      ],
+      "layer2": [
+        "hp",
+        "crit",
+        "critResist"
+      ],
+      "layer3": [
+        "defense",
+        "hp",
+        "crit",
+        "critResist"
+      ]
     }
   },
   "boardConfig": {
