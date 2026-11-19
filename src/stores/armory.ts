@@ -128,20 +128,18 @@ export const useArmoryStore = defineStore('armory', () => {
     const prog = rosterStore.getUnitProgress(selectedCharacter.value)
     if (prog.currentRank > targetRank.value) return false
 
-    // Allow upgrade at same rank if character has unowned gear at current rank
+    // Allow upgrade at same rank if character has unequipped gear at current rank
     if (prog.currentRank === targetRank.value) {
       const char = charData.value[selectedCharacter.value]
       if (char?.gear) {
         const rankGear = char.gear[prog.currentRank - 1]
         if (rankGear) {
-          const ogStore = useOwnedGearStore()
           const roster = rosterStore.rosterData[selectedCharacter.value]
           const nameToUid = getNameToUidMap()
-          const allOwned = rankGear.every((uid: number, s: number) => {
-            if (roster?.equipment[s] && nameToUid.get(roster.equipment[s]!) === uid) return true
-            return ogStore.getCount(uid) > 0
-          })
-          if (allOwned) return false // maxed for this rank, nothing to upgrade
+          const allEquipped = rankGear.every((uid: number, s: number) =>
+            !!roster?.equipment[s] && nameToUid.get(roster.equipment[s]!) === uid,
+          )
+          if (allEquipped) return false // maxed for this rank, nothing to upgrade
         }
       }
     }

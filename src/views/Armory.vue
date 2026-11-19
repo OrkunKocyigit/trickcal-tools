@@ -187,7 +187,6 @@ import { ref, computed, watch, nextTick, onMounted, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useArmoryStore } from '@/stores/armory'
 import { useRosterStore } from '@/stores/roster'
-import { useOwnedGearStore } from '@/stores/ownedGear'
 import { useMaterialInventoryStore } from '@/stores/materialInventory'
 import AppLayout from '@/components/Layout/AppLayout.vue'
 import CharacterSelector from '@/components/Armory/CharacterSelector.vue'
@@ -202,7 +201,6 @@ import { range } from '@/utils/helpers'
 const { locale } = useI18n()
 const armoryStore = useArmoryStore()
 const rosterStore = useRosterStore()
-const ownedGearStore = useOwnedGearStore()
 const inventoryStore = useMaterialInventoryStore()
 
 const selectedChar = ref('')
@@ -221,10 +219,9 @@ const rankOptions = computed(() => {
   if (!rankGear) return range(2, armoryStore.maxRank)
   const roster = rosterStore.rosterData[selectedChar.value]
   const nameToUid = armoryStore.getNameToUidMap()
-  const allEquipped = rankGear.every((uid: number, s: number) => {
-    if (roster?.equipment[s] && nameToUid.get(roster.equipment[s]!) === uid) return true
-    return ownedGearStore.isOwned(uid)
-  })
+  const allEquipped = rankGear.every((uid: number, s: number) =>
+    !!roster?.equipment[s] && nameToUid.get(roster.equipment[s]!) === uid,
+  )
   const start = allEquipped ? currentRank.value + 1 : currentRank.value
   return range(start, armoryStore.maxRank)
 })
