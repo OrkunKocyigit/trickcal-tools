@@ -88,10 +88,11 @@ const rankList = computed(() => {
   const gear = char.gear
   if (!gear) return []
   const currentRank = rosterStore.getUnitProgress(charName).currentRank
+  const targetRank = armoryStore.targetRank
   return gear
     .map((_: unknown, idx: number) => idx + 1)
     .filter((r: number) => {
-      if (r < currentRank) return false
+      if (r < currentRank || r > targetRank) return false
       const rankGear = gear[r - 1]
       return Array.isArray(rankGear) && rankGear.length > 0
     })
