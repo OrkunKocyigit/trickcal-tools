@@ -773,6 +773,7 @@ export const useArmoryStore = defineStore('armory', () => {
       // Build plan from column primal values
       const planRows: StagePlanRow[] = []
       let total = 0
+      const haveByUid = new Map(materialNeeds.value.map(m => [m.uid, m.have]))
 
       for (const [varKey, col] of Object.entries(solution.Columns)) {
         const runCount = Math.round(col.Primal)
@@ -790,7 +791,9 @@ export const useArmoryStore = defineStore('armory', () => {
             dropRate: drop.rate,
           })
         }
-        expectedDrops.sort((a, b) => a.uid - b.uid)
+        expectedDrops.sort((a, b) =>
+          (haveByUid.get(b.uid) ?? 0) - (haveByUid.get(a.uid) ?? 0) || a.uid - b.uid,
+        )
         const st = runCount * STAMINA_PER_RUN
         total += st
         planRows.push({
