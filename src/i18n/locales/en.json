@@ -84,7 +84,8 @@
   "deployRows": {
     "前排": "Front",
     "中排": "Middle",
-    "後排": "Back"
+    "後排": "Back",
+    "自由": "All Rows"
   },
   "roles": {
     "輸出": "DPS",
@@ -100,7 +101,8 @@
     "冷靜": "Composed",
     "憂鬱": "Depressed",
     "活潑": "Vivacious",
-    "狂亂": "Mad"
+    "狂亂": "Mad",
+    "溫柔": "Dual Aspect"
   },
   "settings": {
     "title": "Character Settings",

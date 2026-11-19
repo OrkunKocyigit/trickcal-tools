@@ -100,7 +100,8 @@ const personalityClass = computed(() => {
     '狂亂': 'mad',
     '天真': 'naive',
     '活潑': 'jolly',
-    '憂鬱': 'gloomy'
+    '憂鬱': 'gloomy',
+    '溫柔': 'naivegloomy'
   }
   return map[props.character.personality] || ''
 })
@@ -111,7 +112,8 @@ const personalityIcon = computed(() => {
     '冷靜': 'assets/icons/unit_personality_cool.webp',
     '憂鬱': 'assets/icons/unit_personality_gloomy.webp',
     '活潑': 'assets/icons/unit_personality_jolly.webp',
-    '狂亂': 'assets/icons/unit_personality_mad.webp'
+    '狂亂': 'assets/icons/unit_personality_mad.webp',
+    '溫柔': 'assets/icons/unit_personality_naivegloomy.webp'
   }
   return icons[props.character.personality] || ''
 })
@@ -128,7 +130,8 @@ const deployRowIcon = computed(() => {
   const icons: Record<string, string> = {
     '前排': 'assets/icons/unit_position_front.webp',
     '中排': 'assets/icons/unit_position_middle.webp',
-    '後排': 'assets/icons/unit_position_back.webp'
+    '後排': 'assets/icons/unit_position_back.webp',
+    '自由': 'assets/icons/unit_position_free.webp'
   }
   return icons[props.character.deployRow] || ''
 })
@@ -228,6 +231,10 @@ function handleImageError(event: Event) {
 
 .character-card.personality-gloomy .character-avatar {
   background: var(--personality-gloomy-bg);
+}
+
+.character-card.personality-naivegloomy .character-avatar {
+  background: var(--personality-naivegloomy-bg);
 }
 
 .character-avatar {

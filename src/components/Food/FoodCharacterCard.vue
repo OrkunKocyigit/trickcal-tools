@@ -61,7 +61,8 @@ const personalityClass = computed(() => {
     '狂亂': 'mad',
     '天真': 'naive',
     '活潑': 'jolly',
-    '憂鬱': 'gloomy'
+    '憂鬱': 'gloomy',
+    '溫柔': 'naivegloomy'
   }
   return map[props.character.personality] || ''
 })
@@ -138,6 +139,10 @@ function handleImageError(event: Event) {
 
 .food-character-card.personality-gloomy .character-avatar {
   background: var(--personality-gloomy-bg);
+}
+
+.food-character-card.personality-naivegloomy .character-avatar {
+  background: var(--personality-naivegloomy-bg);
 }
 
 .character-avatar {

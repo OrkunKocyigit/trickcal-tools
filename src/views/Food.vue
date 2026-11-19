@@ -154,7 +154,8 @@ const personalityOrder: Record<string, number> = {
   '狂亂': 2,
   '天真': 3,
   '活潑': 4,
-  '憂鬱': 5
+  '憂鬱': 5,
+  '溫柔': 6
 }
 
 // 获取所有角色（按性格排序）

@@ -31,6 +31,7 @@
   --personality-naive-bg: #85d775;
   --personality-jolly-bg: #ebda56;
   --personality-gloomy-bg: #a083e7;
+  --personality-naivegloomy-bg: linear-gradient(135deg, var(--personality-gloomy-bg) 0%, var(--personality-naive-bg) 100%);
   
   /* 背景 */
   --body-bg: #e8eaed;
