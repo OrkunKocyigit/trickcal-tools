@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import { SweepSelectionStorage } from '@/utils/storage'
 import { Logger } from '@/utils/logger'
+import { collectRanks } from '@/utils/rankFilter'
 
 export interface StageInfo {
   code: string
@@ -32,6 +33,11 @@ export const useSweepStore = defineStore('sweep', () => {
   const materialData = ref<MaterialData>({})
   const stageData = ref<StageData>({})
   const selectedMaterials = ref<Set<string>>(new Set())
+
+  // 資料中出現的所有 rank
+  const availableRanks = computed(() =>
+    collectRanks(materials.value.map(name => materialData.value[name]))
+  )
 
   // 載入數據
   async function loadData() {
@@ -236,6 +242,7 @@ export const useSweepStore = defineStore('sweep', () => {
     materialData,
     stageData,
     selectedMaterials,
+    availableRanks,
     plan,
     missingMaterials,
     alternativeStages,

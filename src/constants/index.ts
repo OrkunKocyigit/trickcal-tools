@@ -15,6 +15,10 @@ export const STORAGE_KEYS = {
   BOARD_PROGRESS: 'trickcal_board_progress',
   /** 掃蕩工具選擇 */
   SWEEP_SELECTION: 'trickcal_sweep_selected_materials',
+  /** 掃蕩工具排除的 rank */
+  SWEEP_RANK_EXCLUDED: 'trickcal_sweep_rank_excluded',
+  /** 掃蕩工具舊版 rank 篩選（已選 rank，僅供遷移） */
+  SWEEP_RANK_FILTER_LEGACY: 'trickcal_sweep_rank_filter',
   /** 角色編制數據 */
   ROSTER: 'trickcal_roster',
   /** 裝備工坊素材庫存 */

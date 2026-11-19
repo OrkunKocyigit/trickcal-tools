@@ -67,17 +67,17 @@
                   <button
                     class="rank-option all-ranks"
                     type="button"
-                    :class="{ active: selectedRanks.size === 8 }"
+                    :class="{ active: allRanksActive }"
                     @click="toggleAllRanks"
                   >
                     {{ $t('catalog.selectAllRanks') }}
                   </button>
                   <button
-                    v-for="rank in [1, 2, 3, 4, 5, 6, 7, 8]"
+                    v-for="rank in sweepStore.availableRanks"
                     :key="rank"
                     class="rank-option"
                     type="button"
-                    :class="{ active: selectedRanks.has(rank) }"
+                    :class="{ active: !excludedRanks.has(rank) }"
                     @click="toggleRank(rank)"
                   >
                     {{ $t('catalog.selectRank', { rank }) }}
@@ -182,6 +182,8 @@ import AppLayout from '@/components/Layout/AppLayout.vue'
 import MaterialCard from '@/components/Sweep/MaterialCard.vue'
 import MaterialChip from '@/components/Sweep/MaterialChip.vue'
 import { getAssetUrl } from '@/utils/assets'
+import { SweepRankFilterStorage } from '@/utils/storage'
+import { isRankFilterActive, excludedRanksToPersist } from '@/utils/rankFilter'
 
 const { t } = useI18n()
 const sweepStore = useSweepStore()
@@ -189,55 +191,42 @@ const searchTerm = ref('')
 const currentPage = ref(1)
 const pageSize = 24
 
-// Rank 篩選狀態
+// Rank 篩選狀態（儲存排除的 rank，新 rank 預設顯示）
 const showRankFilter = ref(false)
-const selectedRanks = ref<Set<number>>(new Set())
+const excludedRanks = ref<Set<number>>(new Set())
+
+const allRanksActive = computed(() =>
+  sweepStore.availableRanks.every(rank => !excludedRanks.value.has(rank))
+)
 
 // 從 localStorage 加載 rank 篩選設置
 function loadRankFilter() {
-  const saved = localStorage.getItem('trickcal_sweep_rank_filter')
-  if (saved) {
-    try {
-      const ranks = JSON.parse(saved) as number[]
-      selectedRanks.value = new Set(ranks)
-    } catch (e) {
-      // 載入失敗，使用預設值（全選）
-      selectedRanks.value = new Set([1, 2, 3, 4, 5, 6, 7, 8])
-    }
-  } else {
-    // 預設全選
-    selectedRanks.value = new Set([1, 2, 3, 4, 5, 6, 7, 8])
-  }
+  excludedRanks.value = new Set(SweepRankFilterStorage.get())
 }
 
 // 保存 rank 篩選設置到 localStorage
 function saveRankFilter() {
-  const ranks = Array.from(selectedRanks.value).sort((a, b) => a - b)
-  localStorage.setItem('trickcal_sweep_rank_filter', JSON.stringify(ranks))
+  SweepRankFilterStorage.set(excludedRanksToPersist(sweepStore.availableRanks, excludedRanks.value))
 }
 
 // 切換 rank 選擇
 function toggleRank(rank: number) {
-  if (selectedRanks.value.has(rank)) {
-    selectedRanks.value.delete(rank)
+  const next = new Set(excludedRanks.value)
+  if (next.has(rank)) {
+    next.delete(rank)
   } else {
-    selectedRanks.value.add(rank)
+    next.add(rank)
   }
-  // 觸發響應式更新
-  selectedRanks.value = new Set(selectedRanks.value)
+  excludedRanks.value = next
   saveRankFilter()
   currentPage.value = 1
 }
 
 // 切換全選/全不選
 function toggleAllRanks() {
-  if (selectedRanks.value.size === 8) {
-    // 如果已全選，則清空
-    selectedRanks.value = new Set()
-  } else {
-    // 否則全選
-    selectedRanks.value = new Set([1, 2, 3, 4, 5, 6, 7, 8])
-  }
+  excludedRanks.value = allRanksActive.value
+    ? new Set(sweepStore.availableRanks)
+    : new Set()
   saveRankFilter()
   currentPage.value = 1
 }
@@ -246,10 +235,10 @@ const filteredMaterials = computed(() => {
   let filtered = sweepStore.materials
 
   // 根據 rank 篩選
-  if (selectedRanks.value.size > 0 && selectedRanks.value.size < 8) {
+  if (isRankFilterActive(sweepStore.availableRanks, excludedRanks.value)) {
     filtered = filtered.filter(name => {
       const materialInfo = sweepStore.materialData[name]
-      return materialInfo && selectedRanks.value.has(materialInfo.rank)
+      return materialInfo && !excludedRanks.value.has(materialInfo.rank)
     })
   }
 

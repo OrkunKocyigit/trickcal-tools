@@ -6,6 +6,7 @@
 import { STORAGE_KEYS } from '@/constants'
 import type { Theme } from '@/stores/theme'
 import type { Locale } from '@/i18n'
+import { sanitizeRanks, legacySelectionToExcluded } from '@/utils/rankFilter'
 
 /**
  * 通用 Storage 工具
@@ -142,6 +143,29 @@ export const SweepSelectionStorage = {
   },
   set: (materials: string[]): boolean => {
     return Storage.set(STORAGE_KEYS.SWEEP_SELECTION, materials)
+  },
+}
+
+/**
+ * 掃蕩工具 rank 篩選存儲工具（儲存排除的 rank）
+ */
+export const SweepRankFilterStorage = {
+  get: (): number[] => {
+    if (Storage.has(STORAGE_KEYS.SWEEP_RANK_EXCLUDED)) {
+      return sanitizeRanks(Storage.get<unknown>(STORAGE_KEYS.SWEEP_RANK_EXCLUDED))
+    }
+    if (Storage.has(STORAGE_KEYS.SWEEP_RANK_FILTER_LEGACY)) {
+      const excluded = legacySelectionToExcluded(
+        Storage.get<unknown>(STORAGE_KEYS.SWEEP_RANK_FILTER_LEGACY)
+      )
+      Storage.set(STORAGE_KEYS.SWEEP_RANK_EXCLUDED, excluded)
+      Storage.remove(STORAGE_KEYS.SWEEP_RANK_FILTER_LEGACY)
+      return excluded
+    }
+    return []
+  },
+  set: (excluded: number[]): boolean => {
+    return Storage.set(STORAGE_KEYS.SWEEP_RANK_EXCLUDED, sanitizeRanks(excluded))
   },
 }
 
