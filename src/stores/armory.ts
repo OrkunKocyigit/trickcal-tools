@@ -473,6 +473,18 @@ export const useArmoryStore = defineStore('armory', () => {
       Equipment101Storage.set(equipment101Count.value)
     }
 
+    // A fully equipped rank rolls over to the next rank with empty slots, except at max rank
+    if (toRank < maxRank.value) {
+      const nextRank = toRank + 1
+      rosterStore.setUnitRank(name, nextRank)
+      const slotCount = rosterStore.getUnitProgress(name).equipment.length
+      for (let s = 0; s < slotCount; s++) {
+        rosterStore.setEquippedGear(name, s, null)
+      }
+      setTargetRank(nextRank)
+      return
+    }
+
     rosterStore.setUnitRank(name, toRank)
     computeRequirements()
   }
