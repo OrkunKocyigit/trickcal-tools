@@ -146,6 +146,55 @@
     "icon": "Equip_Piece_Icon_Accessory702",
     "rarity": 4
   },
+  "140015": {
+    "uid": 140015,
+    "name": "物理武器碎片（10階）",
+    "nameEn": "Physical Weapon Shard (Tier 10)",
+    "icon": "Equip_Piece_Icon_Weapon1001",
+    "rarity": 5
+  },
+  "140016": {
+    "uid": 140016,
+    "name": "魔法武器碎片（10階）",
+    "nameEn": "Magical Weapon Shard (Tier 10)",
+    "icon": "Equip_Piece_Icon_Weapon1002",
+    "rarity": 5
+  },
+  "140017": {
+    "uid": 140017,
+    "name": "盔甲碎片（10階）",
+    "nameEn": "Armor Shard (Tier 10)",
+    "icon": "Equip_Piece_Icon_Armor1003",
+    "rarity": 5
+  },
+  "140018": {
+    "uid": 140018,
+    "name": "帽子碎片（10階）",
+    "nameEn": "Hat Shard (Tier 10)",
+    "icon": "Equip_Piece_Icon_Armor1001",
+    "rarity": 5
+  },
+  "140019": {
+    "uid": 140019,
+    "name": "靴子碎片（10階）",
+    "nameEn": "Boots Shard (Tier 10)",
+    "icon": "Equip_Piece_Icon_Armor1002",
+    "rarity": 5
+  },
+  "140020": {
+    "uid": 140020,
+    "name": "璀璨的飾品碎片（10階）",
+    "nameEn": "Brilliant Accessory Shard (Tier 10)",
+    "icon": "Equip_Piece_Icon_Accessory1001",
+    "rarity": 5
+  },
+  "140021": {
+    "uid": 140021,
+    "name": "燦爛的飾品碎片（10階）",
+    "nameEn": "Shining Accessory Shard (Tier 10)",
+    "icon": "Equip_Piece_Icon_Accessory1002",
+    "rarity": 5
+  },
   "150001": {
     "uid": 150001,
     "name": "物理武器圖紙（2階）",

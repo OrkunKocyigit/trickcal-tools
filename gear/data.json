@@ -2159,6 +2159,216 @@
       }
     ]
   },
+  "111001": {
+    "uid": 111001,
+    "name": "厚版蓬鬆外套",
+    "nameEn": "Cozy Padded Jacket",
+    "type": "body",
+    "icon": "Equip_Icon_Armor1001",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140017,
+        "count": 64
+      }
+    ]
+  },
+  "111002": {
+    "uid": 111002,
+    "name": "耀眼工匠的圍裙",
+    "nameEn": "Radiant Master's Apron",
+    "type": "body",
+    "icon": "Equip_Icon_Armor1002",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140017,
+        "count": 64
+      }
+    ]
+  },
+  "111003": {
+    "uid": 111003,
+    "name": "無敵防禦迷你套裝",
+    "nameEn": "Unbreakable Petite Suit",
+    "type": "body",
+    "icon": "Equip_Icon_Armor1003",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140017,
+        "count": 64
+      }
+    ]
+  },
+  "111004": {
+    "uid": 111004,
+    "name": "晚霞微光禮服",
+    "nameEn": "Sunset Glow Dress",
+    "type": "body",
+    "icon": "Equip_Icon_Armor1004",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140017,
+        "count": 64
+      }
+    ]
+  },
+  "111005": {
+    "uid": 111005,
+    "name": "做夢妖精的披風",
+    "nameEn": "Dreaming Sprite's Cape",
+    "type": "body",
+    "icon": "Equip_Icon_Armor1005",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140017,
+        "count": 64
+      }
+    ]
+  },
+  "111006": {
+    "uid": 111006,
+    "name": "MVP帽子",
+    "nameEn": "MVP Hat",
+    "type": "hat",
+    "icon": "Equip_Icon_Armor1007",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140018,
+        "count": 64
+      }
+    ]
+  },
+  "111007": {
+    "uid": 111007,
+    "name": "犧牲假日野餐帽",
+    "nameEn": "Sacrificed Day Off Picnic Hat",
+    "type": "hat",
+    "icon": "Equip_Icon_Armor1008",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140018,
+        "count": 64
+      }
+    ]
+  },
+  "111008": {
+    "uid": 111008,
+    "name": "終場演唱會耳機",
+    "nameEn": "Lastcon Earsets",
+    "type": "hat",
+    "icon": "Equip_Icon_Armor1009",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140018,
+        "count": 64
+      }
+    ]
+  },
+  "111009": {
+    "uid": 111009,
+    "name": "秘密頭盔",
+    "nameEn": "Secrecy Helmet",
+    "type": "hat",
+    "icon": "Equip_Icon_Armor1010",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140018,
+        "count": 64
+      }
+    ]
+  },
+  "111010": {
+    "uid": 111010,
+    "name": "限量版頭帶",
+    "nameEn": "Limited Edition Headband",
+    "type": "hat",
+    "icon": "Equip_Icon_Armor1011",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140018,
+        "count": 64
+      }
+    ]
+  },
+  "111011": {
+    "uid": 111011,
+    "name": "回憶軟綿綿拖鞋",
+    "nameEn": "Nostalgic Plush Slippers",
+    "type": "boots",
+    "icon": "Equip_Icon_Armor1013",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140019,
+        "count": 64
+      }
+    ]
+  },
+  "111012": {
+    "uid": 111012,
+    "name": "晚霞微光襪子",
+    "nameEn": "Sunset Glow Socks",
+    "type": "boots",
+    "icon": "Equip_Icon_Armor1014",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140019,
+        "count": 64
+      }
+    ]
+  },
+  "111013": {
+    "uid": 111013,
+    "name": "劃破晚霞的軍靴",
+    "nameEn": "Sunset-Cutting Combat Boots",
+    "type": "boots",
+    "icon": "Equip_Icon_Armor1015",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140019,
+        "count": 64
+      }
+    ]
+  },
+  "111014": {
+    "uid": 111014,
+    "name": "超級閃電滑板",
+    "nameEn": "Shoupa Thunderboard",
+    "type": "boots",
+    "icon": "Equip_Icon_Armor1016",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140019,
+        "count": 64
+      }
+    ]
+  },
+  "111015": {
+    "uid": 111015,
+    "name": "超級閃電溜冰鞋",
+    "nameEn": "Shoupa Thunderskates",
+    "type": "boots",
+    "icon": "Equip_Icon_Armor1017",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140019,
+        "count": 64
+      }
+    ]
+  },
   "120101": {
     "uid": 120101,
     "name": "糖球戒指",
@@ -3599,6 +3809,146 @@
       }
     ]
   },
+  "121001": {
+    "uid": 121001,
+    "name": "健齒守護者",
+    "nameEn": "Bright Smile Defense",
+    "type": "ring",
+    "icon": "Equip_Icon_Accessory1001",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140020,
+        "count": 64
+      }
+    ]
+  },
+  "121002": {
+    "uid": 121002,
+    "name": "星芒黑膠唱盤",
+    "nameEn": "Starbeam Turntable",
+    "type": "ring",
+    "icon": "Equip_Icon_Accessory1002",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140020,
+        "count": 64
+      }
+    ]
+  },
+  "121003": {
+    "uid": 121003,
+    "name": "奇蹟早晨",
+    "nameEn": "Miracle Morning",
+    "type": "ring",
+    "icon": "Equip_Icon_Accessory1003",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140020,
+        "count": 64
+      }
+    ]
+  },
+  "121004": {
+    "uid": 121004,
+    "name": "心算王的計算機",
+    "nameEn": "Mental Math Pro's Calculator",
+    "type": "ring",
+    "icon": "Equip_Icon_Accessory1004",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140020,
+        "count": 64
+      }
+    ]
+  },
+  "121005": {
+    "uid": 121005,
+    "name": "精工師的盤子",
+    "nameEn": "Jeweler's Plate",
+    "type": "ring",
+    "icon": "Equip_Icon_Accessory1005",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140020,
+        "count": 64
+      }
+    ]
+  },
+  "121006": {
+    "uid": 121006,
+    "name": "命運之鐘",
+    "nameEn": "Clock of Fate",
+    "type": "accessory",
+    "icon": "Equip_Icon_Accessory1006",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140021,
+        "count": 64
+      }
+    ]
+  },
+  "121007": {
+    "uid": 121007,
+    "name": "多喝水喵",
+    "nameEn": "Drink Up Right Meow",
+    "type": "accessory",
+    "icon": "Equip_Icon_Accessory1007",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140021,
+        "count": 64
+      }
+    ]
+  },
+  "121008": {
+    "uid": 121008,
+    "name": "嗶嗶啵啵小遊戲",
+    "nameEn": "Bleepity Bloop Mini-Game",
+    "type": "accessory",
+    "icon": "Equip_Icon_Accessory1008",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140021,
+        "count": 64
+      }
+    ]
+  },
+  "121009": {
+    "uid": 121009,
+    "name": "應援卡帶",
+    "nameEn": "Encouragement Cassette Tape",
+    "type": "accessory",
+    "icon": "Equip_Icon_Accessory1009",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140021,
+        "count": 64
+      }
+    ]
+  },
+  "121010": {
+    "uid": 121010,
+    "name": "仿製蛋糕",
+    "nameEn": "Fake Cake",
+    "type": "accessory",
+    "icon": "Equip_Icon_Accessory1010",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140021,
+        "count": 64
+      }
+    ]
+  },
   "130101": {
     "uid": 130101,
     "name": "拳擊手套",
@@ -5036,6 +5386,146 @@
       {
         "uid": 150037,
         "count": 52
+      }
+    ]
+  },
+  "131001": {
+    "uid": 131001,
+    "name": "和平守護杖",
+    "nameEn": "Peacekeeper's Staff",
+    "type": "weapon",
+    "icon": "Equip_Icon_Weapon1001",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140015,
+        "count": 64
+      }
+    ]
+  },
+  "131002": {
+    "uid": 131002,
+    "name": "安息之槓鈴",
+    "nameEn": "Respite Barbell",
+    "type": "weapon",
+    "icon": "Equip_Icon_Weapon1002",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140015,
+        "count": 64
+      }
+    ]
+  },
+  "131003": {
+    "uid": 131003,
+    "name": "說服的手段",
+    "nameEn": "Persuasion Tool",
+    "type": "weapon",
+    "icon": "Equip_Icon_Weapon1003",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140015,
+        "count": 64
+      }
+    ]
+  },
+  "131004": {
+    "uid": 131004,
+    "name": "精彩的對話",
+    "nameEn": "Tongue Loosener",
+    "type": "weapon",
+    "icon": "Equip_Icon_Weapon1004",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140015,
+        "count": 64
+      }
+    ]
+  },
+  "131005": {
+    "uid": 131005,
+    "name": "永恆的碎碎念",
+    "nameEn": "Eternal Nagging",
+    "type": "weapon",
+    "icon": "Equip_Icon_Weapon1005",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140015,
+        "count": 64
+      }
+    ]
+  },
+  "131006": {
+    "uid": 131006,
+    "name": "華麗的湯匙",
+    "nameEn": "Fancy Spoon",
+    "type": "weapon",
+    "icon": "Equip_Icon_Weapon1006",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140016,
+        "count": 64
+      }
+    ]
+  },
+  "131007": {
+    "uid": 131007,
+    "name": "泉湧茶杯",
+    "nameEn": "Wellspring Teacup",
+    "type": "weapon",
+    "icon": "Equip_Icon_Weapon1007",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140016,
+        "count": 64
+      }
+    ]
+  },
+  "131008": {
+    "uid": 131008,
+    "name": "今日運勢",
+    "nameEn": "Today's Fortune",
+    "type": "weapon",
+    "icon": "Equip_Icon_Weapon1008",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140016,
+        "count": 64
+      }
+    ]
+  },
+  "131009": {
+    "uid": 131009,
+    "name": "瞬間捕捉",
+    "nameEn": "Capture a Moment",
+    "type": "weapon",
+    "icon": "Equip_Icon_Weapon1009",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140016,
+        "count": 64
+      }
+    ]
+  },
+  "131010": {
+    "uid": 131010,
+    "name": "時間捕捉",
+    "nameEn": "Capture Time",
+    "type": "weapon",
+    "icon": "Equip_Icon_Weapon1010",
+    "rarity": 5,
+    "recipe": [
+      {
+        "uid": 140016,
+        "count": 64
       }
     ]
   }
