@@ -104,7 +104,6 @@ function toggleOwnedForSlot() {
       ownedGearStore.addCount(uid, -1)
     }
   }
-  armoryStore.computeRequirements()
 }
 </script>
 

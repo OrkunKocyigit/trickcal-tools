@@ -11,113 +11,45 @@
 
       <main class="armory-layout">
         <div class="left-column">
-          <!-- Top Panel: Character Screen -->
+          <!-- Top Panel: Characters -->
           <section class="panel character-panel">
             <header>
-              <h2>{{ $t('armory.characterScreen') }}</h2>
+              <h2>{{ $t('armory.characters') }}</h2>
             </header>
 
-            <!-- State A: Unselected -->
-            <div v-if="!selectedChar" class="unselected-state">
-              <div class="select-character-btn-area">
-                <button
-                  class="select-character-btn"
-                  type="button"
-                  @click="showCharSelect = !showCharSelect"
-                >
-                  + {{ $t('armory.selectCharacter') }}
-                </button>
-              </div>
+            <div class="character-list">
+              <CharacterPanel
+                v-for="name in armoryStore.selectedCharacters"
+                :key="name"
+                :name="name"
+                :open="armoryStore.openPanel === name"
+                :focused="armoryStore.focusedCharacter === name"
+                @toggle-open="armoryStore.togglePanel(name)"
+                @toggle-focus="armoryStore.toggleFocus(name)"
+                @remove="armoryStore.removeCharacter(name)"
+              />
+            </div>
+
+            <div
+              v-if="armoryStore.selectedCharacters.length < MAX_SELECTED"
+              class="add-character"
+              :class="{ 'has-characters': armoryStore.selectedCharacters.length > 0 }"
+            >
+              <button
+                class="select-character-btn"
+                type="button"
+                @click="toggleCharSelect"
+              >
+                + {{ $t('armory.addCharacter', { count: armoryStore.selectedCharacters.length, max: MAX_SELECTED }) }}
+              </button>
               <div v-if="showCharSelect" class="char-dropdown-wrapper">
                 <CharacterSelector
                   ref="charSelectorRef"
-                  v-model="selectedChar"
+                  model-value=""
                   :char-list="armoryStore.charList"
+                  :exclude="armoryStore.selectedCharacters"
+                  @update:model-value="onPickCharacter"
                 />
-              </div>
-            </div>
-
-            <!-- State B: Selected -->
-            <div v-else class="selected-state">
-              <div class="slots-row">
-                <div class="slot-column">
-                  <GearSlot v-for="si in [0, 1, 5]" :key="si" :slot-index="si" :selected-char="selectedChar" />
-                </div>
-
-                <!-- Center: Avatar + Character Info -->
-                <div class="center-column">
-                  <img
-                    :src="getCharacterImageUrl(selectedChar)"
-                    :alt="selectedChar"
-                    class="character-avatar"
-                    loading="lazy"
-                    @error="($event.target as HTMLImageElement).style.display = 'none'"
-                    @click="showCharSelect = true"
-                  />
-                  <div class="char-name">{{ displayCharName }}</div>
-                  <div class="rank-row">
-                    <button
-                      class="rank-nav-btn"
-                      type="button"
-                      @click="prevRank"
-                    >
-                      ‹
-                    </button>
-                    <span class="rank-display" @click.stop="toggleRankDropdown()">
-                      {{ $t('armory.currentRankLabel', { rank: String(currentRank).padStart(2, '0') }) }}
-                    </span>
-                    <Teleport to="body">
-                      <div v-if="showRankDropdown" class="rank-dropdown" :style="rankDropdownStyle" @click.stop>
-                        <button
-                          v-for="r in armoryStore.maxRank"
-                          :key="r"
-                          class="rank-dropdown-item"
-                          :class="{ active: r === currentRank }"
-                          @click="setRank(r)"
-                        >
-                          {{ $t('armory.currentRankLabel', { rank: String(r).padStart(2, '0') }) }}
-                        </button>
-                      </div>
-                    </Teleport>
-                    <button
-                      class="rank-nav-btn"
-                      type="button"
-                      @click="nextRank"
-                    >
-                      ›
-                    </button>
-                  </div>
-                  <div v-if="showCharSelect" class="char-dropdown-wrapper">
-                    <CharacterSelector
-                      ref="charSelectorRef"
-                      v-model="selectedChar"
-                      :char-list="armoryStore.charList"
-                    />
-                  </div>
-                </div>
-
-                <div class="slot-column">
-                  <GearSlot v-for="si in [2, 4, 3]" :key="si" :slot-index="si" :selected-char="selectedChar" />
-                </div>
-              </div>
-
-              <!-- Target rank selector below character -->
-              <div class="target-rank-bar">
-                <span class="target-label">{{ $t('armory.targetRank') }}</span>
-                <div v-if="rankOptions.length > 0" class="rank-selector">
-                  <button
-                    v-for="r in rankOptions"
-                    :key="r"
-                    class="rank-btn"
-                    :class="{ active: r === armoryStore.targetRank }"
-                    type="button"
-                    :disabled="r < currentRank"
-                    @click="setTarget(r)"
-                  >
-                    {{ r }}
-                  </button>
-                </div>
-                <span v-else class="max-label">{{ $t('armory.max') }}</span>
               </div>
             </div>
           </section>
@@ -126,6 +58,16 @@
           <section class="panel requirements-panel">
             <header>
               <h2>{{ $t('armory.gearAndMaterials') }}</h2>
+              <div v-if="armoryStore.focusedCharacter" class="focus-banner">
+                <span class="focus-banner-text">{{ $t('armory.focusedBanner', { name: focusedName }) }}</span>
+                <button
+                  class="focus-banner-clear"
+                  type="button"
+                  :aria-label="$t('armory.clearFocus')"
+                  :title="$t('armory.clearFocus')"
+                  @click="armoryStore.clearFocus()"
+                >✕</button>
+              </div>
               <label class="hide-fulfilled-label">
                 <input type="checkbox" v-model="hideMetReqs" />
                 {{ $t('armory.hideFulfilled') }}
@@ -140,7 +82,7 @@
               @set-material-count="setMaterialCount"
             />
             <button
-              v-if="selectedChar"
+              v-if="armoryStore.selectedCharacters.length > 0"
               class="owned-gear-btn"
               type="button"
               @click="showOwnedGearModal = true"
@@ -154,19 +96,30 @@
         <section class="panel plan-panel">
           <header>
             <h2>{{ $t('armory.plan') }}</h2>
+            <div v-if="armoryStore.focusedCharacter" class="focus-banner">
+              <span class="focus-banner-text">{{ $t('armory.focusedBanner', { name: focusedName }) }}</span>
+              <button
+                class="focus-banner-clear"
+                type="button"
+                :aria-label="$t('armory.clearFocus')"
+                :title="$t('armory.clearFocus')"
+                @click="armoryStore.clearFocus()"
+              >✕</button>
+            </div>
           </header>
           <OptimizationPanel
-            :plan="armoryStore.plan"
+            :plan="armoryStore.planRows"
             :total-stamina="armoryStore.totalStamina"
-            :optimizing="armoryStore.optimizing"
-            :optimization-progress="armoryStore.optimizationProgress"
+            :gap="armoryStore.planGap"
+            :solving="armoryStore.solving"
+            :stale="armoryStore.planStale"
             :solver-error="armoryStore.solverError"
+            :retryable="armoryStore.solverError !== null"
             :unfarmable="armoryStore.infeasibleMaterials"
-            :can-upgrade="armoryStore.canUpgrade"
             :equipment-101-count="armoryStore.equipment101Count"
             :equipment-101-used="armoryStore.equipment101Used"
             :eq101-replaced-mats="armoryStore.eq101ReplacedMats"
-            @upgrade="armoryStore.upgradeCharacter()"
+            @retry="armoryStore.retrySolve()"
             @dec-101="armoryStore.setEquipment101Count(armoryStore.equipment101Count - 1)"
             @inc-101="armoryStore.setEquipment101Count(armoryStore.equipment101Count + 1)"
             @set-101="armoryStore.setEquipment101Count($event)"
@@ -186,50 +139,32 @@
 import { ref, computed, watch, nextTick, onMounted, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useArmoryStore } from '@/stores/armory'
-import { useRosterStore } from '@/stores/roster'
 import { useMaterialInventoryStore } from '@/stores/materialInventory'
 import AppLayout from '@/components/Layout/AppLayout.vue'
 import CharacterSelector from '@/components/Armory/CharacterSelector.vue'
-import GearSlot from '@/components/Armory/GearSlot.vue'
+import CharacterPanel from '@/components/Armory/CharacterPanel.vue'
 import RequirementsPanel from '@/components/Armory/RequirementsPanel.vue'
 import OptimizationPanel from '@/components/Armory/OptimizationPanel.vue'
 import OwnedGearModal from '@/components/Armory/OwnedGearModal.vue'
-import { getAssetUrl, getCharacterImageUrl } from '@/utils/assets'
+import { getAssetUrl } from '@/utils/assets'
 import { HideFulfilledStorage } from '@/utils/storage'
-import { range } from '@/utils/helpers'
+import { MAX_SELECTED } from '@/utils/armory/constants'
 
 const { locale } = useI18n()
 const armoryStore = useArmoryStore()
-const rosterStore = useRosterStore()
 const inventoryStore = useMaterialInventoryStore()
 
-const selectedChar = ref('')
 const showCharSelect = ref(false)
 const showOwnedGearModal = ref(false)
 const hideMetReqs = ref(HideFulfilledStorage.get())
 const charSelectorRef = ref<InstanceType<typeof CharacterSelector> | null>(null)
-const showRankDropdown = ref(false)
-const rankDropdownStyle = ref({})
 
-const rankOptions = computed(() => {
-  if (!selectedChar.value) return []
-  const gear = armoryStore.charData[selectedChar.value]?.gear
-  const rankIdx = currentRank.value - 1
-  const rankGear = gear?.[rankIdx]
-  if (!rankGear) return range(2, armoryStore.maxRank)
-  const roster = rosterStore.rosterData[selectedChar.value]
-  const nameToUid = armoryStore.getNameToUidMap()
-  const allEquipped = rankGear.every((uid: number, s: number) =>
-    !!roster?.equipment[s] && nameToUid.get(roster.equipment[s]!) === uid,
-  )
-  const start = allEquipped ? currentRank.value + 1 : currentRank.value
-  return range(start, armoryStore.maxRank)
-})
-
-const currentRank = computed(() => {
-  if (!selectedChar.value) return 1
-  const prog = rosterStore.getUnitProgress(selectedChar.value)
-  return prog.currentRank
+const focusedName = computed(() => {
+  const focused = armoryStore.focusedCharacter
+  if (!focused) return ''
+  const entry = armoryStore.charList.find(c => c.name === focused)
+  if (!entry) return focused
+  return locale.value === 'en' ? entry.en : entry.name
 })
 
 const filteredMatList = computed(() => {
@@ -237,125 +172,55 @@ const filteredMatList = computed(() => {
   return armoryStore.materialNeeds.filter(m => m.have < m.need)
 })
 
-const displayCharName = computed(() => {
-  const entry = armoryStore.charList.find(c => c.name === selectedChar.value)
-  if (!entry) return selectedChar.value
-  return locale.value === 'en' ? entry.en : entry.name
-})
-
-function setTarget(r: number) {
-  armoryStore.setTargetRank(r)
-}
-
-function setRank(r: number) {
-  showRankDropdown.value = false
-  rosterStore.setUnitRank(selectedChar.value, r)
-  armoryStore.computeRequirements()
-}
-
-function toggleRankDropdown() {
-  showRankDropdown.value = !showRankDropdown.value
-  if (showRankDropdown.value) {
-    const span = document.querySelector('.rank-display') as HTMLElement | null
-    if (!span) return
-    const rect = span.getBoundingClientRect()
-    rankDropdownStyle.value = {
-      position: 'fixed',
-      top: `${rect.bottom + 4}px`,
-      left: `${rect.left + rect.width / 2}px`,
-      transform: 'translateX(-50%)',
-      zIndex: 9999,
-    }
+function toggleCharSelect() {
+  showCharSelect.value = !showCharSelect.value
+  if (showCharSelect.value) {
+    nextTick(() => charSelectorRef.value?.focus())
   }
 }
 
-function prevRank() {
-  const r = rosterStore.getUnitProgress(selectedChar.value)
-  if (r.currentRank > 1) {
-    rosterStore.setUnitRank(selectedChar.value, r.currentRank - 1)
-    armoryStore.computeRequirements()
-  }
-}
-
-function nextRank() {
-  const r = rosterStore.getUnitProgress(selectedChar.value)
-  if (r.currentRank < armoryStore.maxRank) {
-    rosterStore.setUnitRank(selectedChar.value, r.currentRank + 1)
-    armoryStore.computeRequirements()
-  }
+function onPickCharacter(name: string) {
+  if (name) armoryStore.addCharacter(name)
+  showCharSelect.value = false
 }
 
 function decMaterial(uid: number) {
   const current = inventoryStore.getCount(uid)
   inventoryStore.setCount(uid, Math.max(0, current - 1))
-  armoryStore.computeRequirements()
 }
 
 function incMaterial(uid: number) {
   const current = inventoryStore.getCount(uid)
   inventoryStore.setCount(uid, current + 1)
-  armoryStore.computeRequirements()
 }
 
 function setMaterialZero(uid: number) {
   inventoryStore.setCount(uid, 0)
-  armoryStore.computeRequirements()
 }
 
 function setMaterialNeed(uid: number) {
   const mat = armoryStore.materialNeeds.find(m => m.uid === uid)
   if (mat) {
-    inventoryStore.setCount(uid, mat.need)
-    armoryStore.computeRequirements()
+    inventoryStore.setCount(uid, Math.max(0, mat.need))
   }
 }
 
 function setMaterialCount(uid: number, count: number) {
   inventoryStore.setCount(uid, Math.max(0, count))
-  armoryStore.computeRequirements()
 }
-
-watch(showCharSelect, (show) => {
-  if (show) {
-    nextTick(() => charSelectorRef.value?.focus())
-  }
-})
-
-watch(selectedChar, (name) => {
-  if (name) {
-    armoryStore.selectCharacter(name)
-    showCharSelect.value = false
-  }
-})
 
 watch(hideMetReqs, (hide) => {
   HideFulfilledStorage.set(hide)
 })
 
-watch(rankOptions, (opts) => {
-  if (!selectedChar.value) return
-  if (opts.length > 0 && !opts.includes(armoryStore.targetRank)) {
-    armoryStore.setTargetRank(opts[0])
-  }
-})
-
 onMounted(async () => {
+  armoryStore.setActive(true)
   await armoryStore.loadData()
-  if (armoryStore.selectedCharacter) {
-    selectedChar.value = armoryStore.selectedCharacter
-  }
-
-  document.addEventListener('click', closeRankDropdown)
 })
 
 onUnmounted(() => {
-  armoryStore.disposeSolver()
-  document.removeEventListener('click', closeRankDropdown)
+  armoryStore.setActive(false)
 })
-
-function closeRankDropdown() {
-  showRankDropdown.value = false
-}
 </script>
 
 <style scoped>
@@ -438,23 +303,66 @@ function closeRankDropdown() {
   color: var(--text-primary);
 }
 
-/* Character Panel */
-.unselected-state {
-  text-align: center;
-  padding: 2rem 0;
+.focus-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.125rem 0.25rem 0.125rem 0.625rem;
+  border: 1px solid var(--primary-color);
+  border-radius: 999px;
+  color: var(--primary-color);
+  font-size: 0.75rem;
+  font-weight: 600;
+  min-width: 0;
 }
 
-.select-character-btn-area {
-  margin-bottom: 1rem;
+.focus-banner-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.focus-banner-clear {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  font-size: 0.75rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+
+.focus-banner-clear:hover {
+  background: var(--hover-bg);
+}
+
+/* Character Panel */
+.character-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.add-character {
+  text-align: center;
+}
+
+.add-character.has-characters {
+  margin-top: 0.75rem;
 }
 
 .select-character-btn {
-  padding: 1rem 2rem;
+  width: 100%;
+  padding: 0.75rem 1.5rem;
   border: 2px dashed var(--border-color);
   border-radius: 12px;
   background: transparent;
   color: var(--text-secondary);
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-family: var(--site-font);
   cursor: pointer;
   transition: all 0.2s;
@@ -467,174 +375,8 @@ function closeRankDropdown() {
 
 .char-dropdown-wrapper {
   max-width: 320px;
-  margin: 0 auto;
-}
-
-/* Selected state */
-.selected-state {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.slots-row {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  gap: 1rem;
-  align-items: center;
-}
-
-.slot-column {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.center-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  text-align: center;
-}
-
-.character-avatar {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-  border-radius: 50%;
-  background: var(--panel-bg);
-  border: 2px solid var(--border-color);
-  cursor: pointer;
-}
-
-.char-name {
-  font-size: 1.0625rem;
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.rank-row {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.rank-nav-btn {
-  width: 28px;
-  height: 28px;
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  background: var(--button-bg);
-  color: var(--text-primary);
-  font-size: 1rem;
-  font-family: var(--site-font);
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.rank-nav-btn:hover {
-  border-color: var(--primary-color);
-}
-
-.rank-display {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  white-space: nowrap;
-  min-width: 7rem;
-  text-align: center;
-  cursor: pointer;
-}
-
-.rank-dropdown {
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  display: flex;
-  flex-direction: column;
-  min-width: 7rem;
-}
-
-.rank-dropdown-item {
-  padding: 6px 12px;
-  border: none;
-  background: none;
-  color: var(--text-primary);
-  font-size: 0.8125rem;
-  font-family: var(--site-font);
-  cursor: pointer;
-  text-align: center;
-  transition: background 0.15s;
-}
-
-.rank-dropdown-item:hover {
-  background: var(--hover-bg);
-}
-
-.rank-dropdown-item.active {
-  color: var(--primary-color);
-  font-weight: 600;
-}
-
-/* Target Rank Bar */
-.target-rank-bar {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem;
-  background: var(--panel-bg);
-  border-radius: 8px;
-}
-
-.target-label {
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  white-space: nowrap;
-}
-
-.rank-selector {
-  display: flex;
-  gap: 0.375rem;
-  flex-wrap: wrap;
-}
-
-.rank-btn {
-  width: 32px;
-  height: 32px;
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  background: var(--button-bg);
-  color: var(--text-primary);
-  font-size: 0.8125rem;
-  font-weight: 500;
-  font-family: var(--site-font);
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.rank-btn:hover:not(:disabled) {
-  border-color: var(--primary-color);
-}
-
-.rank-btn.active {
-  background: var(--primary-color);
-  border-color: var(--primary-color);
-  color: #fff;
-}
-
-.rank-btn:disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
-}
-
-.max-label {
-  font-size: 0.8125rem;
-  font-weight: 700;
-  color: var(--primary-color);
-  letter-spacing: 0.05em;
+  margin: 1rem auto 0;
+  text-align: left;
 }
 
 /* Requirements Panel */
@@ -689,16 +431,6 @@ function closeRankDropdown() {
 
   .panel {
     padding: 1rem;
-  }
-
-  .slots-row {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
-  }
-
-  .center-column {
-    grid-column: 1 / -1;
-    order: -1;
   }
 }
 </style>

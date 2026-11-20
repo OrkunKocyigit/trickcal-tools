@@ -1,93 +1,54 @@
 import { defineStore } from 'pinia'
-import { ref, computed } from 'vue'
+import { ref, shallowRef, computed, watch } from 'vue'
 import { Logger } from '@/utils/logger'
 import i18n from '@/i18n'
 import { useRosterStore } from './roster'
 import { useMaterialInventoryStore } from './materialInventory'
 import { useOwnedGearStore } from './ownedGear'
-import { Equipment101Storage, SelectedCharacterStorage, Storage, TargetRankStorage } from '@/utils/storage'
+import {
+  Equipment101Storage,
+  SelectedCharactersStorage,
+  Storage,
+  TargetRankStorage,
+} from '@/utils/storage'
 import { STORAGE_KEYS } from '@/constants'
+import type {
+  CharacterInput,
+  CharactersData,
+  Eq101ReplacedMat,
+  GearDb,
+  MaterialDb,
+  MaterialRequirement,
+  StageDrop,
+  StageIndex,
+  StagePlanRow,
+  StaticData,
+  Stock,
+  SweepData,
+} from '@/utils/armory/types'
+import { MAX_SELECTED, STAMINA_PER_RUN } from '@/utils/armory/constants'
+import { allSlotsEquipped, buildStageIndex, computeNeeds, computeUpgrade, solverBudget } from '@/utils/armory/needs'
+import type { NeedsResult, UpgradeResult } from '@/utils/armory/needs'
+import { problemKey } from '@/utils/armory/lpModel'
+import { clampTarget, sanitizeSelection } from '@/utils/armory/selection'
+import { createSolverService, createWorkerSolve } from '@/services/armorySolver'
+import type { SolverService, SolverView } from '@/services/armorySolver'
 
-const STAMINA_PER_RUN = 10
+export type { Eq101ReplacedMat, GearDb, MaterialDb, MaterialRequirement, StageDrop, StagePlanRow }
 
-const EQUIPMENT_101_COST: Record<number, number> = {
-  1: 4, 2: 5, 3: 6, 4: 10, 5: 12, 6: 14, 7: 22, 8: 24,
+const DEBOUNCE_MS = 500
+const UPGRADE_GUARD_MS = 500
+const DEFAULT_MAX_RANK = 8
+const SLOT_COUNT = 6
+
+const EMPTY_VIEW: SolverView = { key: '', result: null, solving: false, stale: false, error: null }
+
+function hasOwn(obj: object, key: string): boolean {
+  return Object.prototype.hasOwnProperty.call(obj, key)
 }
 
-export interface GearRequirement {
-  uid: number
-  name: string
-  nameEn: string
-  rank: number
-  slot: number
-  owned: boolean
-  recipe: { uid: number; count: number }[]
-}
-
-export interface MaterialRequirement {
-  uid: number
-  name: string
-  nameEn: string
-  have: number
-  need: number
-  farmable: boolean
-  minRank: number
-}
-
-export interface StageDrop {
-  uid: number
-  name: string
-  nameEn: string
-  dropRate: number
-}
-
-export interface StagePlanRow {
-  stage: string
-  runs: number
-  stamina: number
-  expectedDrops: StageDrop[]
-}
-
-export interface Eq101ReplacedMat {
-  uid: number
-  name: string
-  nameEn: string
-  count: number
-}
-
-export interface GearDb {
-  [uidStr: string]: {
-    uid: number
-    name: string
-    nameEn: string
-    type: string
-    recipe?: { uid: number; count: number }[]
-  }
-}
-
-export interface MaterialDb {
-  [uidStr: string]: {
-    uid: number
-    name: string
-    nameEn: string
-  }
-}
-
-interface SweepEntry {
-  uid: number
-  rank: number
-  stages: { code: string; dropRate: number }[]
-}
-
-interface SweepData {
-  [materialName: string]: SweepEntry
-}
-
-interface CharactersData {
-  [name: string]: {
-    name?: string
-    gear?: number[][]
-  }
+function toCount(raw: unknown): number {
+  return typeof raw === 'number' && Number.isFinite(raw) ? Math.max(0, Math.floor(raw)) : 0
 }
 
 export const useArmoryStore = defineStore('armory', () => {
@@ -98,140 +59,94 @@ export const useArmoryStore = defineStore('armory', () => {
   const isLoaded = ref(false)
   const loading = ref(false)
 
-  const selectedCharacter = ref<string | null>(null)
-  const targetRank = ref(7)
-
-  const maxRank = computed(() => {
-    const name = selectedCharacter.value
-    if (!name) return 8
-    const char = charData.value[name]
-    if (!char) return 8
-    return char.gear?.length || 8
-  })
-
-  const requirements = ref<GearRequirement[]>([])
-  const materialNeeds = ref<MaterialRequirement[]>([])
-  const plan = ref<StagePlanRow[]>([])
-  const totalStamina = ref(0)
-  const optimizing = ref(false)
-  const optimizationProgress = ref(0)
-  const solverError = ref<string | null>(null)
-  const infeasibleMaterials = ref<number[]>([])
+  const selectedCharacters = ref<string[]>([])
+  const openPanel = ref<string | null>(null)
+  const focusedCharacter = ref<string | null>(null)
+  const targetRanks = ref<Record<string, number>>(TargetRankStorage.get())
   const equipment101Count = ref(0)
-  const equipment101Used = ref(0)
-  const eq101ReplacedMats = ref<Eq101ReplacedMat[]>([])
-  const rankedNeeds = ref<Map<number, Map<number, number>>>(new Map())
 
-  const canUpgrade = computed(() => {
-    if (!selectedCharacter.value) return false
-    const rosterStore = useRosterStore()
-    const prog = rosterStore.getUnitProgress(selectedCharacter.value)
-    if (prog.currentRank > targetRank.value) return false
+  const stageIndex = shallowRef<StageIndex | null>(null)
+  const view = shallowRef<SolverView>(EMPTY_VIEW)
+  const debouncePending = ref(false)
 
-    // Allow upgrade at same rank if character has unequipped gear at current rank
-    if (prog.currentRank === targetRank.value) {
-      const char = charData.value[selectedCharacter.value]
-      if (char?.gear) {
-        const rankGear = char.gear[prog.currentRank - 1]
-        if (rankGear) {
-          const roster = rosterStore.rosterData[selectedCharacter.value]
-          const nameToUid = getNameToUidMap()
-          const allEquipped = rankGear.every((uid: number, s: number) =>
-            !!roster?.equipment[s] && nameToUid.get(roster.equipment[s]!) === uid,
-          )
-          if (allEquipped) return false // maxed for this rank, nothing to upgrade
-        }
-      }
-    }
+  let service: SolverService | null = null
+  let workerSolve: ReturnType<typeof createWorkerSolve> | null = null
+  let debounceTimer: ReturnType<typeof setTimeout> | null = null
+  let lastRequestedKey: string | null = null
+  let active = false
+  let loadPromise: Promise<void> | null = null
+  const lastUpgradeAt = new Map<string, number>()
 
-    // Check if materials are sufficient or coverable by 101
-    const rn = rankedNeeds.value
-    if (rn.size === 0) return materialNeeds.value.length === 0
-
-    let total101Needed = 0
-    const miStore = useMaterialInventoryStore()
-    const ogStore = useOwnedGearStore()
-
-    for (const [uid, rankMap] of rn) {
-      let have = miStore.getCount(uid)
-      if (gearDb.value[String(uid)]) {
-        have += ogStore.getCount(uid)
-      }
-
-      // Allocate inventory from highest-cost rank to lowest
-      const sortedRanks = [...rankMap.entries()].sort(
-        (a, b) => (EQUIPMENT_101_COST[b[0]] || 99) - (EQUIPMENT_101_COST[a[0]] || 99),
-      )
-      for (const [rank, need] of sortedRanks) {
-        const take = Math.min(need, have)
-        have -= take
-        const remaining = need - take
-        if (remaining > 0) {
-          total101Needed += remaining * (EQUIPMENT_101_COST[rank] || 99)
-        }
-      }
-    }
-
-    return total101Needed <= equipment101Count.value
-  })
-
-  const charNames = computed(() => Object.keys(charData.value).filter(k => {
-    const c = charData.value[k]
-    return c && typeof c === 'object' && Array.isArray(c.gear)
+  const staticData = computed<StaticData>(() => ({
+    gearDb: gearDb.value,
+    materialDb: materialDb.value,
+    charData: charData.value,
+    sweepData: sweepData.value,
   }))
 
-  const charList = computed(() => {
-    return charNames.value
-      .map(name => ({
-        name,
-        en: (charData.value[name] as any)?.en || name,
-      }))
-      .sort((a, b) => a.en.localeCompare(b.en))
+  function isKnown(name: string): boolean {
+    return hasOwn(charData.value, name) && Array.isArray(charData.value[name].gear)
+  }
+
+  const charList = computed(() =>
+    Object.keys(charData.value)
+      .filter(isKnown)
+      .map((name) => ({ name, en: charData.value[name].en || name }))
+      .sort((a, b) => a.en.localeCompare(b.en)),
+  )
+
+  function maxRankOf(name: string): number {
+    if (!hasOwn(charData.value, name)) return DEFAULT_MAX_RANK
+    return charData.value[name].gear?.length || DEFAULT_MAX_RANK
+  }
+
+  function currentRankOf(name: string): number {
+    const raw = useRosterStore().getUnitProgress(name).currentRank
+    return Number.isInteger(raw) ? Math.min(maxRankOf(name), Math.max(1, raw)) : 1
+  }
+
+  function equipmentOf(name: string): (string | null)[] {
+    const equipment = useRosterStore().getUnitProgress(name).equipment
+    return Array.isArray(equipment) ? equipment : []
+  }
+
+  /** Lowest sensible target: one above the current rank once all its slots are equipped (unless at max rank). */
+  function minTargetOf(name: string): number {
+    const current = currentRankOf(name)
+    if (current >= maxRankOf(name)) return current
+    const equipped = allSlotsEquipped(
+      { name, currentRank: current, targetRank: current, equipment: equipmentOf(name) },
+      staticData.value,
+    )
+    return equipped ? current + 1 : current
+  }
+
+  function targetRankOf(name: string): number {
+    const stored = hasOwn(targetRanks.value, name) ? targetRanks.value[name] : undefined
+    return Math.max(clampTarget(stored, currentRankOf(name), maxRankOf(name)), minTargetOf(name))
+  }
+
+  function inputOf(name: string): CharacterInput {
+    return {
+      name,
+      currentRank: currentRankOf(name),
+      targetRank: targetRankOf(name),
+      equipment: equipmentOf(name),
+    }
+  }
+
+  const stock = computed<Stock>(() => ({
+    ownedGear: useOwnedGearStore().ownedCounts,
+    inventory: useMaterialInventoryStore().inventory,
+    tokens: equipment101Count.value,
+  }))
+
+  const activeNeeds = computed<NeedsResult>(() => {
+    const names = focusedCharacter.value ? [focusedCharacter.value] : selectedCharacters.value
+    return computeNeeds(names.map(inputOf), staticData.value, stock.value, stageIndex.value ?? undefined)
   })
 
-  async function loadData() {
-    if (isLoaded.value) return
-    loading.value = true
-    try {
-      const base = import.meta.env.BASE_URL
-      const [gearResp, materialResp, charResp, sweepResp] = await Promise.all([
-        fetch(`${base}gear/data.json`),
-        fetch(`${base}gear/material.json`),
-        fetch(`${base}shared/characters.json`),
-        fetch(`${base}sweep/data.json`),
-      ])
-      gearDb.value = await gearResp.json() as GearDb
-      materialDb.value = await materialResp.json() as MaterialDb
-      charData.value = await charResp.json() as CharactersData
-      sweepData.value = await sweepResp.json() as SweepData
-
-      const ogStore = useOwnedGearStore()
-
-      if (!Storage.get(STORAGE_KEYS.GEAR_MIGRATED_V2)) {
-        ogStore.clearAll()
-        Storage.set(STORAGE_KEYS.GEAR_MIGRATED_V2, true)
-        Logger.info('[armory] migrated ownedGearStore for v2')
-      }
-
-      isLoaded.value = true
-    } catch (error) {
-      Logger.error('裝備工坊數據載入失敗:', error)
-      throw error
-    } finally {
-      loading.value = false
-    }
-    equipment101Count.value = Equipment101Storage.get()
-    const savedChar = SelectedCharacterStorage.get()
-    if (savedChar && charData.value[savedChar]) {
-      selectedCharacter.value = savedChar
-    }
-  }
-
-  function setEquipment101Count(count: number) {
-    equipment101Count.value = Math.max(0, count)
-    Equipment101Storage.set(equipment101Count.value)
-    scheduleOptimization()
-  }
+  const ownedGearWindow = computed(() => activeNeeds.value.gearWindow)
 
   function getGearNameByUid(uid: number): { name: string; nameEn: string; type: string } {
     const entry = gearDb.value[String(uid)]
@@ -253,608 +168,349 @@ export const useArmoryStore = defineStore('armory', () => {
     return map
   }
 
-  function selectCharacter(name: string) {
-    selectedCharacter.value = name
-    SelectedCharacterStorage.set(name)
-    const saved = TargetRankStorage.get()
-    targetRank.value = saved[name] ?? maxRank.value
-    computeRequirements()
-  }
+  const materialNeeds = computed<MaterialRequirement[]>(() =>
+    activeNeeds.value.materials.map((m) => {
+      if (gearDb.value[String(m.uid)] || materialDb.value[String(m.uid)]) return m
+      const { name, nameEn } = getGearNameByUid(m.uid)
+      return { ...m, name, nameEn }
+    }),
+  )
 
-  function setTargetRank(rank: number) {
-    targetRank.value = Math.max(1, Math.min(maxRank.value, rank))
-    if (selectedCharacter.value) {
-      const saved = TargetRankStorage.get()
-      saved[selectedCharacter.value] = targetRank.value
-      TargetRankStorage.set(saved)
+  const upgradeInfo = computed<Record<string, UpgradeResult>>(() =>
+    Object.fromEntries(
+      selectedCharacters.value.map((name) => [name, computeUpgrade(inputOf(name), staticData.value, stock.value)]),
+    ),
+  )
+
+  const problem = computed(() => {
+    const { shortfall } = activeNeeds.value
+    const budget = solverBudget(activeNeeds.value, equipment101Count.value)
+    return { shortfall, budget, key: problemKey(shortfall, budget) }
+  })
+
+  const dropsByStage = computed(() => {
+    const byStage = new Map<string, { uid: number; dropRate: number }[]>()
+    for (const [uid, drops] of stageIndex.value ?? []) {
+      for (const d of drops) {
+        const list = byStage.get(d.stage)
+        if (list) list.push({ uid, dropRate: d.dropRate })
+        else byStage.set(d.stage, [{ uid, dropRate: d.dropRate }])
+      }
     }
-    computeRequirements()
-  }
+    return byStage
+  })
 
-  function computeRequirements() {
-    const charName = selectedCharacter.value
-    if (!charName || !charData.value[charName]) {
-      requirements.value = []
-      materialNeeds.value = []
-      plan.value = []
-      totalStamina.value = 0
-      return
-    }
+  const planRows = computed<StagePlanRow[]>(() => {
+    const result = view.value.result
+    if (!result) return []
 
-    const rosterStore = useRosterStore()
-    const ogStore = useOwnedGearStore()
-    const miStore = useMaterialInventoryStore()
-    const char = charData.value[charName]
-    const gear = char.gear
-    if (!gear) {
-      requirements.value = []
-      materialNeeds.value = []
-      return
-    }
+    const haveByUid = new Map(activeNeeds.value.materials.map((m) => [m.uid, m.have]))
+    const shortUids = new Set(activeNeeds.value.shortfall.map((e) => e.uid))
 
-    const progress = rosterStore.getUnitProgress(charName)
-    const currentRank = progress.currentRank
-    const target = targetRank.value
-    const charRoster = rosterStore.rosterData[charName]
-
-    if (target < currentRank) {
-      requirements.value = []
-      materialNeeds.value = []
-      plan.value = []
-      totalStamina.value = 0
-      return
+    const uidRank = new Map<number, number>()
+    let maxSweepRank = 0
+    for (const entry of Object.values(sweepData.value)) {
+      uidRank.set(entry.uid, entry.rank)
+      if (entry.rank > maxSweepRank) maxSweepRank = entry.rank
     }
 
-    const reqs: GearRequirement[] = []
-    const aggregatedMaterials = new Map<number, number>()
-    const rn = new Map<number, Map<number, number>>()
-
-    for (let r = currentRank; r <= target; r++) {
-      const rankGear = gear[r - 1]
-      if (!rankGear) continue
-      for (let s = 0; s < rankGear.length; s++) {
-        const uid = rankGear[s]
-        const info = getGearNameByUid(uid)
-        const ownedCount = ogStore.getCount(uid)
-        const equippedName = charRoster?.equipment[s]
-        const alreadyOwned = ownedCount > 0 || (equippedName === info.name)
-        const gearEntry = gearDb.value[String(uid)]
-        const recipe = gearEntry?.recipe || []
-
-        if (!alreadyOwned) {
-          for (const mat of recipe) {
-            aggregatedMaterials.set(mat.uid, (aggregatedMaterials.get(mat.uid) || 0) + mat.count)
-            if (!rn.has(mat.uid)) rn.set(mat.uid, new Map())
-            const rankMap = rn.get(mat.uid)!
-            rankMap.set(r, (rankMap.get(r) || 0) + mat.count)
-          }
-        }
-
-        reqs.push({
-          uid,
-          name: info.name,
-          nameEn: info.nameEn,
-          rank: r,
-          slot: s,
-          owned: alreadyOwned,
-          recipe,
+    const rows: StagePlanRow[] = []
+    for (const [stage, runs] of Object.entries(result.runsByStage)) {
+      if (!(runs > 0)) continue
+      const expectedDrops: StageDrop[] = (dropsByStage.value.get(stage) ?? [])
+        .filter((d) => shortUids.has(d.uid))
+        .map((d) => {
+          const info = getGearNameByUid(d.uid)
+          return { uid: d.uid, name: info.name, nameEn: info.nameEn, dropRate: d.dropRate }
         })
-      }
+        .sort((a, b) => (haveByUid.get(b.uid) ?? 0) - (haveByUid.get(a.uid) ?? 0) || a.uid - b.uid)
+      rows.push({ stage, runs, stamina: runs * STAMINA_PER_RUN, expectedDrops })
     }
 
-    rankedNeeds.value = rn
-
-    const mats: MaterialRequirement[] = []
-    const sweepUidSet = new Set<number>()
-    for (const entry of Object.values(sweepData.value)) {
-      sweepUidSet.add(entry.uid)
+    const meanRank = (row: StagePlanRow): number => {
+      const ranks = [...new Set(row.expectedDrops.map((d) => uidRank.get(d.uid) ?? maxSweepRank))]
+      if (ranks.length === 0) return 0
+      return ranks.reduce((s, r) => s + r, 0) / ranks.length
     }
+    rows.sort((a, b) => meanRank(a) - meanRank(b) || b.runs - a.runs)
+    return rows
+  })
 
-    for (const [uid, need] of aggregatedMaterials) {
-      const info = getGearNameByUid(uid)
-      let have = miStore.getCount(uid)
-      if (gearDb.value[String(uid)]) {
-        have += ogStore.getCount(uid)
-      }
-      const rankMap = rn.get(uid)
-      const minRank = rankMap ? Math.min(...rankMap.keys()) : 99
-      mats.push({
-        uid,
-        name: info.name,
-        nameEn: info.nameEn,
-        have,
-        need,
-        farmable: sweepUidSet.has(uid),
-        minRank,
-      })
+  const totalStamina = computed(() => view.value.result?.stamina ?? 0)
+  const equipment101Used = computed(() => view.value.result?.tokensUsed ?? 0)
+  const planGap = computed(() => view.value.result?.gap ?? 0)
+
+  const eq101ReplacedMats = computed<Eq101ReplacedMat[]>(() => {
+    const byUid = new Map<number, number>()
+    for (const [key, count] of Object.entries(view.value.result?.tokensByEntry ?? {})) {
+      const uid = Number(key.split('@')[0])
+      if (!Number.isInteger(uid) || !(count > 0)) continue
+      byUid.set(uid, (byUid.get(uid) ?? 0) + count)
     }
-
-    mats.sort((a, b) => a.minRank - b.minRank || a.uid - b.uid)
-
-    requirements.value = reqs
-    materialNeeds.value = mats
-    plan.value = []
-    totalStamina.value = 0
-    solverError.value = null
-    infeasibleMaterials.value = []
-
-    scheduleOptimization()
-  }
-
-  function buildStageDropsIndex(): Map<number, { stage: string; dropRate: number }[]> {
-    const index = new Map<number, { stage: string; dropRate: number }[]>()
-    for (const entry of Object.values(sweepData.value)) {
-      const uid = entry.uid
-      const stages = entry.stages || []
-      for (const st of stages) {
-        if (!index.has(uid)) index.set(uid, [])
-        index.get(uid)!.push({ stage: st.code, dropRate: st.dropRate })
-      }
-    }
-    return index
-  }
-
-  let _solverWorker: Worker | null = null
-  let _optimizeTimer: ReturnType<typeof setTimeout> | null = null
-
-  function scheduleOptimization() {
-    if (_optimizeTimer) clearTimeout(_optimizeTimer)
-    _optimizeTimer = setTimeout(() => {
-      _optimizeTimer = null
-      runOptimization()
-    }, 500)
-  }
-
-  function upgradeCharacter() {
-    const name = selectedCharacter.value
-    if (!name) return
-    const rosterStore = useRosterStore()
-    const ogStore = useOwnedGearStore()
-    const miStore = useMaterialInventoryStore()
-    const char = charData.value[name]
-    if (!char) return
-    const progress = rosterStore.getUnitProgress(name)
-    const fromRank = progress.currentRank
-    const toRank = targetRank.value
-    if (fromRank > toRank) return
-
-    const charRoster = rosterStore.rosterData[name]
-
-    // Execute upgrade: iterate rank upward, equip gear, deduct resources
-    let total101Cost = 0
-    for (let r = fromRank; r <= toRank; r++) {
-      const rankGear = char.gear?.[r - 1]
-      if (!rankGear) continue
-      for (let s = 0; s < rankGear.length; s++) {
-        const uid = rankGear[s] as number
-        const info = getGearNameByUid(uid)
-
-        // Already equipped via roster → skip
-        if (charRoster?.equipment[s] === info.name) continue
-
-        // Priority 1: consume full gear from ownedGearStore
-        if (ogStore.getCount(uid) > 0) {
-          ogStore.addCount(uid, -1)
-          rosterStore.setEquippedGear(name, s, info.name)
-          continue
-        }
-
-        // Priority 2: craft from recipe materials
-        const gearEntry = gearDb.value[String(uid)]
-        if (gearEntry?.recipe) {
-          for (const mat of gearEntry.recipe) {
-            let remaining = mat.count
-            // Deduct owned sub-material gear first
-            if (gearDb.value[String(mat.uid)] && ogStore.getCount(mat.uid) > 0) {
-              const usedOwned = Math.min(remaining, ogStore.getCount(mat.uid))
-              ogStore.addCount(mat.uid, -usedOwned)
-              remaining -= usedOwned
-            }
-            // Deduct from inventory
-            const inv = miStore.getCount(mat.uid)
-            const fromInv = Math.min(remaining, inv)
-            if (fromInv > 0) {
-              miStore.addCount(mat.uid, -fromInv)
-              remaining -= fromInv
-            }
-            // remaining > 0 covered by 101 tokens
-            if (remaining > 0) {
-              total101Cost += remaining * (EQUIPMENT_101_COST[r] || 99)
-            }
-          }
-        }
-
-        rosterStore.setEquippedGear(name, s, info.name)
-      }
-    }
-
-    if (total101Cost > 0) {
-      equipment101Count.value = Math.max(0, equipment101Count.value - total101Cost)
-      Equipment101Storage.set(equipment101Count.value)
-    }
-
-    // A fully equipped rank rolls over to the next rank with empty slots, except at max rank
-    if (toRank < maxRank.value) {
-      const nextRank = toRank + 1
-      rosterStore.setUnitRank(name, nextRank)
-      const slotCount = rosterStore.getUnitProgress(name).equipment.length
-      for (let s = 0; s < slotCount; s++) {
-        rosterStore.setEquippedGear(name, s, null)
-      }
-      setTargetRank(nextRank)
-      return
-    }
-
-    rosterStore.setUnitRank(name, toRank)
-    computeRequirements()
-  }
-
-  function getSolverWorker(): Worker {
-    if (!_solverWorker) {
-      _solverWorker = new Worker(
-        new URL('../workers/optimizer.worker', import.meta.url),
-        { type: 'module' },
-      )
-    }
-    return _solverWorker
-  }
-
-  function disposeSolver() {
-    if (_solverWorker) {
-      _solverWorker.terminate()
-      _solverWorker = null
-    }
-  }
-
-  function runOptimization() {
-    if (optimizing.value) return
-    if (requirements.value.length === 0 || materialNeeds.value.length === 0) return
-
-    const unfarmable: number[] = []
-    const stageDropsIndex = buildStageDropsIndex()
-    const varsMap = new Map<string, { code: string; drops: { uid: number; rate: number }[] }>()
-    const constraintsMap = new Map<string, number>()
-
-    for (const mat of materialNeeds.value) {
-      const remaining = Math.max(0, mat.need - mat.have)
-      if (remaining <= 0) continue
-
-      if (!stageDropsIndex.has(mat.uid)) {
-        unfarmable.push(mat.uid)
-        continue
-      }
-
-      constraintsMap.set(`m${mat.uid}`, remaining)
-
-      const stages = stageDropsIndex.get(mat.uid)!
-      for (const st of stages) {
-        if (!varsMap.has(st.stage)) {
-          varsMap.set(st.stage, { code: st.stage, drops: [] })
-        }
-        varsMap.get(st.stage)!.drops.push({ uid: mat.uid, rate: st.dropRate })
-      }
-    }
-
-    infeasibleMaterials.value = unfarmable
-
-    if (constraintsMap.size === 0) {
-      plan.value = []
-      totalStamina.value = 0
-      return
-    }
-
-    // Preprocess Equipment 101: greedy even-distribution across remaining material needs
-    eq101ReplacedMats.value = []
-    const replacedMap = new Map<number, number>()
-    let total101Used = 0
-    if (equipment101Count.value > 0) {
-      let remBudget = equipment101Count.value
-      const miStore = useMaterialInventoryStore()
-      const ogStore2 = useOwnedGearStore()
-
-      // Build per-(uid,rank) remaining entries (same inventory logic as before)
-      type E101Entry = { uid: number; rank: number; remaining: number }
-      const entries: E101Entry[] = []
-      const rn = rankedNeeds.value
-      for (const [uid, rankMap] of rn) {
-        const matKey = `m${uid}`
-        if (!constraintsMap.has(matKey)) continue
-        let have = miStore.getCount(uid)
-        if (gearDb.value[String(uid)]) have += ogStore2.getCount(uid)
-        const sortedRanks = [...rankMap.entries()].sort(
-          (a, b) => (EQUIPMENT_101_COST[b[0]] || 99) - (EQUIPMENT_101_COST[a[0]] || 99),
-        )
-        for (const [rank, need] of sortedRanks) {
-          const take = Math.min(need, have)
-          have -= take
-          const rem = need - take
-          if (rem > 0) entries.push({ uid, rank, remaining: rem })
-        }
-      }
-
-      // Sort by rank ASC (cheapest 101 cost first)
-      entries.sort((a, b) => (EQUIPMENT_101_COST[a.rank] || 99) - (EQUIPMENT_101_COST[b.rank] || 99))
-
-      // Group by rank for per-rank reduce-peak
-      const rankGroups = new Map<number, E101Entry[]>()
-      for (const e of entries) {
-        if (!rankGroups.has(e.rank)) rankGroups.set(e.rank, [])
-        rankGroups.get(e.rank)!.push(e)
-      }
-
-      for (const [rank, group] of rankGroups) {
-        const unitCost = EQUIPMENT_101_COST[rank] || 99
-        if (remBudget < unitCost) break
-        const totalRem = group.reduce((s, e) => s + e.remaining, 0)
-        const affordable = Math.min(totalRem, Math.floor(remBudget / unitCost))
-        if (affordable <= 0) continue
-
-        // Reduce-peak: iteratively cut the highest remaining, spread evenly
-        let toAlloc = affordable
-        const final = group.map(e => e.remaining)
-        while (toAlloc > 0) {
-          let maxIdx = 0
-          for (let i = 1; i < final.length; i++) {
-            if (final[i] > final[maxIdx]) maxIdx = i
-          }
-          final[maxIdx]--
-          toAlloc--
-        }
-
-        // Write back to constraintsMap
-        for (let i = 0; i < group.length; i++) {
-          const allocated = group[i].remaining - final[i]
-          if (allocated <= 0) continue
-          replacedMap.set(group[i].uid, (replacedMap.get(group[i].uid) || 0) + allocated)
-          const matKey = `m${group[i].uid}`
-          const cur = constraintsMap.get(matKey) || 0
-          const next = cur - allocated
-          if (next <= 0) {
-            constraintsMap.delete(matKey)
-          } else {
-            constraintsMap.set(matKey, next)
-          }
-        }
-
-        const used = affordable * unitCost
-        remBudget -= used
-        total101Used += used
-      }
-
-      equipment101Used.value = total101Used
-    }
-
-    eq101ReplacedMats.value = [...replacedMap.entries()]
+    return [...byUid.entries()]
+      .sort((a, b) => a[0] - b[0])
       .map(([uid, count]) => {
         const info = getGearNameByUid(uid)
         return { uid, name: info.name, nameEn: info.nameEn, count }
       })
-      .sort((a, b) => a.uid - b.uid)
+  })
 
-    // Build CPLEX LP format string for HiGHS solver
-    const stageCodeByVarKey = new Map<string, string>()
-    const varKeys: string[] = []
+  const infeasibleMaterials = computed(() => activeNeeds.value.unfarmable)
+  const solving = computed(() => view.value.solving)
+  const planStale = computed(() => view.value.stale || debouncePending.value)
 
-    // Collect variable definitions: varKey -> { drops relevant to constraints }
-    const varDrops = new Map<string, { matKey: string; rate: number }[]>()
-
-    for (const [stageCode, v] of varsMap) {
-      const varKey = `s_${stageCode.replace('-', '_')}`
-      stageCodeByVarKey.set(varKey, stageCode)
-      varKeys.push(varKey)
-      const drops: { matKey: string; rate: number }[] = []
-      for (const drop of v.drops) {
-        const matKey = `m${drop.uid}`
-        if (constraintsMap.has(matKey)) {
-          drops.push({ matKey, rate: drop.rate })
-        }
-      }
-      varDrops.set(varKey, drops)
-    }
-
-    // Build LP string
-    const lpParts: string[] = ['Minimize', '  obj:']
-
-    // Objective: minimize total stamina cost
-    const objTerms = varKeys.map((vk, i) =>
-      i === 0 ? `${STAMINA_PER_RUN} ${vk}` : `+ ${STAMINA_PER_RUN} ${vk}`,
-    )
-    lpParts.push(`    ${objTerms.join(' ')}`)
-
-    // Constraints: each material need must be met
-    lpParts.push('Subject To')
-    for (const [matKey, need] of constraintsMap) {
-      const terms: string[] = []
-      for (const vk of varKeys) {
-        const drops = varDrops.get(vk)!
-        const drop = drops.find((d) => d.matKey === matKey)
-        if (drop) {
-          if (terms.length === 0) {
-            terms.push(`${drop.rate} ${vk}`)
-          } else {
-            terms.push(`+ ${drop.rate} ${vk}`)
-          }
-        }
-      }
-      if (terms.length > 0) {
-        lpParts.push(`  ${matKey}: ${terms.join(' ')} >= ${Math.ceil(need)}`)
+  const solverError = computed<string | null>(() => {
+    const failure = view.value.error
+    if (!failure) return null
+    switch (failure.kind) {
+      case 'timeout':
+        return i18n.global.t('errors.solverTimeout')
+      case 'wasm':
+        return i18n.global.t('errors.solverWasmFail')
+      case 'init':
+        return i18n.global.t('errors.solverInitFail')
+      default: {
+        const status = typeof failure.status === 'string' && /^[A-Za-z ]{1,32}$/.test(failure.status)
+          ? failure.status
+          : '-'
+        return i18n.global.t('errors.solverStatus', { status })
       }
     }
+  })
 
-    // Bounds: all variables >= 0
-    lpParts.push('Bounds')
-    for (const vk of varKeys) {
-      lpParts.push(`  ${vk} >= 0`)
-    }
-
-    // Integer variables
-    lpParts.push('General')
-    lpParts.push(`  ${varKeys.join(' ')}`)
-    lpParts.push('End')
-
-    const lp = lpParts.join('\n')
-    if (import.meta.env.DEV) {
-      console.log(`[armory] LP model: ${varKeys.length} vars, ${constraintsMap.size} constraints, ${lp.length} chars`)
-    }
-    solveModel(lp, stageCodeByVarKey, varsMap)
+  function ensureService(): SolverService | null {
+    if (service) return service
+    const index = stageIndex.value
+    if (!index) return null
+    workerSolve = createWorkerSolve()
+    service = createSolverService({
+      solve: workerSolve.solve,
+      index,
+      onChange: (v) => {
+        view.value = v
+      },
+    })
+    return service
   }
 
-  function solveModel(
-    lp: string,
-    stageCodeByVarKey: Map<string, string>,
-    varsMap: Map<string, { code: string; drops: { uid: number; rate: number }[] }>,
-  ) {
-    solverError.value = null
-    optimizing.value = true
-    optimizationProgress.value = 0
+  function cancelDebounce() {
+    if (debounceTimer) clearTimeout(debounceTimer)
+    debounceTimer = null
+    debouncePending.value = false
+  }
 
-    console.log(`[armory] solving ILP: ${stageCodeByVarKey.size} vars, HiGHS WASM`)
-    if (import.meta.env.DEV) {
-      console.log('[armory] LP preview:\n', lp.slice(0, 500) + (lp.length > 500 ? '\n...' : ''))
+  function requestNow() {
+    cancelDebounce()
+    if (!active) return
+    const svc = ensureService()
+    if (!svc) return
+    lastRequestedKey = problem.value.key
+    svc.request(problem.value.shortfall, problem.value.budget)
+  }
+
+  watch(
+    () => problem.value.key,
+    (key) => {
+      cancelDebounce()
+      if (!active || !service || key === lastRequestedKey) return
+      debouncePending.value = true
+      debounceTimer = setTimeout(requestNow, DEBOUNCE_MS)
+    },
+  )
+
+  /** The Armory view is on screen. Leaving keeps the solver service (cache, plan, failed keys) but stops its worker. */
+  function setActive(value: boolean) {
+    if (active === value) return
+    active = value
+    if (value) return
+    cancelDebounce()
+    service?.suspend()
+    workerSolve?.dispose()
+  }
+
+  function resetSolver() {
+    cancelDebounce()
+    service?.dispose()
+    service = null
+    workerSolve?.dispose()
+    workerSolve = null
+    lastRequestedKey = null
+  }
+
+  function retrySolve() {
+    if (!active) return
+    service?.retry()
+  }
+
+  function setStaticData(d: StaticData) {
+    resetSolver()
+    gearDb.value = d.gearDb
+    materialDb.value = d.materialDb
+    charData.value = d.charData
+    sweepData.value = d.sweepData
+    stageIndex.value = buildStageIndex(d.sweepData)
+    view.value = EMPTY_VIEW
+    requestNow()
+  }
+
+  function persistSelection() {
+    SelectedCharactersStorage.set(selectedCharacters.value)
+  }
+
+  function restoreSelection() {
+    let names: string[]
+    const stored = SelectedCharactersStorage.get()
+    if (stored !== null) {
+      names = sanitizeSelection(stored, isKnown)
+    } else {
+      const legacy = SelectedCharactersStorage.getLegacy()
+      names = typeof legacy === 'string' && isKnown(legacy) ? [legacy] : []
+      SelectedCharactersStorage.set(names)
+      SelectedCharactersStorage.removeLegacy()
     }
+    selectedCharacters.value = names
+    beginVisit()
+  }
 
-    const worker = getSolverWorker()
-    const progressInterval = setInterval(() => {
-      if (optimizationProgress.value < 90) {
-        optimizationProgress.value += 5
-      }
-    }, 200)
+  function beginVisit() {
+    focusedCharacter.value = null
+    openPanel.value = selectedCharacters.value[0] ?? null
+  }
 
-    const workerTimeout = setTimeout(() => {
-      cleanup()
-      console.error('Solver worker timed out after 60s')
-      solverError.value = i18n.global.t('errors.solverTimeout')
-      plan.value = []
-      totalStamina.value = 0
-      optimizing.value = false
-      optimizationProgress.value = 0
-    }, 60000)
-
-    function cleanup() {
-      clearInterval(progressInterval)
-      clearTimeout(workerTimeout)
-      worker.removeEventListener('message', onMessage)
-      worker.removeEventListener('error', onError)
+  /** Call once per visit: loads on first use, then opens the visit and (re)requests the current plan. */
+  function loadData(): Promise<void> {
+    if (isLoaded.value) {
+      beginVisit()
+      requestNow()
+      return Promise.resolve()
     }
+    if (!loadPromise) {
+      loadPromise = fetchAndRestore().finally(() => {
+        loadPromise = null
+      })
+    }
+    return loadPromise
+  }
 
-    const onMessage = (e: MessageEvent) => {
-      cleanup()
-      const { result, error } = e.data
-      if (error) {
-        console.error('Solver worker error:', error)
-        solverError.value = i18n.global.t('errors.solverWasmFail')
-        plan.value = []
-        totalStamina.value = 0
-        optimizing.value = false
-        optimizationProgress.value = 0
-        return
-      }
-
-      // HiGHS solution format
-      const solution = result as {
-        Status: string
-        ObjectiveValue: number
-        Columns: Record<string, { Primal: number; Name: string }>
-      }
-
-      if (solution.Status !== 'Optimal') {
-        console.warn('[armory] HiGHS status:', solution.Status)
-        solverError.value = i18n.global.t('errors.solverStatus', { status: solution.Status })
-        if (import.meta.env.DEV) {
-          console.warn('[armory] non-optimal solution:', solution)
-        }
-        plan.value = []
-        totalStamina.value = 0
-        optimizing.value = false
-        optimizationProgress.value = 0
-        return
-      }
-
-      // Build plan from column primal values
-      const planRows: StagePlanRow[] = []
-      let total = 0
-      const haveByUid = new Map(materialNeeds.value.map(m => [m.uid, m.have]))
-
-      for (const [varKey, col] of Object.entries(solution.Columns)) {
-        const runCount = Math.round(col.Primal)
-        if (runCount <= 0) continue
-        if (!stageCodeByVarKey.has(varKey)) continue
-
-        const stageCode = stageCodeByVarKey.get(varKey)!
-        const expectedDrops: StageDrop[] = []
-        for (const drop of (varsMap.get(stageCode)?.drops || [])) {
-          const info = getGearNameByUid(drop.uid)
-          expectedDrops.push({
-            uid: drop.uid,
-            name: info.name,
-            nameEn: info.nameEn,
-            dropRate: drop.rate,
-          })
-        }
-        expectedDrops.sort((a, b) =>
-          (haveByUid.get(b.uid) ?? 0) - (haveByUid.get(a.uid) ?? 0) || a.uid - b.uid,
-        )
-        const st = runCount * STAMINA_PER_RUN
-        total += st
-        planRows.push({
-          stage: stageCode,
-          runs: runCount,
-          stamina: st,
-          expectedDrops,
-        })
-      }
-
-      const uidRankMap = new Map<number, number>()
-      let maxRank = 0
-      for (const entry of Object.values(sweepData.value)) {
-        uidRankMap.set(entry.uid, entry.rank)
-        if (entry.rank > maxRank) maxRank = entry.rank
-      }
-      const stageAvgRank = (row: StagePlanRow): number => {
-        const ranks = [...new Set(row.expectedDrops.map(d => uidRankMap.get(d.uid) ?? maxRank))]
-        if (ranks.length === 0) return 0
-        return ranks.length === 1 ? ranks[0] : ranks.reduce((s, r) => s + r, 0) / ranks.length
-      }
-      planRows.sort((a, b) => {
-        const diff = stageAvgRank(a) - stageAvgRank(b)
-        if (diff !== 0) return diff
-        return b.runs - a.runs
+  async function fetchAndRestore() {
+    loading.value = true
+    try {
+      const base = import.meta.env.BASE_URL
+      const [gearResp, materialResp, charResp, sweepResp] = await Promise.all([
+        fetch(`${base}gear/data.json`),
+        fetch(`${base}gear/material.json`),
+        fetch(`${base}shared/characters.json`),
+        fetch(`${base}sweep/data.json`),
+      ])
+      setStaticData({
+        gearDb: await gearResp.json() as GearDb,
+        materialDb: await materialResp.json() as MaterialDb,
+        charData: await charResp.json() as CharactersData,
+        sweepData: await sweepResp.json() as SweepData,
       })
 
-      plan.value = planRows
-      totalStamina.value = total
-      if (import.meta.env.DEV) {
-        console.log(`[armory] solution: ${planRows.length} stages, ${total} total stamina`)
+      const ogStore = useOwnedGearStore()
+
+      if (!Storage.get(STORAGE_KEYS.GEAR_MIGRATED_V2)) {
+        ogStore.clearAll()
+        Storage.set(STORAGE_KEYS.GEAR_MIGRATED_V2, true)
+        Logger.info('[armory] migrated ownedGearStore for v2')
       }
-      optimizing.value = false
-      optimizationProgress.value = 100
-    }
 
-    const onError = (e: ErrorEvent) => {
-      cleanup()
-      console.error('Solver worker error:', e.message)
-      solverError.value = i18n.global.t('errors.solverInitFail')
-      plan.value = []
-      totalStamina.value = 0
-      optimizing.value = false
-      optimizationProgress.value = 0
+      equipment101Count.value = toCount(Equipment101Storage.get())
+      restoreSelection()
+      isLoaded.value = true
+    } catch (error) {
+      Logger.error('裝備工坊數據載入失敗:', error)
+      throw error
+    } finally {
+      loading.value = false
     }
-
-    worker.addEventListener('message', onMessage)
-    worker.addEventListener('error', onError)
-    worker.postMessage({ lp })
+    requestNow()
   }
 
-  function toggleGearOwned(uid: number) {
+  function addCharacter(name: string): boolean {
+    if (typeof name !== 'string' || !isKnown(name)) return false
+    if (selectedCharacters.value.includes(name)) return false
+    if (selectedCharacters.value.length >= MAX_SELECTED) return false
+    selectedCharacters.value = [...selectedCharacters.value, name]
+    openPanel.value = name
+    persistSelection()
+    return true
+  }
+
+  function removeCharacter(name: string) {
+    if (!selectedCharacters.value.includes(name)) return
+    selectedCharacters.value = selectedCharacters.value.filter((n) => n !== name)
+    if (openPanel.value === name) openPanel.value = null
+    persistSelection()
+    if (focusedCharacter.value === name) {
+      focusedCharacter.value = null
+      requestNow()
+    }
+  }
+
+  function togglePanel(name: string) {
+    openPanel.value = openPanel.value === name ? null : name
+  }
+
+  function toggleFocus(name: string) {
+    if (!selectedCharacters.value.includes(name)) return
+    focusedCharacter.value = focusedCharacter.value === name ? null : name
+    requestNow()
+  }
+
+  function clearFocus() {
+    if (focusedCharacter.value === null) return
+    focusedCharacter.value = null
+    requestNow()
+  }
+
+  function setTargetRank(name: string, rank: number) {
+    if (!isKnown(name)) return
+    const next = clampTarget(rank, currentRankOf(name), maxRankOf(name))
+    targetRanks.value = { ...targetRanks.value, [name]: next }
+    TargetRankStorage.set(targetRanks.value)
+  }
+
+  function setEquipment101Count(n: number) {
+    if (typeof n !== 'number' || !Number.isFinite(n)) return
+    equipment101Count.value = Math.max(0, Math.floor(n))
+    Equipment101Storage.set(equipment101Count.value)
+  }
+
+  function upgradeCharacter(name: string): boolean {
+    if (!selectedCharacters.value.includes(name)) return false
+    const now = Date.now()
+    const last = lastUpgradeAt.get(name)
+    if (last !== undefined && now - last < UPGRADE_GUARD_MS) return false
+
+    const result = computeUpgrade(inputOf(name), staticData.value, stock.value)
+    if (!result.ready) {
+      Logger.debug('[armory] upgrade refused:', result.reason)
+      return false
+    }
+
+    const rosterStore = useRosterStore()
     const ogStore = useOwnedGearStore()
-    ogStore.toggleOwned(uid)
-    computeRequirements()
-  }
-
-  function setMaterialCount(uid: number, count: number) {
     const miStore = useMaterialInventoryStore()
-    miStore.setCount(uid, count)
-    computeRequirements()
+    const previousTarget = targetRankOf(name)
+
+    for (const [uid, n] of Object.entries(result.consumeOwned)) ogStore.addCount(Number(uid), -n)
+    for (const [uid, n] of Object.entries(result.consumeInventory)) miStore.addCount(Number(uid), -n)
+    if (result.tokens > 0) {
+      equipment101Count.value = Math.max(0, equipment101Count.value - result.tokens)
+      Equipment101Storage.set(equipment101Count.value)
+    }
+
+    rosterStore.setUnitRank(name, result.nextRank)
+    for (let slot = 0; slot < SLOT_COUNT; slot++) {
+      rosterStore.setEquippedGear(name, slot, result.nextEquipment[slot] ?? null)
+    }
+    if (result.nextRank !== previousTarget) setTargetRank(name, result.nextRank)
+
+    lastUpgradeAt.set(name, now)
+    return true
   }
 
   return {
@@ -864,33 +520,40 @@ export const useArmoryStore = defineStore('armory', () => {
     sweepData,
     isLoaded,
     loading,
-    selectedCharacter,
-    targetRank,
-    maxRank,
-    materialNeeds,
-    plan,
-    totalStamina,
-    optimizing,
-    optimizationProgress,
-    solverError,
-    infeasibleMaterials,
-    canUpgrade,
+    selectedCharacters,
+    openPanel,
+    focusedCharacter,
     equipment101Count,
+    charList,
+    maxRankOf,
+    currentRankOf,
+    minTargetOf,
+    targetRankOf,
+    activeNeeds,
+    materialNeeds,
+    ownedGearWindow,
+    upgradeInfo,
+    planRows,
+    totalStamina,
+    planGap,
     equipment101Used,
     eq101ReplacedMats,
-    rankedNeeds,
-    charNames,
-    charList,
+    infeasibleMaterials,
+    solving,
+    planStale,
+    solverError,
     loadData,
-    selectCharacter,
+    setStaticData,
+    addCharacter,
+    removeCharacter,
+    togglePanel,
+    toggleFocus,
+    clearFocus,
     setTargetRank,
-    computeRequirements,
-    disposeSolver,
-    runOptimization,
-    upgradeCharacter,
     setEquipment101Count,
-    toggleGearOwned,
-    setMaterialCount,
+    upgradeCharacter,
+    retrySolve,
+    setActive,
     getGearNameByUid,
     getNameToUidMap,
   }

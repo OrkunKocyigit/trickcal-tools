@@ -1,26 +1,26 @@
 <template>
   <div class="optimization-panel">
-    <div v-if="optimizing" class="progress-bar-wrap">
-      <div class="progress-bar">
-        <div class="progress-fill" :style="{ width: optimizationProgress + '%' }"></div>
+    <div v-if="solving" class="progress-bar-wrap">
+      <div class="progress-bar" role="progressbar" :aria-label="$t('armory.updating')">
+        <div class="progress-fill"></div>
       </div>
-      <span class="progress-text">{{ optimizationProgress }}%</span>
     </div>
 
-    <div v-if="solverError" class="error-box">{{ solverError }}</div>
+    <div v-if="solverError" class="error-box" role="alert">
+      <span class="error-text">{{ solverError }}</span>
+      <button
+        v-if="retryable"
+        class="retry-btn"
+        type="button"
+        @click="$emit('retry')"
+      >
+        {{ $t('armory.retry') }}
+      </button>
+    </div>
 
     <div v-if="unfarmable.length > 0" class="warning-box">
       {{ $t('armory.unfarmableWarning', { count: unfarmable.length }) }}
     </div>
-
-    <button
-      class="upgrade-btn"
-      type="button"
-      :disabled="!canUpgrade || optimizing"
-      @click="$emit('upgrade')"
-    >
-      {{ $t('armory.upgrade') }}
-    </button>
 
     <div class="eq101-row">
       <button class="adj-btn" type="button" @click="$emit('dec-101')">−</button>
@@ -44,11 +44,20 @@
       <button class="adj-btn" type="button" @click="$emit('inc-101')">+</button>
     </div>
 
-    <div v-if="plan.length > 0" class="results">
+    <div
+      v-if="plan.length > 0 || equipment101Used > 0"
+      class="results"
+      :class="{ stale }"
+      :aria-busy="solving ? 'true' : 'false'"
+    >
+      <div v-if="stale && !solverError" class="updating-label" role="status">{{ $t('armory.updating') }}</div>
       <div class="total-stamina">
         <div class="stamina-line">
           <img :src="getAssetUrl('assets/icons/stamina.webp')" class="summary-icon" />
           {{ $t('armory.totalStamina', { stamina: totalStamina, runs: totalRuns }) }}
+        </div>
+        <div v-if="gap > 0" class="near-optimal" role="note">
+          {{ $t('armory.nearOptimal', { stamina: gap }) }}
         </div>
       </div>
 
@@ -111,18 +120,19 @@ const { locale } = useI18n()
 const props = defineProps<{
   plan: StagePlanRow[]
   totalStamina: number
-  optimizing: boolean
-  optimizationProgress: number
+  gap: number
+  solving: boolean
+  stale: boolean
   solverError: string | null
+  retryable: boolean
   unfarmable: number[]
-  canUpgrade: boolean
   equipment101Count: number
   equipment101Used: number
   eq101ReplacedMats: Eq101ReplacedMat[]
 }>()
 
 const emit = defineEmits<{
-  upgrade: []
+  retry: []
   'dec-101': []
   'inc-101': []
   'set-101': [count: number]
@@ -178,6 +188,7 @@ function matDisplayName(mat: Eq101ReplacedMat): string {
 
 .progress-bar {
   flex: 1;
+  position: relative;
   height: 8px;
   background: var(--border-color);
   border-radius: 4px;
@@ -185,20 +196,38 @@ function matDisplayName(mat: Eq101ReplacedMat): string {
 }
 
 .progress-fill {
-  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40%;
   background: var(--primary-color);
   border-radius: 4px;
-  transition: width 0.3s ease;
+  animation: progress-indeterminate 1.2s ease-in-out infinite;
 }
 
-.progress-text {
-  font-size: 0.75rem;
-  color: var(--text-secondary);
-  min-width: 2.5rem;
-  text-align: right;
+@keyframes progress-indeterminate {
+  from {
+    left: -40%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-fill {
+    animation: none;
+    left: 0;
+    width: 100%;
+    opacity: 0.6;
+  }
 }
 
 .error-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
   padding: 0.75rem;
   background: var(--error-bg, rgba(239, 68, 68, 0.1));
   border-left: 3px solid var(--error-color, #ef4444);
@@ -216,27 +245,31 @@ function matDisplayName(mat: Eq101ReplacedMat): string {
   font-size: 0.8125rem;
 }
 
-.upgrade-btn {
-  width: 100%;
-  padding: 0.875rem;
-  border: none;
-  border-radius: 8px;
-  background: var(--success-color, #22c55e);
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 600;
+.retry-btn {
+  flex-shrink: 0;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--error-color, #ef4444);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--error-color, #ef4444);
+  font-size: 0.8125rem;
   font-family: var(--site-font);
   cursor: pointer;
+}
+
+.retry-btn:hover {
+  background: var(--error-bg, rgba(239, 68, 68, 0.1));
+}
+
+.results.stale > :not(.updating-label) {
+  opacity: 0.5;
   transition: opacity 0.2s;
 }
 
-.upgrade-btn:hover:not(:disabled) {
-  opacity: 0.9;
-}
-
-.upgrade-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+.updating-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
 }
 
 .eq101-row {
@@ -310,6 +343,12 @@ function matDisplayName(mat: Eq101ReplacedMat): string {
   display: flex;
   align-items: center;
   gap: 0.375rem;
+}
+
+.near-optimal {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-secondary);
 }
 
 .summary-icon {

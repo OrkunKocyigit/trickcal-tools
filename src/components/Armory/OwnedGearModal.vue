@@ -8,11 +8,12 @@
         </header>
 
         <div class="modal-body">
-          <div v-for="rank in rankList" :key="rank" class="rank-group">
-            <div class="rank-group-header">Rank {{ rank }}</div>
+          <p v-if="rankGroups.length === 0" class="empty-note">{{ $t('armory.noRequirements') }}</p>
+          <div v-for="group in rankGroups" :key="group.rank" class="rank-group">
+            <div class="rank-group-header">{{ $t('armory.rankHeader', { rank: group.rank }) }}</div>
             <div class="gear-grid">
                 <div
-                  v-for="g in gearByRank(rank)"
+                  v-for="g in group.slots"
                   :key="g.uid"
                   class="gear-card"
                   :class="{ owned: g.count > 0 }"
@@ -59,13 +60,11 @@ import { computed, nextTick, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useArmoryStore } from '@/stores/armory'
 import { useOwnedGearStore } from '@/stores/ownedGear'
-import { useRosterStore } from '@/stores/roster'
 import { getGearImageUrl } from '@/utils/assets'
 
 const { locale } = useI18n()
 const armoryStore = useArmoryStore()
 const ownedGearStore = useOwnedGearStore()
-const rosterStore = useRosterStore()
 const editingUid = ref<number | null>(null)
 
 defineEmits<{
@@ -80,53 +79,21 @@ interface GearDisplayInfo {
   count: number
 }
 
-const rankList = computed(() => {
-  const charName = armoryStore.selectedCharacter
-  if (!charName) return []
-  const char = armoryStore.charData[charName]
-  if (!char) return []
-  const gear = char.gear
-  if (!gear) return []
-  const currentRank = rosterStore.getUnitProgress(charName).currentRank
-  const targetRank = armoryStore.targetRank
-  return gear
-    .map((_: unknown, idx: number) => idx + 1)
-    .filter((r: number) => {
-      if (r < currentRank || r > targetRank) return false
-      const rankGear = gear[r - 1]
-      return Array.isArray(rankGear) && rankGear.length > 0
-    })
-})
-
-function gearByRank(rank: number): GearDisplayInfo[] {
-  const charName = armoryStore.selectedCharacter
-  if (!charName) return []
-  const char = armoryStore.charData[charName]
-  if (!char) return []
-  const gear = char.gear
-  if (!gear) return []
-  const rankGear = gear[rank - 1]
-  if (!rankGear) return []
-  return rankGear.map((uid: number, slotIdx: number) => {
-    const info = armoryStore.getGearNameByUid(uid)
-    return {
-      uid,
-      name: info.name,
-      nameEn: info.nameEn,
-      slotIdx,
-      count: ownedGearStore.getCount(uid),
-    }
-  })
-}
-
-function isEquippedByCurrentChar(uid: number): boolean {
-  const charName = armoryStore.selectedCharacter
-  if (!charName) return false
-  const info = armoryStore.getGearNameByUid(uid)
-  const roster = rosterStore.rosterData[charName]
-  if (!roster) return false
-  return roster.equipment.some(e => e === info.name)
-}
+const rankGroups = computed(() =>
+  armoryStore.ownedGearWindow.map(({ rank, slots }) => ({
+    rank,
+    slots: slots.map(({ uid, slotIdx }): GearDisplayInfo => {
+      const info = armoryStore.getGearNameByUid(uid)
+      return {
+        uid,
+        name: info.name,
+        nameEn: info.nameEn,
+        slotIdx,
+        count: ownedGearStore.getCount(uid),
+      }
+    }),
+  })),
+)
 
 function displayName(g: GearDisplayInfo): string {
   return locale.value === 'en' ? g.nameEn : g.name
@@ -145,12 +112,7 @@ function commitEdit(uid: number, raw: string) {
   editingUid.value = null
   const count = parseInt(raw, 10)
   if (!isNaN(count) && count >= 0) {
-    const prev = ownedGearStore.getCount(uid)
     ownedGearStore.setCount(uid, count)
-    const crossed = (prev === 0) !== (count === 0)
-    if (crossed && !isEquippedByCurrentChar(uid)) {
-      armoryStore.computeRequirements()
-    }
   }
 }
 
@@ -159,19 +121,11 @@ function cancelEdit() {
 }
 
 function inc(uid: number) {
-  const prev = ownedGearStore.getCount(uid)
   ownedGearStore.addCount(uid, 1)
-  if (prev === 0 && !isEquippedByCurrentChar(uid)) {
-    armoryStore.computeRequirements()
-  }
 }
 
 function dec(uid: number) {
-  const prev = ownedGearStore.getCount(uid)
   ownedGearStore.addCount(uid, -1)
-  if (prev === 1 && !isEquippedByCurrentChar(uid)) {
-    armoryStore.computeRequirements()
-  }
 }
 </script>
 
@@ -232,6 +186,13 @@ function dec(uid: number) {
   padding: 1.5rem;
   overflow-y: auto;
   flex: 1;
+}
+
+.empty-note {
+  margin: 0;
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
 }
 
 .rank-group {

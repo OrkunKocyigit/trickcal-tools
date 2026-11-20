@@ -217,14 +217,20 @@ export const Equipment101Storage = {
   },
 }
 
-export const SelectedCharacterStorage = {
-  get: (): string | null => {
-    return Storage.get<string>(STORAGE_KEYS.SELECTED_CHARACTER)
+/**
+ * 裝備工坊已選擇的角色列表（原始值，需由呼叫端驗證）
+ */
+export const SelectedCharactersStorage = {
+  get: (): unknown => {
+    return Storage.get<unknown>(STORAGE_KEYS.ARMORY_SELECTED_CHARS)
   },
-  set: (name: string): boolean => {
-    return Storage.set(STORAGE_KEYS.SELECTED_CHARACTER, name)
+  set: (names: string[]): boolean => {
+    return Storage.set(STORAGE_KEYS.ARMORY_SELECTED_CHARS, names)
   },
-  remove: (): boolean => {
+  getLegacy: (): unknown => {
+    return Storage.get<unknown>(STORAGE_KEYS.SELECTED_CHARACTER)
+  },
+  removeLegacy: (): boolean => {
     return Storage.remove(STORAGE_KEYS.SELECTED_CHARACTER)
   },
 }
@@ -244,7 +250,9 @@ export const HideFulfilledStorage = {
  */
 export const TargetRankStorage = {
   get: (): Record<string, number> => {
-    return Storage.get<Record<string, number>>(STORAGE_KEYS.ARMORY_TARGET_RANKS) || {}
+    const raw = Storage.get<unknown>(STORAGE_KEYS.ARMORY_TARGET_RANKS)
+    if (typeof raw !== 'object' || raw === null || Array.isArray(raw)) return {}
+    return raw as Record<string, number>
   },
   set: (data: Record<string, number>): boolean => {
     return Storage.set(STORAGE_KEYS.ARMORY_TARGET_RANKS, data)

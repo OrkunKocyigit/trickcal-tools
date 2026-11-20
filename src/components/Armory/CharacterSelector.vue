@@ -8,7 +8,7 @@
       @change="$emit('update:modelValue', ($event.target as HTMLSelectElement).value)"
     >
       <option value="" disabled>{{ $t('armory.chooseCharacter') }}</option>
-      <option v-for="c in charList" :key="c.name" :value="c.name">
+      <option v-for="c in options" :key="c.name" :value="c.name">
         {{ displayName(c) }}
       </option>
     </select>
@@ -16,13 +16,18 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-const props = defineProps<{
+const props = withDefaults(defineProps<{
   modelValue: string
   charList: { name: string; en: string }[]
-}>()
+  exclude?: string[]
+}>(), {
+  exclude: () => [],
+})
+
+const options = computed(() => props.charList.filter(c => !props.exclude.includes(c.name)))
 
 defineEmits<{
   'update:modelValue': [value: string]
