@@ -42,7 +42,7 @@ self.onmessage = async (e: MessageEvent<unknown>) => {
       console.log(
         `[solver] status: ${solution.Status}, objective: ${objective}, dual bound: ${solution.DualBound ?? 'n/a'}, time: ${elapsed.toFixed(0)}ms`,
       )
-      if (solution.Status !== 'Optimal') {
+      if (solution.Status !== 'Optimal' && solution.Status !== 'Time limit reached') {
         console.warn('[solver] non-optimal result, full solution:', solution)
         console.warn('[solver] LP input:\n', lp)
       }

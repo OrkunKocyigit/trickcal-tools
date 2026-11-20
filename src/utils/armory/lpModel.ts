@@ -25,6 +25,8 @@ export interface HighsLikeSolution {
 }
 
 const EPS = 1e-9
+// HiGHS dual bounds carry ~1e-7 noise; treat a bound this close above a whole run as that run so a real gap is never hidden.
+const BOUND_TOLERANCE_RUNS = 1e-6
 
 function normaliseBudget(budget: number): number {
   return Number.isFinite(budget) && budget > 0 ? Math.floor(budget) : 0
@@ -154,7 +156,7 @@ export function parseSolution(sol: HighsLikeSolution, model: BuiltModel): SolveR
 /** Whole runs make every plan a multiple of STAMINA_PER_RUN, so the dual bound rounds up to the next run. */
 function planGap(sol: HighsLikeSolution, stamina: number): number {
   if (sol.Status !== STATUS_TIME_LIMIT || typeof sol.DualBound !== 'number' || !Number.isFinite(sol.DualBound)) return 0
-  const lowerBound = Math.ceil(sol.DualBound / STAMINA_PER_RUN - EPS) * STAMINA_PER_RUN
+  const lowerBound = Math.ceil(sol.DualBound / STAMINA_PER_RUN - BOUND_TOLERANCE_RUNS) * STAMINA_PER_RUN
   return Math.max(0, stamina - lowerBound)
 }
 
